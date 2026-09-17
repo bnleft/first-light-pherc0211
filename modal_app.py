@@ -753,11 +753,11 @@ json.dump(res, open(f"{out_dir}/readout.json", "w"), indent=2)
 
 
 @app.function(image=image, volumes={str(DATA): vol}, timeout=HOURS, cpu=8, memory=49152)
-def readout(run_tag: str, scope: str = "fitted_scoped_w010-065", T: float = 199.0) -> dict:
+def readout(run_tag: str, scope: str = "fitted_scoped_w010-065", thresh: float = 199.0) -> dict:
     out = DATA / "ink" / run_tag / scope
     seg = out / "segment.zarr"
     script = VILLA / "spiral-fitting" / "_readout.py"
     script.write_text(READOUT_SCRIPT)
-    sh(f"cd {VILLA}/spiral-fitting && uv run python {script} {out}/segment.tif {out}/segment_reverse.tif {seg} {out} {T}")
+    sh(f"cd {VILLA}/spiral-fitting && uv run python {script} {out}/segment.tif {out}/segment_reverse.tif {seg} {out} {thresh}")
     vol.commit()
     return json.loads((out / "readout.json").read_text())

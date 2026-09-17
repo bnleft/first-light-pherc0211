@@ -3,3 +3,4 @@ out/
 *.pyc
 __pycache__/
 analysis/control/*.tif
+analysis/**/*_q.png
