@@ -488,3 +488,61 @@ def probe_vc() -> None:
     sh("vc_render_tifxyz --help | grep -n flip-normals")
     sh("ls -la /usr/local/bin | grep -E 'vc_|flatboi'")
     sh("cat /src/.git/HEAD 2>/dev/null; git -C /src rev-parse HEAD 2>/dev/null || echo 'no /src git'; ls /src 2>/dev/null | head")
+
+
+# ---------------------------------------------------------------------------
+LASAGNA_STORES = ["nx", "ny", "grad_mag"]
+
+
+@app.function(image=image, volumes={str(DATA): vol}, timeout=3 * HOURS, cpu=16, memory=32768, ephemeral_disk=100 * 1024)
+def pack_pools_fast(z_begin: int = 10000, z_end: int = 11000, margin: int = 1500) -> None:
+    """Replace fetch_dataset's lasagna step + pack_pools.
+
+    Copying the full group-2 stores (~100k tiny chunk files each) into a Modal
+    Volume ran at ~2 chunk-rows/min, i.e. hours per store. The fitter only reads
+    the sidecars pack_resident_pools.py produces (a handful of large files), and
+    the packer only iterates over chunk files that exist. So: pull just the
+    chunk rows covering [z_begin - margin, z_end + margin) to local disk, pack
+    there, and write the sidecars plus the zarr metadata files to the volume.
+    Rows outside the window are absent bricks, which read back as no-data."""
+    import shutil
+    t0 = time.time()
+    scale, chunk = 4, 32
+    row_lo = max(0, (z_begin - margin) // scale // chunk)
+    row_hi = (z_end + margin) // scale // chunk + 1
+    print(f"lasagna group 2 chunk rows {row_lo}..{row_hi} (full-res z {row_lo*scale*chunk}..{row_hi*scale*chunk})")
+    local = Path("/tmp/lasagna")
+    local.mkdir(parents=True, exist_ok=True)
+    for st in LASAGNA_STORES:
+        src = f"{LASAGNA_S3}/{SCROLL}_{st}.ome.zarr"
+        dst = local / f"{SCROLL}_{st}.ome.zarr"
+        (dst / "2").mkdir(parents=True, exist_ok=True)
+        for f in [".zattrs", ".zgroup", "2/.zarray"]:
+            sh(f"aws s3 cp --no-sign-request --only-show-errors {src}/{f} {dst}/{f}")
+        rows = " ".join(str(r) for r in range(row_lo, row_hi))
+        # 16 parallel row copies; each row is ~700 files / ~17 MB
+        sh(f"cd {dst}/2 && echo {rows} | tr ' ' '\\n' | xargs -P 16 -I{{}} aws s3 cp --no-sign-request --only-show-errors --recursive {src}/2/{{}} {dst}/2/{{}}")
+        n = sum(1 for _ in (dst / "2").rglob("*") if _.is_file())
+        print(f"{st}: {n} chunk files on local disk")
+    sh(f"cd {VILLA}/spiral-fitting && uv run python pack_resident_pools.py {local} "
+       f"--what normals,grad_mag --normal-group 2 --io-threads 16 --verify 500")
+    # publish: zarr metadata (so the fitter's directory checks pass) + sidecars
+    vol_lasagna = DS / "lasagna"
+    vol_lasagna.mkdir(parents=True, exist_ok=True)
+    for st in LASAGNA_STORES:
+        dst = vol_lasagna / f"{SCROLL}_{st}.ome.zarr"
+        (dst / "2").mkdir(parents=True, exist_ok=True)
+        for f in [".zattrs", ".zgroup", "2/.zarray"]:
+            shutil.copy2(local / f"{SCROLL}_{st}.ome.zarr" / f, dst / f)
+    for side in sorted(local.glob("*.respool_g2*")):
+        target = vol_lasagna / side.name
+        if target.exists():
+            shutil.rmtree(target)
+        shutil.copytree(side, target)
+        print("published sidecar", target)
+    # the DBM mtime repair that fetch_dataset never reached
+    tracks = DS / "tracks"
+    print(repair_crossings_mtime(str(tracks / f"{TRACKS_BASE}.dbm"), str(tracks / f"{TRACKS_BASE}.dbm.crossings.npz")))
+    vol.commit()
+    sh(f"du -sh {vol_lasagna}/* && cat {vol_lasagna}/{SCROLL}_nx.ome.zarr.respool_g2_pair/meta.json | head -c 600")
+    print(f"pack_pools_fast done in {(time.time()-t0)/60:.1f} min")

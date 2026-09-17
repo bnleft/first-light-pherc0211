@@ -72,3 +72,17 @@ it is a villa defect a human hit on real data, a PR)
 - Our own wrapper masked the failure: `cmd | tee log` returns tee's exit code, so
   inference ran against a store that was never written. Fixed with
   `bash -o pipefail`. Cost of the wasted GPU run: a couple of minutes of A10.
+
+## 2026-09-17 — lasagna stores: do not mirror them into a Modal Volume
+
+- `aws s3 cp --recursive` of one group-2 normal store (~100k chunk files, ~2.6 GB)
+  into a Modal Volume progressed at ~2 chunk-rows/min → hours per store. The
+  tracks (4 files, 16 GiB) had copied in ~12 min at 33 MB/s, so this is a
+  small-file problem, not bandwidth.
+- `fit_spiral` reads the normals only through `pack_resident_pools.py` sidecars,
+  and the packer packs whatever chunk files exist. New step `pack_pools_fast`:
+  pull only the chunk rows for the fit window (±1500 slices) to local disk,
+  pack there, write the sidecars (a few large files) + zarr metadata to the volume.
+- Stopping the fetch app mid-copy did not lose the tracks: Modal volume writes
+  were already visible from the CLI (`modal volume ls`), so `vol.commit()` at the
+  end was not what persisted them.

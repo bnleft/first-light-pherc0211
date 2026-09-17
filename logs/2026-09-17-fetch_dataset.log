@@ -728,3 +728,94 @@ $ aws s3 cp --no-sign-request --only-show-errors s3://vesuvius-challenge-open-da
 $ aws s3 cp --no-sign-request --only-show-errors s3://vesuvius-challenge-open-data/PHerc0211/representations/predictions/lasagna/20250821151803-lasagna-20260419180421/PHerc0211_nx.ome.zarr/.zgroup /data/spiral_datasets/PHerc0211/20250821151803/lasagna/PHerc0211_nx.ome.zarr/.zgroup
 
 $ aws s3 cp --no-sign-request --only-show-errors --recursive s3://vesuvius-challenge-open-data/PHerc0211/representations/predictions/lasagna/20250821151803-lasagna-20260419180421/PHerc0211_nx.ome.zarr/2 /data/spiral_datasets/PHerc0211/20250821151803/lasagna/PHerc0211_nx.ome.zarr/2
+Stopping app - user stopped from CLI.
+cancelled: ctrl-c received
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ /Users/bryantle/.pyenv/versions/3.11.8/bin/modal:8 in <module>               │
+│                                                                              │
+│   7 │   sys.argv[0] = re.sub(r'(-script\.pyw|\.exe)?$', '', sys.argv[0])     │
+│ ❱ 8 │   sys.exit(main())                                                     │
+│   9                                                                          │
+│                                                                              │
+│ /Users/bryantle/.pyenv/versions/3.11.8/lib/python3.11/site-packages/modal/__ │
+│ main__.py:18 in main                                                         │
+│                                                                              │
+│   17 │   try:                                                                │
+│ ❱ 18 │   │   entrypoint_cli()                                                │
+│   19                                                                         │
+│                                                                              │
+│ /Users/bryantle/.pyenv/versions/3.11.8/lib/python3.11/site-packages/click/co │
+│ re.py:1485 in __call__                                                       │
+│                                                                              │
+│ /Users/bryantle/.pyenv/versions/3.11.8/lib/python3.11/site-packages/typer/co │
+│ re.py:814 in main                                                            │
+│                                                                              │
+│ /Users/bryantle/.pyenv/versions/3.11.8/lib/python3.11/site-packages/typer/co │
+│ re.py:190 in _main                                                           │
+│                                                                              │
+│ /Users/bryantle/.pyenv/versions/3.11.8/lib/python3.11/site-packages/click/co │
+│ re.py:1873 in invoke                                                         │
+│                                                                              │
+│ /Users/bryantle/.pyenv/versions/3.11.8/lib/python3.11/site-packages/click/co │
+│ re.py:1873 in invoke                                                         │
+│                                                                              │
+│ /Users/bryantle/.pyenv/versions/3.11.8/lib/python3.11/site-packages/click/co │
+│ re.py:1269 in invoke                                                         │
+│                                                                              │
+│ /Users/bryantle/.pyenv/versions/3.11.8/lib/python3.11/site-packages/click/co │
+│ re.py:824 in invoke                                                          │
+│                                                                              │
+│ /Users/bryantle/.pyenv/versions/3.11.8/lib/python3.11/site-packages/click/de │
+│ corators.py:34 in new_func                                                   │
+│                                                                              │
+│ /Users/bryantle/.pyenv/versions/3.11.8/lib/python3.11/site-packages/modal/cl │
+│ i/run.py:195 in f                                                            │
+│                                                                              │
+│   194 │   │   │   ):                                                         │
+│ ❱ 195 │   │   │   │   res = inner(args, kwargs)                              │
+│   196                                                                        │
+│                                                                              │
+│ /Users/bryantle/.pyenv/versions/3.11.8/lib/python3.11/site-packages/modal/cl │
+│ i/run.py:225 in _inner                                                       │
+│                                                                              │
+│   224 │   │   else:                                                          │
+│ ❱ 225 │   │   │   return function.remote(*args, **click_kwargs)              │
+│   226                                                                        │
+│                                                                              │
+│ /Users/bryantle/.pyenv/versions/3.11.8/lib/python3.11/site-packages/modal/_o │
+│ bject.py:340 in wrapped                                                      │
+│                                                                              │
+│   339 │   │   await self.hydrate()                                           │
+│ ❱ 340 │   │   return await method(self, *args, **kwargs)                     │
+│   341                                                                        │
+│                                                                              │
+│ /Users/bryantle/.pyenv/versions/3.11.8/lib/python3.11/site-packages/modal/_f │
+│ unctions.py:1766 in remote                                                   │
+│                                                                              │
+│   1765 │   │                                                                 │
+│ ❱ 1766 │   │   return await self._call_function(args, kwargs)                │
+│   1767                                                                       │
+│                                                                              │
+│ /Users/bryantle/.pyenv/versions/3.11.8/lib/python3.11/site-packages/modal/_f │
+│ unctions.py:1710 in _call_function                                           │
+│                                                                              │
+│   1709 │   │                                                                 │
+│ ❱ 1710 │   │   return await invocation.run_function()                        │
+│   1711                                                                       │
+│                                                                              │
+│ /Users/bryantle/.pyenv/versions/3.11.8/lib/python3.11/site-packages/modal/_f │
+│ unctions.py:477 in run_function                                              │
+│                                                                              │
+│    476 │   │   │   if await_response.output.result.status in TERMINAL_STATUS │
+│ ❱  477 │   │   │   │   return await _process_result(                         │
+│    478 │   │   │   │   │   await_response.output.result, await_response.outp │
+│                                                                              │
+│ /Users/bryantle/.pyenv/versions/3.11.8/lib/python3.11/site-packages/modal/_u │
+│ tils/function_utils.py:531 in _process_result                                │
+│                                                                              │
+│   530 │   │                                                                  │
+│ ❱ 531 │   │   raise RemoteError(result.exception)                            │
+│   532                                                                        │
+╰──────────────────────────────────────────────────────────────────────────────╯
+RemoteError
+exit=1

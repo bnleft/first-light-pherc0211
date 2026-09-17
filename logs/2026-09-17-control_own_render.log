@@ -12,3 +12,65 @@ https://modal.com/apps/bnleft/main/ap-IjPKSgaaeDuZv9SwbpKoaq
 ├── 🔨 Created function render_and_infer.
 ├── 🔨 Created function control.
 └── 🔨 Created function probe_vc.
+
+$ ls -la /data/control/mesh_on_9362um.tifxyz; cat /data/control/mesh_on_9362um.tifxyz/meta.json
+total 896
+drwxr-xr-x 1 root root     24 Sep 17 18:42 .
+drwxr-xr-x 1 root root     35 Sep 17 18:42 ..
+-rw-r--r-- 1 root root    415 Jul 15 15:36 meta.json
+-rw-r--r-- 1 root root 305102 Jul 15 15:36 x.tif
+-rw-r--r-- 1 root root 305102 Jul 15 15:36 y.tif
+-rw-r--r-- 1 root root 305102 Jul 15 15:36 z.tif
+{
+    "area_vx2": 25082013.29527031,
+    "bbox": [
+        [
+            1792.0513916015625,
+            2288.8984375,
+            2843.08154296875
+        ],
+        [
+            4419.91552734375,
+            4572.0517578125,
+            8061.2626953125
+        ]
+    ],
+    "format": "tifxyz",
+    "scale": [
+        0.05000000074505806,
+        0.05000000074505806
+    ],
+    "type": "seg",
+    "uuid": "out"
+}
+
+$ vc_render_tifxyz --volume /data/volume-cache/control-PHerc0139-9362.zarr --remote-url s3://vesuvius-challenge-open-data/PHerc0139/volumes/20250728140407-9.362um-1.2m-113keV-masked.zarr --group-idx 0 --scale 1 --segmentation /data/control/mesh_on_9362um.tifxyz --num-slices 28 --slice-step 1 --cache-gb 16 --flip-normals --zarr-output /data/control/out_own_render/control.zarr 2>&1 | tee /data/control/out_own_render/vc_render_tifxyz.log
+
+[1A  tile-row 1/46 (2%)  12.2 chunks/s  0m03s  eta 2m30s
+[1A  tile-row 2/46 (4%)  8.3 chunks/s  0m09s  eta 3m38s
+[1A  tile-row 3/46 (6%)  8.8 chunks/s  0m13s  eta 3m19s
+[1A  tile-row 4/46 (8%)  9.7 chunks/s  0m16s  eta 2m57s
+[1A  tile-row 5/46 (10%)  10.6 chunks/s  0m19s  eta 2m37s
+[1A  tile-row 6/46 (13%)  11.2 chunks/s  0m21s  eta 2m26s
+[1A  tile-row 7/46 (15%)  11.6 chunks/s  0m24s  eta 2m18s
+[1A  tile-row 8/46 (17%)  11.8 chunks/s  0m27s  eta 2m12s
+[1A  tile-row 9/46 (19%)  12.0 chunks/s  0m30s  eta 2m06s
+[1A  tile-row 10/46 (21%)  12.4 chunks/s  0m33s  eta 1m59s
+[1A  tile-row 11/46 (23%)  12.7 chunks/s  0m35s  eta 1m53s
+[1A  tile-row 12/46 (26%)  12.9 chunks/s  0m38s  eta 1m48s
+[1A  tile-row 13/46 (28%)  12.9 chunks/s  0m41s  eta 1m44s
+[1A  tile-row 14/46 (30%)  13.1 chunks/s  0m43s  eta 1m40s
+[1A  tile-row 15/46 (32%)  13.1 chunks/s  0m47s  eta 1m37s
+[1A  tile-row 16/46 (34%)  13.2 chunks/s  0m49s  eta 1m33s
+[1A  tile-row 17/46 (36%)  13.3 chunks/s  0m52s  eta 1m29s
+[1A  tile-row 18/46 (39%)  13.4 chunks/s  0m54s  eta 1m25s
+[1A  tile-row 19/46 (41%)  13.4 chunks/s  0m58s  eta 1m22s
+[1A  tile-row 20/46 (43%)  13.5 chunks/s  1m00s  eta 1m18s
+[1A  tile-row 21/46 (45%)  13.6 chunks/s  1m03s  eta 1m15s
+[1A  tile-row 22/46 (47%)  13.7 chunks/s  1m05s  eta 1m11s
+[1A  tile-row 23/46 (50%)  13.8 chunks/s  1m08s  eta 1m08s
+[1A  tile-row 24/46 (52%)  13.8 chunks/s  1m11s  eta 1m05s
+[1A  tile-row 25/46 (54%)  13.8 chunks/s  1m14s  eta 1m02s
+[1A  tile-row 26/46 (56%)  13.9 chunks/s  1m16s  eta 0m59s
+[1A  tile-row 27/46 (58%)  13.8 chunks/s  1m19s  eta 0m56s
+[1A  tile-row 28/46 (60%)  13.8 chunks/s  1m22s  eta 0m53s
