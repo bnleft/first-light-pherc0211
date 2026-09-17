@@ -1,2 +1,21 @@
 ✓ Initialized. View run at 
 https://modal.com/apps/bnleft/main/ap-V9avOyUeFACfahMVe3NYNR
+✓ Created objects.
+├── 🔨 Created mount 
+│   /Users/bryantle/Documents/bnleft/first-light-pherc0211/modal_app.py
+├── 🔨 Created function probe.
+├── 🔨 Created function fetch_dataset.
+├── 🔨 Created function render_slices.
+├── 🔨 Created function pack_pools.
+├── 🔨 Created function spiral_fit.
+├── 🔨 Created function pack_pools_fast.
+├── 🔨 Created function overlay_fits.
+├── 🔨 Created function calibrate_control.
+├── 🔨 Created function readout.
+├── 🔨 Created function probe_ink.
+├── 🔨 Created function render_and_infer.
+├── 🔨 Created function control.
+└── 🔨 Created function probe_vc.
+scoped 56 windings into /data/out/CW_z10000-11000_s30000/2026-09-17_PHerc0211_slice-10000-11000_0-patch/meshes/fitted_scoped_w010-065
+
+$ cd /opt/villa/spiral-fitting && uv run python render_ink.py /data/out/CW_z10000-11000_s30000/2026-09-17_PHerc0211_slice-10000-11000_0-patch/meshes/fitted_scoped_w010-065 --volume /data/volume-cache/PHerc0211.zarr --remote-url s3://vesuvius-challenge-open-data/PHerc0211/volumes/20250821151803-9.362um-1.2m-113keV-masked.zarr --group-idx 1 --scale 0.25 --num-slices 5 --no-strips --full-scroll --lasagna-device cuda 2>&1 | tee /data/ink/CW_z10000-11000_s30000/fitted_scoped_w010-065/render_ink.log
