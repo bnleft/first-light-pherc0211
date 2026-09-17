@@ -592,7 +592,16 @@ for z in zs:
         for w, x, y, zz in ms:
             sel = np.abs(zz - z) < tol
             if sel.any():
-                ax.scatter(x[sel]/SCALE, y[sel]/SCALE, s=msz, c=[plt.cm.turbo((w-10)/120)], alpha=1.0, linewidths=0); n += int(sel.sum())
+                # draw each winding's z-slab as a polyline ordered by angle about the umbilicus
+                px, py = x[sel]/SCALE, y[sel]/SCALE
+                ang = np.arctan2(py - cy, px - cx); order = np.argsort(ang)
+                px, py, ang = px[order], py[order], ang[order]
+                # break the line where consecutive points are far apart (gaps / wrap)
+                d = np.hypot(np.diff(px), np.diff(py)); brk = np.where(d > 25)[0] + 1
+                for seg_x, seg_y in zip(np.split(px, brk), np.split(py, brk)):
+                    if len(seg_x) > 2:
+                        ax.plot(seg_x, seg_y, "-", lw=1.0, color=plt.cm.turbo((w-10)/120), alpha=0.95)
+                n += int(sel.sum())
         ax.plot(cx, cy, "r+", ms=20, mew=2)
         ax.set_xlim(x0, x1); ax.set_ylim(y1, y0)
         ax.set_title(f"{name}: fitted sheets within |dz|<{tol:g} vx of z={z}  ({n} vertices)  colour = winding index", fontsize=10)

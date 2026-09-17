@@ -88,3 +88,4 @@ PROGRESS Creating optimizer — elapsed 0s
 PROGRESS Synchronizing model across GPU workers — elapsed 0s
 PROGRESS Preparing tracks for optimization — 741,046 tracks — elapsed 0s
 PROGRESS Optimizing — 0/30,000 iterations (0.0%) — elapsed 0s
+PROGRESS Optimizing — 0/30,000 iterations (0.0%) — elapsed 31s

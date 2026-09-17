@@ -1,0 +1,73 @@
+✓ Initialized. View run at 
+https://modal.com/apps/bnleft/main/ap-QkNbWisk4X3LmqEiTmP0E4
+✓ Created objects.
+├── 🔨 Created mount 
+│   /Users/bryantle/Documents/bnleft/first-light-pherc0211/modal_app.py
+├── 🔨 Created function fetch_dataset.
+├── 🔨 Created function render_slices.
+├── 🔨 Created function probe.
+├── 🔨 Created function probe_ink.
+├── 🔨 Created function pack_pools.
+├── 🔨 Created function spiral_fit.
+├── 🔨 Created function pack_pools_fast.
+├── 🔨 Created function overlay_fits.
+├── 🔨 Created function render_and_infer.
+├── 🔨 Created function control.
+└── 🔨 Created function probe_vc.
+
+$ cd /opt/villa/spiral-fitting && uv run python /opt/villa/spiral-fitting/_overlay_fits.py '{"CW": "/data/out/CW_z10000-11000_s1500/2026-09-17_PHerc0211_slice-10000-11000_0-patch/meshes/fitted", "ACW": "/data/out/ACW_z10000-11000_s1500/2026-09-17_PHerc0211_slice-10000-11000_0-patch/meshes/fitted"}' /data/spiral_datasets/PHerc0211/20250821151803/umbilicus.json /data/renders 10500 250 10.0 6.0
+CW 120 windings; 2123955 valid vertices
+ACW 120 windings; 2124424 valid vertices
+saved /data/renders/overlay_z10500_CW_vs_ACW.png
+Task was destroyed but it is pending!
+task: <Task pending name='Task-104' coro=<_wait_for_close() running at /opt/villa/spiral-fitting/.venv/lib/python3.14/site-packages/aiohttp/connector.py:121>>
+Task was destroyed but it is pending!
+task: <Task pending name='Task-105' coro=<_wait_for_close() running at /opt/villa/spiral-fitting/.venv/lib/python3.14/site-packages/aiohttp/connector.py:121>>
+Task was destroyed but it is pending!
+task: <Task pending name='Task-106' coro=<_wait_for_close() running at /opt/villa/spiral-fitting/.venv/lib/python3.14/site-packages/aiohttp/connector.py:121>>
+Task was destroyed but it is pending!
+task: <Task pending name='Task-107' coro=<_wait_for_close() running at /opt/villa/spiral-fitting/.venv/lib/python3.14/site-packages/aiohttp/connector.py:121>>
+Traceback (most recent call last):
+  File "/root/.local/share/uv/python/cpython-3.14.7-linux-x86_64-gnu/lib/python3.14/weakref.py", line 566, in _exitfunc
+    f()
+    ~^^
+  File "/root/.local/share/uv/python/cpython-3.14.7-linux-x86_64-gnu/lib/python3.14/weakref.py", line 490, in __call__
+    return info.func(*info.args, **(info.kwargs or {}))
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/villa/spiral-fitting/.venv/lib/python3.14/site-packages/s3fs/core.py", line 705, in close_session
+    sync(loop, s3.__aexit__, None, None, None, timeout=0.1)
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/villa/spiral-fitting/.venv/lib/python3.14/site-packages/fsspec/asyn.py", line 103, in sync
+    raise return_result
+  File "/opt/villa/spiral-fitting/.venv/lib/python3.14/site-packages/fsspec/asyn.py", line 56, in _runner
+    result[0] = await coro
+                ^^^^^^^^^^
+  File "/root/.local/share/uv/python/cpython-3.14.7-linux-x86_64-gnu/lib/python3.14/asyncio/tasks.py", line 488, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "/opt/villa/spiral-fitting/.venv/lib/python3.14/site-packages/aiobotocore/session.py", line 41, in __aexit__
+    await self._client.__aexit__(exc_type, exc_val, exc_tb)
+  File "/opt/villa/spiral-fitting/.venv/lib/python3.14/site-packages/aiobotocore/client.py", line 678, in __aexit__
+    await self._endpoint.http_session.__aexit__(exc_type, exc_val, exc_tb)
+  File "/opt/villa/spiral-fitting/.venv/lib/python3.14/site-packages/aiobotocore/httpsession.py", line 132, in __aexit__
+    await self._exit_stack.aclose()
+  File "/root/.local/share/uv/python/cpython-3.14.7-linux-x86_64-gnu/lib/python3.14/contextlib.py", line 705, in aclose
+    await self.__aexit__(None, None, None)
+  File "/root/.local/share/uv/python/cpython-3.14.7-linux-x86_64-gnu/lib/python3.14/contextlib.py", line 768, in __aexit__
+    raise exc
+  File "/root/.local/share/uv/python/cpython-3.14.7-linux-x86_64-gnu/lib/python3.14/contextlib.py", line 751, in __aexit__
+    cb_suppress = await cb(*exc_details)
+                  ^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/villa/spiral-fitting/.venv/lib/python3.14/site-packages/aiohttp/client.py", line 1664, in __aexit__
+    await self.close()
+  File "/opt/villa/spiral-fitting/.venv/lib/python3.14/site-packages/aiohttp/client.py", line 1530, in close
+    await self._connector.close()
+  File "/opt/villa/spiral-fitting/.venv/lib/python3.14/site-packages/aiohttp/connector.py", line 1069, in close
+    await super().close(abort_ssl=abort_ssl or self._ssl_shutdown_timeout == 0)
+          ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/villa/spiral-fitting/.venv/lib/python3.14/site-packages/aiohttp/connector.py", line 497, in close
+    task = asyncio.Task(coro, loop=self._loop, eager_start=True)
+RuntimeError: loop <_UnixSelectorEventLoop running=True closed=False debug=False> is not the running loop
+Stopping app - local entrypoint completed.
+✓ App completed. View run at 
+https://modal.com/apps/bnleft/main/ap-QkNbWisk4X3LmqEiTmP0E4
