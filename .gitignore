@@ -2,3 +2,4 @@ renders/*.png
 out/
 *.pyc
 __pycache__/
+analysis/control/*.tif

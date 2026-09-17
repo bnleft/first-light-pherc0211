@@ -494,7 +494,7 @@ def probe_vc() -> None:
 LASAGNA_STORES = ["nx", "ny", "grad_mag"]
 
 
-@app.function(image=image, volumes={str(DATA): vol}, timeout=3 * HOURS, cpu=16, memory=32768, ephemeral_disk=100 * 1024)
+@app.function(image=image, volumes={str(DATA): vol}, timeout=3 * HOURS, cpu=16, memory=32768)
 def pack_pools_fast(z_begin: int = 10000, z_end: int = 11000, margin: int = 1500) -> None:
     """Replace fetch_dataset's lasagna step + pack_pools.
 
