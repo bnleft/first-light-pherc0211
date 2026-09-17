@@ -39,3 +39,77 @@ initial forward flatten (inversion skipped): map_shape=(66, 9656, 2) point_valid
   f_sdir   : flatten_sdir                     | f_sdirW  : weighted flatten_sdir            | f_estep  : physical edge step loss
   f_estpW  : weighted physical edge step loss | f_avg    : flatten_avg_offset               | f_avgW   : weighted flatten_avg_offset
   f_orient : flatten_orient                   | f_oriW   : weighted flatten_orient          | f_step   : flatten current avg grid step
+              step     loss  it/s f_sdir f_sdirW f_estep f_estpW  f_avg f_avgW f_orient f_oriW f_step
+     stage0 0/4500   2.5153       2.0787  2.0787  0.4366  0.4366 0.0000 0.0000   0.0000 0.0000 20.000
+     stage0 1/4500   2.5153   0.1 2.0787  2.0787  0.4366  0.4366 0.0000 0.0000   0.0000 0.0000 20.000
+   stage0 100/4500   0.5097 256.5 0.3737  0.3737  0.1351  0.1351 0.0000 0.0000  5.0e-04 9.0e-04 19.993
+   stage0 200/4500   0.2600 259.6 0.1845  0.1845  0.0751  0.0751 0.0000 0.0000  2.0e-04 4.0e-04 19.994
+   stage0 300/4500   0.1696 254.4 0.1104  0.1104  0.0559  0.0559 0.0000 0.0000   0.0017 0.0033 20.002
+   stage0 400/4500   0.1253 258.5 0.0795  0.0795  0.0455  0.0455 0.0000 0.0000  1.0e-04 2.0e-04 20.005
+[optimizer] stage0: flatten renorm step=500 avg_step=20.0084 target=20 uv_scale=1.00042
+   stage0 500/4500   0.1063 252.4 0.0665  0.0665  0.0397  0.0397 0.0000 0.0000   0.0000 0.0000 20.000
+   stage0 600/4500   0.0842 250.5 0.0506  0.0506  0.0322  0.0322 0.0000 0.0000  7.0e-04 0.0014 20.010
+   stage0 700/4500   0.0815 257.6 0.0476  0.0476  0.0328  0.0328 0.0000 0.0000  6.0e-04 0.0012 20.012
+   stage0 800/4500   0.0801 258.1 0.0460  0.0460  0.0340  0.0340 0.0000 0.0000  1.0e-04 1.0e-04 20.014
+   stage0 900/4500   0.0778 257.5 0.0448  0.0448  0.0330  0.0330 0.0000 0.0000   0.0000 0.0000 20.014
+[optimizer] stage0: flatten renorm step=1000 avg_step=20.0137 target=20 uv_scale=1.00069
+  stage0 1000/4500   0.0783 255.2 0.0453  0.0453  0.0329  0.0329 0.0000 0.0000   0.0000 1.0e-04 20.000
+  stage0 1100/4500   0.0722  73.8 0.0427  0.0427  0.0294  0.0294 0.0000 0.0000   0.0000 0.0000 20.013
+  stage0 1200/4500   0.0670 256.0 0.0404  0.0404  0.0266  0.0266 0.0000 0.0000   0.0000 1.0e-04 20.012
+  stage0 1300/4500   0.0660 257.6 0.0399  0.0399  0.0260  0.0260 0.0000 0.0000   0.0000 1.0e-04 20.012
+  stage0 1400/4500   0.0685 260.2 0.0394  0.0394  0.0290  0.0290 0.0000 0.0000   0.0000 0.0000 20.013
+[optimizer] stage0: flatten renorm step=1500 avg_step=20.0134 target=20 uv_scale=1.00067
+  stage0 1500/4500   0.0679 257.9 0.0390  0.0390  0.0289  0.0289 0.0000 0.0000   0.0000 0.0000 20.000
+  stage0 1600/4500   0.0634 259.4 0.0399  0.0399  0.0234  0.0234 0.0000 0.0000  1.0e-04 1.0e-04 20.011
+  stage0 1700/4500   0.0650 260.9 0.0381  0.0381  0.0268  0.0268 0.0000 0.0000   0.0000 1.0e-04 20.013
+  stage0 1800/4500   0.0641 258.3 0.0375  0.0375  0.0266  0.0266 0.0000 0.0000   0.0000 0.0000 20.013
+              step     loss  it/s f_sdir f_sdirW f_estep f_estpW  f_avg f_avgW f_orient f_oriW f_step
+  stage0 1900/4500   0.0636 258.9 0.0371  0.0371  0.0265  0.0265 0.0000 0.0000   0.0000 0.0000 20.013
+[optimizer] stage0: flatten renorm step=2000 avg_step=20.0128 target=20 uv_scale=1.00064
+  stage0 2000/4500   0.0628 254.9 0.0364  0.0364  0.0264  0.0264 0.0000 0.0000   0.0000 0.0000 20.000
+  stage0 2100/4500   0.0597  72.5 0.0378  0.0378  0.0219  0.0219 0.0000 0.0000   0.0000 0.0000 20.010
+  stage0 2200/4500   0.0598 254.4 0.0358  0.0358  0.0239  0.0239 0.0000 0.0000   0.0000 0.0000 20.012
+  stage0 2300/4500   0.0594 258.0 0.0351  0.0351  0.0243  0.0243 0.0000 0.0000   0.0000 0.0000 20.012
+  stage0 2400/4500   0.0587 257.4 0.0346  0.0346  0.0240  0.0240 0.0000 0.0000   0.0000 0.0000 20.012
+[optimizer] stage0: flatten renorm step=2500 avg_step=20.0119 target=20 uv_scale=1.00059
+  stage0 2500/4500   0.0583 260.3 0.0344  0.0344  0.0239  0.0239 0.0000 0.0000   0.0000 0.0000 20.000
+  stage0 2600/4500   0.0543 262.0 0.0358  0.0358  0.0185  0.0185 0.0000 0.0000   0.0000 0.0000 20.008
+  stage0 2700/4500   0.0562 256.4 0.0343  0.0343  0.0219  0.0219 0.0000 0.0000   0.0000 0.0000 20.011
+  stage0 2800/4500   0.0557 252.8 0.0338  0.0338  0.0219  0.0219 0.0000 0.0000   0.0000 0.0000 20.011
+  stage0 2900/4500   0.0551 254.5 0.0336  0.0336  0.0214  0.0214 0.0000 0.0000   0.0000 0.0000 20.011
+[optimizer] stage0: flatten renorm step=3000 avg_step=20.0109 target=20 uv_scale=1.00055
+  stage0 3000/4500   0.0554 252.4 0.0336  0.0336  0.0218  0.0218 0.0000 0.0000   0.0000 0.0000 20.000
+  stage0 3100/4500   0.0532  72.9 0.0348  0.0348  0.0181  0.0181 0.0000 0.0000  1.0e-04 3.0e-04 20.008
+  stage0 3200/4500   0.0532 256.1 0.0328  0.0328  0.0204  0.0204 0.0000 0.0000   0.0000 0.0000 20.010
+  stage0 3300/4500   0.0527 251.3 0.0322  0.0322  0.0205  0.0205 0.0000 0.0000   0.0000 0.0000 20.010
+  stage0 3400/4500   0.0529 250.9 0.0323  0.0323  0.0205  0.0205 0.0000 0.0000   0.0000 0.0000 20.010
+[optimizer] stage0: flatten renorm step=3500 avg_step=20.0103 target=20 uv_scale=1.00052
+  stage0 3500/4500   0.0528 252.1 0.0323  0.0323  0.0205  0.0205 0.0000 0.0000   0.0000 0.0000 20.000
+  stage0 3600/4500   0.0527 249.0 0.0342  0.0342  0.0184  0.0184 0.0000 0.0000   0.0000 0.0000 20.009
+  stage0 3700/4500   0.0511 252.9 0.0318  0.0318  0.0192  0.0192 0.0000 0.0000   0.0000 0.0000 20.009
+  stage0 3800/4500   0.0505 254.4 0.0313  0.0313  0.0192  0.0192 0.0000 0.0000   0.0000 0.0000 20.010
+              step     loss  it/s f_sdir f_sdirW f_estep f_estpW  f_avg f_avgW f_orient f_oriW f_step
+  stage0 3900/4500   0.0504 252.2 0.0311  0.0311  0.0193  0.0193 0.0000 0.0000   0.0000 0.0000 20.010
+[optimizer] stage0: flatten renorm step=4000 avg_step=20.0103 target=20 uv_scale=1.00051
+  stage0 4000/4500   0.0512 254.1 0.0314  0.0314  0.0198  0.0198 0.0000 0.0000   0.0000 0.0000 20.000
+  stage0 4100/4500   0.0497  68.7 0.0328  0.0328  0.0169  0.0169 0.0000 0.0000   0.0000 0.0000 20.008
+  stage0 4200/4500   0.0495 255.5 0.0313  0.0313  0.0182  0.0182 0.0000 0.0000   0.0000 1.0e-04 20.009
+  stage0 4300/4500   0.0493 255.9 0.0308  0.0308  0.0185  0.0185 0.0000 0.0000   0.0000 0.0000 20.009
+  stage0 4400/4500   0.0492 253.3 0.0306  0.0306  0.0185  0.0185 0.0000 0.0000  1.0e-04 2.0e-04 20.009
+[optimizer] stage0: flatten renorm step=4500 avg_step=20.0093 target=20 uv_scale=1.00047
+  stage0 4500/4500   0.0490 251.0 0.0305  0.0305  0.0184  0.0184 0.0000 0.0000   0.0000 0.0000 20.000
+[optimizer] stage0 'flatten' complete in 49.53s
+[optimizer] stage1: params=['map_flatten_ms'] steps=1000 lr=0.001 min_scaledown=0
+[optimizer] stage1: snap_surf_map_weight=0 snap_surf_map_offset=n/a snap_surf_map_offset_mode=n/a
+[optimizer] stage1: flatten_edge_step_global_scale=100
+[optimizer] stage1: flatten_diagnostics=0
+[optimizer] stage1: compile_flatten=1 combined=1
+[optimizer] stage1: forward_needs=xyz_lr,data,params+flatten prefetch_grad_channels=[] prefetch_nograd_channels=[]
+[optimizer] stage1: flatten_max_update=0.1 (per-scale cap doubles at each coarser level)
+[optimizer] stage1: fused_flatten_adam_clamp=1 (Triton CUDA with PyTorch fallback)
+[optimizer] progress columns
+  col      : meaning                          | col      : meaning                          | col      : meaning
+  step     : stage step                       | loss     : total loss                       | it/s     : optimizer it/s
+  f_sdir   : flatten_sdir                     | f_sdirW  : weighted flatten_sdir            | f_estep  : physical edge step loss
+  f_estpW  : weighted physical edge step loss | f_avg    : flatten_avg_offset               | f_avgW   : weighted flatten_avg_offset
+  f_orient : flatten_orient                   | f_oriW   : weighted flatten_orient          | f_step   : flatten current avg grid step

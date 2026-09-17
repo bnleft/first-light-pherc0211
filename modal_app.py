@@ -690,3 +690,74 @@ def calibrate_control() -> dict:
     sh(f"cd {VILLA}/spiral-fitting && uv run python {script} {labels} {out}/control_prediction.tif {out}/control_prediction_reverse.tif {out}/calibration.json")
     vol.commit()
     return json.loads((out / "calibration.json").read_text())
+
+
+# ---------------------------------------------------------------------------
+READOUT_SCRIPT = r'''
+"""Apply prereg/readout.md mechanically. Inputs: forward + reverse prediction
+TIFFs, the rendered surface volume (for the zero-coverage exclusion), T.
+Outputs: readout.json with every count, quarter-scale previews, and crops of the
+largest candidates at the same scale as the control letterforms."""
+import json, sys, numpy as np, zarr
+from PIL import Image
+import scipy.ndimage as ndi
+Image.MAX_IMAGE_PIXELS = None
+fwd, rev, seg_zarr, out_dir, T = sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4], float(sys.argv[5])
+UM_PER_PX = 9.362; MIN_MM = 0.5; MIN_PX = int(round(MIN_MM * 1000 / UM_PER_PX))   # 53 px
+res = {"T": T, "min_px": MIN_PX}
+F = np.asarray(Image.open(fwd)).astype(np.uint8); R = np.asarray(Image.open(rev)).astype(np.uint8)
+res["shape"] = list(F.shape); res["mm"] = [round(F.shape[0]*UM_PER_PX/1000, 1), round(F.shape[1]*UM_PER_PX/1000, 1)]
+print("prediction", F.shape, "=", res["mm"], "mm")
+# surface-volume middle slice zero fraction (exclusion 3), on 128x128 blocks
+g = zarr.open_group(seg_zarr, mode="r"); arr = g["0"] if "0" in g else g[list(g.array_keys())[0]]
+mid = np.asarray(arr[arr.shape[0] // 2]); print("surface volume", arr.shape)
+zero_frac = ndi.uniform_filter((mid == 0).astype(np.float32), size=129, mode="nearest")
+low_cov = zero_frac > 0.5
+res["frac_low_coverage"] = float(low_cov.mean())
+for name, P in [("forward", F), ("reverse", R)]:
+    Image.fromarray(P).resize((P.shape[1] // 4, P.shape[0] // 4)).save(f"{out_dir}/{name}_q.png")
+    stats = {"mean": float(P.mean()), "p99": float(np.percentile(P, 99)), "frac_ge_T": float((P >= T).mean()),
+             "pixels_ge_T": int((P >= T).sum())}
+    lab, n = ndi.label(P >= T, structure=[[0,1,0],[1,1,1],[0,1,0]])
+    stats["components"] = int(n)
+    cands, excluded = [], {"boundary": 0, "band": 0, "low_coverage": 0, "small": 0}
+    if n:
+        objs = ndi.find_objects(lab)
+        for i, sl in enumerate(objs, start=1):
+            h, w = sl[0].stop - sl[0].start, sl[1].stop - sl[1].start
+            if max(h, w) < MIN_PX: excluded["small"] += 1; continue
+            touches = sl[0].start == 0 or sl[1].start == 0 or sl[0].stop == P.shape[0] or sl[1].stop == P.shape[1]
+            # boundary: also treat any column/row that is entirely zero in the *prediction* as a render edge
+            if touches: excluded["boundary"] += 1; continue
+            if max(h, w) >= 5 * min(h, w): excluded["band"] += 1; continue
+            cy, cx = (sl[0].start + sl[0].stop) // 2, (sl[1].start + sl[1].stop) // 2
+            if low_cov[cy, cx]: excluded["low_coverage"] += 1; continue
+            area = int((lab[sl] == i).sum())
+            cands.append({"id": i, "bbox_yx": [sl[0].start, sl[1].start, sl[0].stop, sl[1].stop], "h_px": h, "w_px": w,
+                          "long_mm": round(max(h, w) * UM_PER_PX / 1000, 2), "area_px": area,
+                          "mean_val": float(P[sl][lab[sl] == i].mean())})
+    cands.sort(key=lambda c: -c["area_px"])
+    stats["excluded"] = excluded; stats["candidates"] = len(cands); stats["top_candidates"] = cands[:12]
+    # same-scale crops (2.0 mm square = 214 px) of the top 6 candidates
+    for k, c in enumerate(cands[:6]):
+        cy, cx = (c["bbox_yx"][0] + c["bbox_yx"][2]) // 2, (c["bbox_yx"][1] + c["bbox_yx"][3]) // 2
+        half = 107
+        y0, x0 = max(0, cy - half), max(0, cx - half)
+        crop = P[y0:y0 + 2 * half, x0:x0 + 2 * half]
+        Image.fromarray(crop).resize((crop.shape[1] * 2, crop.shape[0] * 2), Image.NEAREST).save(f"{out_dir}/{name}_cand{k+1}_id{c['id']}_2mm.png")
+    res[name] = stats
+    print(name, json.dumps({k: v for k, v in stats.items() if k != "top_candidates"}))
+    for c in cands[:6]: print("  ", c)
+json.dump(res, open(f"{out_dir}/readout.json", "w"), indent=2)
+'''
+
+
+@app.function(image=image, volumes={str(DATA): vol}, timeout=HOURS, cpu=8, memory=49152)
+def readout(run_tag: str, scope: str = "fitted_scoped_w010-065", T: float = 199.0) -> dict:
+    out = DATA / "ink" / run_tag / scope
+    seg = out / "segment.zarr"
+    script = VILLA / "spiral-fitting" / "_readout.py"
+    script.write_text(READOUT_SCRIPT)
+    sh(f"cd {VILLA}/spiral-fitting && uv run python {script} {out}/segment.tif {out}/segment_reverse.tif {seg} {out} {T}")
+    vol.commit()
+    return json.loads((out / "readout.json").read_text())
