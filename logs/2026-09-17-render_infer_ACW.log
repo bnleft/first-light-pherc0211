@@ -1,0 +1,16 @@
+✓ Initialized. View run at 
+https://modal.com/apps/bnleft/main/ap-aotug4XkSBnfMm1BbWSgPE
+✓ Created objects.
+├── 🔨 Created mount 
+│   /Users/bryantle/Documents/bnleft/first-light-pherc0211/modal_app.py
+├── 🔨 Created function probe.
+├── 🔨 Created function fetch_dataset.
+├── 🔨 Created function render_slices.
+├── 🔨 Created function pack_pools.
+├── 🔨 Created function spiral_fit.
+├── 🔨 Created function pack_pools_fast.
+├── 🔨 Created function overlay_fits.
+├── 🔨 Created function probe_ink.
+├── 🔨 Created function render_and_infer.
+├── 🔨 Created function control.
+└── 🔨 Created function probe_vc.

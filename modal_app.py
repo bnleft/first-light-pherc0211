@@ -641,3 +641,50 @@ def overlay_fits(run_tags: str, zs: str = "10250,10500,10750", crop: int = 300, 
     sh(f"cd {VILLA}/spiral-fitting && uv run python {script} '{json.dumps(runs)}' {DS}/umbilicus.json {out} {zs} {crop} {tol} {msz}")
     vol.commit()
     return sorted(str(p) for p in out.glob("overlay_*.png"))
+
+
+# ---------------------------------------------------------------------------
+CALIB_SCRIPT = r'''
+import json, sys, numpy as np, zarr, tifffile
+labels_dir, pred_fwd, pred_rev, out_json = sys.argv[1:5]
+lab = zarr.open_group(labels_dir, mode="r")["0"]           # (28, 5820, 5240) uint8
+print("labels", lab.shape, lab.dtype)
+L = np.asarray(lab[:]).max(axis=0) > 0                      # any-depth ink label
+print("label pixels", int(L.sum()), "of", L.size, f"({L.mean()*100:.3f}%)")
+res = {"label_pixels": int(L.sum())}
+for name, path in [("forward", pred_fwd), ("reverse", pred_rev)]:
+    P = tifffile.imread(path).astype(np.float32)
+    assert P.shape == L.shape, (P.shape, L.shape)
+    on, off = P[L], P[~L & (P > 0)]
+    res[name] = {"median_on_label": float(np.median(on)), "mean_on_label": float(on.mean()),
+                 "p90_off_label": float(np.percentile(off, 90)), "p99_off_label": float(np.percentile(off, 99)),
+                 "frac_off_label_above_median_on": float((off >= np.median(on)).mean())}
+    print(name, json.dumps(res[name]))
+json.dump(res, open(out_json, "w"), indent=2)
+'''
+
+
+@app.function(image=image, volumes={str(DATA): vol}, timeout=HOURS, cpu=8, memory=32768)
+def calibrate_control() -> dict:
+    """Threshold T for the preregistered readout: the median predicted value
+    over the control's published ink-label pixels (labels from the ink_9um
+    training tree; the same 5820x5240x28 grid as our control render)."""
+    root = DATA / "control"
+    labels = root / "w035_inklabels.zarr"
+    if not (labels / "0" / ".zarray").exists():
+        (labels / "0").mkdir(parents=True, exist_ok=True)
+        base = "https://huggingface.co/buckets/scrollprize/datasets/resolve/ink_9um/labels/native9-scrollprizeorg-21slices/w035/w035_inklabels.zarr"
+        sh(f"curl -sfL {base}/.zgroup -o {labels}/.zgroup; curl -sfL {base}/.zattrs -o {labels}/.zattrs || true; curl -sfL {base}/0/.zarray -o {labels}/0/.zarray")
+        meta = json.loads((labels / "0" / ".zarray").read_text())
+        sep = meta.get("dimension_separator", ".")
+        ny = -(-meta["shape"][1] // meta["chunks"][1]); nx = -(-meta["shape"][2] // meta["chunks"][2])
+        keys = [f"0{sep}{y}{sep}{x}" for y in range(ny) for x in range(nx)]
+        (root / "_keys.txt").write_text("\n".join(keys))
+        # missing chunks are fill_value; curl -f skips 404s quietly
+        sh(f"cd {labels}/0 && xargs -P 32 -I{{}} sh -c 'curl -sfL {base}/0/{{}} -o {{}} || true' < {root}/_keys.txt; ls | wc -l")
+    script = VILLA / "spiral-fitting" / "_calibrate.py"
+    script.write_text(CALIB_SCRIPT)
+    out = root / "out_own_render"
+    sh(f"cd {VILLA}/spiral-fitting && uv run python {script} {labels} {out}/control_prediction.tif {out}/control_prediction_reverse.tif {out}/calibration.json")
+    vol.commit()
+    return json.loads((out / "calibration.json").read_text())
