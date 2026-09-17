@@ -1,0 +1,18 @@
+✓ Initialized. View run at 
+https://modal.com/apps/bnleft/main/ap-Bo3b2kMrEfBh1xZDz9NtPN
+✓ Created objects.
+├── 🔨 Created mount 
+│   /Users/bryantle/Documents/bnleft/first-light-pherc0211/modal_app.py
+├── 🔨 Created function spiral_fit.
+├── 🔨 Created function pack_pools.
+├── 🔨 Created function probe.
+├── 🔨 Created function render_slices.
+├── 🔨 Created function render_and_infer.
+├── 🔨 Created function fetch_dataset.
+├── 🔨 Created function probe_ink.
+├── 🔨 Created function control.
+├── 🔨 Created function probe_vc.
+├── 🔨 Created function pack_pools_fast.
+└── 🔨 Created function overlay_fits.
+
+$ cd /opt/villa/spiral-fitting && uv run python /opt/villa/spiral-fitting/_overlay_fits.py '{"CW": "/data/out/CW_z10000-11000_s1500/2026-09-17_PHerc0211_slice-10000-11000_0-patch/meshes/fitted", "ACW": "/data/out/ACW_z10000-11000_s1500/2026-09-17_PHerc0211_slice-10000-11000_0-patch/meshes/fitted"}' /data/spiral_datasets/PHerc0211/20250821151803/umbilicus.json /data/renders 10250,10500,10750 300 2.0

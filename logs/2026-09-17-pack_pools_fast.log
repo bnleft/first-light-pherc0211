@@ -40,3 +40,89 @@ $ aws s3 cp --no-sign-request --only-show-errors s3://vesuvius-challenge-open-da
 $ aws s3 cp --no-sign-request --only-show-errors s3://vesuvius-challenge-open-data/PHerc0211/representations/predictions/lasagna/20250821151803-lasagna-20260419180421/PHerc0211_grad_mag.ome.zarr/2/.zarray /tmp/lasagna/PHerc0211_grad_mag.ome.zarr/2/.zarray
 
 $ cd /tmp/lasagna/PHerc0211_grad_mag.ome.zarr/2 && echo 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 | tr ' ' '\n' | xargs -P 16 -I{} aws s3 cp --no-sign-request --only-show-errors --recursive s3://vesuvius-challenge-open-data/PHerc0211/representations/predictions/lasagna/20250821151803-lasagna-20260419180421/PHerc0211_grad_mag.ome.zarr/2/{} /tmp/lasagna/PHerc0211_grad_mag.ome.zarr/2/{}
+grad_mag: 25859 chunk files on local disk
+
+$ cd /opt/villa/spiral-fitting && uv run python pack_resident_pools.py /tmp/lasagna --what normals,grad_mag --normal-group 2 --io-threads 16 --verify 500
+normals: packing 25,858 chunks of (32, 32, 32) into bricks of (32, 32, 32) x2 channel(s), <= 1.6 GiB, ct_mask=off -> /tmp/lasagna/PHerc0211_nx.ome.zarr.respool_g2_pair
+normals: 2,000/25,858 chunks, 2,000 bricks kept (8%, 2s)
+normals: 4,000/25,858 chunks, 4,000 bricks kept (15%, 4s)
+normals: 6,000/25,858 chunks, 6,000 bricks kept (23%, 5s)
+normals: 8,000/25,858 chunks, 8,000 bricks kept (31%, 7s)
+normals: 10,000/25,858 chunks, 10,000 bricks kept (39%, 8s)
+normals: 12,000/25,858 chunks, 12,000 bricks kept (46%, 10s)
+normals: 14,000/25,858 chunks, 14,000 bricks kept (54%, 11s)
+normals: 16,000/25,858 chunks, 16,000 bricks kept (62%, 13s)
+normals: 18,000/25,858 chunks, 18,000 bricks kept (70%, 14s)
+normals: 20,000/25,858 chunks, 20,000 bricks kept (77%, 16s)
+normals: 22,000/25,858 chunks, 22,000 bricks kept (85%, 18s)
+normals: 24,000/25,858 chunks, 24,000 bricks kept (93%, 19s)
+normals: 25,858/25,858 chunks, 25,858 bricks kept (100%, 21s)
+normals: done in 21s, 25,858 bricks = 1.6 GiB
+grad_mag: packing 25,858 chunks of (32, 32, 32) into bricks of (32, 32, 32) x1 channel(s), <= 0.8 GiB, ct_mask=off -> /tmp/lasagna/PHerc0211_grad_mag.ome.zarr.respool_g2
+grad_mag: 2,000/25,858 chunks, 2,000 bricks kept (8%, 1s)
+grad_mag: 4,000/25,858 chunks, 4,000 bricks kept (15%, 2s)
+grad_mag: 6,000/25,858 chunks, 6,000 bricks kept (23%, 3s)
+grad_mag: 8,000/25,858 chunks, 8,000 bricks kept (31%, 4s)
+grad_mag: 10,000/25,858 chunks, 10,000 bricks kept (39%, 5s)
+grad_mag: 12,000/25,858 chunks, 12,000 bricks kept (46%, 6s)
+grad_mag: 14,000/25,858 chunks, 14,000 bricks kept (54%, 7s)
+grad_mag: 16,000/25,858 chunks, 16,000 bricks kept (62%, 7s)
+grad_mag: 18,000/25,858 chunks, 18,000 bricks kept (70%, 8s)
+grad_mag: 20,000/25,858 chunks, 20,000 bricks kept (77%, 9s)
+grad_mag: 22,000/25,858 chunks, 22,000 bricks kept (85%, 10s)
+grad_mag: 24,000/25,858 chunks, 24,000 bricks kept (93%, 11s)
+grad_mag: 25,858/25,858 chunks, 25,858 bricks kept (100%, 12s)
+grad_mag: done in 12s, 25,858 bricks = 0.8 GiB
+/tmp/lasagna/PHerc0211_nx.ome.zarr.respool_g2_pair: verified 500 random voxels x2 channel(s); all match (0 differ only under the CT mask)
+/tmp/lasagna/PHerc0211_grad_mag.ome.zarr.respool_g2: verified 500 random voxels x1 channel(s); all match (0 differ only under the CT mask)
+published sidecar /data/spiral_datasets/PHerc0211/20250821151803/lasagna/PHerc0211_grad_mag.ome.zarr.respool_g2
+published sidecar /data/spiral_datasets/PHerc0211/20250821151803/lasagna/PHerc0211_nx.ome.zarr.respool_g2_pair
+restored st_mtime_ns 1789670359624585750 -> 1785297244870836754
+
+$ du -sh /data/spiral_datasets/PHerc0211/20250821151803/lasagna/* && cat /data/spiral_datasets/PHerc0211/20250821151803/lasagna/PHerc0211_nx.ome.zarr.respool_g2_pair/meta.json | head -c 600
+3.5K    /data/spiral_datasets/PHerc0211/20250821151803/lasagna/PHerc0211_grad_mag.ome.zarr
+811M    /data/spiral_datasets/PHerc0211/20250821151803/lasagna/PHerc0211_grad_mag.ome.zarr.respool_g2
+956M    /data/spiral_datasets/PHerc0211/20250821151803/lasagna/PHerc0211_nx.ome.zarr
+Stopping app - local entrypoint completed.
+1.6G    /data/spiral_datasets/PHerc0211/20250821151803/lasagna/PHerc0211_nx.ome.zarr.respool_g2_pair
+3.5K    /data/spiral_datasets/PHerc0211/20250821151803/lasagna/PHerc0211_ny.ome.zarr
+{
+  "format": "respool",
+  "version": 2,
+  "array_shape": [
+    4854,
+    1987,
+    1987
+  ],
+  "source_chunk_shape": [
+    32,
+    32,
+    32
+  ],
+  "brick_shape": [
+    32,
+    32,
+    32
+  ],
+  "grid_shape": [
+    152,
+    63,
+    63
+  ],
+  "rows": 25859,
+  "channels": [
+    "/tmp/lasagna/PHerc0211_nx.ome.zarr/2",
+    "/tmp/lasagna/PHerc0211_ny.ome.zarr/2"
+  ],
+  "channel_names": [
+    "PHerc0211_nx.ome.zarr/2",
+    "PHerc0211_ny.ome.zarr/2"
+  ],
+  "dtype": "u1",
+  "ct_mask": null,
+  "created": "2026-09-17T18:59:36+0000"
+}pack_pools_fast done in 4.6 min
+Runner terminated.
+✓ App completed. View run at 
+https://modal.com/apps/bnleft/main/ap-IJaz8EIWJ5wMI0xLR75S48
+exit=0

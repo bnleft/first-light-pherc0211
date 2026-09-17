@@ -546,3 +546,75 @@ def pack_pools_fast(z_begin: int = 10000, z_end: int = 11000, margin: int = 1500
     vol.commit()
     sh(f"du -sh {vol_lasagna}/* && cat {vol_lasagna}/{SCROLL}_nx.ome.zarr.respool_g2_pair/meta.json | head -c 600")
     print(f"pack_pools_fast done in {(time.time()-t0)/60:.1f} min")
+
+
+# ---------------------------------------------------------------------------
+OVERLAY_SCRIPT = r'''
+import glob, json, os, re, sys, warnings
+import matplotlib; matplotlib.use("Agg")
+import matplotlib.pyplot as plt
+import numpy as np, s3fs, zarr
+from PIL import Image
+warnings.filterwarnings("ignore")
+VOLUME = "vesuvius-challenge-open-data/PHerc0211/volumes/20250821151803-9.362um-1.2m-113keV-masked.zarr"
+runs = json.loads(sys.argv[1]); umb_path, out_dir = sys.argv[2], sys.argv[3]
+zs = [int(z) for z in sys.argv[4].split(",")]; crop = int(sys.argv[5]); tol = float(sys.argv[6])
+LEVEL, SCALE = "1", 2
+pts = sorted(json.load(open(umb_path))["control_points"], key=lambda p: p["z"])
+def umb(z):
+    for a, b in zip(pts, pts[1:]):
+        if a["z"] <= z <= b["z"]:
+            t = (z - a["z"]) / max(b["z"] - a["z"], 1)
+            return a["x"] + t*(b["x"]-a["x"]), a["y"] + t*(b["y"]-a["y"])
+    p = pts[0] if z < pts[0]["z"] else pts[-1]; return p["x"], p["y"]
+def load_meshes(meshes_dir):
+    out = []
+    for d in sorted(glob.glob(os.path.join(meshes_dir, "w*_spliced"))):
+        w = int(re.match(r"w(\d+)", os.path.basename(d)).group(1))
+        x = np.array(Image.open(f"{d}/x.tif")); y = np.array(Image.open(f"{d}/y.tif")); z = np.array(Image.open(f"{d}/z.tif"))
+        ok = (x != -1) & (y != -1) & (z != -1)
+        out.append((w, x[ok].astype(np.float32), y[ok].astype(np.float32), z[ok].astype(np.float32)))
+    return out
+fs = s3fs.S3FileSystem(anon=True)
+arr = zarr.open_group(zarr.storage.FsspecStore(fs, path=VOLUME), mode="r")[LEVEL]
+meshes = {name: load_meshes(path) for name, path in runs.items()}
+for name, ms in meshes.items():
+    print(name, len(ms), "windings;", sum(len(m[1]) for m in ms), "valid vertices")
+for z in zs:
+    zi = round(z / SCALE); ux, uy = umb(z); cx, cy = ux/SCALE, uy/SCALE
+    y0, y1 = max(0, int(cy-crop)), min(arr.shape[1], int(cy+crop)); x0, x1 = max(0, int(cx-crop)), min(arr.shape[2], int(cx+crop))
+    slab = np.asarray(arr[zi, y0:y1, x0:x1]); lo, hi = np.percentile(slab[slab>0], [1, 99])
+    disp = np.clip((slab.astype(np.float32)-lo)/max(hi-lo,1), 0, 1)
+    fig, axes = plt.subplots(1, len(runs), figsize=(9*len(runs), 9.6), dpi=130)
+    for ax, (name, ms) in zip(np.atleast_1d(axes), meshes.items()):
+        ax.imshow(disp, cmap="gray", origin="upper", extent=(x0, x1, y1, y0))
+        n = 0
+        for w, x, y, zz in ms:
+            sel = np.abs(zz - z) < tol
+            if sel.any():
+                ax.scatter(x[sel]/SCALE, y[sel]/SCALE, s=1.2, c=[plt.cm.turbo((w-10)/120)], alpha=0.9, linewidths=0); n += int(sel.sum())
+        ax.plot(cx, cy, "r+", ms=20, mew=2)
+        ax.set_xlim(x0, x1); ax.set_ylim(y1, y0)
+        ax.set_title(f"{name}: fitted sheets within |dz|<{tol:g} vx of z={z}  ({n} vertices)  colour = winding index", fontsize=10)
+    fig.text(0.01, 0.005, "Level 1 (2x). Red + = published umbilicus. A correct sense follows the bright papyrus sheets; a wrong sense cuts across them.", fontsize=9)
+    fig.tight_layout(rect=[0, 0.02, 1, 1])
+    p = f"{out_dir}/overlay_z{z}_" + "_vs_".join(runs) + ".png"; fig.savefig(p); plt.close(fig); print("saved", p)
+'''
+
+
+@app.function(image=image, volumes={str(DATA): vol}, timeout=HOURS, cpu=4, memory=16384)
+def overlay_fits(run_tags: str, zs: str = "10250,10500,10750", crop: int = 300, tol: float = 2.0) -> list[str]:
+    """Overlay fitted meshes from one or more runs on CT slices, side by side.
+    This is how the winding sense is actually decided (villa#1621: the
+    satisfaction metric is periodic in the winding and cannot tell CW from ACW)."""
+    runs = {}
+    for tag in run_tags.split(","):
+        fit_root = DATA / "out" / tag
+        run_dir = sorted(p for p in fit_root.iterdir() if (p / "meshes" / "fitted").is_dir())[-1]
+        runs[tag.split("_")[0]] = str(run_dir / "meshes" / "fitted")
+    script = VILLA / "spiral-fitting" / "_overlay_fits.py"
+    script.write_text(OVERLAY_SCRIPT)
+    out = DATA / "renders"
+    sh(f"cd {VILLA}/spiral-fitting && uv run python {script} '{json.dumps(runs)}' {DS}/umbilicus.json {out} {zs} {crop} {tol}")
+    vol.commit()
+    return sorted(str(p) for p in out.glob("overlay_*.png"))

@@ -1,0 +1,191 @@
+✓ Initialized. View run at 
+https://modal.com/apps/bnleft/main/ap-YYMQxcgIRsawx8SzqBDjva
+✓ Created objects.
+├── 🔨 Created mount 
+│   /Users/bryantle/Documents/bnleft/first-light-pherc0211/modal_app.py
+├── 🔨 Created function probe.
+├── 🔨 Created function fetch_dataset.
+├── 🔨 Created function render_slices.
+├── 🔨 Created function pack_pools.
+├── 🔨 Created function spiral_fit.
+├── 🔨 Created function pack_pools_fast.
+├── 🔨 Created function probe_ink.
+├── 🔨 Created function render_and_infer.
+├── 🔨 Created function control.
+└── 🔨 Created function probe_vc.
+{
+  "schema_version": 1,
+  "name": "PHerc0211",
+  "voxel_size_um": 9.362,
+  "spiral_outward_sense": "CW",
+  "normal_zarr_group": "2",
+  "lasagna_scale": 4,
+  "paths": {
+    "tracks_dbm": "tracks/PHerc0211_20250821151803_surface_m7_L0_th0.2.dbm",
+    "normal_x": "lasagna/PHerc0211_nx.ome.zarr",
+    "normal_y": "lasagna/PHerc0211_ny.ome.zarr",
+    "gradient_magnitude": "lasagna/PHerc0211_grad_mag.ome.zarr"
+  }
+}
+
+
+$ nvidia-smi --query-gpu=name,memory.total --format=csv
+name, memory.total [MiB]
+NVIDIA A10, 23028 MiB
+PROGRESS Checking CUDA availability — elapsed 0s
+PROGRESS Loading umbilicus — elapsed 0s
+PROGRESS Loading fiber direction samples — elapsed 0s
+PROGRESS Loading point collections — 0/3 inputs (0.0%) — elapsed 0s
+PROGRESS Loading fiber point collections — elapsed 0s
+PROGRESS Linking points to patches — 0 collections, 0 patches — elapsed 0s
+scaled per-step counts by 0.105 for the 1000-slice z-range [10000, 11000) (reference 9500 slices):
+  sample_count_patches_per_step=38
+  sample_count_patches_per_step_for_dt=25
+  sample_count_unverified_patches_per_step=13
+  sample_count_unverified_patches_per_step_for_dt=8
+  sample_count_relative_winding_pcls=5
+  sample_count_absolute_winding_pcls=5
+  sample_count_unattached_pcls_per_step=9
+  sample_count_tracks_per_step=5053
+  sample_count_dense_normal_points=6316
+  sample_count_fiber_direction_points=6316
+  sample_count_dense_spacing_pairs=8000
+  sample_count_dense_spacing_density_extra_pairs=16000
+  sample_count_winding_model_relative_pairs=13474
+  sample_count_winding_model_density_pairs=13474
+  sample_count_dense_attachment_points=2105
+  sample_count_regularisation_points=474
+  sample_count_shell_samples=2587
+skipping all verified/unverified patch loading
+ loaded 0 patches
+ loaded 0 unverified patches
+WARNING: point collection file not found, skipping: /data/spiral_datasets/PHerc0211/20250821151803/relative_windings.json
+WARNING: point collection file not found, skipping: /data/spiral_datasets/PHerc0211/20250821151803/same_windings.json
+WARNING: point collection file not found, skipping: /data/spiral_datasets/PHerc0211/20250821151803/drawn_control_points.json
+no fiber point collections found in /data/spiral_datasets/PHerc0211/20250821151803/fibers
+
+linking points to patches: 0it [00:00, ?it/s]
+linking points to patches: 0it [00:00, ?it/s]
+PROGRESS Resolving track store — PHerc0211_20250821151803_surface_m7_L0_th0.2.dbm — elapsed 0s
+PROGRESS Resolving track store — PHerc0211_20250821151803_surface_m7_L0_th0.2.dbm — elapsed 30s
+PROGRESS Preparing patch sampling — elapsed 0s
+PROGRESS Loading normal volumes onto GPU — elapsed 0s
+PROGRESS Loading normal volumes onto GPU — 5,773/11,546 bricks (50.0%) — elapsed 11s — ETA 11s
+PROGRESS Loading normal volumes onto GPU — 11,546/11,546 bricks (100.0%) — elapsed 20s — ETA 0s
+fiber links: 0 resolved
+pcls: 0 cross-patch, 0 unattached
+  cross-patch sampling groups: 
+  unattached sampling groups: 
+loading tracks from /__modal/volumes/vo-LHT8V9wmg3O9TXLwnegdFi/spiral_datasets/PHerc0211/20250821151803/tracks/PHerc0211_20250821151803_surface_m7_L0_th0.2.dbm
+loaded track crossing cache /__modal/volumes/vo-LHT8V9wmg3O9TXLwnegdFi/spiral_datasets/PHerc0211/20250821151803/tracks/PHerc0211_20250821151803_surface_m7_L0_th0.2.dbm.crossings.npz: 14360311 tracks, 63368856 directed records
+built TrackGraph: 14360311 tracks, 31684428 crossings in 6.4s
+loaded packed track store /__modal/volumes/vo-LHT8V9wmg3O9TXLwnegdFi/spiral_datasets/PHerc0211/20250821151803/tracks/PHerc0211_20250821151803_surface_m7_L0_th0.2.dbm.vctracks: 741046 tracks, 34978733 points in ROI
+loaded 741046 tracks within z-roi [10000, 11000)
+fitting 0 patches
+loading lasagna resident pools, group 2
+lasagna normals: resident pool 5,773/25,859 bricks of (32, 32, 32) x2 channel(s) (0.35 GiB) loaded in 19.8s from PHerc0211_nx.ome.zarr.respool_g2_pair
+PROGRESS Building verified-patch GPU atlas — 0 patches — elapsed 0s
+PROGRESS Constructing spiral model — elapsed 0s
+PROGRESS Creating optimizer — elapsed 0s
+PROGRESS Synchronizing model across GPU workers — elapsed 0s
+PROGRESS Preparing tracks for optimization — 741,046 tracks — elapsed 0s
+PROGRESS Optimizing — 0/1,500 iterations (0.0%) — elapsed 0s
+PROGRESS Optimizing — 0/1,500 iterations (0.0%) — elapsed 30s
+PROGRESS Optimizing — 0/1,500 iterations (0.0%) — elapsed 1m 00s
+PROGRESS Optimizing — 0/1,500 iterations (0.0%) — elapsed 1m 30s
+PROGRESS Optimizing — 0/1,500 iterations (0.0%) — elapsed 2m 00s
+PROGRESS Optimizing — 0/1,500 iterations (0.0%) — elapsed 2m 30s
+PROGRESS Optimizing — 0/1,500 iterations (0.0%) — elapsed 3m 01s
+PROGRESS Optimizing — 0/1,500 iterations (0.0%) — elapsed 3m 31s
+PROGRESS Optimizing — 0/1,500 iterations (0.0%) — elapsed 4m 01s
+PROGRESS Optimizing — 0/1,500 iterations (0.0%) — elapsed 4m 31s
+PROGRESS Optimizing — 1/1,500 iterations (0.1%) — 0.0 it/s — elapsed 5m 00s — ETA 124h 46m
+PROGRESS Optimizing — 12/1,500 iterations (0.8%) — 0.0 it/s — elapsed 5m 31s — ETA 11h 23m
+PROGRESS Optimizing — 12/1,500 iterations (0.8%) — 0.0 it/s — elapsed 6m 01s — ETA 12h 25m
+PROGRESS Optimizing — 12/1,500 iterations (0.8%) — 0.0 it/s — elapsed 6m 31s — ETA 13h 27m
+PROGRESS Optimizing — 12/1,500 iterations (0.8%) — 0.0 it/s — elapsed 7m 01s — ETA 14h 29m
+PROGRESS Optimizing — 13/1,500 iterations (0.9%) — 0.0 it/s — elapsed 7m 30s — ETA 14h 18m
+PROGRESS Optimizing — 74/1,500 iterations (4.9%) — 0.2 it/s — elapsed 7m 35s — ETA 2h 26m
+PROGRESS Optimizing — 135/1,500 iterations (9.0%) — 0.3 it/s — elapsed 7m 40s — ETA 1h 17m
+PROGRESS Optimizing — 196/1,500 iterations (13.1%) — 0.4 it/s — elapsed 7m 46s — ETA 51m 37s
+PROGRESS Optimizing — 257/1,500 iterations (17.1%) — 0.5 it/s — elapsed 7m 51s — ETA 37m 56s
+PROGRESS Optimizing — 318/1,500 iterations (21.2%) — 0.7 it/s — elapsed 7m 56s — ETA 29m 28s
+PROGRESS Optimizing — 379/1,500 iterations (25.3%) — 0.8 it/s — elapsed 8m 01s — ETA 23m 42s
+PROGRESS Optimizing — 440/1,500 iterations (29.3%) — 0.9 it/s — elapsed 8m 06s — ETA 19m 30s
+PROGRESS Optimizing — 501/1,500 iterations (33.4%) — 1.0 it/s — elapsed 8m 11s — ETA 16m 19s
+PROGRESS Optimizing — 562/1,500 iterations (37.5%) — 1.1 it/s — elapsed 8m 16s — ETA 13m 47s
+PROGRESS Optimizing — 623/1,500 iterations (41.5%) — 1.2 it/s — elapsed 8m 21s — ETA 11m 45s
+PROGRESS Optimizing — 684/1,500 iterations (45.6%) — 1.4 it/s — elapsed 8m 26s — ETA 10m 04s
+PROGRESS Optimizing — 745/1,500 iterations (49.7%) — 1.5 it/s — elapsed 8m 31s — ETA 8m 38s
+PROGRESS Optimizing — 806/1,500 iterations (53.7%) — 1.6 it/s — elapsed 8m 36s — ETA 7m 24s
+PROGRESS Optimizing — 867/1,500 iterations (57.8%) — 1.7 it/s — elapsed 8m 41s — ETA 6m 20s
+PROGRESS Optimizing — 928/1,500 iterations (61.9%) — 1.8 it/s — elapsed 8m 46s — ETA 5m 24s
+PROGRESS Optimizing — 989/1,500 iterations (65.9%) — 1.9 it/s — elapsed 8m 51s — ETA 4m 34s
+PROGRESS Optimizing — 1,027/1,500 iterations (68.5%) — 1.9 it/s — elapsed 8m 56s — ETA 4m 07s
+PROGRESS Optimizing — 1,088/1,500 iterations (72.5%) — 2.0 it/s — elapsed 9m 01s — ETA 3m 25s
+PROGRESS Optimizing — 1,149/1,500 iterations (76.6%) — 2.1 it/s — elapsed 9m 06s — ETA 2m 47s
+PROGRESS Optimizing — 1,209/1,500 iterations (80.6%) — 2.2 it/s — elapsed 9m 11s — ETA 2m 13s
+PROGRESS Optimizing — 1,270/1,500 iterations (84.7%) — 2.3 it/s — elapsed 9m 16s — ETA 1m 41s
+PROGRESS Optimizing — 1,331/1,500 iterations (88.7%) — 2.4 it/s — elapsed 9m 21s — ETA 1m 11s
+PROGRESS Optimizing — 1,392/1,500 iterations (92.8%) — 2.5 it/s — elapsed 9m 27s — ETA 44s
+PROGRESS Optimizing — 1,453/1,500 iterations (96.9%) — 2.5 it/s — elapsed 9m 32s — ETA 18s
+PROGRESS Saving final checkpoint — checkpoint_fitted.ckpt — elapsed 0s
+PROGRESS Computing satisfaction metrics and outputs — elapsed 0s
+PROGRESS Evaluating verified patches — 0 patches — elapsed 0s
+PROGRESS Evaluating tracks — 741,046 tracks — elapsed 0s
+PROGRESS Evaluating tracks — 741,046 tracks — elapsed 31s
+PROGRESS Evaluating tracks — 741,046 tracks — elapsed 1m 01s
+PROGRESS Evaluating tracks — 741,046 tracks — elapsed 1m 31s
+PROGRESS Evaluating tracks — 741,046 tracks — elapsed 2m 01s
+PROGRESS Evaluating tracks — 741,046 tracks — elapsed 2m 31s
+PROGRESS Evaluating tracks — 741,046 tracks — elapsed 3m 01s
+PROGRESS Transforming final mesh — 0/44 chunks (0.0%) — elapsed 0s
+PROGRESS Writing final mesh windings — 0/260 windings (0.0%) — elapsed 0s
+PROGRESS Writing final mesh windings — 260/260 windings (100.0%) — elapsed 2s — ETA 0s
+no outer-shell losses; using configured shell_outer_winding_idx = 130 for the dense and regularisation losses
+removing tracks near patches
+kept 741046 / 741046 tracks (packed)
+track radius loss: 741046/741046 tracks survive exclusion (radius 16.0); 34978733 points retained
+track crossings: using TrackGraph cache for 741046 surviving tracks
+track crossings: used cached CSR for 741046 surviving tracks
+track crossing index: 492504/741046 tracks connected, 3011996 directed crossings, 43.0 MiB
+track length bins: short <= 32.0 (247171), medium <= 68.7 (246866), long (247009); effective weights [0.0, 0.15, 0.85]
+theta topology ready (0.0s, peak RSS 15.38 GiB)
+trainable parameters: 81,448,362 (325.8 MB) - gradient volume all-reduced every step in distributed mode
+WARNING: loss_weight_dense_spacing_density > 0 but dense_spacing_mode='grad_mag'; this component runs only as part of the 'phase' bundle and is INACTIVE.
+track point spacing: 4653630 cached points, observed 2.00-60.00 voxels (limits 20-60; 2358419 mandatory-anchor exceptions; native)
+step 0: loss = 4409.6, umbilicus = 3.0, sym_dirichlet = 4.1, dense_normals = 30.0, min_spacing = 0.0, track_radius = 4372.6, track_dt = 0.0
+step 200: loss = 1385.1, umbilicus = 0.1, sym_dirichlet = 9.7, dense_normals = 11.7, min_spacing = 0.0, track_radius = 1363.7, track_dt = 0.0
+step 400: loss = 681.4, umbilicus = 0.1, sym_dirichlet = 13.4, dense_normals = 7.6, min_spacing = 0.0, track_radius = 660.4, track_dt = 0.0
+step 600: loss = 502.2, umbilicus = 0.1, sym_dirichlet = 13.5, dense_normals = 6.7, min_spacing = 0.0, track_radius = 481.9, track_dt = 0.0
+step 800: loss = 427.0, umbilicus = 0.0, sym_dirichlet = 15.0, dense_normals = 6.1, min_spacing = 0.0, track_radius = 405.9, track_dt = 0.0
+step 1000: loss = 379.5, umbilicus = 0.0, sym_dirichlet = 14.2, dense_normals = 6.0, min_spacing = 0.0, track_radius = 359.2, track_dt = 0.0
+step 1200: loss = 369.2, umbilicus = 0.0, sym_dirichlet = 15.7, dense_normals = 5.9, min_spacing = 0.0, track_radius = 347.6, track_dt = 0.0
+step 1400: loss = 354.3, umbilicus = 0.0, sym_dirichlet = 15.9, dense_normals = 5.9, min_spacing = 0.0, track_radius = 332.5, track_dt = 0.0
+patch satisfaction: 0 patches, 0 quad centers, 0 forward + 0 inverse batches, 0.00s
+satisfied_patches = 0/0 (0.0%)
+satisfied_patches_area_weighted = 0.0/0.0 (0.0%)
+boundary_satisfied_patches = 0/0 (0.0%)
+satisfied_area = 0.0/0.0 (0.0%)
+satisfied_tracks = 130843/741046 (17.7%)
+satisfied_track_points = 19541123/34978733 (55.9%)
+save_mesh fitted: winding range [10, 130)
+splice rasterization: 0 eligible quads, 0 vertex batches, 0.00s
+
+Stopping app - local entrypoint completed.
+$ find /data/out/CW_z10000-11000_s1500 -maxdepth 3 | head -60
+/data/out/CW_z10000-11000_s1500
+/data/out/CW_z10000-11000_s1500/2026-09-17_PHerc0211_slice-10000-11000_0-patch
+/data/out/CW_z10000-11000_s1500/2026-09-17_PHerc0211_slice-10000-11000_0-patch/checkpoint_fitted.ckpt
+/data/out/CW_z10000-11000_s1500/2026-09-17_PHerc0211_slice-10000-11000_0-patch/meshes
+/data/out/CW_z10000-11000_s1500/2026-09-17_PHerc0211_slice-10000-11000_0-patch/meshes/fitted
+/data/out/CW_z10000-11000_s1500/2026-09-17_PHerc0211_slice-10000-11000_0-patch/non_liftable_patches.txt
+/data/out/CW_z10000-11000_s1500/2026-09-17_PHerc0211_slice-10000-11000_0-patch/satisfaction_metrics_fitted.json
+/data/out/CW_z10000-11000_s1500/2026-09-17_PHerc0211_slice-10000-11000_0-patch/satisfied_fitted.json
+/data/out/CW_z10000-11000_s1500/fit.log
+/data/out/CW_z10000-11000_s1500/overrides.json
+/data/out/CW_z10000-11000_s1500/timing.json
+spiral_fit CW_z10000-11000_s1500: exit 0, 14.0 min on A10
+✓ App completed. View run at 
+https://modal.com/apps/bnleft/main/ap-YYMQxcgIRsawx8SzqBDjva
+exit=0

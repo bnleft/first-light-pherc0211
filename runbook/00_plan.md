@@ -86,3 +86,21 @@ it is a villa defect a human hit on real data, a PR)
 - Stopping the fetch app mid-copy did not lose the tracks: Modal volume writes
   were already visible from the CLI (`modal volume ls`), so `vol.commit()` at the
   end was not what persisted them.
+
+## 2026-09-17 — pack + 1,500-step CW/ACW fits (z 10000–11000)
+
+- `pack_pools_fast`: 32 chunk rows × 3 stores pulled to local disk in ~3 min,
+  packed in ~1 min, sidecars verified (500 random voxels each, all match).
+  DBM mtime restored so the published crossings cache was accepted
+  (`loaded track crossing cache ... 14,360,311 tracks`). Total 4.6 min, CPU only.
+- Fits: 741,046 tracks / 34.98 M points in the z-ROI; 5,773 of 25,859 normal
+  bricks resident. Both senses converge similarly at 1,500 steps:
+
+| sense | loss @1400 | satisfied tracks | satisfied points | wall (A10) |
+|---|---:|---:|---:|---:|
+| CW  | 354.3 | 130,843 / 741,046 (17.7%) | 55.9% | 14.0 min |
+| ACW | 351.1 | 131,014 / 741,046 (17.7%) | 56.3% | 15.4 min |
+
+  Identical to within noise, as villa#1621 predicts (the metric is periodic in
+  the winding). Decision therefore comes from overlaying the fitted sheets on
+  the CT slice (`overlay_fits`), plus Bryant's read of the crops.
