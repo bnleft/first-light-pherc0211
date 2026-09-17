@@ -1,2 +1,90 @@
 ✓ Initialized. View run at 
 https://modal.com/apps/bnleft/main/ap-wltKfl9pkWHylXsrOS7VoD
+✓ Created objects.
+├── 🔨 Created mount 
+│   /Users/bryantle/Documents/bnleft/first-light-pherc0211/modal_app.py
+├── 🔨 Created function probe.
+├── 🔨 Created function fetch_dataset.
+├── 🔨 Created function render_slices.
+├── 🔨 Created function pack_pools.
+├── 🔨 Created function spiral_fit.
+├── 🔨 Created function pack_pools_fast.
+├── 🔨 Created function overlay_fits.
+├── 🔨 Created function probe_ink.
+├── 🔨 Created function render_and_infer.
+├── 🔨 Created function control.
+└── 🔨 Created function probe_vc.
+{
+  "schema_version": 1,
+  "name": "PHerc0211",
+  "voxel_size_um": 9.362,
+  "spiral_outward_sense": "ACW",
+  "normal_zarr_group": "2",
+  "lasagna_scale": 4,
+  "paths": {
+    "tracks_dbm": "tracks/PHerc0211_20250821151803_surface_m7_L0_th0.2.dbm",
+    "normal_x": "lasagna/PHerc0211_nx.ome.zarr",
+    "normal_y": "lasagna/PHerc0211_ny.ome.zarr",
+    "gradient_magnitude": "lasagna/PHerc0211_grad_mag.ome.zarr"
+  }
+}
+
+
+$ nvidia-smi --query-gpu=name,memory.total --format=csv
+name, memory.total [MiB]
+NVIDIA A10, 23028 MiB
+PROGRESS Checking CUDA availability — elapsed 0s
+PROGRESS Loading umbilicus — elapsed 0s
+PROGRESS Loading fiber direction samples — elapsed 0s
+PROGRESS Loading point collections — 0/3 inputs (0.0%) — elapsed 0s
+PROGRESS Loading fiber point collections — elapsed 0s
+PROGRESS Linking points to patches — 0 collections, 0 patches — elapsed 0s
+scaled per-step counts by 0.105 for the 1000-slice z-range [10000, 11000) (reference 9500 slices):
+  sample_count_patches_per_step=38
+  sample_count_patches_per_step_for_dt=25
+  sample_count_unverified_patches_per_step=13
+  sample_count_unverified_patches_per_step_for_dt=8
+  sample_count_relative_winding_pcls=5
+  sample_count_absolute_winding_pcls=5
+  sample_count_unattached_pcls_per_step=9
+  sample_count_tracks_per_step=5053
+  sample_count_dense_normal_points=6316
+  sample_count_fiber_direction_points=6316
+  sample_count_dense_spacing_pairs=8000
+  sample_count_dense_spacing_density_extra_pairs=16000
+  sample_count_winding_model_relative_pairs=13474
+  sample_count_winding_model_density_pairs=13474
+  sample_count_dense_attachment_points=2105
+  sample_count_regularisation_points=474
+  sample_count_shell_samples=2587
+skipping all verified/unverified patch loading
+ loaded 0 patches
+ loaded 0 unverified patches
+WARNING: point collection file not found, skipping: /data/spiral_datasets/PHerc0211/20250821151803/relative_windings.json
+WARNING: point collection file not found, skipping: /data/spiral_datasets/PHerc0211/20250821151803/same_windings.json
+WARNING: point collection file not found, skipping: /data/spiral_datasets/PHerc0211/20250821151803/drawn_control_points.json
+no fiber point collections found in /data/spiral_datasets/PHerc0211/20250821151803/fibers
+
+linking points to patches: 0it [00:00, ?it/s]
+linking points to patches: 0it [00:00, ?it/s]
+PROGRESS Resolving track store — PHerc0211_20250821151803_surface_m7_L0_th0.2.dbm — elapsed 0s
+PROGRESS Preparing patch sampling — elapsed 0s
+PROGRESS Loading normal volumes onto GPU — elapsed 0s
+fiber links: 0 resolved
+pcls: 0 cross-patch, 0 unattached
+  cross-patch sampling groups: 
+  unattached sampling groups: 
+loading tracks from /__modal/volumes/vo-LHT8V9wmg3O9TXLwnegdFi/spiral_datasets/PHerc0211/20250821151803/tracks/PHerc0211_20250821151803_surface_m7_L0_th0.2.dbm
+loaded track crossing cache /__modal/volumes/vo-LHT8V9wmg3O9TXLwnegdFi/spiral_datasets/PHerc0211/20250821151803/tracks/PHerc0211_20250821151803_surface_m7_L0_th0.2.dbm.crossings.npz: 14360311 tracks, 63368856 directed records
+built TrackGraph: 14360311 tracks, 31684428 crossings in 6.1s
+loaded packed track store /__modal/volumes/vo-LHT8V9wmg3O9TXLwnegdFi/spiral_datasets/PHerc0211/20250821151803/tracks/PHerc0211_20250821151803_surface_m7_L0_th0.2.dbm.vctracks: 741046 tracks, 34978733 points in ROI
+loaded 741046 tracks within z-roi [10000, 11000)
+fitting 0 patches
+loading lasagna resident pools, group 2
+lasagna normals: resident pool 5,773/25,859 bricks of (32, 32, 32) x2 channel(s) (0.35 GiB) loaded in 0.3s from PHerc0211_nx.ome.zarr.respool_g2_pair
+PROGRESS Building verified-patch GPU atlas — 0 patches — elapsed 0s
+PROGRESS Constructing spiral model — elapsed 0s
+PROGRESS Creating optimizer — elapsed 0s
+PROGRESS Synchronizing model across GPU workers — elapsed 0s
+PROGRESS Preparing tracks for optimization — 741,046 tracks — elapsed 0s
+PROGRESS Optimizing — 0/30,000 iterations (0.0%) — elapsed 0s
