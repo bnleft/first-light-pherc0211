@@ -59,3 +59,16 @@ it is a villa defect a human hit on real data, a PR)
 - Current villa main only loads the lasagna normal stores through
   `pack_resident_pools.py` sidecars (`lasagna_data.py`: "there is no other loading
   path"). The 18 Aug workflow post and the Aug runbook predate this. Added as a step.
+
+## 2026-09-17 — control run, attempt 1 (failed usefully)
+
+- `ghcr.io/scrollprize/villa/volume-cartographer:main` is built from villa
+  `1e3f4c021f4e53bea3867772ed05f51a7e586a9c` (image label
+  `org.opencontainers.image.revision`, created 2026-05-13). Its `vc_render_tifxyz`
+  rejects `--flip-normals`, which main's source has and the Aug control recipe
+  needs. Same defect as villa#1588 ("container images are 3+ months stale"),
+  now four months. Fix on our side: rebuild the `vc_runtime` component from the
+  pinned commit inside the image (`cmake --preset ci-release-gcc`).
+- Our own wrapper masked the failure: `cmd | tee log` returns tee's exit code, so
+  inference ran against a store that was never written. Fixed with
+  `bash -o pipefail`. Cost of the wasted GPU run: a couple of minutes of A10.

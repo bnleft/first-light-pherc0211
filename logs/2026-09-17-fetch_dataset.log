@@ -412,3 +412,319 @@ $ aria2c -x 8 -s 8 --file-allocation=none --console-log-level=warn --summary-int
 FILE: /data/spiral_datasets/PHerc0211/20250821151803/tracks/PHerc0211_20250821151803_surface_m7_L0_th0.2.dbm.vctracks/coordinates.i32
 -------------------------------------------------------------------------------
 
+[#3ff723 877MiB/6.5GiB(12%) CN:8 DL:32MiB ETA:3m3s]
+[#3ff723 909MiB/6.5GiB(13%) CN:8 DL:32MiB ETA:3m]
+[#3ff723 0.9GiB/6.5GiB(13%) CN:8 DL:32MiB ETA:2m58s]
+[#3ff723 0.9GiB/6.5GiB(14%) CN:8 DL:32MiB ETA:2m59s]
+[#3ff723 0.9GiB/6.5GiB(14%) CN:8 DL:32MiB ETA:2m57s]
+[#3ff723 1.0GiB/6.5GiB(15%) CN:8 DL:32MiB ETA:2m53s]
+[#3ff723 1.0GiB/6.5GiB(15%) CN:8 DL:32MiB ETA:2m53s]
+[#3ff723 1.0GiB/6.5GiB(16%) CN:8 DL:32MiB ETA:2m52s]
+[#3ff723 1.1GiB/6.5GiB(16%) CN:8 DL:32MiB ETA:2m50s]
+[#3ff723 1.1GiB/6.5GiB(17%) CN:8 DL:33MiB ETA:2m47s]
+[#3ff723 1.1GiB/6.5GiB(17%) CN:8 DL:33MiB ETA:2m44s]
+[#3ff723 1.2GiB/6.5GiB(18%) CN:8 DL:33MiB ETA:2m42s]
+[#3ff723 1.2GiB/6.5GiB(19%) CN:8 DL:33MiB ETA:2m41s]
+[#3ff723 1.2GiB/6.5GiB(19%) CN:8 DL:33MiB ETA:2m40s]
+[#3ff723 1.3GiB/6.5GiB(20%) CN:8 DL:34MiB ETA:2m38s]
+[#3ff723 1.3GiB/6.5GiB(20%) CN:8 DL:34MiB ETA:2m35s]
+[#3ff723 1.3GiB/6.5GiB(21%) CN:8 DL:34MiB ETA:2m35s]
+[#3ff723 1.4GiB/6.5GiB(21%) CN:8 DL:34MiB ETA:2m32s]
+[#3ff723 1.4GiB/6.5GiB(22%) CN:8 DL:34MiB ETA:2m31s]
+[#3ff723 1.4GiB/6.5GiB(22%) CN:8 DL:34MiB ETA:2m31s]
+[#3ff723 1.5GiB/6.5GiB(23%) CN:8 DL:34MiB ETA:2m29s]
+[#3ff723 1.5GiB/6.5GiB(23%) CN:8 DL:35MiB ETA:2m25s]
+[#3ff723 1.5GiB/6.5GiB(24%) CN:8 DL:35MiB ETA:2m26s]
+[#3ff723 1.6GiB/6.5GiB(24%) CN:8 DL:35MiB ETA:2m24s]
+[#3ff723 1.6GiB/6.5GiB(25%) CN:8 DL:34MiB ETA:2m24s]
+[#3ff723 1.6GiB/6.5GiB(25%) CN:8 DL:35MiB ETA:2m23s]
+[#3ff723 1.7GiB/6.5GiB(26%) CN:8 DL:34MiB ETA:2m24s]
+[#3ff723 1.7GiB/6.5GiB(26%) CN:8 DL:34MiB ETA:2m23s]
+[#3ff723 1.7GiB/6.5GiB(27%) CN:8 DL:34MiB ETA:2m22s]
+[#3ff723 1.8GiB/6.5GiB(27%) CN:8 DL:33MiB ETA:2m24s]
+ *** Download Progress Summary as of Thu Sep 17 18:41:21 2026 *** 
+===============================================================================
+[#3ff723 1.8GiB/6.5GiB(28%) CN:8 DL:34MiB ETA:2m22s]
+FILE: /data/spiral_datasets/PHerc0211/20250821151803/tracks/PHerc0211_20250821151803_surface_m7_L0_th0.2.dbm.vctracks/coordinates.i32
+-------------------------------------------------------------------------------
+
+[#3ff723 1.8GiB/6.5GiB(28%) CN:8 DL:34MiB ETA:2m22s]
+[#3ff723 1.8GiB/6.5GiB(28%) CN:8 DL:33MiB ETA:2m23s]
+[#3ff723 1.9GiB/6.5GiB(29%) CN:8 DL:33MiB ETA:2m23s]
+[#3ff723 1.9GiB/6.5GiB(29%) CN:8 DL:32MiB ETA:2m24s]
+[#3ff723 1.9GiB/6.5GiB(30%) CN:8 DL:32MiB ETA:2m23s]
+[#3ff723 2.0GiB/6.5GiB(30%) CN:8 DL:33MiB ETA:2m20s]
+[#3ff723 2.0GiB/6.5GiB(31%) CN:8 DL:32MiB ETA:2m22s]
+[#3ff723 2.0GiB/6.5GiB(31%) CN:8 DL:32MiB ETA:2m21s]
+[#3ff723 2.1GiB/6.5GiB(32%) CN:8 DL:32MiB ETA:2m20s]
+[#3ff723 2.1GiB/6.5GiB(32%) CN:8 DL:30MiB ETA:2m28s]
+[#3ff723 2.1GiB/6.5GiB(32%) CN:8 DL:29MiB ETA:2m35s]
+[#3ff723 2.1GiB/6.5GiB(32%) CN:8 DL:27MiB ETA:2m43s]
+[#3ff723 2.2GiB/6.5GiB(33%) CN:8 DL:28MiB ETA:2m39s]
+[#3ff723 2.2GiB/6.5GiB(33%) CN:8 DL:27MiB ETA:2m45s]
+[#3ff723 2.2GiB/6.5GiB(34%) CN:8 DL:26MiB ETA:2m45s]
+[#3ff723 2.2GiB/6.5GiB(34%) CN:8 DL:26MiB ETA:2m45s]
+[#3ff723 2.3GiB/6.5GiB(35%) CN:8 DL:26MiB ETA:2m45s]
+[#3ff723 2.3GiB/6.5GiB(35%) CN:8 DL:26MiB ETA:2m45s]
+[#3ff723 2.3GiB/6.5GiB(36%) CN:8 DL:27MiB ETA:2m36s]
+[#3ff723 2.4GiB/6.5GiB(36%) CN:8 DL:28MiB ETA:2m28s]
+[#3ff723 2.4GiB/6.5GiB(37%) CN:8 DL:30MiB ETA:2m20s]
+[#3ff723 2.4GiB/6.5GiB(37%) CN:8 DL:30MiB ETA:2m17s]
+[#3ff723 2.5GiB/6.5GiB(37%) CN:8 DL:31MiB ETA:2m14s]
+[#3ff723 2.5GiB/6.5GiB(38%) CN:8 DL:31MiB ETA:2m13s]
+[#3ff723 2.5GiB/6.5GiB(38%) CN:8 DL:31MiB ETA:2m10s]
+[#3ff723 2.6GiB/6.5GiB(39%) CN:8 DL:31MiB ETA:2m9s]
+[#3ff723 2.6GiB/6.5GiB(39%) CN:8 DL:31MiB ETA:2m7s]
+[#3ff723 2.6GiB/6.5GiB(40%) CN:8 DL:32MiB ETA:2m3s]
+[#3ff723 2.7GiB/6.5GiB(40%) CN:8 DL:32MiB ETA:2m2s]
+[#3ff723 2.7GiB/6.5GiB(41%) CN:8 DL:32MiB ETA:2m1s]
+ *** Download Progress Summary as of Thu Sep 17 18:41:52 2026 *** 
+===============================================================================
+[#3ff723 2.7GiB/6.5GiB(41%) CN:8 DL:32MiB ETA:1m59s]
+FILE: /data/spiral_datasets/PHerc0211/20250821151803/tracks/PHerc0211_20250821151803_surface_m7_L0_th0.2.dbm.vctracks/coordinates.i32
+-------------------------------------------------------------------------------
+
+[#3ff723 2.7GiB/6.5GiB(41%) CN:8 DL:32MiB ETA:1m59s]
+[#3ff723 2.7GiB/6.5GiB(42%) CN:8 DL:32MiB ETA:1m59s]
+[#3ff723 2.8GiB/6.5GiB(42%) CN:8 DL:32MiB ETA:1m57s]
+[#3ff723 2.8GiB/6.5GiB(43%) CN:8 DL:32MiB ETA:1m57s]
+[#3ff723 2.8GiB/6.5GiB(43%) CN:8 DL:32MiB ETA:1m56s]
+[#3ff723 2.9GiB/6.5GiB(44%) CN:8 DL:32MiB ETA:1m54s]
+[#3ff723 2.9GiB/6.5GiB(44%) CN:8 DL:32MiB ETA:1m53s]
+[#3ff723 2.9GiB/6.5GiB(45%) CN:8 DL:32MiB ETA:1m53s]
+[#3ff723 3.0GiB/6.5GiB(45%) CN:8 DL:32MiB ETA:1m51s]
+[#3ff723 3.0GiB/6.5GiB(46%) CN:8 DL:32MiB ETA:1m50s]
+[#3ff723 3.0GiB/6.5GiB(46%) CN:8 DL:32MiB ETA:1m49s]
+[#3ff723 3.1GiB/6.5GiB(47%) CN:8 DL:32MiB ETA:1m49s]
+[#3ff723 3.1GiB/6.5GiB(47%) CN:8 DL:32MiB ETA:1m47s]
+[#3ff723 3.1GiB/6.5GiB(48%) CN:8 DL:33MiB ETA:1m46s]
+[#3ff723 3.2GiB/6.5GiB(48%) CN:8 DL:32MiB ETA:1m46s]
+[#3ff723 3.2GiB/6.5GiB(49%) CN:8 DL:32MiB ETA:1m45s]
+[#3ff723 3.2GiB/6.5GiB(49%) CN:8 DL:33MiB ETA:1m42s]
+[#3ff723 3.3GiB/6.5GiB(50%) CN:8 DL:32MiB ETA:1m42s]
+[#3ff723 3.3GiB/6.5GiB(50%) CN:8 DL:32MiB ETA:1m41s]
+[#3ff723 3.3GiB/6.5GiB(51%) CN:8 DL:32MiB ETA:1m41s]
+[#3ff723 3.4GiB/6.5GiB(51%) CN:8 DL:32MiB ETA:1m39s]
+[#3ff723 3.4GiB/6.5GiB(52%) CN:8 DL:33MiB ETA:1m37s]
+[#3ff723 3.4GiB/6.5GiB(52%) CN:8 DL:33MiB ETA:1m36s]
+[#3ff723 3.5GiB/6.5GiB(53%) CN:8 DL:33MiB ETA:1m34s]
+[#3ff723 3.5GiB/6.5GiB(53%) CN:8 DL:33MiB ETA:1m33s]
+[#3ff723 3.5GiB/6.5GiB(54%) CN:8 DL:33MiB ETA:1m33s]
+[#3ff723 3.6GiB/6.5GiB(54%) CN:8 DL:33MiB ETA:1m32s]
+[#3ff723 3.6GiB/6.5GiB(55%) CN:8 DL:33MiB ETA:1m30s]
+[#3ff723 3.6GiB/6.5GiB(55%) CN:8 DL:33MiB ETA:1m30s]
+[#3ff723 3.7GiB/6.5GiB(56%) CN:8 DL:33MiB ETA:1m28s]
+ *** Download Progress Summary as of Thu Sep 17 18:42:22 2026 *** 
+===============================================================================
+[#3ff723 3.7GiB/6.5GiB(56%) CN:8 DL:33MiB ETA:1m26s]
+FILE: /data/spiral_datasets/PHerc0211/20250821151803/tracks/PHerc0211_20250821151803_surface_m7_L0_th0.2.dbm.vctracks/coordinates.i32
+-------------------------------------------------------------------------------
+
+[#3ff723 3.7GiB/6.5GiB(56%) CN:8 DL:33MiB ETA:1m26s]
+[#3ff723 3.7GiB/6.5GiB(57%) CN:8 DL:33MiB ETA:1m25s]
+[#3ff723 3.8GiB/6.5GiB(57%) CN:8 DL:33MiB ETA:1m25s]
+[#3ff723 3.8GiB/6.5GiB(58%) CN:8 DL:33MiB ETA:1m24s]
+[#3ff723 3.8GiB/6.5GiB(58%) CN:8 DL:33MiB ETA:1m22s]
+[#3ff723 3.9GiB/6.5GiB(59%) CN:8 DL:33MiB ETA:1m21s]
+[#3ff723 3.9GiB/6.5GiB(59%) CN:8 DL:34MiB ETA:1m19s]
+[#3ff723 3.9GiB/6.5GiB(60%) CN:8 DL:34MiB ETA:1m17s]
+[#3ff723 3.9GiB/6.5GiB(60%) CN:8 DL:33MiB ETA:1m19s]
+[#3ff723 4.0GiB/6.5GiB(60%) CN:8 DL:32MiB ETA:1m21s]
+[#3ff723 4.0GiB/6.5GiB(61%) CN:8 DL:30MiB ETA:1m24s]
+[#3ff723 4.0GiB/6.5GiB(61%) CN:8 DL:29MiB ETA:1m26s]
+[#3ff723 4.0GiB/6.5GiB(62%) CN:8 DL:30MiB ETA:1m25s]
+[#3ff723 4.1GiB/6.5GiB(62%) CN:8 DL:29MiB ETA:1m24s]
+[#3ff723 4.1GiB/6.5GiB(63%) CN:8 DL:29MiB ETA:1m24s]
+[#3ff723 4.1GiB/6.5GiB(63%) CN:8 DL:29MiB ETA:1m23s]
+[#3ff723 4.2GiB/6.5GiB(64%) CN:8 DL:29MiB ETA:1m23s]
+[#3ff723 4.2GiB/6.5GiB(64%) CN:8 DL:28MiB ETA:1m23s]
+[#3ff723 4.2GiB/6.5GiB(65%) CN:8 DL:30MiB ETA:1m18s]
+[#3ff723 4.3GiB/6.5GiB(65%) CN:8 DL:31MiB ETA:1m14s]
+[#3ff723 4.3GiB/6.5GiB(66%) CN:8 DL:32MiB ETA:1m11s]
+[#3ff723 4.3GiB/6.5GiB(66%) CN:8 DL:33MiB ETA:1m7s]
+[#3ff723 4.4GiB/6.5GiB(67%) CN:8 DL:33MiB ETA:1m5s]
+[#3ff723 4.4GiB/6.5GiB(67%) CN:8 DL:34MiB ETA:1m3s]
+[#3ff723 4.4GiB/6.5GiB(68%) CN:8 DL:33MiB ETA:1m3s]
+[#3ff723 4.5GiB/6.5GiB(68%) CN:8 DL:34MiB ETA:1m1s]
+[#3ff723 4.5GiB/6.5GiB(69%) CN:8 DL:34MiB ETA:1m]
+[#3ff723 4.6GiB/6.5GiB(69%) CN:8 DL:34MiB ETA:59s]
+[#3ff723 4.6GiB/6.5GiB(70%) CN:8 DL:34MiB ETA:57s]
+[#3ff723 4.6GiB/6.5GiB(70%) CN:8 DL:34MiB ETA:56s]
+ *** Download Progress Summary as of Thu Sep 17 18:42:52 2026 *** 
+===============================================================================
+[#3ff723 4.7GiB/6.5GiB(71%) CN:8 DL:34MiB ETA:55s]
+FILE: /data/spiral_datasets/PHerc0211/20250821151803/tracks/PHerc0211_20250821151803_surface_m7_L0_th0.2.dbm.vctracks/coordinates.i32
+-------------------------------------------------------------------------------
+
+[#3ff723 4.7GiB/6.5GiB(71%) CN:8 DL:34MiB ETA:55s]
+[#3ff723 4.7GiB/6.5GiB(71%) CN:8 DL:34MiB ETA:54s]
+[#3ff723 4.7GiB/6.5GiB(72%) CN:8 DL:34MiB ETA:54s]
+[#3ff723 4.8GiB/6.5GiB(72%) CN:8 DL:35MiB ETA:52s]
+[#3ff723 4.8GiB/6.5GiB(73%) CN:8 DL:34MiB ETA:51s]
+[#3ff723 4.8GiB/6.5GiB(73%) CN:8 DL:34MiB ETA:50s]
+[#3ff723 4.9GiB/6.5GiB(74%) CN:8 DL:34MiB ETA:49s]
+[#3ff723 4.9GiB/6.5GiB(74%) CN:8 DL:34MiB ETA:49s]
+[#3ff723 4.9GiB/6.5GiB(75%) CN:8 DL:34MiB ETA:48s]
+[#3ff723 5.0GiB/6.5GiB(75%) CN:8 DL:34MiB ETA:47s]
+[#3ff723 5.0GiB/6.5GiB(76%) CN:8 DL:34MiB ETA:46s]
+[#3ff723 5.0GiB/6.5GiB(76%) CN:8 DL:34MiB ETA:45s]
+[#3ff723 5.1GiB/6.5GiB(77%) CN:8 DL:34MiB ETA:44s]
+[#3ff723 5.1GiB/6.5GiB(77%) CN:8 DL:34MiB ETA:43s]
+[#3ff723 5.1GiB/6.5GiB(78%) CN:8 DL:32MiB ETA:44s]
+[#3ff723 5.2GiB/6.5GiB(78%) CN:8 DL:32MiB ETA:43s]
+[#3ff723 5.2GiB/6.5GiB(79%) CN:8 DL:32MiB ETA:42s]
+[#3ff723 5.2GiB/6.5GiB(79%) CN:8 DL:33MiB ETA:40s]
+[#3ff723 5.3GiB/6.5GiB(80%) CN:8 DL:33MiB ETA:40s]
+[#3ff723 5.3GiB/6.5GiB(80%) CN:8 DL:33MiB ETA:38s]
+[#3ff723 5.3GiB/6.5GiB(81%) CN:8 DL:33MiB ETA:37s]
+[#3ff723 5.4GiB/6.5GiB(81%) CN:8 DL:33MiB ETA:36s]
+[#3ff723 5.4GiB/6.5GiB(82%) CN:8 DL:33MiB ETA:34s]
+[#3ff723 5.4GiB/6.5GiB(83%) CN:8 DL:34MiB ETA:33s]
+[#3ff723 5.5GiB/6.5GiB(83%) CN:8 DL:35MiB ETA:31s]
+[#3ff723 5.5GiB/6.5GiB(84%) CN:8 DL:35MiB ETA:30s]
+[#3ff723 5.5GiB/6.5GiB(84%) CN:8 DL:35MiB ETA:29s]
+[#3ff723 5.6GiB/6.5GiB(85%) CN:8 DL:34MiB ETA:29s]
+[#3ff723 5.6GiB/6.5GiB(85%) CN:8 DL:34MiB ETA:27s]
+[#3ff723 5.6GiB/6.5GiB(86%) CN:8 DL:34MiB ETA:27s]
+ *** Download Progress Summary as of Thu Sep 17 18:43:22 2026 *** 
+===============================================================================
+[#3ff723 5.7GiB/6.5GiB(86%) CN:8 DL:34MiB ETA:26s]
+FILE: /data/spiral_datasets/PHerc0211/20250821151803/tracks/PHerc0211_20250821151803_surface_m7_L0_th0.2.dbm.vctracks/coordinates.i32
+-------------------------------------------------------------------------------
+
+[#3ff723 5.7GiB/6.5GiB(86%) CN:8 DL:34MiB ETA:26s]
+[#3ff723 5.7GiB/6.5GiB(87%) CN:8 DL:34MiB ETA:25s]
+[#3ff723 5.7GiB/6.5GiB(87%) CN:8 DL:34MiB ETA:24s]
+[#3ff723 5.8GiB/6.5GiB(88%) CN:8 DL:33MiB ETA:24s]
+[#3ff723 5.8GiB/6.5GiB(88%) CN:8 DL:33MiB ETA:23s]
+[#3ff723 5.8GiB/6.5GiB(89%) CN:8 DL:33MiB ETA:22s]
+[#3ff723 5.9GiB/6.5GiB(89%) CN:8 DL:33MiB ETA:21s]
+[#3ff723 5.9GiB/6.5GiB(89%) CN:8 DL:32MiB ETA:20s]
+[#3ff723 5.9GiB/6.5GiB(90%) CN:8 DL:32MiB ETA:19s]
+[#3ff723 5.9GiB/6.5GiB(90%) CN:8 DL:30MiB ETA:20s]
+[#3ff723 6.0GiB/6.5GiB(91%) CN:8 DL:29MiB ETA:20s]
+[#3ff723 6.0GiB/6.5GiB(91%) CN:8 DL:28MiB ETA:20s]
+[#3ff723 6.0GiB/6.5GiB(91%) CN:8 DL:26MiB ETA:21s]
+[#3ff723 6.0GiB/6.5GiB(92%) CN:8 DL:26MiB ETA:20s]
+[#3ff723 6.1GiB/6.5GiB(92%) CN:8 DL:26MiB ETA:19s]
+[#3ff723 6.1GiB/6.5GiB(93%) CN:8 DL:26MiB ETA:18s]
+[#3ff723 6.1GiB/6.5GiB(93%) CN:8 DL:26MiB ETA:16s]
+[#3ff723 6.2GiB/6.5GiB(94%) CN:8 DL:26MiB ETA:15s]
+[#3ff723 6.2GiB/6.5GiB(94%) CN:8 DL:28MiB ETA:12s]
+[#3ff723 6.2GiB/6.5GiB(95%) CN:8 DL:29MiB ETA:11s]
+[#3ff723 6.3GiB/6.5GiB(95%) CN:8 DL:31MiB ETA:9s]
+[#3ff723 6.3GiB/6.5GiB(95%) CN:8 DL:32MiB ETA:8s]
+[#3ff723 6.3GiB/6.5GiB(96%) CN:8 DL:32MiB ETA:7s]
+[#3ff723 6.3GiB/6.5GiB(96%) CN:8 DL:32MiB ETA:6s]
+[#3ff723 6.4GiB/6.5GiB(97%) CN:8 DL:32MiB ETA:5s]
+[#3ff723 6.4GiB/6.5GiB(97%) CN:8 DL:32MiB ETA:4s]
+[#3ff723 6.4GiB/6.5GiB(98%) CN:8 DL:32MiB ETA:3s]
+[#3ff723 6.5GiB/6.5GiB(98%) CN:8 DL:32MiB ETA:2s]
+[#3ff723 6.5GiB/6.5GiB(99%) CN:7 DL:32MiB ETA:1s]
+[#3ff723 6.5GiB/6.5GiB(99%) CN:7 DL:32MiB]
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+3ff723|OK  |    32MiB/s|/data/spiral_datasets/PHerc0211/20250821151803/tracks/PHerc0211_20250821151803_surface_m7_L0_th0.2.dbm.vctracks/coordinates.i32
+
+Status Legend:
+(OK):download completed.
+
+$ aria2c -x 8 -s 8 --file-allocation=none --console-log-level=warn --summary-interval=30 -d /data/spiral_datasets/PHerc0211/20250821151803/tracks/PHerc0211_20250821151803_surface_m7_L0_th0.2.dbm.vctracks -o family_codes.i8 'https://dl.ash2txt.org/datasets/spiral_datasets/PHerc0211/20250821151803/tracks/PHerc0211_20250821151803_surface_m7_L0_th0.2.dbm.vctracks/family_codes.i8'
+[#7e1182 4.0MiB/13MiB(29%) CN:1 DL:5.9MiB ETA:1s]
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+7e1182|OK  |   9.6MiB/s|/data/spiral_datasets/PHerc0211/20250821151803/tracks/PHerc0211_20250821151803_surface_m7_L0_th0.2.dbm.vctracks/family_codes.i8
+
+Status Legend:
+(OK):download completed.
+
+$ aria2c -x 8 -s 8 --file-allocation=none --console-log-level=warn --summary-interval=30 -d /data/spiral_datasets/PHerc0211/20250821151803/tracks/PHerc0211_20250821151803_surface_m7_L0_th0.2.dbm.vctracks -o header.bin 'https://dl.ash2txt.org/datasets/spiral_datasets/PHerc0211/20250821151803/tracks/PHerc0211_20250821151803_surface_m7_L0_th0.2.dbm.vctracks/header.bin'
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+679566|OK  |   6.9KiB/s|/data/spiral_datasets/PHerc0211/20250821151803/tracks/PHerc0211_20250821151803_surface_m7_L0_th0.2.dbm.vctracks/header.bin
+
+Status Legend:
+(OK):download completed.
+
+$ aria2c -x 8 -s 8 --file-allocation=none --console-log-level=warn --summary-interval=30 -d /data/spiral_datasets/PHerc0211/20250821151803/tracks/PHerc0211_20250821151803_surface_m7_L0_th0.2.dbm.vctracks -o metadata.json 'https://dl.ash2txt.org/datasets/spiral_datasets/PHerc0211/20250821151803/tracks/PHerc0211_20250821151803_surface_m7_L0_th0.2.dbm.vctracks/metadata.json'
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+f91281|OK  |    19KiB/s|/data/spiral_datasets/PHerc0211/20250821151803/tracks/PHerc0211_20250821151803_surface_m7_L0_th0.2.dbm.vctracks/metadata.json
+
+Status Legend:
+(OK):download completed.
+
+$ aria2c -x 8 -s 8 --file-allocation=none --console-log-level=warn --summary-interval=30 -d /data/spiral_datasets/PHerc0211/20250821151803/tracks/PHerc0211_20250821151803_surface_m7_L0_th0.2.dbm.vctracks -o offsets.i64 'https://dl.ash2txt.org/datasets/spiral_datasets/PHerc0211/20250821151803/tracks/PHerc0211_20250821151803_surface_m7_L0_th0.2.dbm.vctracks/offsets.i64'
+[#423d0f 5.5MiB/109MiB(5%) CN:4 DL:8.4MiB ETA:12s]
+[#423d0f 36MiB/109MiB(33%) CN:4 DL:21MiB ETA:3s]
+[#423d0f 69MiB/109MiB(63%) CN:4 DL:26MiB ETA:1s]
+[#423d0f 103MiB/109MiB(94%) CN:3 DL:28MiB]
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+423d0f|OK  |    28MiB/s|/data/spiral_datasets/PHerc0211/20250821151803/tracks/PHerc0211_20250821151803_surface_m7_L0_th0.2.dbm.vctracks/offsets.i64
+
+Status Legend:
+(OK):download completed.
+
+$ aria2c -x 8 -s 8 --file-allocation=none --console-log-level=warn --summary-interval=30 -d /data/spiral_datasets/PHerc0211/20250821151803/tracks/PHerc0211_20250821151803_surface_m7_L0_th0.2.dbm.vctracks -o source_ids.u64 'https://dl.ash2txt.org/datasets/spiral_datasets/PHerc0211/20250821151803/tracks/PHerc0211_20250821151803_surface_m7_L0_th0.2.dbm.vctracks/source_ids.u64'
+[#9fec6d 5.5MiB/109MiB(5%) CN:4 DL:8.8MiB ETA:11s]
+[#9fec6d 23MiB/109MiB(21%) CN:4 DL:14MiB ETA:6s]
+[#9fec6d 46MiB/109MiB(42%) CN:4 DL:17MiB ETA:3s]
+[#9fec6d 75MiB/109MiB(68%) CN:4 DL:20MiB ETA:1s]
+[#9fec6d 105MiB/109MiB(95%) CN:3 DL:22MiB]
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+9fec6d|OK  |    22MiB/s|/data/spiral_datasets/PHerc0211/20250821151803/tracks/PHerc0211_20250821151803_surface_m7_L0_th0.2.dbm.vctracks/source_ids.u64
+
+Status Legend:
+(OK):download completed.
+
+$ aria2c -x 8 -s 8 --file-allocation=none --console-log-level=warn --summary-interval=30 -d /data/spiral_datasets/PHerc0211/20250821151803/tracks/PHerc0211_20250821151803_surface_m7_L0_th0.2.dbm.vctracks -o tortuosities.f64 'https://dl.ash2txt.org/datasets/spiral_datasets/PHerc0211/20250821151803/tracks/PHerc0211_20250821151803_surface_m7_L0_th0.2.dbm.vctracks/tortuosities.f64'
+[#7238d8 6.9MiB/109MiB(6%) CN:4 DL:10MiB ETA:9s]
+[#7238d8 37MiB/109MiB(33%) CN:4 DL:22MiB ETA:3s]
+[#7238d8 69MiB/109MiB(63%) CN:4 DL:25MiB ETA:1s]
+[#7238d8 98MiB/109MiB(90%) CN:3 DL:26MiB]
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+7238d8|OK  |    26MiB/s|/data/spiral_datasets/PHerc0211/20250821151803/tracks/PHerc0211_20250821151803_surface_m7_L0_th0.2.dbm.vctracks/tortuosities.f64
+
+Status Legend:
+(OK):download completed.
+
+$ aria2c -x 8 -s 8 --file-allocation=none --console-log-level=warn --summary-interval=30 -d /data/spiral_datasets/PHerc0211/20250821151803/tracks/PHerc0211_20250821151803_surface_m7_L0_th0.2.dbm.vctracks -o z_bounds.i32 'https://dl.ash2txt.org/datasets/spiral_datasets/PHerc0211/20250821151803/tracks/PHerc0211_20250821151803_surface_m7_L0_th0.2.dbm.vctracks/z_bounds.i32'
+[#6ecd4f 2.2MiB/109MiB(2%) CN:4 DL:1.7MiB ETA:1m1s]
+[#6ecd4f 28MiB/109MiB(25%) CN:4 DL:12MiB ETA:6s]
+[#6ecd4f 63MiB/109MiB(58%) CN:4 DL:19MiB ETA:2s]
+[#6ecd4f 96MiB/109MiB(88%) CN:2 DL:22MiB]
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+6ecd4f|OK  |    22MiB/s|/data/spiral_datasets/PHerc0211/20250821151803/tracks/PHerc0211_20250821151803_surface_m7_L0_th0.2.dbm.vctracks/z_bounds.i32
+
+Status Legend:
+(OK):download completed.
+
+$ aws s3 cp --no-sign-request s3://vesuvius-challenge-open-data/PHerc0211/representations/umbilicus/20250821151803-umbilicus-20260808112626.json /data/spiral_datasets/PHerc0211/20250821151803/umbilicus.json
+Completed 6.3 KiB/6.3 KiB (14.5 KiB/s) with 1 file(s) remaining
+[1Adownload: s3://vesuvius-challenge-open-data/PHerc0211/representations/umbilicus/20250821151803-umbilicus-20260808112626.json to ../../data/spiral_datasets/PHerc0211/20250821151803/umbilicus.json
+
+$ aws s3 cp --no-sign-request --only-show-errors s3://vesuvius-challenge-open-data/PHerc0211/representations/predictions/lasagna/20250821151803-lasagna-20260419180421/PHerc0211_nx.ome.zarr/.zattrs /data/spiral_datasets/PHerc0211/20250821151803/lasagna/PHerc0211_nx.ome.zarr/.zattrs
+
+$ aws s3 cp --no-sign-request --only-show-errors s3://vesuvius-challenge-open-data/PHerc0211/representations/predictions/lasagna/20250821151803-lasagna-20260419180421/PHerc0211_nx.ome.zarr/.zgroup /data/spiral_datasets/PHerc0211/20250821151803/lasagna/PHerc0211_nx.ome.zarr/.zgroup
+
+$ aws s3 cp --no-sign-request --only-show-errors --recursive s3://vesuvius-challenge-open-data/PHerc0211/representations/predictions/lasagna/20250821151803-lasagna-20260419180421/PHerc0211_nx.ome.zarr/2 /data/spiral_datasets/PHerc0211/20250821151803/lasagna/PHerc0211_nx.ome.zarr/2

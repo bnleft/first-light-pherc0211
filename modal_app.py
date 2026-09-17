@@ -96,6 +96,18 @@ ink_image = image.run_commands(
     f"cd {VILLA}/vesuvius && uv sync --frozen --extra models",
 )
 
+# Third layer: the vc_* apps rebuilt from the pinned villa commit. The published
+# ghcr `:main` image turned out to lag main (its vc_render_tifxyz has no
+# --flip-normals, which main's source has), so for the writeup's "pinned versions"
+# claim the binaries have to come from the same commit as the Python code.
+vc_image = ink_image.run_commands(
+    f"cd {VILLA}/volume-cartographer && cmake --preset ci-release-gcc "
+    f"&& cmake --build --preset ci-release-gcc -j 16 "
+    f"&& cmake --install build/ci-release-gcc --prefix /usr/local --component vc_runtime "
+    f"&& rm -rf build && vc_render_tifxyz --help | grep -q flip-normals",
+    gpu=None,
+)
+
 GPU = "A10"          # 24 GB, same class as the RTX 3090 the survey tool measured on
 CHECKPOINT_REPO = "scrollprize/ink_9um"
 CHECKPOINT_FILE = "hybrid_3d2d-seed42/step-075000.pth"
@@ -103,8 +115,11 @@ HOURS = 3600
 
 
 def sh(cmd: str, **kw) -> None:
+    """Run under bash with pipefail so `... | tee log` cannot mask a failure
+    (the first control run did exactly that: vc_render_tifxyz failed, tee
+    returned 0, and inference ran against a store that did not exist)."""
     print(f"\n$ {cmd}", flush=True)
-    subprocess.run(cmd, shell=True, check=True, **kw)
+    subprocess.run(["bash", "-o", "pipefail", "-c", cmd], check=True, **kw)
 
 
 # ---------------------------------------------------------------------------
@@ -346,7 +361,7 @@ def probe_ink() -> None:
     sh(f"cd {VILLA}/spiral-fitting && uv run python render_ink.py --help | head -40")
 
 
-@app.function(image=ink_image, gpu=GPU, volumes={str(DATA): vol}, timeout=8 * HOURS, cpu=16, memory=65536)
+@app.function(image=vc_image, gpu=GPU, volumes={str(DATA): vol}, timeout=8 * HOURS, cpu=16, memory=65536)
 def render_and_infer(run_tag: str, winding_min: int = -1, winding_max: int = -1,
                      cache_gb: int = 16) -> str:
     """Steps 4-6 of the Aug runbook in one GPU container:
@@ -423,7 +438,7 @@ CONTROL_VOLUME_ZARR = "s3://vesuvius-challenge-open-data/PHerc0139/volumes/20250
 CONTROL_LABELS_HF = "ink_9um/labels/native9-scrollprizeorg-21slices/w035"
 
 
-@app.function(image=ink_image, gpu=GPU, volumes={str(DATA): vol}, timeout=4 * HOURS, cpu=16, memory=65536)
+@app.function(image=vc_image, gpu=GPU, volumes={str(DATA): vol}, timeout=4 * HOURS, cpu=16, memory=65536)
 def control(flip_normals: bool = True, cache_gb: int = 16, use_published_render: bool = False) -> str:
     """Run the identical inference on the control. Path A (default): our own
     vc_render_tifxyz render of the published 9.362um-registered mesh. Path B
@@ -460,3 +475,10 @@ def control(flip_normals: bool = True, cache_gb: int = 16, use_published_render:
                                                  "flip_normals": flip_normals, "published_render": use_published_render}, indent=2))
     sh(f"ls -la {out}")
     return str(out)
+
+
+@app.function(image=vc_image, volumes={str(DATA): vol}, timeout=20 * 60)
+def probe_vc() -> None:
+    sh("vc_render_tifxyz --help | grep -n flip-normals")
+    sh("ls -la /usr/local/bin | grep -E 'vc_|flatboi'")
+    sh("cat /src/.git/HEAD 2>/dev/null; git -C /src rev-parse HEAD 2>/dev/null || echo 'no /src git'; ls /src 2>/dev/null | head")
