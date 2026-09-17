@@ -1,17 +1,27 @@
 ✓ Initialized. View run at 
-https://modal.com/apps/bnleft/main/ap-BlbqRfx3IjYehY7GJR4Vxw
+https://modal.com/apps/bnleft/main/ap-MR05bDuJuP8x6g0OD3lNBX
 ✓ Created objects.
 ├── 🔨 Created mount 
 │   /Users/bryantle/Documents/bnleft/first-light-pherc0211/modal_app.py
-├── 🔨 Created function render_slices.
-├── 🔨 Created function probe.
 ├── 🔨 Created function fetch_dataset.
-├── 🔨 Created function render_and_infer.
-├── 🔨 Created function probe_ink.
 ├── 🔨 Created function spiral_fit.
 ├── 🔨 Created function pack_pools.
+├── 🔨 Created function probe_ink.
+├── 🔨 Created function render_slices.
+├── 🔨 Created function pack_pools_fast.
+├── 🔨 Created function render_and_infer.
+├── 🔨 Created function probe.
 ├── 🔨 Created function control.
 ├── 🔨 Created function overlay_fits.
-├── 🔨 Created function pack_pools_fast.
-├── 🔨 Created function probe_vc.
-└── 🔨 Created function calibrate_control.
+├── 🔨 Created function calibrate_control.
+└── 🔨 Created function probe_vc.
+
+$ cd /opt/villa/spiral-fitting && uv run python /opt/villa/spiral-fitting/_calibrate.py /data/control/w035_inklabels.zarr /data/control/out_own_render/control_prediction.tif /data/control/out_own_render/control_prediction_reverse.tif /data/control/out_own_render/calibration.json
+labels (28, 5820, 5240) uint8
+label pixels 396164 of 30496800 (1.299%)
+forward {"median_on_label": 199.0, "mean_on_label": 185.7688446044922, "p90_off_label": 122.0, "p99_off_label": 195.0, "frac_off_label_above_median_on": 0.0062519581022517446}
+reverse {"median_on_label": 68.0, "mean_on_label": 76.68841552734375, "p90_off_label": 111.0, "p99_off_label": 177.0, "frac_off_label_above_median_on": 0.5827340687605581}
+Stopping app - local entrypoint completed.
+✓ App completed. View run at 
+https://modal.com/apps/bnleft/main/ap-MR05bDuJuP8x6g0OD3lNBX
+exit=0

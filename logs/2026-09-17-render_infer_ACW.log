@@ -14,3 +14,28 @@ https://modal.com/apps/bnleft/main/ap-aotug4XkSBnfMm1BbWSgPE
 ├── 🔨 Created function render_and_infer.
 ├── 🔨 Created function control.
 └── 🔨 Created function probe_vc.
+scoped 56 windings into /data/out/ACW_z10000-11000_s30000/2026-09-17_PHerc0211_slice-10000-11000_0-patch/meshes/fitted_scoped_w010-065
+
+$ cd /opt/villa/spiral-fitting && uv run python render_ink.py /data/out/ACW_z10000-11000_s30000/2026-09-17_PHerc0211_slice-10000-11000_0-patch/meshes/fitted_scoped_w010-065 --volume /data/volume-cache/PHerc0211.zarr --remote-url s3://vesuvius-challenge-open-data/PHerc0211/volumes/20250821151803-9.362um-1.2m-113keV-masked.zarr --group-idx 1 --scale 0.25 --num-slices 5 --no-strips --full-scroll --lasagna-device cuda 2>&1 | tee /data/ink/ACW_z10000-11000_s30000/fitted_scoped_w010-065/render_ink.log
+[tifxyz_io] loaded w010-065: 66x9656, 476785/637296 valid (74.8%) step_h=25.116 step_w=27.576 step_diag=26.529 step_avg=26.443
+data: flatten-only (no volume input)
+model: ModelConfig(mesh_step=100, winding_step=25, subsample_mesh=4, subsample_winding=4, depth=3, mesh_h=32, mesh_w=32, init_mode='cylinder_seed', z_center=0.0, pyramid_d=True, model_input=None, model_output=None)
+opt: OptConfig(device='cuda', snapshot_interval=1000, normal_mask_zero=False)
+[fit] model-init=flatten solver=forward source=/data/out/ACW_z10000-11000_s30000/2026-09-17_PHerc0211_slice-10000-11000_0-patch/meshes/fitted_scoped_w010-065/concat/w010-065 shape=(66, 9656, 3) valid=476785/637296 model_shape=66x9656 source_step=20 output_step=20 measured_source_step=26.4403 initial_uv_rescale=1 flatten_correction_scales=14
+initial forward flatten (inversion skipped): map_shape=(66, 9656, 2) point_valid=476785/637296 quad_valid=466094/627575
+[optimizer] corr_points=False active_corr_terms=[]
+[optimizer] stage0: params=['map_flatten_ms'] steps=4500 lr=0.01 min_scaledown=0
+[optimizer] stage0: snap_surf_map_weight=0 snap_surf_map_offset=n/a snap_surf_map_offset_mode=n/a
+[optimizer] stage0: flatten_edge_step_global_scale=100
+[optimizer] stage0: flatten_diagnostics=0
+[optimizer] stage0: compile_flatten=1 combined=1
+[optimizer] stage0: forward_needs=xyz_lr,data,params+flatten prefetch_grad_channels=[] prefetch_nograd_channels=[]
+[optimizer] stage0: flatten_max_update=0.1 (per-scale cap doubles at each coarser level)
+[optimizer] stage0: fused_flatten_adam_clamp=1 (Triton CUDA with PyTorch fallback)
+[optimizer] stage0: flatten_renorm_interval=500
+[optimizer] progress columns
+  col      : meaning                          | col      : meaning                          | col      : meaning
+  step     : stage step                       | loss     : total loss                       | it/s     : optimizer it/s
+  f_sdir   : flatten_sdir                     | f_sdirW  : weighted flatten_sdir            | f_estep  : physical edge step loss
+  f_estpW  : weighted physical edge step loss | f_avg    : flatten_avg_offset               | f_avgW   : weighted flatten_avg_offset
+  f_orient : flatten_orient                   | f_oriW   : weighted flatten_orient          | f_step   : flatten current avg grid step

@@ -25,15 +25,15 @@ Spend cap agreed: $60.
 
 | # | Step | Function | Status |
 |---|------|----------|--------|
-| 0 | Build image, probe binaries | `probe` | |
-| 1 | Fetch tracks + umbilicus + lasagna group-2 stores | `fetch_dataset` | |
-| 2 | Render axial slices for the CW/ACW read | `render_slices` | |
+| 0 | Build image, probe binaries | `probe` | done |
+| 1 | Fetch tracks + umbilicus (+ lasagna via `pack_pools_fast`) | `fetch_dataset` | done |
+| 2 | Render axial slices for the CW/ACW read | `render_slices` | done |
 | 3 | Human reads winding sense | (Bryant) | |
-| 4 | Pack resident pools (new since the Aug post) | `pack_pools` | |
-| 5 | 1,500-step fits, CW and ACW, z 10000–11000 | `spiral_fit` | |
-| 6 | 30,000-step fit in the confirmed sense | `spiral_fit` | |
-| 7 | Flatten + render + ink inference | (to write) | |
-| 8 | Control on PHerc0139 w035 | (to write) | |
+| 4 | Pack resident pools (new since the Aug post) | `pack_pools_fast` | done |
+| 5 | 1,500-step fits, CW and ACW, z 10000–11000 | `spiral_fit` | done, tied |
+| 6 | 30,000-step fits, both senses | `spiral_fit` | done, tied; ACW chosen first |
+| 7 | Flatten + render + ink inference (w010–w065) | `render_and_infer` | running (ACW) |
+| 8 | Control on PHerc0139 w035 + calibration | `control`, `calibrate_control` | done, T=199 |
 | 9 | Preregistered readout, writeup, submission | (Bryant + Claude) | |
 
 ## Walls hit so far

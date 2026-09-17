@@ -48,3 +48,19 @@ list of walls hit with their villa issue or PR numbers.
 The checkpoint's inference patch is 128 × 128 px = 1.198 mm, larger than the
 0.5 × 0.5 mm the prize page recommends for ML-generated images. We claim no
 letters from these outputs unless a papyrologist does.
+
+## Deviation note 1 — calibration value (2026-09-17, before target inference)
+
+Computed from the control exactly as specified above (`calibrate_control`,
+labels `ink_9um/labels/native9-scrollprizeorg-21slices/w035`, any-depth max,
+396,164 label pixels = 1.30 % of the 5820 × 5240 grid):
+
+| direction | median on label | mean on label | p90 off label | p99 off label | frac off-label ≥ median-on |
+|---|---:|---:|---:|---:|---:|
+| forward | **199** | 185.8 | 122 | 195 | 0.63 % |
+| reverse | 68 | 76.7 | 111 | 177 | 58.3 % |
+
+**T = 199** (uint8; ≈ 0.78 probability). The forward direction is the readable
+one on the control; the reverse is treated as a second, weaker channel. The
+ACW target inference was already running when this was computed, but no target
+output had been read; this note is committed before any target output is opened.

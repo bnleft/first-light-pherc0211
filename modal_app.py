@@ -645,7 +645,9 @@ def overlay_fits(run_tags: str, zs: str = "10250,10500,10750", crop: int = 300, 
 
 # ---------------------------------------------------------------------------
 CALIB_SCRIPT = r'''
-import json, sys, numpy as np, zarr, tifffile
+import json, sys, numpy as np, zarr
+from PIL import Image
+Image.MAX_IMAGE_PIXELS = None
 labels_dir, pred_fwd, pred_rev, out_json = sys.argv[1:5]
 lab = zarr.open_group(labels_dir, mode="r")["0"]           # (28, 5820, 5240) uint8
 print("labels", lab.shape, lab.dtype)
@@ -653,7 +655,7 @@ L = np.asarray(lab[:]).max(axis=0) > 0                      # any-depth ink labe
 print("label pixels", int(L.sum()), "of", L.size, f"({L.mean()*100:.3f}%)")
 res = {"label_pixels": int(L.sum())}
 for name, path in [("forward", pred_fwd), ("reverse", pred_rev)]:
-    P = tifffile.imread(path).astype(np.float32)
+    P = np.asarray(Image.open(path)).astype(np.float32)  # PIL decodes the LZW TIFFs; tifffile needs imagecodecs
     assert P.shape == L.shape, (P.shape, L.shape)
     on, off = P[L], P[~L & (P > 0)]
     res[name] = {"median_on_label": float(np.median(on)), "mean_on_label": float(on.mean()),
