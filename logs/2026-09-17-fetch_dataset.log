@@ -1,0 +1,12 @@
+✓ Initialized. View run at 
+https://modal.com/apps/bnleft/main/ap-Pg4S97WV0wonHIKhycCDmx
+✓ Created objects.
+├── 🔨 Created mount 
+│   /Users/bryantle/Documents/bnleft/first-light-pherc0211/modal_app.py
+├── 🔨 Created function probe.
+├── 🔨 Created function fetch_dataset.
+├── 🔨 Created function pack_pools.
+├── 🔨 Created function render_slices.
+└── 🔨 Created function spiral_fit.
+
+$ aria2c -x 8 -s 8 --file-allocation=none --console-log-level=warn --summary-interval=30 -d /data/spiral_datasets/PHerc0211/20250821151803/tracks -o PHerc0211_20250821151803_surface_m7_L0_th0.2.dbm 'https://dl.ash2txt.org/datasets/spiral_datasets/PHerc0211/20250821151803/tracks/PHerc0211_20250821151803_surface_m7_L0_th0.2.dbm'

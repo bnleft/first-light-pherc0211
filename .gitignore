@@ -1,0 +1,4 @@
+renders/*.png
+out/
+*.pyc
+__pycache__/

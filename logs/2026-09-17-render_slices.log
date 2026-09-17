@@ -1,0 +1,12 @@
+✓ Initialized. View run at 
+https://modal.com/apps/bnleft/main/ap-ai7APNo1bVMz9oMF4McMNa
+✓ Created objects.
+├── 🔨 Created mount 
+│   /Users/bryantle/Documents/bnleft/first-light-pherc0211/modal_app.py
+├── 🔨 Created function render_slices.
+├── 🔨 Created function fetch_dataset.
+├── 🔨 Created function pack_pools.
+├── 🔨 Created function probe.
+└── 🔨 Created function spiral_fit.
+
+$ aws s3 cp --no-sign-request s3://vesuvius-challenge-open-data/PHerc0211/representations/umbilicus/20250821151803-umbilicus-20260808112626.json /data/spiral_datasets/PHerc0211/20250821151803/umbilicus.json

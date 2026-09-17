@@ -1,0 +1,602 @@
+✓ Initialized. View run at 
+https://modal.com/apps/bnleft/main/ap-WnXzA8lbOdt9guZR4QtMhb
+Building image im-tOktqZJMccT6cS5CsGeyCT
+
+=> Step 0: FROM ghcr.io/scrollprize/villa/volume-cartographer:main
+Getting image source signatures
+Copying blob sha256:b40150c1c2717d324cdb17278c8efdfa4dfcd2ffe083e976f0bcedf31115f081
+Copying blob sha256:402b12c645eb28c0828798e3e3e5162a3c01d9d2ba9320e837a105bfb6dcdf13
+Copying blob sha256:f0b7333c0074e9e017679a8f51912cd93d5f9fe5d519ebb11f1b140061b9bb75
+Copying blob sha256:df38145d562cd31feef9a3fbfbcc54438cbf8e1e592a45d97630df4a0cf67761
+Copying blob sha256:087d19347a9fd74f4746f61709982853b2a941b3ac877bd8210325a929cb3553
+Copying blob sha256:c5dc5ad85c93d79f7025a50ffea45ceb6d00a83ea581f29814f545c9f3870235
+Copying blob sha256:37472161d066211e58f0754236611a226e6265f2d762e11f6b61ff930d395871
+Copying blob sha256:3ae17e4fe3df2f1075469a0f8e5bfc4b418aaa92e3918d209bf323e3f1dc5bc1
+Copying blob sha256:6d5301b2a881ea70c4c6bf92aa834199324ad9a4f20ca3e25214837679f924e0
+Copying blob sha256:11193e51b68a6eddb942ccf5a69ba02616b0521d9d63e3c15e4317d1d9ed3210
+Copying blob sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1
+Copying blob sha256:5ca5a81dfecac75c39fbf79a0743b1b5151fc39447bf472c4d14a431c0a96df3
+Copying blob sha256:c01640e808aff8db2525e6b91814d2042a4aabb9c33c138997332c25600a7697
+Copying blob sha256:45e9e208b49ede588cade03a11b046a5b01bd703252b5bcd773f2daee76c6bc7
+Copying blob sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1
+Copying blob sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1
+Copying blob sha256:c2a308186381f6f092a41bd585773a1305b6481e8bd1696aa449ad83c0c6d795
+Copying blob sha256:5d75e354ad768344fffe099d0b2190d714c5b2ff58085fabd269ae78011bd126
+Copying blob sha256:5ba0c04bf56ea4250e370d84f95d736df63bba4a5bf01c3bf3207fdc074fc58e
+Copying blob sha256:4dfc1fa1a8160f27823e90addb26bd4550dc3325625faf580e4af768ad156edc
+Copying blob sha256:7efc66d4eed850611fa420edc44c7d0a8ac3af28c476b898c1b96bc1d9f34ab5
+Copying blob sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1
+Copying blob sha256:7f8bc93b6be22820a033263321afb7ce9dc681027872ff5c1cdd51dd9b049d22
+Copying blob sha256:c5c6c3b935b48380fd34abfd3d61d07d31c7f7aa7ef5f7ce6fa580375b1fae73
+Copying blob sha256:352211d3af87057ed08c86eac284487924bf32a9f40275c5c3f86a1aec7e927c
+Copying blob sha256:999521faddaf23e6d7191e15185a1c1fcfc1edea3ddf6e9197b8d135e27ef2bc
+Copying blob sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1
+Copying blob sha256:a98c9d15279669c5da90617363971074d85f7d6d85955ea304451d90dca620c9
+Copying blob sha256:1ae87b4009e6a119abc22d54f9933c8817757520cd7a1a673392e1372e01cf6e
+Copying blob sha256:b74592525e386f36618e5bcb94b54865b3cff7be30a09ca57ad236eeac5530fb
+Copying blob sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1
+Copying blob sha256:dc7ad8b343162b8637faca659c406ba563a25ccbe93e2502da2a3cda756f060d
+Copying blob sha256:88c01e356fc17e7505794d6f5416071ec7edd599cfc76361c0cf596db1fb0fc4
+Copying blob sha256:135da0ce139b657f96b72c851c4c046668222a114acd91777337c3c2251bbf58
+Copying blob sha256:eef2a5fb4111a1a8983529116a479246e3f0c82155bd95509ced01cb435a4118
+Copying blob sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1
+Copying blob sha256:15bde56842f56e2f9c86b36a6509130e1a9c7e073babd54ae7496b4356680387
+Copying blob sha256:3151f59a58b77820662ea1f2b003d1a4a2f6edc79f40a7ceb2ffe9b06ec38baa
+Copying blob sha256:cca4c03d14cde6e9265fe0c95c55fa8ecdfd18dd13696f239d2e71cc956997b9
+Copying blob sha256:e82834301ea05d892cbf46d43feb8ff4d540ab295a310edc76eab754f01ce253
+Copying blob sha256:aa443c90d4c81566bf50e4e1a1b2af0f170c1ca50941287a202d29ebe19f8dab
+Copying config sha256:a73c32e37dff24a11c7642c138318d1633e459f64d0da1d005226a8257da3bc1
+Writing manifest to image destination
+Unpacking OCI image
+   • unpacking rootfs ...     
+   • ... done                 
+   • unpacked image rootfs: /tmp/task-data/ta-01M2RA5K3ZX8EY0THTCFGXWG1B/registry-unpackQ7Hy1x
+Copied image in 5.50s
+
+=> Step 1: COPY /python/. /usr/local
+
+=> Step 2: ENV TERMINFO_DIRS=/etc/terminfo:/lib/terminfo:/usr/share/terminfo:/usr/lib/terminfo
+Saving image...
+Image saved, took 8.73s
+
+Built image im-tOktqZJMccT6cS5CsGeyCT in 85.33s
+
+
+Building image im-U5HZk1mZutq6Hi3oswtpia
+
+=> Step 0: FROM base
+
+=> Step 1: RUN apt-get update
+Get:1 http://security.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+Get:2 http://archive.ubuntu.com/ubuntu noble InRelease [256 kB]
+Get:3 http://security.ubuntu.com/ubuntu noble-security/main amd64 Packages [1245 kB]
+Get:4 http://security.ubuntu.com/ubuntu noble-security/main amd64 Components [59.4 kB]
+Get:5 http://security.ubuntu.com/ubuntu noble-security/universe amd64 Packages [1533 kB]
+Get:6 http://security.ubuntu.com/ubuntu noble-security/universe amd64 Components [97.7 kB]
+Get:7 http://security.ubuntu.com/ubuntu noble-security/restricted amd64 Packages [1801 kB]
+Get:8 http://security.ubuntu.com/ubuntu noble-security/restricted amd64 Components [157 B]
+Get:9 http://security.ubuntu.com/ubuntu noble-security/multiverse amd64 Packages [50.0 kB]
+Get:10 http://security.ubuntu.com/ubuntu noble-security/multiverse amd64 Components [158 B]
+Get:11 http://archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+Get:12 http://archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
+Get:13 http://archive.ubuntu.com/ubuntu noble/main amd64 Packages [1808 kB]
+Get:14 http://archive.ubuntu.com/ubuntu noble/main amd64 Components [665 kB]
+Get:15 http://archive.ubuntu.com/ubuntu noble/universe amd64 Packages [19.3 MB]
+Get:16 http://archive.ubuntu.com/ubuntu noble/universe amd64 Components [5943 kB]
+Get:17 http://archive.ubuntu.com/ubuntu noble/restricted amd64 Packages [117 kB]
+Get:18 http://archive.ubuntu.com/ubuntu noble/multiverse amd64 Packages [331 kB]
+Get:19 http://archive.ubuntu.com/ubuntu noble/multiverse amd64 Components [41.9 kB]
+Get:20 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [1580 kB]
+Get:21 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 Components [242 kB]
+Get:22 http://archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [2149 kB]
+Get:23 http://archive.ubuntu.com/ubuntu noble-updates/universe amd64 Components [535 kB]
+Get:24 http://archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Packages [1960 kB]
+Get:25 http://archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Components [159 B]
+Get:26 http://archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Packages [56.2 kB]
+Get:27 http://archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Components [887 B]
+Get:28 http://archive.ubuntu.com/ubuntu noble-backports/main amd64 Packages [48.9 kB]
+Get:29 http://archive.ubuntu.com/ubuntu noble-backports/main amd64 Components [6351 B]
+Get:30 http://archive.ubuntu.com/ubuntu noble-backports/universe amd64 Packages [35.9 kB]
+Get:31 http://archive.ubuntu.com/ubuntu noble-backports/universe amd64 Components [13.6 kB]
+Get:32 http://archive.ubuntu.com/ubuntu noble-backports/restricted amd64 Components [160 B]
+Get:33 http://archive.ubuntu.com/ubuntu noble-backports/multiverse amd64 Packages [671 B]
+Get:34 http://archive.ubuntu.com/ubuntu noble-backports/multiverse amd64 Components [161 B]
+Fetched 40.3 MB in 3s (12.3 MB/s)
+Reading package lists...
+
+=> Step 2: RUN apt-get install -y aria2 rclone git curl
+Reading package lists...
+Building dependency tree...
+Reading state information...
+git is already the newest version (1:2.43.0-1ubuntu7.3).
+The following additional packages will be installed:
+  libaria2-0 libcares2 libcurl3t64-gnutls libcurl4-openssl-dev libcurl4t64
+  libssh2-1t64
+Suggested packages:
+  libcurl4-doc libidn-dev libkrb5-dev libldap2-dev librtmp-dev libssh2-1-dev
+  libssl-dev
+The following NEW packages will be installed:
+  aria2 libaria2-0 libcares2 libssh2-1t64 rclone
+The following packages will be upgraded:
+  curl libcurl3t64-gnutls libcurl4-openssl-dev libcurl4t64
+4 upgraded, 5 newly installed, 0 to remove and 146 not upgraded.
+Need to get 19.5 MB of archives.
+After this operation, 68.8 MB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu noble/main amd64 libcares2 amd64 1.27.0-1.0ubuntu1 [73.7 kB]
+Get:2 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libssh2-1t64 amd64 1.11.0-4.1ubuntu0.24.04.4 [121 kB]
+Get:3 http://archive.ubuntu.com/ubuntu noble/universe amd64 libaria2-0 amd64 1.37.0+debian-1build3 [1105 kB]
+Get:4 http://archive.ubuntu.com/ubuntu noble/universe amd64 aria2 amd64 1.37.0+debian-1build3 [387 kB]
+Get:5 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libcurl4-openssl-dev amd64 8.5.0-2ubuntu10.13 [446 kB]
+Get:6 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 curl amd64 8.5.0-2ubuntu10.13 [226 kB]
+Get:7 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libcurl4t64 amd64 8.5.0-2ubuntu10.13 [343 kB]
+Get:8 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libcurl3t64-gnutls amd64 8.5.0-2ubuntu10.13 [335 kB]
+Get:9 http://archive.ubuntu.com/ubuntu noble-updates/universe amd64 rclone amd64 1.60.1+dfsg-3ubuntu0.24.04.6 [16.5 MB]
+debconf: delaying package configuration, since apt-utils is not installed
+Fetched 19.5 MB in 2s (10.2 MB/s)
+Selecting previously unselected package libcares2:amd64.
+(Reading database ... 
+[1A(Reading database ... 5%
+[1A(Reading database ... 10%
+[1A(Reading database ... 15%
+[1A(Reading database ... 20%
+[1A(Reading database ... 25%
+[1A(Reading database ... 30%
+[1A(Reading database ... 35%
+[1A(Reading database ... 40%(Reading database ... 45%
+[1A(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%
+[1A(Reading database ... 95%(Reading database ... 100%(Reading database ... 80470 files and directories currently installed.)
+Preparing to unpack .../0-libcares2_1.27.0-1.0ubuntu1_amd64.deb ...
+Unpacking libcares2:amd64 (1.27.0-1.0ubuntu1) ...
+Selecting previously unselected package libssh2-1t64:amd64.
+Preparing to unpack .../1-libssh2-1t64_1.11.0-4.1ubuntu0.24.04.4_amd64.deb ...
+Unpacking libssh2-1t64:amd64 (1.11.0-4.1ubuntu0.24.04.4) ...
+Selecting previously unselected package libaria2-0:amd64.
+Preparing to unpack .../2-libaria2-0_1.37.0+debian-1build3_amd64.deb ...
+Unpacking libaria2-0:amd64 (1.37.0+debian-1build3) ...
+Selecting previously unselected package aria2.
+Preparing to unpack .../3-aria2_1.37.0+debian-1build3_amd64.deb ...
+Unpacking aria2 (1.37.0+debian-1build3) ...
+Preparing to unpack .../4-libcurl4-openssl-dev_8.5.0-2ubuntu10.13_amd64.deb ...
+Unpacking libcurl4-openssl-dev:amd64 (8.5.0-2ubuntu10.13) over (8.5.0-2ubuntu10.9) ...
+Preparing to unpack .../5-curl_8.5.0-2ubuntu10.13_amd64.deb ...
+Unpacking curl (8.5.0-2ubuntu10.13) over (8.5.0-2ubuntu10.9) ...
+Preparing to unpack .../6-libcurl4t64_8.5.0-2ubuntu10.13_amd64.deb ...
+Unpacking libcurl4t64:amd64 (8.5.0-2ubuntu10.13) over (8.5.0-2ubuntu10.9) ...
+Preparing to unpack .../7-libcurl3t64-gnutls_8.5.0-2ubuntu10.13_amd64.deb ...
+Unpacking libcurl3t64-gnutls:amd64 (8.5.0-2ubuntu10.13) over (8.5.0-2ubuntu10.9) ...
+Selecting previously unselected package rclone.
+Preparing to unpack .../8-rclone_1.60.1+dfsg-3ubuntu0.24.04.6_amd64.deb ...
+Unpacking rclone (1.60.1+dfsg-3ubuntu0.24.04.6) ...
+Setting up rclone (1.60.1+dfsg-3ubuntu0.24.04.6) ...
+Setting up libcurl4t64:amd64 (8.5.0-2ubuntu10.13) ...
+Setting up libcurl3t64-gnutls:amd64 (8.5.0-2ubuntu10.13) ...
+Setting up libcurl4-openssl-dev:amd64 (8.5.0-2ubuntu10.13) ...
+Setting up libcares2:amd64 (1.27.0-1.0ubuntu1) ...
+Setting up curl (8.5.0-2ubuntu10.13) ...
+Setting up libssh2-1t64:amd64 (1.11.0-4.1ubuntu0.24.04.4) ...
+Setting up libaria2-0:amd64 (1.37.0+debian-1build3) ...
+Setting up aria2 (1.37.0+debian-1build3) ...
+Processing triggers for libc-bin (2.39-0ubuntu8.7) ...
+Saving image...
+Image saved, took 2.29s
+
+Built image im-U5HZk1mZutq6Hi3oswtpia in 16.90s
+
+
+Building image im-VJnuF2nzuoRtj29qrkSaEI
+
+=> Step 0: FROM base
+
+=> Step 1: RUN curl -LsSf https://astral.sh/uv/install.sh | sh
+downloading uv 0.12.15 x86_64-unknown-linux-gnu
+installing to /root/.local/bin
+  uv
+  uvx
+everything's installed!
+
+To add $HOME/.local/bin to your PATH, either restart your shell or run:
+
+    source $HOME/.local/bin/env (sh, bash, zsh)
+    source $HOME/.local/bin/env.fish (fish)
+
+=> Step 2: RUN git clone https://github.com/ScrollPrize/villa.git /opt/villa && cd /opt/villa && git checkout 2dcfaf6a08c3bc796fde726c4fa32050c8fc90e7
+Cloning into '/opt/villa'...
+Updating files:  23% (1190/5105)
+[1AUpdating files:  24% (1226/5105)
+[1AUpdating files:  25% (1277/5105)
+[1AUpdating files:  26% (1328/5105)
+[1AUpdating files:  27% (1379/5105)
+[1AUpdating files:  28% (1430/5105)
+[1AUpdating files:  29% (1481/5105)
+[1AUpdating files:  30% (1532/5105)
+[1AUpdating files:  31% (1583/5105)
+[1AUpdating files:  32% (1634/5105)
+[1AUpdating files:  33% (1685/5105)
+[1AUpdating files:  34% (1736/5105)
+[1AUpdating files:  35% (1787/5105)
+[1AUpdating files:  36% (1838/5105)
+[1AUpdating files:  37% (1889/5105)
+[1AUpdating files:  38% (1940/5105)
+[1AUpdating files:  39% (1991/5105)
+[1AUpdating files:  40% (2042/5105)
+[1AUpdating files:  40% (2073/5105)
+[1AUpdating files:  41% (2094/5105)
+[1AUpdating files:  42% (2145/5105)
+[1AUpdating files:  43% (2196/5105)
+[1AUpdating files:  44% (2247/5105)
+[1AUpdating files:  45% (2298/5105)
+[1AUpdating files:  46% (2349/5105)
+[1AUpdating files:  47% (2400/5105)
+[1AUpdating files:  48% (2451/5105)
+[1AUpdating files:  48% (2479/5105)
+[1AUpdating files:  49% (2502/5105)
+[1AUpdating files:  50% (2553/5105)
+[1AUpdating files:  51% (2604/5105)
+[1AUpdating files:  52% (2655/5105)
+[1AUpdating files:  53% (2706/5105)
+[1AUpdating files:  54% (2757/5105)
+[1AUpdating files:  55% (2808/5105)
+[1AUpdating files:  56% (2859/5105)
+[1AUpdating files:  57% (2910/5105)
+[1AUpdating files:  57% (2933/5105)
+[1AUpdating files:  58% (2961/5105)
+[1AUpdating files:  59% (3012/5105)
+[1AUpdating files:  60% (3063/5105)
+[1AUpdating files:  61% (3115/5105)
+[1AUpdating files:  62% (3166/5105)
+[1AUpdating files:  63% (3217/5105)
+[1AUpdating files:  64% (3268/5105)
+[1AUpdating files:  65% (3319/5105)
+[1AUpdating files:  66% (3370/5105)
+[1AUpdating files:  67% (3421/5105)
+[1AUpdating files:  68% (3472/5105)
+[1AUpdating files:  69% (3523/5105)
+[1AUpdating files:  70% (3574/5105)
+[1AUpdating files:  71% (3625/5105)
+[1AUpdating files:  72% (3676/5105)
+[1AUpdating files:  73% (3727/5105)
+[1AUpdating files:  74% (3778/5105)
+[1AUpdating files:  75% (3829/5105)
+[1AUpdating files:  76% (3880/5105)
+[1AUpdating files:  77% (3931/5105)
+[1AUpdating files:  78% (3982/5105)
+[1AUpdating files:  79% (4033/5105)
+[1AUpdating files:  80% (4084/5105)
+[1AUpdating files:  81% (4136/5105)
+[1AUpdating files:  82% (4187/5105)
+[1AUpdating files:  83% (4238/5105)
+[1AUpdating files:  84% (4289/5105)
+[1AUpdating files:  85% (4340/5105)
+[1AUpdating files:  86% (4391/5105)
+[1AUpdating files:  87% (4442/5105)
+[1AUpdating files:  88% (4493/5105)
+[1AUpdating files:  89% (4544/5105)
+[1AUpdating files:  90% (4595/5105)
+[1AUpdating files:  91% (4646/5105)
+[1AUpdating files:  92% (4697/5105)
+[1AUpdating files:  93% (4748/5105)
+[1AUpdating files:  94% (4799/5105)
+[1AUpdating files:  95% (4850/5105)
+[1AUpdating files:  96% (4901/5105)
+[1AUpdating files:  97% (4952/5105)
+[1AUpdating files:  98% (5003/5105)
+[1AUpdating files:  99% (5054/5105)
+[1AUpdating files: 100% (5105/5105)
+[1AUpdating files: 100% (5105/5105), done.
+Note: switching to '2dcfaf6a08c3bc796fde726c4fa32050c8fc90e7'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 2dcfaf6a0 VC3D fiber map: crossings read together as traversals, kollesis seams read from tags and links (#1815)
+Saving image...
+Image saved, took 5.65s
+
+Built image im-VJnuF2nzuoRtj29qrkSaEI in 63.44s
+
+
+Building image im-DG0qfcnRm4hArwu9xXLTsq
+
+=> Step 0: FROM base
+
+=> Step 1: ENV PATH=/root/.local/bin:/usr/local/bin:/usr/bin:/bin
+
+=> Step 2: ENV UV_LINK_MODE=copy
+Saving image...
+Image saved, took 1.96s
+
+Built image im-DG0qfcnRm4hArwu9xXLTsq in 3.31s
+
+
+Building image im-G7QTbXWB5RGvcWl5QkyZAj
+
+=> Step 0: FROM base
+
+=> Step 1: RUN cd /opt/villa/spiral-fitting && uv python install 3.14 && uv sync --frozen
+Downloading cpython-3.14.7-linux-x86_64-gnu (download) (34.3MiB)
+ Downloaded cpython-3.14.7-linux-x86_64-gnu (download)
+Installed Python 3.14.7 in 1.68s
+ + cpython-3.14.7-linux-x86_64-gnu (python3.14)
+Bytecode compiled 1059 files in 685ms
+Using CPython 3.14.7
+Creating virtual environment at: .venv
+   Building spiral @ file:///opt/villa/spiral-fitting
+Downloading botocore (14.7MiB)
+Downloading nvidia-nvjitlink-cu12 (37.4MiB)
+Downloading setuptools (1.0MiB)
+Downloading pillow (6.6MiB)
+Downloading fonttools (4.7MiB)
+Downloading pydantic-core (2.0MiB)
+Downloading networkx (2.0MiB)
+Downloading aiohttp (1.7MiB)
+Downloading nvidia-cufile-cu12 (1.1MiB)
+Downloading pygments (1.2MiB)
+Downloading torch (782.3MiB)
+Downloading nvidia-nvshmem-cu12 (132.7MiB)
+Downloading matplotlib (10.6MiB)
+Downloading kiwisolver (1.4MiB)
+Downloading vtk (133.2MiB)
+Downloading kimimaro (2.7MiB)
+Downloading numcodecs (8.7MiB)
+Downloading nvidia-cusparselt-cu12 (273.9MiB)
+Downloading nvidia-cusparse-cu12 (274.9MiB)
+Downloading nvidia-curand-cu12 (60.7MiB)
+Downloading kornia-rs (3.5MiB)
+Downloading edt (2.8MiB)
+Downloading nvidia-cusolver-cu12 (255.1MiB)
+Downloading sympy (6.0MiB)
+Downloading nvidia-cufft-cu12 (184.2MiB)
+Downloading opencv-python-headless (58.4MiB)
+Downloading nvidia-cuda-cupti-cu12 (9.8MiB)
+Downloading rustworkx (2.3MiB)
+Downloading nvidia-cuda-nvrtc-cu12 (84.0MiB)
+Downloading dijkstra3d (3.2MiB)
+Downloading nibabel (3.1MiB)
+Downloading nvidia-cublas-cu12 (566.8MiB)
+Downloading triton (179.6MiB)
+Downloading connected-components-3d (4.6MiB)
+Downloading kornia (1.1MiB)
+Downloading cuda-bindings (7.2MiB)
+Downloading tensorstore (20.6MiB)
+Downloading fill-voids (1.4MiB)
+Downloading fastremap (7.0MiB)
+Downloading nvidia-nccl-cu12 (283.0MiB)
+Downloading wandb (28.3MiB)
+Downloading nvidia-cudnn-cu12 (627.4MiB)
+Downloading scipy (33.6MiB)
+Downloading libigl (12.2MiB)
+Downloading numpy (15.9MiB)
+ Downloaded setuptools
+ Downloaded nvidia-cufile-cu12
+ Downloaded pygments
+ Downloaded kornia
+ Downloaded fill-voids
+ Downloaded kiwisolver
+ Downloaded aiohttp
+ Downloaded networkx
+ Downloaded pydantic-core
+ Downloaded rustworkx
+ Downloaded kimimaro
+ Downloaded edt
+ Downloaded dijkstra3d
+ Downloaded nibabel
+ Downloaded kornia-rs
+ Downloaded connected-components-3d
+ Downloaded fonttools
+ Downloaded sympy
+ Downloaded pillow
+   Building posix-ipc==1.3.2
+ Downloaded fastremap
+ Downloaded cuda-bindings
+ Downloaded numcodecs
+ Downloaded nvidia-cuda-cupti-cu12
+ Downloaded matplotlib
+ Downloaded libigl
+ Downloaded botocore
+ Downloaded numpy
+ Downloaded tensorstore
+      Built posix-ipc==1.3.2
+ Downloaded wandb
+ Downloaded scipy
+ Downloaded nvidia-nvjitlink-cu12
+ Downloaded opencv-python-headless
+ Downloaded nvidia-curand-cu12
+ Downloaded nvidia-cuda-nvrtc-cu12
+      Built spiral @ file:///opt/villa/spiral-fitting
+ Downloaded nvidia-nvshmem-cu12
+ Downloaded vtk
+ Downloaded triton
+ Downloaded nvidia-cufft-cu12
+ Downloaded torch
+ Downloaded nvidia-cusolver-cu12
+ Downloaded nvidia-cusparselt-cu12
+ Downloaded nvidia-cusparse-cu12
+ Downloaded nvidia-nccl-cu12
+ Downloaded nvidia-cublas-cu12
+ Downloaded nvidia-cudnn-cu12
+Prepared 120 packages in 27.63s
+Installed 120 packages in 4.64s
+Bytecode compiled 10888 files in 2.76s
+ + aiobotocore==3.9.0
+ + aiohappyeyeballs==2.7.1
+ + aiohttp==3.14.3
+ + aioitertools==0.13.0
+ + aiosignal==1.4.0
+ + annotated-types==0.8.0
+ + attrs==26.1.0
+ + botocore==1.43.56
+ + certifi==2026.7.22
+ + charset-normalizer==3.5.1
+ + click==8.4.2
+ + connected-components-3d==4.0.0
+ + contourpy==1.3.3
+ + crackle-codec==0.43.0
+ + cuda-bindings==12.9.7
+ + cuda-pathfinder==1.6.1
+ + cuda-toolkit==12.8.1
+ + cycler==0.12.1
+ + dijkstra3d==1.15.2
+ + dill==0.4.1
+ + donfig==0.8.1.post1
+ + edt==3.1.2
+ + einops==0.8.2
+ + fastremap==1.20.0
+ + filelock==3.32.3
+ + fill-voids==2.1.2
+ + fonttools==4.63.0
+ + frozenlist==1.8.0
+ + fsspec==2026.7.0
+ + google-crc32c==1.8.0
+ + idna==3.19
+ + imageio==2.37.4
+ + iniconfig==2.3.0
+ + jinja2==3.1.6
+ + jmespath==1.1.0
+ + kimimaro==5.8.4
+ + kiwisolver==1.5.0
+ + kornia==0.8.3
+ + kornia-rs==0.1.14
+ + libigl==2.6.2
+ + markupsafe==3.0.3
+ + matplotlib==3.11.1
+ + microviewer==1.21.0
+ + ml-dtypes==0.6.0
+ + mpmath==1.3.0
+ + multidict==6.7.1
+ + multiprocess==0.70.19
+ + networkx==3.6.1
+ + nibabel==5.4.2
+ + numcodecs==0.16.5
+ + numpy==2.5.2
+ + nvidia-cublas-cu12==12.8.4.1
+ + nvidia-cuda-cupti-cu12==12.8.90
+ + nvidia-cuda-nvrtc-cu12==12.8.93
+ + nvidia-cuda-runtime-cu12==12.8.90
+ + nvidia-cudnn-cu12==9.19.0.56
+ + nvidia-cufft-cu12==11.3.3.83
+ + nvidia-cufile-cu12==1.13.1.3
+ + nvidia-curand-cu12==10.3.9.90
+ + nvidia-cusolver-cu12==11.7.3.90
+ + nvidia-cusparse-cu12==12.5.8.93
+ + nvidia-cusparselt-cu12==0.7.1
+ + nvidia-nccl-cu12==2.28.9
+ + nvidia-nvjitlink-cu12==12.8.93
+ + nvidia-nvshmem-cu12==3.4.5
+ + nvidia-nvtx-cu12==12.8.90
+ + opencv-python-headless==5.0.0.93
+ + opentelemetry-api==1.44.0
+ + opt-einsum==3.4.0
+ + osteoid==0.6.0
+ + packaging==26.3
+ + pathos==0.3.5
+ + pillow==12.3.0
+ + platformdirs==4.11.3
+ + pluggy==1.6.0
+ + posix-ipc==1.3.2
+ + pox==0.3.7
+ + ppft==1.7.8
+ + propcache==0.5.2
+ + protobuf==7.36.0
+ + psutil==7.2.2
+ + pybind11==3.1.0
+ + pydantic==2.13.4
+ + pydantic-core==2.46.4
+ + pygments==2.21.0
+ + pykdtree==1.4.3
+ + pynrrd==1.1.3
+ + pyparsing==3.3.2
+ + pyro-api==0.1.2
+ + pyro-ppl==1.9.1
+ + pytest==9.1.1
+ + python-dateutil==2.9.0.post0
+ + pyyaml==6.0.3
+ + requests==2.34.2
+ + rustworkx==0.18.1
+ + s3fs==2026.7.0
+ + scipy==1.18.0
+ + sentry-sdk==2.68.0
+ + setuptools==81.0.0
+ + six==1.17.0
+ + spiral==0.1.0 (from file:///opt/villa/spiral-fitting)
+ + sympy==1.14.0
+ + tensorstore==0.1.85
+ + threadpoolctl==3.6.0
+ + tifffile==2026.8.16
+ + torch==2.11.0+cu128
+ + torchdiffeq==0.2.5
+ + tqdm==4.70.0
+ + trimesh==5.0.0
+ + triton==3.6.0
+ + typing-extensions==4.16.0
+ + typing-inspection==0.4.4
+ + urllib3==2.7.0
+ + vc-delta3d==0.1.0
+ + vtk==9.7.0
+ + wandb==0.28.2
+ + wrapt==2.3.0
+ + xs3d==1.13.0
+ + yarl==1.24.5
+ + zarr==3.3.0
+
+=> Step 2: RUN cd /opt/villa/spiral-fitting && uv pip install 'scikit-image>=0.21'
+Resolved 9 packages in 94ms
+Downloading scikit-image (13.1MiB)
+ Downloaded scikit-image
+Prepared 2 packages in 105ms
+Installed 2 packages in 93ms
+Bytecode compiled 191 files in 151ms
+ + lazy-loader==0.5
+ + scikit-image==0.26.0
+Saving image...
+Image saved, took 15.61s
+
+Built image im-G7QTbXWB5RGvcWl5QkyZAj in 57.14s
+
+
+✓ Created objects.
+├── 🔨 Created mount 
+│   /Users/bryantle/Documents/bnleft/first-light-pherc0211/modal_app.py
+├── 🔨 Created function probe.
+├── 🔨 Created function fetch_dataset.
+├── 🔨 Created function render_slices.
+├── 🔨 Created function pack_pools.
+└── 🔨 Created function spiral_fit.
+
+$ python --version; which python
+Python 3.14.2
+/usr/local/bin/python
+
+$ cd /opt/villa && git rev-parse HEAD
+2dcfaf6a08c3bc796fde726c4fa32050c8fc90e7
+
+$ cd /opt/villa/spiral-fitting && uv run python -c "import torch, zarr, vc_spiral; print('torch', torch.__version__, 'cuda build', torch.version.cuda, 'zarr', zarr.__version__)"
+torch 2.11.0+cu128 cuda build 12.8 zarr 3.3.0
+/usr/local/bin/vc_render_tifxyz
+/usr/local/bin/vc_tifxyz2obj
+/usr/local/bin/vc_obj2tifxyz
+MISSING: vc_obj_uv_lift
+/usr/local/bin/vc_tifxyz_trim
+/usr/local/bin/flatboi
+/usr/local/bin/aws
+/usr/bin/aria2c
+
+$ df -h /data && ls -la /data
+Filesystem      Size  Used Avail Use% Mounted on
+none            382G     0  382G   0% /__modal/volumes
+Stopping app - local entrypoint completed.
+lrwxrwxrwx 1 root root 42 Sep 17 18:34 /data -> /__modal/volumes/vo-LHT8V9wmg3O9TXLwnegdFi
+✓ App completed. View run at 
+https://modal.com/apps/bnleft/main/ap-WnXzA8lbOdt9guZR4QtMhb
+exit=0
