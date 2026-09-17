@@ -1,28 +1,32 @@
 ✓ Initialized. View run at 
-https://modal.com/apps/bnleft/main/ap-Bo3b2kMrEfBh1xZDz9NtPN
+https://modal.com/apps/bnleft/main/ap-m9VzYydF9CUjMVAy5vqtXz
 ✓ Created objects.
 ├── 🔨 Created mount 
 │   /Users/bryantle/Documents/bnleft/first-light-pherc0211/modal_app.py
 ├── 🔨 Created function spiral_fit.
-├── 🔨 Created function pack_pools.
 ├── 🔨 Created function probe.
 ├── 🔨 Created function render_slices.
-├── 🔨 Created function render_and_infer.
 ├── 🔨 Created function fetch_dataset.
+├── 🔨 Created function pack_pools.
+├── 🔨 Created function probe_vc.
+├── 🔨 Created function render_and_infer.
 ├── 🔨 Created function probe_ink.
 ├── 🔨 Created function control.
-├── 🔨 Created function probe_vc.
 ├── 🔨 Created function pack_pools_fast.
 └── 🔨 Created function overlay_fits.
 
-$ cd /opt/villa/spiral-fitting && uv run python /opt/villa/spiral-fitting/_overlay_fits.py '{"CW": "/data/out/CW_z10000-11000_s1500/2026-09-17_PHerc0211_slice-10000-11000_0-patch/meshes/fitted", "ACW": "/data/out/ACW_z10000-11000_s1500/2026-09-17_PHerc0211_slice-10000-11000_0-patch/meshes/fitted"}' /data/spiral_datasets/PHerc0211/20250821151803/umbilicus.json /data/renders 10250,10500,10750 300 2.0
+$ cd /opt/villa/spiral-fitting && uv run python /opt/villa/spiral-fitting/_overlay_fits.py '{"CW": "/data/out/CW_z10000-11000_s1500/2026-09-17_PHerc0211_slice-10000-11000_0-patch/meshes/fitted", "ACW": "/data/out/ACW_z10000-11000_s1500/2026-09-17_PHerc0211_slice-10000-11000_0-patch/meshes/fitted"}' /data/spiral_datasets/PHerc0211/20250821151803/umbilicus.json /data/renders 10500 250 10.0 5.0
 CW 120 windings; 2123955 valid vertices
 ACW 120 windings; 2124424 valid vertices
-saved /data/renders/overlay_z10250_CW_vs_ACW.png
 saved /data/renders/overlay_z10500_CW_vs_ACW.png
-saved /data/renders/overlay_z10750_CW_vs_ACW.png
 Task was destroyed but it is pending!
-task: <Task pending name='Task-276' coro=<_wait_for_close() running at /opt/villa/spiral-fitting/.venv/lib/python3.14/site-packages/aiohttp/connector.py:121>>
+task: <Task pending name='Task-104' coro=<_wait_for_close() running at /opt/villa/spiral-fitting/.venv/lib/python3.14/site-packages/aiohttp/connector.py:121>>
+Task was destroyed but it is pending!
+task: <Task pending name='Task-105' coro=<_wait_for_close() running at /opt/villa/spiral-fitting/.venv/lib/python3.14/site-packages/aiohttp/connector.py:121>>
+Task was destroyed but it is pending!
+task: <Task pending name='Task-106' coro=<_wait_for_close() running at /opt/villa/spiral-fitting/.venv/lib/python3.14/site-packages/aiohttp/connector.py:121>>
+Task was destroyed but it is pending!
+task: <Task pending name='Task-107' coro=<_wait_for_close() running at /opt/villa/spiral-fitting/.venv/lib/python3.14/site-packages/aiohttp/connector.py:121>>
 Traceback (most recent call last):
   File "/root/.local/share/uv/python/cpython-3.14.7-linux-x86_64-gnu/lib/python3.14/weakref.py", line 566, in _exitfunc
     f()
@@ -66,5 +70,4 @@ Traceback (most recent call last):
 RuntimeError: loop <_UnixSelectorEventLoop running=True closed=False debug=False> is not the running loop
 Stopping app - local entrypoint completed.
 ✓ App completed. View run at 
-https://modal.com/apps/bnleft/main/ap-Bo3b2kMrEfBh1xZDz9NtPN
-exit=0
+https://modal.com/apps/bnleft/main/ap-m9VzYydF9CUjMVAy5vqtXz

@@ -558,7 +558,7 @@ from PIL import Image
 warnings.filterwarnings("ignore")
 VOLUME = "vesuvius-challenge-open-data/PHerc0211/volumes/20250821151803-9.362um-1.2m-113keV-masked.zarr"
 runs = json.loads(sys.argv[1]); umb_path, out_dir = sys.argv[2], sys.argv[3]
-zs = [int(z) for z in sys.argv[4].split(",")]; crop = int(sys.argv[5]); tol = float(sys.argv[6])
+zs = [int(z) for z in sys.argv[4].split(",")]; crop = int(sys.argv[5]); tol = float(sys.argv[6]); msz = float(sys.argv[7]) if len(sys.argv) > 7 else 6.0
 LEVEL, SCALE = "1", 2
 pts = sorted(json.load(open(umb_path))["control_points"], key=lambda p: p["z"])
 def umb(z):
@@ -592,7 +592,7 @@ for z in zs:
         for w, x, y, zz in ms:
             sel = np.abs(zz - z) < tol
             if sel.any():
-                ax.scatter(x[sel]/SCALE, y[sel]/SCALE, s=1.2, c=[plt.cm.turbo((w-10)/120)], alpha=0.9, linewidths=0); n += int(sel.sum())
+                ax.scatter(x[sel]/SCALE, y[sel]/SCALE, s=msz, c=[plt.cm.turbo((w-10)/120)], alpha=1.0, linewidths=0); n += int(sel.sum())
         ax.plot(cx, cy, "r+", ms=20, mew=2)
         ax.set_xlim(x0, x1); ax.set_ylim(y1, y0)
         ax.set_title(f"{name}: fitted sheets within |dz|<{tol:g} vx of z={z}  ({n} vertices)  colour = winding index", fontsize=10)
@@ -603,7 +603,7 @@ for z in zs:
 
 
 @app.function(image=image, volumes={str(DATA): vol}, timeout=HOURS, cpu=4, memory=16384)
-def overlay_fits(run_tags: str, zs: str = "10250,10500,10750", crop: int = 300, tol: float = 2.0) -> list[str]:
+def overlay_fits(run_tags: str, zs: str = "10250,10500,10750", crop: int = 300, tol: float = 2.0, msz: float = 6.0) -> list[str]:
     """Overlay fitted meshes from one or more runs on CT slices, side by side.
     This is how the winding sense is actually decided (villa#1621: the
     satisfaction metric is periodic in the winding and cannot tell CW from ACW)."""
@@ -615,6 +615,6 @@ def overlay_fits(run_tags: str, zs: str = "10250,10500,10750", crop: int = 300, 
     script = VILLA / "spiral-fitting" / "_overlay_fits.py"
     script.write_text(OVERLAY_SCRIPT)
     out = DATA / "renders"
-    sh(f"cd {VILLA}/spiral-fitting && uv run python {script} '{json.dumps(runs)}' {DS}/umbilicus.json {out} {zs} {crop} {tol}")
+    sh(f"cd {VILLA}/spiral-fitting && uv run python {script} '{json.dumps(runs)}' {DS}/umbilicus.json {out} {zs} {crop} {tol} {msz}")
     vol.commit()
     return sorted(str(p) for p in out.glob("overlay_*.png"))
