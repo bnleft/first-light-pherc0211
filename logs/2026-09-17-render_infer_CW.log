@@ -19,3 +19,287 @@ https://modal.com/apps/bnleft/main/ap-V9avOyUeFACfahMVe3NYNR
 scoped 56 windings into /data/out/CW_z10000-11000_s30000/2026-09-17_PHerc0211_slice-10000-11000_0-patch/meshes/fitted_scoped_w010-065
 
 $ cd /opt/villa/spiral-fitting && uv run python render_ink.py /data/out/CW_z10000-11000_s30000/2026-09-17_PHerc0211_slice-10000-11000_0-patch/meshes/fitted_scoped_w010-065 --volume /data/volume-cache/PHerc0211.zarr --remote-url s3://vesuvius-challenge-open-data/PHerc0211/volumes/20250821151803-9.362um-1.2m-113keV-masked.zarr --group-idx 1 --scale 0.25 --num-slices 5 --no-strips --full-scroll --lasagna-device cuda 2>&1 | tee /data/ink/CW_z10000-11000_s30000/fitted_scoped_w010-065/render_ink.log
+[tifxyz_io] loaded w010-065: 66x9673, 477469/638418 valid (74.8%) step_h=25.134 step_w=27.570 step_diag=26.514 step_avg=26.438
+data: flatten-only (no volume input)
+model: ModelConfig(mesh_step=100, winding_step=25, subsample_mesh=4, subsample_winding=4, depth=3, mesh_h=32, mesh_w=32, init_mode='cylinder_seed', z_center=0.0, pyramid_d=True, model_input=None, model_output=None)
+opt: OptConfig(device='cuda', snapshot_interval=1000, normal_mask_zero=False)
+[fit] model-init=flatten solver=forward source=/data/out/CW_z10000-11000_s30000/2026-09-17_PHerc0211_slice-10000-11000_0-patch/meshes/fitted_scoped_w010-065/concat/w010-065 shape=(66, 9673, 3) valid=477469/638418 model_shape=66x9673 source_step=20 output_step=20 measured_source_step=26.4364 initial_uv_rescale=1 flatten_correction_scales=14
+initial forward flatten (inversion skipped): map_shape=(66, 9673, 2) point_valid=477469/638418 quad_valid=466804/628680
+[optimizer] corr_points=False active_corr_terms=[]
+[optimizer] stage0: params=['map_flatten_ms'] steps=4500 lr=0.01 min_scaledown=0
+[optimizer] stage0: snap_surf_map_weight=0 snap_surf_map_offset=n/a snap_surf_map_offset_mode=n/a
+[optimizer] stage0: flatten_edge_step_global_scale=100
+[optimizer] stage0: flatten_diagnostics=0
+[optimizer] stage0: compile_flatten=1 combined=1
+[optimizer] stage0: forward_needs=xyz_lr,data,params+flatten prefetch_grad_channels=[] prefetch_nograd_channels=[]
+[optimizer] stage0: flatten_max_update=0.1 (per-scale cap doubles at each coarser level)
+[optimizer] stage0: fused_flatten_adam_clamp=1 (Triton CUDA with PyTorch fallback)
+[optimizer] stage0: flatten_renorm_interval=500
+[optimizer] progress columns
+  col      : meaning                          | col      : meaning                          | col      : meaning
+  step     : stage step                       | loss     : total loss                       | it/s     : optimizer it/s
+  f_sdir   : flatten_sdir                     | f_sdirW  : weighted flatten_sdir            | f_estep  : physical edge step loss
+  f_estpW  : weighted physical edge step loss | f_avg    : flatten_avg_offset               | f_avgW   : weighted flatten_avg_offset
+  f_orient : flatten_orient                   | f_oriW   : weighted flatten_orient          | f_step   : flatten current avg grid step
+              step     loss  it/s f_sdir f_sdirW f_estep f_estpW  f_avg f_avgW f_orient f_oriW f_step
+     stage0 0/4500   2.3018       1.8809  1.8809  0.4209  0.4209 0.0000 0.0000   0.0000 0.0000 20.000
+     stage0 1/4500   2.3018   0.1 1.8809  1.8809  0.4209  0.4209 0.0000 0.0000   0.0000 0.0000 20.000
+   stage0 100/4500   0.5222 245.5 0.3872  0.3872  0.1339  0.1339 0.0000 0.0000  5.0e-04 0.0010 19.996
+   stage0 200/4500   0.2675 240.5 0.1933  0.1933  0.0740  0.0740 0.0000 0.0000  1.0e-04 2.0e-04 19.996
+   stage0 300/4500   0.1729 246.9 0.1173  0.1173  0.0525  0.0525 0.0000 0.0000   0.0015 0.0031 20.001
+   stage0 400/4500   0.1293 256.5 0.0830  0.0830  0.0464  0.0464 0.0000 0.0000   0.0000 0.0000 20.006
+[optimizer] stage0: flatten renorm step=500 avg_step=20.0086 target=20 uv_scale=1.00043
+   stage0 500/4500   0.1079 257.5 0.0661  0.0661  0.0418  0.0418 0.0000 0.0000   0.0000 0.0000 20.000
+   stage0 600/4500   0.0866 261.5 0.0519  0.0519  0.0346  0.0346 0.0000 0.0000   0.0000 0.0000 20.011
+   stage0 700/4500   0.0853 253.2 0.0466  0.0466  0.0384  0.0384 0.0000 0.0000  2.0e-04 4.0e-04 20.015
+   stage0 800/4500   0.0825 246.2 0.0444  0.0444  0.0382  0.0382 0.0000 0.0000   0.0000 0.0000 20.015
+   stage0 900/4500   0.0801 238.2 0.0430  0.0430  0.0371  0.0371 0.0000 0.0000   0.0000 0.0000 20.015
+[optimizer] stage0: flatten renorm step=1000 avg_step=20.0152 target=20 uv_scale=1.00076
+  stage0 1000/4500   0.0769 244.4 0.0413  0.0413  0.0356  0.0356 0.0000 0.0000   0.0000 0.0000 20.000
+  stage0 1100/4500   0.0724  70.8 0.0407  0.0407  0.0304  0.0304 0.0000 0.0000  6.0e-04 0.0012 20.013
+  stage0 1200/4500   0.0706 251.1 0.0380  0.0380  0.0319  0.0319 0.0000 0.0000  4.0e-04 7.0e-04 20.015
+  stage0 1300/4500   0.0690 252.5 0.0374  0.0374  0.0315  0.0315 0.0000 0.0000   0.0000 0.0000 20.015
+  stage0 1400/4500   0.0682 252.6 0.0372  0.0372  0.0309  0.0309 0.0000 0.0000   0.0000 0.0000 20.014
+[optimizer] stage0: flatten renorm step=1500 avg_step=20.0145 target=20 uv_scale=1.00073
+  stage0 1500/4500   0.0672 251.7 0.0362  0.0362  0.0310  0.0310 0.0000 0.0000   0.0000 0.0000 20.000
+  stage0 1600/4500   0.0644 249.3 0.0371  0.0371  0.0262  0.0262 0.0000 0.0000  6.0e-04 0.0011 20.012
+  stage0 1700/4500   0.0622 256.1 0.0344  0.0344  0.0278  0.0278 0.0000 0.0000   0.0000 0.0000 20.013
+  stage0 1800/4500   0.0617 250.7 0.0339  0.0339  0.0278  0.0278 0.0000 0.0000   0.0000 0.0000 20.014
+              step     loss  it/s f_sdir f_sdirW f_estep f_estpW  f_avg f_avgW f_orient f_oriW f_step
+  stage0 1900/4500   0.0615 248.6 0.0341  0.0341  0.0274  0.0274 0.0000 0.0000   0.0000 0.0000 20.014
+[optimizer] stage0: flatten renorm step=2000 avg_step=20.0135 target=20 uv_scale=1.00067
+  stage0 2000/4500   0.0609 242.4 0.0335  0.0335  0.0273  0.0273 0.0000 0.0000   0.0000 0.0000 20.000
+  stage0 2100/4500   0.0589  71.4 0.0346  0.0346  0.0243  0.0243 0.0000 0.0000   0.0000 0.0000 20.012
+  stage0 2200/4500   0.0566 247.3 0.0329  0.0329  0.0237  0.0237 0.0000 0.0000   0.0000 0.0000 20.012
+  stage0 2300/4500   0.0581 257.6 0.0320  0.0320  0.0247  0.0247 0.0000 0.0000  7.0e-04 0.0014 20.012
+  stage0 2400/4500   0.0558 259.6 0.0313  0.0313  0.0245  0.0245 0.0000 0.0000   0.0000 0.0000 20.012
+[optimizer] stage0: flatten renorm step=2500 avg_step=20.0123 target=20 uv_scale=1.00061
+  stage0 2500/4500   0.0553 247.8 0.0311  0.0311  0.0242  0.0242 0.0000 0.0000   0.0000 0.0000 20.000
+  stage0 2600/4500   0.0548 257.7 0.0330  0.0330  0.0217  0.0217 0.0000 0.0000   0.0000 1.0e-04 20.011
+  stage0 2700/4500   0.0533 236.5 0.0310  0.0310  0.0223  0.0223 0.0000 0.0000   0.0000 0.0000 20.011
+  stage0 2800/4500   0.0529 258.2 0.0306  0.0306  0.0223  0.0223 0.0000 0.0000   0.0000 0.0000 20.011
+  stage0 2900/4500   0.0528 258.8 0.0307  0.0307  0.0221  0.0221 0.0000 0.0000   0.0000 0.0000 20.011
+[optimizer] stage0: flatten renorm step=3000 avg_step=20.0114 target=20 uv_scale=1.00057
+  stage0 3000/4500   0.0520 254.3 0.0300  0.0300  0.0220  0.0220 0.0000 0.0000   0.0000 0.0000 20.000
+  stage0 3100/4500   0.0517  66.4 0.0320  0.0320  0.0198  0.0198 0.0000 0.0000   0.0000 0.0000 20.010
+  stage0 3200/4500   0.0502 242.5 0.0299  0.0299  0.0203  0.0203 0.0000 0.0000   0.0000 0.0000 20.010
+  stage0 3300/4500   0.0492 234.6 0.0295  0.0295  0.0197  0.0197 0.0000 0.0000   0.0000 0.0000 20.010
+  stage0 3400/4500   0.0495 239.9 0.0290  0.0290  0.0204  0.0204 0.0000 0.0000   0.0000 0.0000 20.011
+[optimizer] stage0: flatten renorm step=3500 avg_step=20.0105 target=20 uv_scale=1.00053
+  stage0 3500/4500   0.0491 254.4 0.0288  0.0288  0.0202  0.0202 0.0000 0.0000   0.0000 0.0000 20.000
+  stage0 3600/4500   0.0496 243.7 0.0316  0.0316  0.0180  0.0180 0.0000 0.0000   0.0000 0.0000 20.009
+  stage0 3700/4500   0.0480 254.2 0.0292  0.0292  0.0188  0.0188 0.0000 0.0000   0.0000 0.0000 20.010
+  stage0 3800/4500   0.0477 241.3 0.0285  0.0285  0.0192  0.0192 0.0000 0.0000   0.0000 0.0000 20.010
+              step     loss  it/s f_sdir f_sdirW f_estep f_estpW  f_avg f_avgW f_orient f_oriW f_step
+  stage0 3900/4500   0.0473 250.0 0.0284  0.0284  0.0189  0.0189 0.0000 0.0000   0.0000 0.0000 20.010
+[optimizer] stage0: flatten renorm step=4000 avg_step=20.01 target=20 uv_scale=1.0005
+  stage0 4000/4500   0.0472 246.3 0.0281  0.0281  0.0191  0.0191 0.0000 0.0000   0.0000 0.0000 20.000
+  stage0 4100/4500   0.0473  68.7 0.0302  0.0302  0.0171  0.0171 0.0000 0.0000   0.0000 0.0000 20.009
+  stage0 4200/4500   0.0455 253.4 0.0286  0.0286  0.0169  0.0169 0.0000 0.0000   0.0000 0.0000 20.008
+  stage0 4300/4500   0.0465 247.8 0.0284  0.0284  0.0181  0.0181 0.0000 0.0000   0.0000 0.0000 20.009
+  stage0 4400/4500   0.0543 262.8 0.0285  0.0285  0.0181  0.0181 0.0000 0.0000   0.0038 0.0077 20.009
+[optimizer] stage0: flatten renorm step=4500 avg_step=20.0095 target=20 uv_scale=1.00047
+  stage0 4500/4500   0.0462 257.0 0.0282  0.0282  0.0180  0.0180 0.0000 0.0000   0.0000 0.0000 20.000
+[optimizer] stage0 'flatten' complete in 51.05s
+[optimizer] stage1: params=['map_flatten_ms'] steps=1000 lr=0.001 min_scaledown=0
+[optimizer] stage1: snap_surf_map_weight=0 snap_surf_map_offset=n/a snap_surf_map_offset_mode=n/a
+[optimizer] stage1: flatten_edge_step_global_scale=100
+[optimizer] stage1: flatten_diagnostics=0
+[optimizer] stage1: compile_flatten=1 combined=1
+[optimizer] stage1: forward_needs=xyz_lr,data,params+flatten prefetch_grad_channels=[] prefetch_nograd_channels=[]
+[optimizer] stage1: flatten_max_update=0.1 (per-scale cap doubles at each coarser level)
+[optimizer] stage1: fused_flatten_adam_clamp=1 (Triton CUDA with PyTorch fallback)
+[optimizer] progress columns
+  col      : meaning                          | col      : meaning                          | col      : meaning
+  step     : stage step                       | loss     : total loss                       | it/s     : optimizer it/s
+  f_sdir   : flatten_sdir                     | f_sdirW  : weighted flatten_sdir            | f_estep  : physical edge step loss
+  f_estpW  : weighted physical edge step loss | f_avg    : flatten_avg_offset               | f_avgW   : weighted flatten_avg_offset
+  f_orient : flatten_orient                   | f_oriW   : weighted flatten_orient          | f_step   : flatten current avg grid step
+              step     loss  it/s f_sdir f_sdirW f_estep f_estpW  f_avg f_avgW f_orient f_oriW f_step
+     stage1 0/1000   0.0392       0.0282  0.0282  0.0110  0.0110 0.0000 0.0000   0.0000 0.0000 20.000
+     stage1 1/1000   0.0392 124.6 0.0282  0.0282  0.0110  0.0110 0.0000 0.0000   0.0000 0.0000 20.000
+   stage1 100/1000   0.0419 221.2 0.0265  0.0265  0.0153  0.0153 0.0000 0.0000   0.0000 0.0000 20.008
+   stage1 200/1000   0.0439 237.2 0.0263  0.0263  0.0176  0.0176 0.0000 0.0000   0.0000 0.0000 20.009
+   stage1 300/1000   0.0439 222.9 0.0262  0.0262  0.0177  0.0177 0.0000 0.0000   0.0000 0.0000 20.009
+   stage1 400/1000   0.0436 225.7 0.0261  0.0261  0.0175  0.0175 0.0000 0.0000   0.0000 0.0000 20.009
+   stage1 500/1000   0.0433 228.7 0.0260  0.0260  0.0174  0.0174 0.0000 0.0000   0.0000 0.0000 20.009
+   stage1 600/1000   0.0433 228.2 0.0259  0.0259  0.0175  0.0175 0.0000 0.0000   0.0000 0.0000 20.009
+   stage1 700/1000   0.0431 243.1 0.0258  0.0258  0.0173  0.0173 0.0000 0.0000   0.0000 0.0000 20.009
+   stage1 800/1000   0.0430 231.7 0.0257  0.0257  0.0173  0.0173 0.0000 0.0000   0.0000 0.0000 20.009
+   stage1 900/1000   0.0429 262.1 0.0256  0.0256  0.0173  0.0173 0.0000 0.0000   0.0000 0.0000 20.009
+  stage1 1000/1000   0.0428 247.0 0.0255  0.0255  0.0173  0.0173 0.0000 0.0000   0.0000 0.0000 20.009
+[optimizer] stage1 'flatten' complete in 7.62s
+[optimizer] stage2: params=['map_flatten_ms'] steps=1000 lr=0.0001 min_scaledown=0
+[optimizer] stage2: snap_surf_map_weight=0 snap_surf_map_offset=n/a snap_surf_map_offset_mode=n/a
+[optimizer] stage2: flatten_edge_step_global_scale=100
+[optimizer] stage2: flatten_diagnostics=0
+[optimizer] stage2: compile_flatten=1 combined=1
+[optimizer] stage2: forward_needs=xyz_lr,data,params+flatten prefetch_grad_channels=[] prefetch_nograd_channels=[]
+[optimizer] stage2: flatten_max_update=0.1 (per-scale cap doubles at each coarser level)
+[optimizer] stage2: fused_flatten_adam_clamp=1 (Triton CUDA with PyTorch fallback)
+[optimizer] progress columns
+  col      : meaning                          | col      : meaning                          | col      : meaning
+  step     : stage step                       | loss     : total loss                       | it/s     : optimizer it/s
+  f_sdir   : flatten_sdir                     | f_sdirW  : weighted flatten_sdir            | f_estep  : physical edge step loss
+  f_estpW  : weighted physical edge step loss | f_avg    : flatten_avg_offset               | f_avgW   : weighted flatten_avg_offset
+  f_orient : flatten_orient                   | f_oriW   : weighted flatten_orient          | f_step   : flatten current avg grid step
+              step     loss  it/s f_sdir f_sdirW f_estep f_estpW  f_avg f_avgW f_orient f_oriW f_step
+     stage2 0/1000   0.0427       0.0255  0.0255  0.0172  0.0172 0.0000 0.0000   0.0000 0.0000 20.009
+     stage2 1/1000   0.0427 121.2 0.0255  0.0255  0.0172  0.0172 0.0000 0.0000   0.0000 0.0000 20.009
+   stage2 100/1000   0.0426 239.1 0.0254  0.0254  0.0172  0.0172 0.0000 0.0000   0.0000 0.0000 20.009
+   stage2 200/1000   0.0425 249.7 0.0254  0.0254  0.0171  0.0171 0.0000 0.0000   0.0000 0.0000 20.009
+   stage2 300/1000   0.0426 251.7 0.0253  0.0253  0.0172  0.0172 0.0000 0.0000   0.0000 0.0000 20.009
+   stage2 400/1000   0.0426 254.6 0.0253  0.0253  0.0172  0.0172 0.0000 0.0000   0.0000 0.0000 20.009
+   stage2 500/1000   0.0425 256.0 0.0253  0.0253  0.0172  0.0172 0.0000 0.0000   0.0000 0.0000 20.009
+   stage2 600/1000   0.0425 253.4 0.0253  0.0253  0.0172  0.0172 0.0000 0.0000   0.0000 0.0000 20.009
+   stage2 700/1000   0.0425 246.2 0.0253  0.0253  0.0172  0.0172 0.0000 0.0000   0.0000 0.0000 20.009
+   stage2 800/1000   0.0425 246.8 0.0252  0.0252  0.0172  0.0172 0.0000 0.0000   0.0000 0.0000 20.009
+   stage2 900/1000   0.0424 246.7 0.0252  0.0252  0.0172  0.0172 0.0000 0.0000   0.0000 0.0000 20.009
+  stage2 1000/1000   0.0424 252.5 0.0252  0.0252  0.0172  0.0172 0.0000 0.0000   0.0000 0.0000 20.009
+[optimizer] stage2 'flatten' complete in 7.35s
+[optimizer] total optimize time: 1m06.02s
+[fit] peak GPU memory: 0.28 GiB
+[fit2tifxyz] area_vx2=293721600
+trim grid 12822x116 -> 12820x114 (rect c=1+12820 r=1+114)
+wrote trimmed segment to "/data/out/CW_z10000-11000_s30000/2026-09-17_PHerc0211_slice-10000-11000_0-patch/meshes/fitted_scoped_w010-065/concat/w010-065_flat"
+
+[1A  band 1/3 (33%)  0.0 bands/s  0m21s  eta 0m43s
+[1A  band 2/3 (66%)  0.1 bands/s  0m23s  eta 0m11s
+[1A  band 3/3 (100%)  0.1 bands/s  0m23s  eta 0m00s
+Remote zarr streaming: s3://vesuvius-challenge-open-data/PHerc0211/volumes/20250821151803-9.362um-1.2m-113keV-masked.zarr
+zarr dataset size for group 1 [9708 3974 3974 ]
+Source dtype: uint8
+chunk shape [128 128 128 ]
+Voxel size: 1.0 (no metadata found; override with --voxel-size)
+Rendering: /data/out/CW_z10000-11000_s30000/2026-09-17_PHerc0211_slice-10000-11000_0-patch/meshes/fitted_scoped_w010-065/concat/w010-065_flat -> /data/out/CW_z10000-11000_s30000/2026-09-17_PHerc0211_slice-10000-11000_0-patch/meshes/fitted_scoped_w010-065/concat/w010-065_flat/ink (tif)
+ds_level=1 ds_scale=0.5 sA=1 Pg=0.25 render_scale=0.125
+rendering 32050x285 at scale 0.25 crop [32050×285 from (0,0)]
+Found 56 _spliced mesh(es) in /data/out/CW_z10000-11000_s30000/2026-09-17_PHerc0211_slice-10000-11000_0-patch/meshes/fitted_scoped_w010-065
+wrote /data/out/CW_z10000-11000_s30000/2026-09-17_PHerc0211_slice-10000-11000_0-patch/meshes/fitted_scoped_w010-065/concat/w010-065 full-scroll concat (56 windings, 9673px wide tifxyz mesh)
+Lasagna-flattening full-scroll concat via /opt/villa/lasagna/fit.py (config /opt/villa/lasagna/configs/flatten_fast_nofilter.json)
+lasagna-flattened w010-065 -> /data/out/CW_z10000-11000_s30000/2026-09-17_PHerc0211_slice-10000-11000_0-patch/meshes/fitted_scoped_w010-065/concat/w010-065_flat
+trimmed w010-065_flat to valid bbox
+[1/1] wrote 2 tiles w010-065_flat.000-001.jpg (32050px wide total, p95=159.0)
+Done. Strips in /data/out/CW_z10000-11000_s30000/2026-09-17_PHerc0211_slice-10000-11000_0-patch/meshes/fitted_scoped_w010-065/ink
+flattened tifxyz: /data/out/CW_z10000-11000_s30000/2026-09-17_PHerc0211_slice-10000-11000_0-patch/meshes/fitted_scoped_w010-065/concat/w010-065_flat
+
+$ vc_render_tifxyz --volume /data/volume-cache/PHerc0211.zarr --remote-url s3://vesuvius-challenge-open-data/PHerc0211/volumes/20250821151803-9.362um-1.2m-113keV-masked.zarr --group-idx 0 --scale 1 --segmentation /data/out/CW_z10000-11000_s30000/2026-09-17_PHerc0211_slice-10000-11000_0-patch/meshes/fitted_scoped_w010-065/concat/w010-065_flat --num-slices 28 --slice-step 1 --cache-gb 16 --zarr-output /data/ink/CW_z10000-11000_s30000/fitted_scoped_w010-065/segment.zarr 2>&1 | tee /data/ink/CW_z10000-11000_s30000/fitted_scoped_w010-065/vc_render_tifxyz.log
+
+[1A  tile-row 1/18 (5%)  263.7 chunks/s  0m07s  eta 2m09s
+[1A  tile-row 2/18 (11%)  323.9 chunks/s  0m12s  eta 1m38s
+[1A  tile-row 3/18 (16%)  337.4 chunks/s  0m17s  eta 1m29s
+[1A  tile-row 4/18 (22%)  287.7 chunks/s  0m27s  eta 1m37s
+[1A  tile-row 5/18 (27%)  259.6 chunks/s  0m38s  eta 1m40s
+[1A  tile-row 6/18 (33%)  225.2 chunks/s  0m53s  eta 1m46s
+[1A  tile-row 7/18 (38%)  211.8 chunks/s  1m06s  eta 1m44s
+[1A  tile-row 8/18 (44%)  194.7 chunks/s  1m22s  eta 1m42s
+[1A  tile-row 9/18 (50%)  187.7 chunks/s  1m36s  eta 1m36s
+[1A  tile-row 10/18 (55%)  182.5 chunks/s  1m49s  eta 1m27s
+[1A  tile-row 11/18 (61%)  182.2 chunks/s  2m01s  eta 1m17s
+[1A  tile-row 12/18 (66%)  178.6 chunks/s  2m14s  eta 1m07s
+[1A  tile-row 13/18 (72%)  184.5 chunks/s  2m21s  eta 0m54s
+[1A  tile-row 14/18 (77%)  191.2 chunks/s  2m26s  eta 0m41s
+[1A  tile-row 15/18 (83%)  203.2 chunks/s  2m27s  eta 0m29s
+[1A  tile-row 16/18 (88%)  213.3 chunks/s  2m30s  eta 0m18s
+[1A  tile-row 18/18 (100%)  237.4 chunks/s  2m31s  eta 0m00s
+Remote zarr streaming: s3://vesuvius-challenge-open-data/PHerc0211/volumes/20250821151803-9.362um-1.2m-113keV-masked.zarr
+zarr dataset size for group 0 [19416 7948 7948 ]
+Source dtype: uint8
+chunk shape [128 128 128 ]
+Voxel size: 1.0 (no metadata found; override with --voxel-size)
+Rendering: /data/out/CW_z10000-11000_s30000/2026-09-17_PHerc0211_slice-10000-11000_0-patch/meshes/fitted_scoped_w010-065/concat/w010-065_flat -> /data/ink/CW_z10000-11000_s30000/fitted_scoped_w010-065/segment.zarr (zarr)
+ds_level=0 ds_scale=1 sA=1 Pg=1 render_scale=1
+rendering 256400x2280 at scale 1 crop [256400×2280 from (0,0)]
+
+$ cd /opt/villa/vesuvius && uv run --extra models python -m vesuvius.ink_detection.inference.infer /data/ink/CW_z10000-11000_s30000/fitted_scoped_w010-065/segment.zarr /data/checkpoints/ink_9um/hybrid_3d2d-seed42/step-075000.pth /data/ink/CW_z10000-11000_s30000/fitted_scoped_w010-065/segment.tif --overlap 0.5 --blend-mode hann --batch-size 4 --direction both 2>&1 | tee /data/ink/CW_z10000-11000_s30000/fitted_scoped_w010-065/infer.log
+   Building vesuvius @ file:///opt/villa/vesuvius
+      Built vesuvius @ file:///opt/villa/vesuvius
+Uninstalled 1 package in 2ms
+Installed 2 packages in 4ms
+[2026-09-17 21:32:59,793] INFO Loaded model weights from /data/checkpoints/ink_9um/hybrid_3d2d-seed42/step-075000.pth (missing_keys=0 unexpected_keys=0)
+[2026-09-17 21:33:01,132] INFO Selected source layer indices=[6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22]
+[2026-09-17 21:33:01,132] INFO Input level=0 shape=(depth=28, height=2280, width=256400) chunks=(128, 128) patch=128 stride=64 requested_overlap=0.500 blend_mode=hann tta_mirror=False
+[2026-09-17 21:33:01,132] INFO No mask supplied; using the entire Zarr
+[2026-09-17 21:33:01,707] INFO Using occupancy scan level=3 shape=(285, 32050) scale=(8, 8) nonempty_coverage=49.845%
+[2026-09-17 21:33:02,259] INFO Selected 80162 patches for inference
+Using dimensionality (2D) from ConfigManager
+Using 2D convolutions (nn.Conv2d)
+Using 2D normalization (nn.InstanceNorm2d)
+--- Full autoconfiguration from config ---
+Patch size adjusted from (128, 128) to (128, 128) to ensure divisibility by pooling factors [32 32]
+Task 'ink' configured with shared decoder + head (1 channels)
+NetworkFromConfig initialized with final configuration:
+  model_name: ink_det
+  basic_encoder_block: BasicBlockD
+  basic_decoder_block: ConvBlock
+  bottleneck_block: BasicBlockD
+  features_per_stage: [32, 64, 128, 256, 320, 320]
+  num_stages: 6
+  n_blocks_per_stage: [1, 3, 4, 6, 6, 6]
+  n_conv_per_stage_decoder: [1, 1, 1, 1, 1]
+  kernel_sizes: [[3, 3], [3, 3], [3, 3], [3, 3], [3, 3], [3, 3]]
+  pool_op_kernel_sizes: [[1, 1], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2]]
+  conv_op: Conv2d
+  conv_bias: True
+  norm_op: InstanceNorm2d
+  norm_op_kwargs: {'affine': True, 'eps': 1e-05}
+  dropout_op: None
+  dropout_op_kwargs: None
+  nonlin: LeakyReLU
+  nonlin_kwargs: {'inplace': True, 'negative_slope': 0.01}
+  strides: [[1, 1], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2]]
+  return_skips: True
+  do_stem: True
+  stem_channels: 32
+  bottleneck_channels: None
+  stochastic_depth_p: 0.0
+  squeeze_excitation: False
+  squeeze_excitation_reduction_ratio: 0.0625
+  squeeze_excitation_type: channel
+  squeeze_excitation_add_maxpool: False
+  pool_type: conv
+  upsample_mode: transpconv
+  op_dims: 2
+  patch_size: (128, 128)
+  batch_size: 64
+  in_channels: 32
+  autoconfigure: True
+  targets: {'ink': {'activation': 'none', 'out_channels': 1, 'z_projection_mode': 'none'}}
+  target_z_projection: {}
+  separate_decoders: False
+  num_pool_per_axis: [5, 5]
+  must_be_divisible_by: [32 32]
+  guide_backbone: None
+  guide_backbone_config_path: None
+  guide_freeze: True
+  guide_patch_grid: None
+  guide_stage_keys: None
+  guide_skip_concat_projector_channels: None
+  guide_feature_gate_alpha: None
+  guide_tokenbook_tokens: None
+  guide_tokenbook_prototype_weighting: mean
+  guide_tokenbook_weight_mlp_hidden: None
+  guide_compile_policy: off
+  guide_fusion_stage: None
+[2026-09-17 21:39:58,537] INFO Selected source layer indices=[22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6]
+[2026-09-17 21:39:58,538] INFO Input level=0 shape=(depth=28, height=2280, width=256400) chunks=(128, 128) patch=128 stride=64 requested_overlap=0.500 blend_mode=hann tta_mirror=False
+[2026-09-17 21:39:58,538] INFO No mask supplied; using the entire Zarr
+[2026-09-17 21:39:59,042] INFO Using occupancy scan level=3 shape=(285, 32050) scale=(8, 8) nonempty_coverage=49.845%
+[2026-09-17 21:39:59,356] INFO Selected 80162 patches for inference
+
+$ ls -la /data/ink/CW_z10000-11000_s30000/fitted_scoped_w010-065
+Stopping app - local entrypoint completed.
+total 353571
+drwxr-xr-x 1 root root        96 Sep 17 21:46 .
+drwxr-xr-x 1 root root        22 Sep 17 21:27 ..
+-rw-r--r-- 1 root root      3517 Sep 17 21:39 infer.log
+-rw-r--r-- 1 root root     15729 Sep 17 21:30 render_ink.log
+-rw-r--r-- 1 root root 184707067 Sep 17 21:39 segment.tif
+drwxr-xr-x 1 root root        20 Sep 17 21:32 segment.zarr
+-rw-r--r-- 1 root root 177325970 Sep 17 21:46 segment_reverse.tif
+-rw-r--r-- 1 root root       151 Sep 17 21:46 timing.json
+-rw-r--r-- 1 root root      1575 Sep 17 21:32 vc_render_tifxyz.log
+render_and_infer done in 18.9 min
+✓ App completed. View run at 
+https://modal.com/apps/bnleft/main/ap-V9avOyUeFACfahMVe3NYNR
+exit=0

@@ -59,7 +59,18 @@ forming 23 candidates above the 0.5 mm size floor. No candidate was excluded by
 the boundary, band or coverage rules. The largest is a ~1 mm diffuse blob that
 looks like neither the control's strokes nor plain texture. Every number and
 crop is in [`analysis/target-ACW-w010-065/`](analysis/target-ACW-w010-065/).
-<!-- TODO: CW numbers once its readout lands -->
+
+The CW fit, rendered and read out identically, gives the same picture (and, as
+flipping the sense should, its forward/reverse numbers mirror ACW's):
+
+| | ACW fwd | ACW rev | CW fwd | CW rev |
+|---|---:|---:|---:|---:|
+| pixels ≥ T (%) | 0.019 | 0.027 | 0.032 | 0.019 |
+| components ≥ T | 3,937 | 6,490 | 6,510 | 4,116 |
+| candidates ≥ 0.5 mm | **23** | **38** | **42** | **22** |
+| largest (mm) | 0.95 | 0.75 | 1.08 | 0.71 |
+| excluded (boundary/band/coverage) | 0/0/0 | 0/0/0 | 1/2/0 | 1/1/1 |
+
 
 Disclosure: the checkpoint's inference patch is 128 × 128 px = 1.198 mm, larger
 than the 0.5 × 0.5 mm the prize page recommends for ML-generated images. We
@@ -84,7 +95,7 @@ claim no letters from these outputs.
 | Spiral fit 30,000 steps × 2 senses | A10 | 61.0 + 64.9 min | |
 | Control: render + inference | A10 | 4.75 min | |
 | Target ACW: flatten + render + inference (w010–w065) | A10 | 36.1 min | |
-| Target CW: same | A10 | <!-- TODO --> | |
+| Target CW: same (warm volume cache) | A10 | 18.9 min | |
 | **Total** | | | **<!-- TODO from Modal dashboard -->** (cap: $60) |
 
 Modal bills per second with no idle-pod cost; the Aug team's $56 was ~90 % idle

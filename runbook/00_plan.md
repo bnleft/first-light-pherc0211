@@ -32,9 +32,9 @@ Spend cap agreed: $60.
 | 4 | Pack resident pools (new since the Aug post) | `pack_pools_fast` | done |
 | 5 | 1,500-step fits, CW and ACW, z 10000–11000 | `spiral_fit` | done, tied |
 | 6 | 30,000-step fits, both senses | `spiral_fit` | done, tied; ACW chosen first |
-| 7 | Flatten + render + ink inference (w010–w065) | `render_and_infer` | running (ACW) |
+| 7 | Flatten + render + ink inference (w010–w065) | `render_and_infer` | done, ACW and CW |
 | 8 | Control on PHerc0139 w035 + calibration | `control`, `calibrate_control` | done, T=199 |
-| 9 | Preregistered readout, writeup, submission | (Bryant + Claude) | |
+| 9 | Preregistered readout, writeup, submission | `readout`; README drafted | readout done; verdict + submission = Bryant |
 
 ## Walls hit so far
 
