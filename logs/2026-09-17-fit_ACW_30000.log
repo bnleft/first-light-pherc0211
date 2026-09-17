@@ -89,3 +89,827 @@ PROGRESS Synchronizing model across GPU workers — elapsed 0s
 PROGRESS Preparing tracks for optimization — 741,046 tracks — elapsed 0s
 PROGRESS Optimizing — 0/30,000 iterations (0.0%) — elapsed 0s
 PROGRESS Optimizing — 0/30,000 iterations (0.0%) — elapsed 31s
+PROGRESS Optimizing — 0/30,000 iterations (0.0%) — elapsed 1m 01s
+PROGRESS Optimizing — 0/30,000 iterations (0.0%) — elapsed 1m 31s
+PROGRESS Optimizing — 0/30,000 iterations (0.0%) — elapsed 2m 01s
+PROGRESS Optimizing — 0/30,000 iterations (0.0%) — elapsed 2m 31s
+PROGRESS Optimizing — 0/30,000 iterations (0.0%) — elapsed 3m 01s
+PROGRESS Optimizing — 0/30,000 iterations (0.0%) — elapsed 3m 31s
+PROGRESS Optimizing — 0/30,000 iterations (0.0%) — elapsed 4m 01s
+PROGRESS Optimizing — 0/30,000 iterations (0.0%) — elapsed 4m 31s
+PROGRESS Optimizing — 1/30,000 iterations (0.0%) — 0.0 it/s — elapsed 4m 57s — ETA 2476h 41m
+PROGRESS Optimizing — 22/30,000 iterations (0.1%) — 0.1 it/s — elapsed 5m 28s — ETA 124h 03m
+PROGRESS Optimizing — 22/30,000 iterations (0.1%) — 0.1 it/s — elapsed 5m 58s — ETA 135h 24m
+PROGRESS Optimizing — 22/30,000 iterations (0.1%) — 0.1 it/s — elapsed 6m 28s — ETA 146h 46m
+PROGRESS Optimizing — 22/30,000 iterations (0.1%) — 0.1 it/s — elapsed 6m 58s — ETA 158h 08m
+PROGRESS Optimizing — 23/30,000 iterations (0.1%) — 0.1 it/s — elapsed 7m 28s — ETA 162h 01m
+PROGRESS Optimizing — 78/30,000 iterations (0.3%) — 0.2 it/s — elapsed 7m 33s — ETA 48h 13m
+PROGRESS Optimizing — 133/30,000 iterations (0.4%) — 0.3 it/s — elapsed 7m 38s — ETA 28h 32m
+PROGRESS Optimizing — 188/30,000 iterations (0.6%) — 0.4 it/s — elapsed 7m 43s — ETA 20h 22m
+PROGRESS Optimizing — 243/30,000 iterations (0.8%) — 0.5 it/s — elapsed 7m 48s — ETA 15h 54m
+PROGRESS Optimizing — 298/30,000 iterations (1.0%) — 0.6 it/s — elapsed 7m 53s — ETA 13h 05m
+PROGRESS Optimizing — 353/30,000 iterations (1.2%) — 0.7 it/s — elapsed 7m 58s — ETA 11h 08m
+PROGRESS Optimizing — 407/30,000 iterations (1.4%) — 0.8 it/s — elapsed 8m 03s — ETA 9h 45m
+PROGRESS Optimizing — 461/30,000 iterations (1.5%) — 0.9 it/s — elapsed 8m 08s — ETA 8h 41m
+PROGRESS Optimizing — 515/30,000 iterations (1.7%) — 1.0 it/s — elapsed 8m 13s — ETA 7h 50m
+PROGRESS Optimizing — 569/30,000 iterations (1.9%) — 1.1 it/s — elapsed 8m 18s — ETA 7h 09m
+PROGRESS Optimizing — 624/30,000 iterations (2.1%) — 1.2 it/s — elapsed 8m 23s — ETA 6h 34m
+PROGRESS Optimizing — 679/30,000 iterations (2.3%) — 1.3 it/s — elapsed 8m 28s — ETA 6h 05m
+PROGRESS Optimizing — 734/30,000 iterations (2.4%) — 1.4 it/s — elapsed 8m 33s — ETA 5h 41m
+PROGRESS Optimizing — 789/30,000 iterations (2.6%) — 1.5 it/s — elapsed 8m 38s — ETA 5h 19m
+PROGRESS Optimizing — 843/30,000 iterations (2.8%) — 1.6 it/s — elapsed 8m 43s — ETA 5h 01m
+PROGRESS Optimizing — 898/30,000 iterations (3.0%) — 1.7 it/s — elapsed 8m 48s — ETA 4h 45m
+PROGRESS Optimizing — 953/30,000 iterations (3.2%) — 1.8 it/s — elapsed 8m 53s — ETA 4h 30m
+PROGRESS Optimizing — 1,001/30,000 iterations (3.3%) — 1.9 it/s — elapsed 9m 00s — ETA 4h 20m
+PROGRESS Optimizing — 1,055/30,000 iterations (3.5%) — 1.9 it/s — elapsed 9m 05s — ETA 4h 09m
+PROGRESS Optimizing — 1,110/30,000 iterations (3.7%) — 2.0 it/s — elapsed 9m 10s — ETA 3h 58m
+PROGRESS Optimizing — 1,165/30,000 iterations (3.9%) — 2.1 it/s — elapsed 9m 15s — ETA 3h 48m
+PROGRESS Optimizing — 1,220/30,000 iterations (4.1%) — 2.2 it/s — elapsed 9m 20s — ETA 3h 40m
+PROGRESS Optimizing — 1,275/30,000 iterations (4.2%) — 2.3 it/s — elapsed 9m 25s — ETA 3h 32m
+PROGRESS Optimizing — 1,330/30,000 iterations (4.4%) — 2.3 it/s — elapsed 9m 30s — ETA 3h 24m
+PROGRESS Optimizing — 1,385/30,000 iterations (4.6%) — 2.4 it/s — elapsed 9m 35s — ETA 3h 17m
+PROGRESS Optimizing — 1,440/30,000 iterations (4.8%) — 2.5 it/s — elapsed 9m 40s — ETA 3h 11m
+PROGRESS Optimizing — 1,495/30,000 iterations (5.0%) — 2.6 it/s — elapsed 9m 45s — ETA 3h 05m
+PROGRESS Optimizing — 1,550/30,000 iterations (5.2%) — 2.6 it/s — elapsed 9m 50s — ETA 3h 00m
+PROGRESS Optimizing — 1,605/30,000 iterations (5.3%) — 2.7 it/s — elapsed 9m 55s — ETA 2h 55m
+PROGRESS Optimizing — 1,660/30,000 iterations (5.5%) — 2.8 it/s — elapsed 10m 00s — ETA 2h 50m
+PROGRESS Optimizing — 1,715/30,000 iterations (5.7%) — 2.8 it/s — elapsed 10m 05s — ETA 2h 46m
+PROGRESS Optimizing — 1,770/30,000 iterations (5.9%) — 2.9 it/s — elapsed 10m 10s — ETA 2h 42m
+PROGRESS Optimizing — 1,825/30,000 iterations (6.1%) — 3.0 it/s — elapsed 10m 15s — ETA 2h 38m
+PROGRESS Optimizing — 1,880/30,000 iterations (6.3%) — 3.0 it/s — elapsed 10m 20s — ETA 2h 34m
+PROGRESS Optimizing — 1,935/30,000 iterations (6.5%) — 3.1 it/s — elapsed 10m 25s — ETA 2h 31m
+PROGRESS Optimizing — 1,989/30,000 iterations (6.6%) — 3.2 it/s — elapsed 10m 30s — ETA 2h 27m
+PROGRESS Optimizing — 2,023/30,000 iterations (6.7%) — 3.2 it/s — elapsed 10m 35s — ETA 2h 26m
+PROGRESS Optimizing — 2,077/30,000 iterations (6.9%) — 3.2 it/s — elapsed 10m 40s — ETA 2h 23m
+PROGRESS Optimizing — 2,132/30,000 iterations (7.1%) — 3.3 it/s — elapsed 10m 45s — ETA 2h 20m
+PROGRESS Optimizing — 2,187/30,000 iterations (7.3%) — 3.4 it/s — elapsed 10m 50s — ETA 2h 17m
+PROGRESS Optimizing — 2,242/30,000 iterations (7.5%) — 3.4 it/s — elapsed 10m 55s — ETA 2h 15m
+PROGRESS Optimizing — 2,297/30,000 iterations (7.7%) — 3.5 it/s — elapsed 11m 00s — ETA 2h 12m
+PROGRESS Optimizing — 2,351/30,000 iterations (7.8%) — 3.5 it/s — elapsed 11m 05s — ETA 2h 10m
+PROGRESS Optimizing — 2,406/30,000 iterations (8.0%) — 3.6 it/s — elapsed 11m 11s — ETA 2h 08m
+PROGRESS Optimizing — 2,461/30,000 iterations (8.2%) — 3.6 it/s — elapsed 11m 16s — ETA 2h 06m
+PROGRESS Optimizing — 2,516/30,000 iterations (8.4%) — 3.7 it/s — elapsed 11m 21s — ETA 2h 03m
+PROGRESS Optimizing — 2,571/30,000 iterations (8.6%) — 3.7 it/s — elapsed 11m 26s — ETA 2h 01m
+PROGRESS Optimizing — 2,626/30,000 iterations (8.8%) — 3.8 it/s — elapsed 11m 31s — ETA 2h 00m
+PROGRESS Optimizing — 2,681/30,000 iterations (8.9%) — 3.9 it/s — elapsed 11m 36s — ETA 1h 58m
+PROGRESS Optimizing — 2,737/30,000 iterations (9.1%) — 3.9 it/s — elapsed 11m 41s — ETA 1h 56m
+PROGRESS Optimizing — 2,793/30,000 iterations (9.3%) — 4.0 it/s — elapsed 11m 46s — ETA 1h 54m
+PROGRESS Optimizing — 2,848/30,000 iterations (9.5%) — 4.0 it/s — elapsed 11m 51s — ETA 1h 52m
+PROGRESS Optimizing — 2,903/30,000 iterations (9.7%) — 4.1 it/s — elapsed 11m 56s — ETA 1h 51m
+PROGRESS Optimizing — 2,958/30,000 iterations (9.9%) — 4.1 it/s — elapsed 12m 01s — ETA 1h 49m
+PROGRESS Optimizing — 3,001/30,000 iterations (10.0%) — 4.1 it/s — elapsed 12m 07s — ETA 1h 48m
+PROGRESS Optimizing — 3,056/30,000 iterations (10.2%) — 4.2 it/s — elapsed 12m 12s — ETA 1h 47m
+PROGRESS Optimizing — 3,110/30,000 iterations (10.4%) — 4.2 it/s — elapsed 12m 17s — ETA 1h 46m
+PROGRESS Optimizing — 3,165/30,000 iterations (10.6%) — 4.3 it/s — elapsed 12m 22s — ETA 1h 44m
+PROGRESS Optimizing — 3,219/30,000 iterations (10.7%) — 4.3 it/s — elapsed 12m 27s — ETA 1h 43m
+PROGRESS Optimizing — 3,273/30,000 iterations (10.9%) — 4.4 it/s — elapsed 12m 32s — ETA 1h 42m
+PROGRESS Optimizing — 3,327/30,000 iterations (11.1%) — 4.4 it/s — elapsed 12m 37s — ETA 1h 41m
+PROGRESS Optimizing — 3,381/30,000 iterations (11.3%) — 4.4 it/s — elapsed 12m 42s — ETA 1h 40m
+PROGRESS Optimizing — 3,435/30,000 iterations (11.4%) — 4.5 it/s — elapsed 12m 47s — ETA 1h 38m
+PROGRESS Optimizing — 3,490/30,000 iterations (11.6%) — 4.5 it/s — elapsed 12m 52s — ETA 1h 37m
+PROGRESS Optimizing — 3,545/30,000 iterations (11.8%) — 4.6 it/s — elapsed 12m 57s — ETA 1h 36m
+PROGRESS Optimizing — 3,600/30,000 iterations (12.0%) — 4.6 it/s — elapsed 13m 02s — ETA 1h 35m
+PROGRESS Optimizing — 3,654/30,000 iterations (12.2%) — 4.6 it/s — elapsed 13m 08s — ETA 1h 34m
+PROGRESS Optimizing — 3,707/30,000 iterations (12.4%) — 4.7 it/s — elapsed 13m 13s — ETA 1h 33m
+PROGRESS Optimizing — 3,761/30,000 iterations (12.5%) — 4.7 it/s — elapsed 13m 18s — ETA 1h 32m
+PROGRESS Optimizing — 3,815/30,000 iterations (12.7%) — 4.8 it/s — elapsed 13m 23s — ETA 1h 31m
+PROGRESS Optimizing — 3,867/30,000 iterations (12.9%) — 4.8 it/s — elapsed 13m 28s — ETA 1h 30m
+PROGRESS Optimizing — 3,920/30,000 iterations (13.1%) — 4.8 it/s — elapsed 13m 33s — ETA 1h 30m
+PROGRESS Optimizing — 3,973/30,000 iterations (13.2%) — 4.9 it/s — elapsed 13m 38s — ETA 1h 29m
+PROGRESS Optimizing — 4,006/30,000 iterations (13.4%) — 4.9 it/s — elapsed 13m 43s — ETA 1h 28m
+PROGRESS Optimizing — 4,059/30,000 iterations (13.5%) — 4.9 it/s — elapsed 13m 48s — ETA 1h 28m
+PROGRESS Optimizing — 4,112/30,000 iterations (13.7%) — 4.9 it/s — elapsed 13m 53s — ETA 1h 27m
+PROGRESS Optimizing — 4,166/30,000 iterations (13.9%) — 5.0 it/s — elapsed 13m 58s — ETA 1h 26m
+PROGRESS Optimizing — 4,221/30,000 iterations (14.1%) — 5.0 it/s — elapsed 14m 03s — ETA 1h 25m
+PROGRESS Optimizing — 4,275/30,000 iterations (14.2%) — 5.0 it/s — elapsed 14m 08s — ETA 1h 25m
+PROGRESS Optimizing — 4,329/30,000 iterations (14.4%) — 5.1 it/s — elapsed 14m 13s — ETA 1h 24m
+PROGRESS Optimizing — 4,384/30,000 iterations (14.6%) — 5.1 it/s — elapsed 14m 18s — ETA 1h 23m
+PROGRESS Optimizing — 4,438/30,000 iterations (14.8%) — 5.1 it/s — elapsed 14m 23s — ETA 1h 22m
+PROGRESS Optimizing — 4,492/30,000 iterations (15.0%) — 5.2 it/s — elapsed 14m 28s — ETA 1h 22m
+PROGRESS Optimizing — 4,546/30,000 iterations (15.2%) — 5.2 it/s — elapsed 14m 33s — ETA 1h 21m
+PROGRESS Optimizing — 4,600/30,000 iterations (15.3%) — 5.2 it/s — elapsed 14m 38s — ETA 1h 20m
+PROGRESS Optimizing — 4,654/30,000 iterations (15.5%) — 5.3 it/s — elapsed 14m 43s — ETA 1h 20m
+PROGRESS Optimizing — 4,708/30,000 iterations (15.7%) — 5.3 it/s — elapsed 14m 49s — ETA 1h 19m
+PROGRESS Optimizing — 4,762/30,000 iterations (15.9%) — 5.3 it/s — elapsed 14m 54s — ETA 1h 18m
+PROGRESS Optimizing — 4,816/30,000 iterations (16.1%) — 5.4 it/s — elapsed 14m 59s — ETA 1h 18m
+PROGRESS Optimizing — 4,871/30,000 iterations (16.2%) — 5.4 it/s — elapsed 15m 04s — ETA 1h 17m
+PROGRESS Optimizing — 4,925/30,000 iterations (16.4%) — 5.4 it/s — elapsed 15m 09s — ETA 1h 17m
+PROGRESS Optimizing — 4,979/30,000 iterations (16.6%) — 5.4 it/s — elapsed 15m 14s — ETA 1h 16m
+PROGRESS Optimizing — 5,012/30,000 iterations (16.7%) — 5.5 it/s — elapsed 15m 19s — ETA 1h 16m
+PROGRESS Optimizing — 5,065/30,000 iterations (16.9%) — 5.5 it/s — elapsed 15m 24s — ETA 1h 15m
+PROGRESS Optimizing — 5,120/30,000 iterations (17.1%) — 5.5 it/s — elapsed 15m 29s — ETA 1h 15m
+PROGRESS Optimizing — 5,174/30,000 iterations (17.2%) — 5.5 it/s — elapsed 15m 34s — ETA 1h 14m
+PROGRESS Optimizing — 5,228/30,000 iterations (17.4%) — 5.6 it/s — elapsed 15m 39s — ETA 1h 14m
+PROGRESS Optimizing — 5,283/30,000 iterations (17.6%) — 5.6 it/s — elapsed 15m 44s — ETA 1h 13m
+PROGRESS Optimizing — 5,338/30,000 iterations (17.8%) — 5.6 it/s — elapsed 15m 49s — ETA 1h 13m
+PROGRESS Optimizing — 5,392/30,000 iterations (18.0%) — 5.7 it/s — elapsed 15m 54s — ETA 1h 12m
+PROGRESS Optimizing — 5,446/30,000 iterations (18.2%) — 5.7 it/s — elapsed 15m 59s — ETA 1h 12m
+PROGRESS Optimizing — 5,501/30,000 iterations (18.3%) — 5.7 it/s — elapsed 16m 04s — ETA 1h 11m
+PROGRESS Optimizing — 5,555/30,000 iterations (18.5%) — 5.7 it/s — elapsed 16m 09s — ETA 1h 11m
+PROGRESS Optimizing — 5,609/30,000 iterations (18.7%) — 5.8 it/s — elapsed 16m 14s — ETA 1h 10m
+PROGRESS Optimizing — 5,663/30,000 iterations (18.9%) — 5.8 it/s — elapsed 16m 19s — ETA 1h 10m
+PROGRESS Optimizing — 5,718/30,000 iterations (19.1%) — 5.8 it/s — elapsed 16m 24s — ETA 1h 09m
+PROGRESS Optimizing — 5,772/30,000 iterations (19.2%) — 5.8 it/s — elapsed 16m 29s — ETA 1h 09m
+PROGRESS Optimizing — 5,826/30,000 iterations (19.4%) — 5.9 it/s — elapsed 16m 34s — ETA 1h 08m
+PROGRESS Optimizing — 5,880/30,000 iterations (19.6%) — 5.9 it/s — elapsed 16m 39s — ETA 1h 08m
+PROGRESS Optimizing — 5,934/30,000 iterations (19.8%) — 5.9 it/s — elapsed 16m 44s — ETA 1h 07m
+PROGRESS Optimizing — 5,987/30,000 iterations (20.0%) — 5.9 it/s — elapsed 16m 49s — ETA 1h 07m
+PROGRESS Optimizing — 6,021/30,000 iterations (20.1%) — 5.9 it/s — elapsed 16m 55s — ETA 1h 07m
+PROGRESS Optimizing — 6,075/30,000 iterations (20.2%) — 6.0 it/s — elapsed 17m 00s — ETA 1h 06m
+PROGRESS Optimizing — 6,129/30,000 iterations (20.4%) — 6.0 it/s — elapsed 17m 05s — ETA 1h 06m
+PROGRESS Optimizing — 6,183/30,000 iterations (20.6%) — 6.0 it/s — elapsed 17m 10s — ETA 1h 06m
+PROGRESS Optimizing — 6,237/30,000 iterations (20.8%) — 6.0 it/s — elapsed 17m 15s — ETA 1h 05m
+PROGRESS Optimizing — 6,291/30,000 iterations (21.0%) — 6.1 it/s — elapsed 17m 20s — ETA 1h 05m
+PROGRESS Optimizing — 6,345/30,000 iterations (21.1%) — 6.1 it/s — elapsed 17m 25s — ETA 1h 04m
+PROGRESS Optimizing — 6,399/30,000 iterations (21.3%) — 6.1 it/s — elapsed 17m 30s — ETA 1h 04m
+PROGRESS Optimizing — 6,453/30,000 iterations (21.5%) — 6.1 it/s — elapsed 17m 35s — ETA 1h 04m
+PROGRESS Optimizing — 6,507/30,000 iterations (21.7%) — 6.1 it/s — elapsed 17m 40s — ETA 1h 03m
+PROGRESS Optimizing — 6,561/30,000 iterations (21.9%) — 6.2 it/s — elapsed 17m 45s — ETA 1h 03m
+PROGRESS Optimizing — 6,615/30,000 iterations (22.1%) — 6.2 it/s — elapsed 17m 50s — ETA 1h 03m
+PROGRESS Optimizing — 6,669/30,000 iterations (22.2%) — 6.2 it/s — elapsed 17m 55s — ETA 1h 02m
+PROGRESS Optimizing — 6,723/30,000 iterations (22.4%) — 6.2 it/s — elapsed 18m 00s — ETA 1h 02m
+PROGRESS Optimizing — 6,777/30,000 iterations (22.6%) — 6.2 it/s — elapsed 18m 05s — ETA 1h 01m
+PROGRESS Optimizing — 6,831/30,000 iterations (22.8%) — 6.3 it/s — elapsed 18m 10s — ETA 1h 01m
+PROGRESS Optimizing — 6,884/30,000 iterations (22.9%) — 6.3 it/s — elapsed 18m 15s — ETA 1h 01m
+PROGRESS Optimizing — 6,938/30,000 iterations (23.1%) — 6.3 it/s — elapsed 18m 20s — ETA 1h 00m
+PROGRESS Optimizing — 6,993/30,000 iterations (23.3%) — 6.3 it/s — elapsed 18m 25s — ETA 1h 00m
+PROGRESS Optimizing — 7,027/30,000 iterations (23.4%) — 6.3 it/s — elapsed 18m 30s — ETA 1h 00m
+PROGRESS Optimizing — 7,080/30,000 iterations (23.6%) — 6.3 it/s — elapsed 18m 35s — ETA 1h 00m
+PROGRESS Optimizing — 7,134/30,000 iterations (23.8%) — 6.4 it/s — elapsed 18m 40s — ETA 59m 51s
+PROGRESS Optimizing — 7,188/30,000 iterations (24.0%) — 6.4 it/s — elapsed 18m 45s — ETA 59m 32s
+PROGRESS Optimizing — 7,242/30,000 iterations (24.1%) — 6.4 it/s — elapsed 18m 50s — ETA 59m 12s
+PROGRESS Optimizing — 7,296/30,000 iterations (24.3%) — 6.4 it/s — elapsed 18m 55s — ETA 58m 53s
+PROGRESS Optimizing — 7,351/30,000 iterations (24.5%) — 6.4 it/s — elapsed 19m 01s — ETA 58m 34s
+PROGRESS Optimizing — 7,405/30,000 iterations (24.7%) — 6.5 it/s — elapsed 19m 06s — ETA 58m 16s
+PROGRESS Optimizing — 7,459/30,000 iterations (24.9%) — 6.5 it/s — elapsed 19m 11s — ETA 57m 57s
+PROGRESS Optimizing — 7,513/30,000 iterations (25.0%) — 6.5 it/s — elapsed 19m 16s — ETA 57m 39s
+PROGRESS Optimizing — 7,567/30,000 iterations (25.2%) — 6.5 it/s — elapsed 19m 21s — ETA 57m 21s
+PROGRESS Optimizing — 7,621/30,000 iterations (25.4%) — 6.5 it/s — elapsed 19m 26s — ETA 57m 03s
+PROGRESS Optimizing — 7,675/30,000 iterations (25.6%) — 6.6 it/s — elapsed 19m 31s — ETA 56m 46s
+PROGRESS Optimizing — 7,729/30,000 iterations (25.8%) — 6.6 it/s — elapsed 19m 36s — ETA 56m 28s
+PROGRESS Optimizing — 7,783/30,000 iterations (25.9%) — 6.6 it/s — elapsed 19m 41s — ETA 56m 11s
+PROGRESS Optimizing — 7,838/30,000 iterations (26.1%) — 6.6 it/s — elapsed 19m 46s — ETA 55m 53s
+PROGRESS Optimizing — 7,893/30,000 iterations (26.3%) — 6.6 it/s — elapsed 19m 51s — ETA 55m 36s
+PROGRESS Optimizing — 7,948/30,000 iterations (26.5%) — 6.6 it/s — elapsed 19m 56s — ETA 55m 18s
+PROGRESS Optimizing — 8,001/30,000 iterations (26.7%) — 6.7 it/s — elapsed 20m 03s — ETA 55m 07s
+PROGRESS Optimizing — 8,055/30,000 iterations (26.9%) — 6.7 it/s — elapsed 20m 08s — ETA 54m 51s
+PROGRESS Optimizing — 8,109/30,000 iterations (27.0%) — 6.7 it/s — elapsed 20m 13s — ETA 54m 34s
+PROGRESS Optimizing — 8,164/30,000 iterations (27.2%) — 6.7 it/s — elapsed 20m 18s — ETA 54m 17s
+PROGRESS Optimizing — 8,219/30,000 iterations (27.4%) — 6.7 it/s — elapsed 20m 23s — ETA 54m 01s
+PROGRESS Optimizing — 8,273/30,000 iterations (27.6%) — 6.7 it/s — elapsed 20m 28s — ETA 53m 45s
+PROGRESS Optimizing — 8,328/30,000 iterations (27.8%) — 6.8 it/s — elapsed 20m 33s — ETA 53m 29s
+PROGRESS Optimizing — 8,383/30,000 iterations (27.9%) — 6.8 it/s — elapsed 20m 38s — ETA 53m 12s
+PROGRESS Optimizing — 8,437/30,000 iterations (28.1%) — 6.8 it/s — elapsed 20m 43s — ETA 52m 57s
+PROGRESS Optimizing — 8,491/30,000 iterations (28.3%) — 6.8 it/s — elapsed 20m 48s — ETA 52m 42s
+PROGRESS Optimizing — 8,546/30,000 iterations (28.5%) — 6.8 it/s — elapsed 20m 53s — ETA 52m 26s
+PROGRESS Optimizing — 8,601/30,000 iterations (28.7%) — 6.8 it/s — elapsed 20m 58s — ETA 52m 10s
+PROGRESS Optimizing — 8,656/30,000 iterations (28.9%) — 6.9 it/s — elapsed 21m 03s — ETA 51m 55s
+PROGRESS Optimizing — 8,711/30,000 iterations (29.0%) — 6.9 it/s — elapsed 21m 08s — ETA 51m 40s
+PROGRESS Optimizing — 8,766/30,000 iterations (29.2%) — 6.9 it/s — elapsed 21m 13s — ETA 51m 24s
+PROGRESS Optimizing — 8,821/30,000 iterations (29.4%) — 6.9 it/s — elapsed 21m 18s — ETA 51m 09s
+PROGRESS Optimizing — 8,876/30,000 iterations (29.6%) — 6.9 it/s — elapsed 21m 23s — ETA 50m 55s
+PROGRESS Optimizing — 8,931/30,000 iterations (29.8%) — 6.9 it/s — elapsed 21m 29s — ETA 50m 40s
+PROGRESS Optimizing — 8,986/30,000 iterations (30.0%) — 6.9 it/s — elapsed 21m 34s — ETA 50m 25s
+PROGRESS Optimizing — 9,018/30,000 iterations (30.1%) — 6.9 it/s — elapsed 21m 39s — ETA 50m 21s
+PROGRESS Optimizing — 9,073/30,000 iterations (30.2%) — 7.0 it/s — elapsed 21m 44s — ETA 50m 07s
+PROGRESS Optimizing — 9,128/30,000 iterations (30.4%) — 7.0 it/s — elapsed 21m 49s — ETA 49m 53s
+PROGRESS Optimizing — 9,183/30,000 iterations (30.6%) — 7.0 it/s — elapsed 21m 54s — ETA 49m 38s
+PROGRESS Optimizing — 9,237/30,000 iterations (30.8%) — 7.0 it/s — elapsed 21m 59s — ETA 49m 25s
+PROGRESS Optimizing — 9,291/30,000 iterations (31.0%) — 7.0 it/s — elapsed 22m 04s — ETA 49m 11s
+PROGRESS Optimizing — 9,345/30,000 iterations (31.1%) — 7.0 it/s — elapsed 22m 09s — ETA 48m 57s
+PROGRESS Optimizing — 9,400/30,000 iterations (31.3%) — 7.0 it/s — elapsed 22m 14s — ETA 48m 43s
+PROGRESS Optimizing — 9,455/30,000 iterations (31.5%) — 7.1 it/s — elapsed 22m 19s — ETA 48m 29s
+PROGRESS Optimizing — 9,510/30,000 iterations (31.7%) — 7.1 it/s — elapsed 22m 24s — ETA 48m 16s
+PROGRESS Optimizing — 9,564/30,000 iterations (31.9%) — 7.1 it/s — elapsed 22m 29s — ETA 48m 03s
+PROGRESS Optimizing — 9,618/30,000 iterations (32.1%) — 7.1 it/s — elapsed 22m 34s — ETA 47m 49s
+PROGRESS Optimizing — 9,673/30,000 iterations (32.2%) — 7.1 it/s — elapsed 22m 39s — ETA 47m 36s
+PROGRESS Optimizing — 9,728/30,000 iterations (32.4%) — 7.1 it/s — elapsed 22m 44s — ETA 47m 23s
+PROGRESS Optimizing — 9,783/30,000 iterations (32.6%) — 7.1 it/s — elapsed 22m 49s — ETA 47m 09s
+PROGRESS Optimizing — 9,838/30,000 iterations (32.8%) — 7.2 it/s — elapsed 22m 54s — ETA 46m 56s
+PROGRESS Optimizing — 9,892/30,000 iterations (33.0%) — 7.2 it/s — elapsed 22m 59s — ETA 46m 44s
+PROGRESS Optimizing — 9,947/30,000 iterations (33.2%) — 7.2 it/s — elapsed 23m 04s — ETA 46m 31s
+PROGRESS Optimizing — 10,001/30,000 iterations (33.3%) — 7.2 it/s — elapsed 23m 11s — ETA 46m 22s
+PROGRESS Optimizing — 10,055/30,000 iterations (33.5%) — 7.2 it/s — elapsed 23m 16s — ETA 46m 09s
+PROGRESS Optimizing — 10,110/30,000 iterations (33.7%) — 7.2 it/s — elapsed 23m 21s — ETA 45m 57s
+PROGRESS Optimizing — 10,165/30,000 iterations (33.9%) — 7.2 it/s — elapsed 23m 26s — ETA 45m 44s
+PROGRESS Optimizing — 10,220/30,000 iterations (34.1%) — 7.2 it/s — elapsed 23m 31s — ETA 45m 32s
+PROGRESS Optimizing — 10,275/30,000 iterations (34.2%) — 7.3 it/s — elapsed 23m 36s — ETA 45m 19s
+PROGRESS Optimizing — 10,329/30,000 iterations (34.4%) — 7.3 it/s — elapsed 23m 41s — ETA 45m 07s
+PROGRESS Optimizing — 10,383/30,000 iterations (34.6%) — 7.3 it/s — elapsed 23m 47s — ETA 44m 55s
+PROGRESS Optimizing — 10,437/30,000 iterations (34.8%) — 7.3 it/s — elapsed 23m 52s — ETA 44m 43s
+PROGRESS Optimizing — 10,492/30,000 iterations (35.0%) — 7.3 it/s — elapsed 23m 57s — ETA 44m 31s
+PROGRESS Optimizing — 10,547/30,000 iterations (35.2%) — 7.3 it/s — elapsed 24m 02s — ETA 44m 19s
+PROGRESS Optimizing — 10,602/30,000 iterations (35.3%) — 7.3 it/s — elapsed 24m 07s — ETA 44m 07s
+PROGRESS Optimizing — 10,657/30,000 iterations (35.5%) — 7.3 it/s — elapsed 24m 12s — ETA 43m 55s
+PROGRESS Optimizing — 10,712/30,000 iterations (35.7%) — 7.4 it/s — elapsed 24m 17s — ETA 43m 43s
+PROGRESS Optimizing — 10,766/30,000 iterations (35.9%) — 7.4 it/s — elapsed 24m 22s — ETA 43m 32s
+PROGRESS Optimizing — 10,820/30,000 iterations (36.1%) — 7.4 it/s — elapsed 24m 27s — ETA 43m 20s
+PROGRESS Optimizing — 10,875/30,000 iterations (36.2%) — 7.4 it/s — elapsed 24m 32s — ETA 43m 09s
+PROGRESS Optimizing — 10,928/30,000 iterations (36.4%) — 7.4 it/s — elapsed 24m 37s — ETA 42m 58s
+PROGRESS Optimizing — 10,982/30,000 iterations (36.6%) — 7.4 it/s — elapsed 24m 42s — ETA 42m 47s
+PROGRESS Optimizing — 11,016/30,000 iterations (36.7%) — 7.4 it/s — elapsed 24m 47s — ETA 42m 43s
+PROGRESS Optimizing — 11,069/30,000 iterations (36.9%) — 7.4 it/s — elapsed 24m 52s — ETA 42m 32s
+PROGRESS Optimizing — 11,123/30,000 iterations (37.1%) — 7.4 it/s — elapsed 24m 57s — ETA 42m 21s
+PROGRESS Optimizing — 11,177/30,000 iterations (37.3%) — 7.4 it/s — elapsed 25m 02s — ETA 42m 10s
+PROGRESS Optimizing — 11,232/30,000 iterations (37.4%) — 7.5 it/s — elapsed 25m 07s — ETA 41m 59s
+PROGRESS Optimizing — 11,286/30,000 iterations (37.6%) — 7.5 it/s — elapsed 25m 12s — ETA 41m 48s
+PROGRESS Optimizing — 11,341/30,000 iterations (37.8%) — 7.5 it/s — elapsed 25m 17s — ETA 41m 37s
+PROGRESS Optimizing — 11,396/30,000 iterations (38.0%) — 7.5 it/s — elapsed 25m 23s — ETA 41m 25s
+PROGRESS Optimizing — 11,450/30,000 iterations (38.2%) — 7.5 it/s — elapsed 25m 28s — ETA 41m 15s
+PROGRESS Optimizing — 11,504/30,000 iterations (38.3%) — 7.5 it/s — elapsed 25m 33s — ETA 41m 04s
+PROGRESS Optimizing — 11,558/30,000 iterations (38.5%) — 7.5 it/s — elapsed 25m 38s — ETA 40m 53s
+PROGRESS Optimizing — 11,612/30,000 iterations (38.7%) — 7.5 it/s — elapsed 25m 43s — ETA 40m 43s
+PROGRESS Optimizing — 11,667/30,000 iterations (38.9%) — 7.5 it/s — elapsed 25m 48s — ETA 40m 32s
+PROGRESS Optimizing — 11,721/30,000 iterations (39.1%) — 7.5 it/s — elapsed 25m 53s — ETA 40m 21s
+PROGRESS Optimizing — 11,775/30,000 iterations (39.2%) — 7.6 it/s — elapsed 25m 58s — ETA 40m 11s
+PROGRESS Optimizing — 11,830/30,000 iterations (39.4%) — 7.6 it/s — elapsed 26m 03s — ETA 40m 00s
+PROGRESS Optimizing — 11,885/30,000 iterations (39.6%) — 7.6 it/s — elapsed 26m 08s — ETA 39m 50s
+PROGRESS Optimizing — 11,939/30,000 iterations (39.8%) — 7.6 it/s — elapsed 26m 13s — ETA 39m 40s
+PROGRESS Optimizing — 11,994/30,000 iterations (40.0%) — 7.6 it/s — elapsed 26m 18s — ETA 39m 29s
+PROGRESS Optimizing — 12,020/30,000 iterations (40.1%) — 7.6 it/s — elapsed 26m 23s — ETA 39m 28s
+PROGRESS Optimizing — 12,075/30,000 iterations (40.2%) — 7.6 it/s — elapsed 26m 28s — ETA 39m 18s
+PROGRESS Optimizing — 12,129/30,000 iterations (40.4%) — 7.6 it/s — elapsed 26m 33s — ETA 39m 07s
+PROGRESS Optimizing — 12,184/30,000 iterations (40.6%) — 7.6 it/s — elapsed 26m 38s — ETA 38m 57s
+PROGRESS Optimizing — 12,238/30,000 iterations (40.8%) — 7.6 it/s — elapsed 26m 43s — ETA 38m 47s
+PROGRESS Optimizing — 12,293/30,000 iterations (41.0%) — 7.6 it/s — elapsed 26m 48s — ETA 38m 37s
+PROGRESS Optimizing — 12,348/30,000 iterations (41.2%) — 7.7 it/s — elapsed 26m 53s — ETA 38m 26s
+PROGRESS Optimizing — 12,402/30,000 iterations (41.3%) — 7.7 it/s — elapsed 26m 58s — ETA 38m 16s
+PROGRESS Optimizing — 12,457/30,000 iterations (41.5%) — 7.7 it/s — elapsed 27m 03s — ETA 38m 06s
+PROGRESS Optimizing — 12,512/30,000 iterations (41.7%) — 7.7 it/s — elapsed 27m 09s — ETA 37m 56s
+PROGRESS Optimizing — 12,566/30,000 iterations (41.9%) — 7.7 it/s — elapsed 27m 14s — ETA 37m 46s
+PROGRESS Optimizing — 12,620/30,000 iterations (42.1%) — 7.7 it/s — elapsed 27m 19s — ETA 37m 37s
+PROGRESS Optimizing — 12,674/30,000 iterations (42.2%) — 7.7 it/s — elapsed 27m 24s — ETA 37m 27s
+PROGRESS Optimizing — 12,728/30,000 iterations (42.4%) — 7.7 it/s — elapsed 27m 29s — ETA 37m 17s
+PROGRESS Optimizing — 12,783/30,000 iterations (42.6%) — 7.7 it/s — elapsed 27m 34s — ETA 37m 07s
+PROGRESS Optimizing — 12,838/30,000 iterations (42.8%) — 7.7 it/s — elapsed 27m 39s — ETA 36m 57s
+PROGRESS Optimizing — 12,893/30,000 iterations (43.0%) — 7.7 it/s — elapsed 27m 44s — ETA 36m 48s
+PROGRESS Optimizing — 12,948/30,000 iterations (43.2%) — 7.8 it/s — elapsed 27m 49s — ETA 36m 38s
+PROGRESS Optimizing — 13,001/30,000 iterations (43.3%) — 7.8 it/s — elapsed 27m 56s — ETA 36m 31s
+PROGRESS Optimizing — 13,055/30,000 iterations (43.5%) — 7.8 it/s — elapsed 28m 01s — ETA 36m 22s
+PROGRESS Optimizing — 13,109/30,000 iterations (43.7%) — 7.8 it/s — elapsed 28m 06s — ETA 36m 12s
+PROGRESS Optimizing — 13,163/30,000 iterations (43.9%) — 7.8 it/s — elapsed 28m 11s — ETA 36m 03s
+PROGRESS Optimizing — 13,217/30,000 iterations (44.1%) — 7.8 it/s — elapsed 28m 16s — ETA 35m 53s
+PROGRESS Optimizing — 13,272/30,000 iterations (44.2%) — 7.8 it/s — elapsed 28m 21s — ETA 35m 44s
+PROGRESS Optimizing — 13,326/30,000 iterations (44.4%) — 7.8 it/s — elapsed 28m 26s — ETA 35m 35s
+PROGRESS Optimizing — 13,381/30,000 iterations (44.6%) — 7.8 it/s — elapsed 28m 31s — ETA 35m 25s
+PROGRESS Optimizing — 13,435/30,000 iterations (44.8%) — 7.8 it/s — elapsed 28m 36s — ETA 35m 16s
+PROGRESS Optimizing — 13,489/30,000 iterations (45.0%) — 7.8 it/s — elapsed 28m 41s — ETA 35m 07s
+PROGRESS Optimizing — 13,544/30,000 iterations (45.1%) — 7.8 it/s — elapsed 28m 46s — ETA 34m 57s
+PROGRESS Optimizing — 13,599/30,000 iterations (45.3%) — 7.9 it/s — elapsed 28m 51s — ETA 34m 48s
+PROGRESS Optimizing — 13,654/30,000 iterations (45.5%) — 7.9 it/s — elapsed 28m 56s — ETA 34m 39s
+PROGRESS Optimizing — 13,709/30,000 iterations (45.7%) — 7.9 it/s — elapsed 29m 01s — ETA 34m 29s
+PROGRESS Optimizing — 13,764/30,000 iterations (45.9%) — 7.9 it/s — elapsed 29m 06s — ETA 34m 20s
+PROGRESS Optimizing — 13,819/30,000 iterations (46.1%) — 7.9 it/s — elapsed 29m 11s — ETA 34m 11s
+PROGRESS Optimizing — 13,874/30,000 iterations (46.2%) — 7.9 it/s — elapsed 29m 16s — ETA 34m 01s
+PROGRESS Optimizing — 13,929/30,000 iterations (46.4%) — 7.9 it/s — elapsed 29m 21s — ETA 33m 52s
+PROGRESS Optimizing — 13,984/30,000 iterations (46.6%) — 7.9 it/s — elapsed 29m 26s — ETA 33m 43s
+PROGRESS Optimizing — 14,010/30,000 iterations (46.7%) — 7.9 it/s — elapsed 29m 31s — ETA 33m 42s
+PROGRESS Optimizing — 14,064/30,000 iterations (46.9%) — 7.9 it/s — elapsed 29m 37s — ETA 33m 33s
+PROGRESS Optimizing — 14,118/30,000 iterations (47.1%) — 7.9 it/s — elapsed 29m 42s — ETA 33m 24s
+PROGRESS Optimizing — 14,172/30,000 iterations (47.2%) — 7.9 it/s — elapsed 29m 47s — ETA 33m 15s
+PROGRESS Optimizing — 14,225/30,000 iterations (47.4%) — 7.9 it/s — elapsed 29m 52s — ETA 33m 07s
+PROGRESS Optimizing — 14,280/30,000 iterations (47.6%) — 7.9 it/s — elapsed 29m 57s — ETA 32m 58s
+PROGRESS Optimizing — 14,334/30,000 iterations (47.8%) — 8.0 it/s — elapsed 30m 02s — ETA 32m 49s
+PROGRESS Optimizing — 14,389/30,000 iterations (48.0%) — 8.0 it/s — elapsed 30m 07s — ETA 32m 40s
+PROGRESS Optimizing — 14,443/30,000 iterations (48.1%) — 8.0 it/s — elapsed 30m 12s — ETA 32m 31s
+PROGRESS Optimizing — 14,497/30,000 iterations (48.3%) — 8.0 it/s — elapsed 30m 17s — ETA 32m 23s
+PROGRESS Optimizing — 14,551/30,000 iterations (48.5%) — 8.0 it/s — elapsed 30m 22s — ETA 32m 14s
+PROGRESS Optimizing — 14,605/30,000 iterations (48.7%) — 8.0 it/s — elapsed 30m 27s — ETA 32m 06s
+PROGRESS Optimizing — 14,659/30,000 iterations (48.9%) — 8.0 it/s — elapsed 30m 32s — ETA 31m 57s
+PROGRESS Optimizing — 14,714/30,000 iterations (49.0%) — 8.0 it/s — elapsed 30m 37s — ETA 31m 48s
+PROGRESS Optimizing — 14,768/30,000 iterations (49.2%) — 8.0 it/s — elapsed 30m 42s — ETA 31m 40s
+PROGRESS Optimizing — 14,824/30,000 iterations (49.4%) — 8.0 it/s — elapsed 30m 47s — ETA 31m 31s
+PROGRESS Optimizing — 14,880/30,000 iterations (49.6%) — 8.0 it/s — elapsed 30m 52s — ETA 31m 22s
+PROGRESS Optimizing — 14,935/30,000 iterations (49.8%) — 8.0 it/s — elapsed 30m 57s — ETA 31m 13s
+PROGRESS Optimizing — 14,990/30,000 iterations (50.0%) — 8.0 it/s — elapsed 31m 02s — ETA 31m 05s
+PROGRESS Optimizing — 15,026/30,000 iterations (50.1%) — 8.0 it/s — elapsed 31m 07s — ETA 31m 01s
+PROGRESS Optimizing — 15,080/30,000 iterations (50.3%) — 8.1 it/s — elapsed 31m 12s — ETA 30m 52s
+PROGRESS Optimizing — 15,134/30,000 iterations (50.4%) — 8.1 it/s — elapsed 31m 17s — ETA 30m 44s
+PROGRESS Optimizing — 15,188/30,000 iterations (50.6%) — 8.1 it/s — elapsed 31m 22s — ETA 30m 36s
+PROGRESS Optimizing — 15,242/30,000 iterations (50.8%) — 8.1 it/s — elapsed 31m 27s — ETA 30m 27s
+PROGRESS Optimizing — 15,297/30,000 iterations (51.0%) — 8.1 it/s — elapsed 31m 32s — ETA 30m 19s
+PROGRESS Optimizing — 15,351/30,000 iterations (51.2%) — 8.1 it/s — elapsed 31m 37s — ETA 30m 11s
+PROGRESS Optimizing — 15,405/30,000 iterations (51.4%) — 8.1 it/s — elapsed 31m 42s — ETA 30m 02s
+PROGRESS Optimizing — 15,459/30,000 iterations (51.5%) — 8.1 it/s — elapsed 31m 48s — ETA 29m 54s
+PROGRESS Optimizing — 15,515/30,000 iterations (51.7%) — 8.1 it/s — elapsed 31m 53s — ETA 29m 46s
+PROGRESS Optimizing — 15,570/30,000 iterations (51.9%) — 8.1 it/s — elapsed 31m 58s — ETA 29m 37s
+PROGRESS Optimizing — 15,625/30,000 iterations (52.1%) — 8.1 it/s — elapsed 32m 03s — ETA 29m 29s
+PROGRESS Optimizing — 15,680/30,000 iterations (52.3%) — 8.1 it/s — elapsed 32m 08s — ETA 29m 21s
+PROGRESS Optimizing — 15,735/30,000 iterations (52.5%) — 8.1 it/s — elapsed 32m 13s — ETA 29m 12s
+PROGRESS Optimizing — 15,790/30,000 iterations (52.6%) — 8.1 it/s — elapsed 32m 18s — ETA 29m 04s
+PROGRESS Optimizing — 15,844/30,000 iterations (52.8%) — 8.2 it/s — elapsed 32m 23s — ETA 28m 56s
+PROGRESS Optimizing — 15,897/30,000 iterations (53.0%) — 8.2 it/s — elapsed 32m 28s — ETA 28m 48s
+PROGRESS Optimizing — 15,952/30,000 iterations (53.2%) — 8.2 it/s — elapsed 32m 33s — ETA 28m 40s
+PROGRESS Optimizing — 16,001/30,000 iterations (53.3%) — 8.2 it/s — elapsed 32m 40s — ETA 28m 35s
+PROGRESS Optimizing — 16,055/30,000 iterations (53.5%) — 8.2 it/s — elapsed 32m 45s — ETA 28m 27s
+PROGRESS Optimizing — 16,110/30,000 iterations (53.7%) — 8.2 it/s — elapsed 32m 50s — ETA 28m 19s
+PROGRESS Optimizing — 16,165/30,000 iterations (53.9%) — 8.2 it/s — elapsed 32m 55s — ETA 28m 10s
+PROGRESS Optimizing — 16,219/30,000 iterations (54.1%) — 8.2 it/s — elapsed 33m 00s — ETA 28m 02s
+PROGRESS Optimizing — 16,274/30,000 iterations (54.2%) — 8.2 it/s — elapsed 33m 05s — ETA 27m 54s
+PROGRESS Optimizing — 16,330/30,000 iterations (54.4%) — 8.2 it/s — elapsed 33m 10s — ETA 27m 46s
+PROGRESS Optimizing — 16,385/30,000 iterations (54.6%) — 8.2 it/s — elapsed 33m 15s — ETA 27m 38s
+PROGRESS Optimizing — 16,440/30,000 iterations (54.8%) — 8.2 it/s — elapsed 33m 20s — ETA 27m 30s
+PROGRESS Optimizing — 16,495/30,000 iterations (55.0%) — 8.2 it/s — elapsed 33m 25s — ETA 27m 22s
+PROGRESS Optimizing — 16,549/30,000 iterations (55.2%) — 8.2 it/s — elapsed 33m 31s — ETA 27m 14s
+PROGRESS Optimizing — 16,603/30,000 iterations (55.3%) — 8.2 it/s — elapsed 33m 36s — ETA 27m 06s
+PROGRESS Optimizing — 16,658/30,000 iterations (55.5%) — 8.2 it/s — elapsed 33m 41s — ETA 26m 58s
+PROGRESS Optimizing — 16,712/30,000 iterations (55.7%) — 8.2 it/s — elapsed 33m 46s — ETA 26m 51s
+PROGRESS Optimizing — 16,766/30,000 iterations (55.9%) — 8.3 it/s — elapsed 33m 51s — ETA 26m 43s
+PROGRESS Optimizing — 16,820/30,000 iterations (56.1%) — 8.3 it/s — elapsed 33m 56s — ETA 26m 35s
+PROGRESS Optimizing — 16,874/30,000 iterations (56.2%) — 8.3 it/s — elapsed 34m 01s — ETA 26m 27s
+PROGRESS Optimizing — 16,928/30,000 iterations (56.4%) — 8.3 it/s — elapsed 34m 06s — ETA 26m 20s
+PROGRESS Optimizing — 16,983/30,000 iterations (56.6%) — 8.3 it/s — elapsed 34m 11s — ETA 26m 12s
+PROGRESS Optimizing — 17,017/30,000 iterations (56.7%) — 8.3 it/s — elapsed 34m 16s — ETA 26m 09s
+PROGRESS Optimizing — 17,071/30,000 iterations (56.9%) — 8.3 it/s — elapsed 34m 21s — ETA 26m 01s
+PROGRESS Optimizing — 17,126/30,000 iterations (57.1%) — 8.3 it/s — elapsed 34m 26s — ETA 25m 53s
+PROGRESS Optimizing — 17,180/30,000 iterations (57.3%) — 8.3 it/s — elapsed 34m 31s — ETA 25m 45s
+PROGRESS Optimizing — 17,235/30,000 iterations (57.5%) — 8.3 it/s — elapsed 34m 36s — ETA 25m 38s
+PROGRESS Optimizing — 17,289/30,000 iterations (57.6%) — 8.3 it/s — elapsed 34m 41s — ETA 25m 30s
+PROGRESS Optimizing — 17,343/30,000 iterations (57.8%) — 8.3 it/s — elapsed 34m 46s — ETA 25m 23s
+PROGRESS Optimizing — 17,397/30,000 iterations (58.0%) — 8.3 it/s — elapsed 34m 51s — ETA 25m 15s
+PROGRESS Optimizing — 17,452/30,000 iterations (58.2%) — 8.3 it/s — elapsed 34m 56s — ETA 25m 07s
+PROGRESS Optimizing — 17,507/30,000 iterations (58.4%) — 8.3 it/s — elapsed 35m 01s — ETA 25m 00s
+PROGRESS Optimizing — 17,562/30,000 iterations (58.5%) — 8.3 it/s — elapsed 35m 06s — ETA 24m 52s
+PROGRESS Optimizing — 17,617/30,000 iterations (58.7%) — 8.3 it/s — elapsed 35m 11s — ETA 24m 44s
+PROGRESS Optimizing — 17,672/30,000 iterations (58.9%) — 8.3 it/s — elapsed 35m 16s — ETA 24m 36s
+PROGRESS Optimizing — 17,726/30,000 iterations (59.1%) — 8.4 it/s — elapsed 35m 21s — ETA 24m 29s
+PROGRESS Optimizing — 17,780/30,000 iterations (59.3%) — 8.4 it/s — elapsed 35m 27s — ETA 24m 22s
+PROGRESS Optimizing — 17,835/30,000 iterations (59.5%) — 8.4 it/s — elapsed 35m 32s — ETA 24m 14s
+PROGRESS Optimizing — 17,889/30,000 iterations (59.6%) — 8.4 it/s — elapsed 35m 37s — ETA 24m 06s
+PROGRESS Optimizing — 17,944/30,000 iterations (59.8%) — 8.4 it/s — elapsed 35m 42s — ETA 23m 59s
+PROGRESS Optimizing — 17,999/30,000 iterations (60.0%) — 8.4 it/s — elapsed 35m 47s — ETA 23m 51s
+PROGRESS Optimizing — 18,032/30,000 iterations (60.1%) — 8.4 it/s — elapsed 35m 52s — ETA 23m 48s
+PROGRESS Optimizing — 18,086/30,000 iterations (60.3%) — 8.4 it/s — elapsed 35m 57s — ETA 23m 41s
+PROGRESS Optimizing — 18,139/30,000 iterations (60.5%) — 8.4 it/s — elapsed 36m 02s — ETA 23m 34s
+PROGRESS Optimizing — 18,194/30,000 iterations (60.6%) — 8.4 it/s — elapsed 36m 07s — ETA 23m 26s
+PROGRESS Optimizing — 18,249/30,000 iterations (60.8%) — 8.4 it/s — elapsed 36m 12s — ETA 23m 19s
+PROGRESS Optimizing — 18,304/30,000 iterations (61.0%) — 8.4 it/s — elapsed 36m 17s — ETA 23m 11s
+PROGRESS Optimizing — 18,359/30,000 iterations (61.2%) — 8.4 it/s — elapsed 36m 22s — ETA 23m 04s
+PROGRESS Optimizing — 18,413/30,000 iterations (61.4%) — 8.4 it/s — elapsed 36m 27s — ETA 22m 56s
+PROGRESS Optimizing — 18,468/30,000 iterations (61.6%) — 8.4 it/s — elapsed 36m 32s — ETA 22m 49s
+PROGRESS Optimizing — 18,523/30,000 iterations (61.7%) — 8.4 it/s — elapsed 36m 37s — ETA 22m 41s
+PROGRESS Optimizing — 18,578/30,000 iterations (61.9%) — 8.4 it/s — elapsed 36m 42s — ETA 22m 34s
+PROGRESS Optimizing — 18,632/30,000 iterations (62.1%) — 8.4 it/s — elapsed 36m 47s — ETA 22m 27s
+PROGRESS Optimizing — 18,687/30,000 iterations (62.3%) — 8.4 it/s — elapsed 36m 52s — ETA 22m 19s
+PROGRESS Optimizing — 18,741/30,000 iterations (62.5%) — 8.5 it/s — elapsed 36m 57s — ETA 22m 12s
+PROGRESS Optimizing — 18,796/30,000 iterations (62.7%) — 8.5 it/s — elapsed 37m 02s — ETA 22m 05s
+PROGRESS Optimizing — 18,851/30,000 iterations (62.8%) — 8.5 it/s — elapsed 37m 07s — ETA 21m 57s
+PROGRESS Optimizing — 18,906/30,000 iterations (63.0%) — 8.5 it/s — elapsed 37m 13s — ETA 21m 50s
+PROGRESS Optimizing — 18,961/30,000 iterations (63.2%) — 8.5 it/s — elapsed 37m 18s — ETA 21m 43s
+PROGRESS Optimizing — 19,001/30,000 iterations (63.3%) — 8.5 it/s — elapsed 37m 23s — ETA 21m 38s
+PROGRESS Optimizing — 19,055/30,000 iterations (63.5%) — 8.5 it/s — elapsed 37m 28s — ETA 21m 31s
+PROGRESS Optimizing — 19,110/30,000 iterations (63.7%) — 8.5 it/s — elapsed 37m 33s — ETA 21m 24s
+PROGRESS Optimizing — 19,164/30,000 iterations (63.9%) — 8.5 it/s — elapsed 37m 38s — ETA 21m 17s
+PROGRESS Optimizing — 19,218/30,000 iterations (64.1%) — 8.5 it/s — elapsed 37m 43s — ETA 21m 10s
+PROGRESS Optimizing — 19,272/30,000 iterations (64.2%) — 8.5 it/s — elapsed 37m 48s — ETA 21m 03s
+PROGRESS Optimizing — 19,326/30,000 iterations (64.4%) — 8.5 it/s — elapsed 37m 53s — ETA 20m 56s
+PROGRESS Optimizing — 19,380/30,000 iterations (64.6%) — 8.5 it/s — elapsed 37m 58s — ETA 20m 49s
+PROGRESS Optimizing — 19,435/30,000 iterations (64.8%) — 8.5 it/s — elapsed 38m 03s — ETA 20m 41s
+PROGRESS Optimizing — 19,489/30,000 iterations (65.0%) — 8.5 it/s — elapsed 38m 08s — ETA 20m 34s
+PROGRESS Optimizing — 19,542/30,000 iterations (65.1%) — 8.5 it/s — elapsed 38m 13s — ETA 20m 27s
+PROGRESS Optimizing — 19,596/30,000 iterations (65.3%) — 8.5 it/s — elapsed 38m 18s — ETA 20m 20s
+PROGRESS Optimizing — 19,651/30,000 iterations (65.5%) — 8.5 it/s — elapsed 38m 24s — ETA 20m 13s
+PROGRESS Optimizing — 19,706/30,000 iterations (65.7%) — 8.5 it/s — elapsed 38m 29s — ETA 20m 06s
+PROGRESS Optimizing — 19,761/30,000 iterations (65.9%) — 8.5 it/s — elapsed 38m 34s — ETA 19m 59s
+PROGRESS Optimizing — 19,815/30,000 iterations (66.0%) — 8.5 it/s — elapsed 38m 39s — ETA 19m 52s
+PROGRESS Optimizing — 19,868/30,000 iterations (66.2%) — 8.6 it/s — elapsed 38m 44s — ETA 19m 45s
+PROGRESS Optimizing — 19,921/30,000 iterations (66.4%) — 8.6 it/s — elapsed 38m 49s — ETA 19m 38s
+PROGRESS Optimizing — 19,974/30,000 iterations (66.6%) — 8.6 it/s — elapsed 38m 54s — ETA 19m 31s
+PROGRESS Optimizing — 20,007/30,000 iterations (66.7%) — 8.6 it/s — elapsed 38m 59s — ETA 19m 28s
+PROGRESS Optimizing — 20,062/30,000 iterations (66.9%) — 8.6 it/s — elapsed 39m 04s — ETA 19m 21s
+PROGRESS Optimizing — 20,115/30,000 iterations (67.0%) — 8.6 it/s — elapsed 39m 09s — ETA 19m 14s
+PROGRESS Optimizing — 20,169/30,000 iterations (67.2%) — 8.6 it/s — elapsed 39m 14s — ETA 19m 07s
+PROGRESS Optimizing — 20,224/30,000 iterations (67.4%) — 8.6 it/s — elapsed 39m 19s — ETA 19m 00s
+PROGRESS Optimizing — 20,279/30,000 iterations (67.6%) — 8.6 it/s — elapsed 39m 24s — ETA 18m 53s
+PROGRESS Optimizing — 20,334/30,000 iterations (67.8%) — 8.6 it/s — elapsed 39m 29s — ETA 18m 46s
+PROGRESS Optimizing — 20,389/30,000 iterations (68.0%) — 8.6 it/s — elapsed 39m 34s — ETA 18m 39s
+PROGRESS Optimizing — 20,444/30,000 iterations (68.1%) — 8.6 it/s — elapsed 39m 39s — ETA 18m 32s
+PROGRESS Optimizing — 20,499/30,000 iterations (68.3%) — 8.6 it/s — elapsed 39m 44s — ETA 18m 25s
+PROGRESS Optimizing — 20,554/30,000 iterations (68.5%) — 8.6 it/s — elapsed 39m 49s — ETA 18m 18s
+PROGRESS Optimizing — 20,609/30,000 iterations (68.7%) — 8.6 it/s — elapsed 39m 54s — ETA 18m 11s
+PROGRESS Optimizing — 20,665/30,000 iterations (68.9%) — 8.6 it/s — elapsed 39m 59s — ETA 18m 04s
+PROGRESS Optimizing — 20,720/30,000 iterations (69.1%) — 8.6 it/s — elapsed 40m 04s — ETA 17m 57s
+PROGRESS Optimizing — 20,775/30,000 iterations (69.2%) — 8.6 it/s — elapsed 40m 09s — ETA 17m 50s
+PROGRESS Optimizing — 20,830/30,000 iterations (69.4%) — 8.6 it/s — elapsed 40m 14s — ETA 17m 43s
+PROGRESS Optimizing — 20,886/30,000 iterations (69.6%) — 8.6 it/s — elapsed 40m 20s — ETA 17m 36s
+PROGRESS Optimizing — 20,941/30,000 iterations (69.8%) — 8.6 it/s — elapsed 40m 25s — ETA 17m 29s
+PROGRESS Optimizing — 20,994/30,000 iterations (70.0%) — 8.6 it/s — elapsed 40m 30s — ETA 17m 22s
+PROGRESS Optimizing — 21,028/30,000 iterations (70.1%) — 8.6 it/s — elapsed 40m 35s — ETA 17m 19s
+PROGRESS Optimizing — 21,082/30,000 iterations (70.3%) — 8.6 it/s — elapsed 40m 40s — ETA 17m 12s
+PROGRESS Optimizing — 21,137/30,000 iterations (70.5%) — 8.6 it/s — elapsed 40m 45s — ETA 17m 05s
+PROGRESS Optimizing — 21,192/30,000 iterations (70.6%) — 8.7 it/s — elapsed 40m 50s — ETA 16m 58s
+PROGRESS Optimizing — 21,247/30,000 iterations (70.8%) — 8.7 it/s — elapsed 40m 55s — ETA 16m 51s
+PROGRESS Optimizing — 21,301/30,000 iterations (71.0%) — 8.7 it/s — elapsed 41m 00s — ETA 16m 45s
+PROGRESS Optimizing — 21,356/30,000 iterations (71.2%) — 8.7 it/s — elapsed 41m 05s — ETA 16m 38s
+PROGRESS Optimizing — 21,411/30,000 iterations (71.4%) — 8.7 it/s — elapsed 41m 10s — ETA 16m 31s
+PROGRESS Optimizing — 21,466/30,000 iterations (71.6%) — 8.7 it/s — elapsed 41m 15s — ETA 16m 24s
+PROGRESS Optimizing — 21,521/30,000 iterations (71.7%) — 8.7 it/s — elapsed 41m 20s — ETA 16m 17s
+PROGRESS Optimizing — 21,577/30,000 iterations (71.9%) — 8.7 it/s — elapsed 41m 25s — ETA 16m 10s
+PROGRESS Optimizing — 21,632/30,000 iterations (72.1%) — 8.7 it/s — elapsed 41m 30s — ETA 16m 03s
+PROGRESS Optimizing — 21,687/30,000 iterations (72.3%) — 8.7 it/s — elapsed 41m 35s — ETA 15m 56s
+PROGRESS Optimizing — 21,742/30,000 iterations (72.5%) — 8.7 it/s — elapsed 41m 40s — ETA 15m 50s
+PROGRESS Optimizing — 21,797/30,000 iterations (72.7%) — 8.7 it/s — elapsed 41m 45s — ETA 15m 43s
+PROGRESS Optimizing — 21,852/30,000 iterations (72.8%) — 8.7 it/s — elapsed 41m 50s — ETA 15m 36s
+PROGRESS Optimizing — 21,907/30,000 iterations (73.0%) — 8.7 it/s — elapsed 41m 55s — ETA 15m 29s
+PROGRESS Optimizing — 21,963/30,000 iterations (73.2%) — 8.7 it/s — elapsed 42m 00s — ETA 15m 22s
+PROGRESS Optimizing — 22,001/30,000 iterations (73.3%) — 8.7 it/s — elapsed 42m 06s — ETA 15m 18s
+PROGRESS Optimizing — 22,055/30,000 iterations (73.5%) — 8.7 it/s — elapsed 42m 11s — ETA 15m 12s
+PROGRESS Optimizing — 22,109/30,000 iterations (73.7%) — 8.7 it/s — elapsed 42m 16s — ETA 15m 05s
+PROGRESS Optimizing — 22,164/30,000 iterations (73.9%) — 8.7 it/s — elapsed 42m 21s — ETA 14m 58s
+PROGRESS Optimizing — 22,219/30,000 iterations (74.1%) — 8.7 it/s — elapsed 42m 26s — ETA 14m 52s
+PROGRESS Optimizing — 22,274/30,000 iterations (74.2%) — 8.7 it/s — elapsed 42m 31s — ETA 14m 45s
+PROGRESS Optimizing — 22,328/30,000 iterations (74.4%) — 8.7 it/s — elapsed 42m 36s — ETA 14m 38s
+PROGRESS Optimizing — 22,382/30,000 iterations (74.6%) — 8.7 it/s — elapsed 42m 41s — ETA 14m 32s
+PROGRESS Optimizing — 22,436/30,000 iterations (74.8%) — 8.7 it/s — elapsed 42m 46s — ETA 14m 25s
+PROGRESS Optimizing — 22,491/30,000 iterations (75.0%) — 8.7 it/s — elapsed 42m 51s — ETA 14m 18s
+PROGRESS Optimizing — 22,546/30,000 iterations (75.2%) — 8.8 it/s — elapsed 42m 56s — ETA 14m 12s
+PROGRESS Optimizing — 22,601/30,000 iterations (75.3%) — 8.8 it/s — elapsed 43m 01s — ETA 14m 05s
+PROGRESS Optimizing — 22,657/30,000 iterations (75.5%) — 8.8 it/s — elapsed 43m 06s — ETA 13m 58s
+PROGRESS Optimizing — 22,713/30,000 iterations (75.7%) — 8.8 it/s — elapsed 43m 11s — ETA 13m 51s
+PROGRESS Optimizing — 22,769/30,000 iterations (75.9%) — 8.8 it/s — elapsed 43m 17s — ETA 13m 45s
+PROGRESS Optimizing — 22,824/30,000 iterations (76.1%) — 8.8 it/s — elapsed 43m 22s — ETA 13m 38s
+PROGRESS Optimizing — 22,879/30,000 iterations (76.3%) — 8.8 it/s — elapsed 43m 27s — ETA 13m 31s
+PROGRESS Optimizing — 22,933/30,000 iterations (76.4%) — 8.8 it/s — elapsed 43m 32s — ETA 13m 25s
+PROGRESS Optimizing — 22,987/30,000 iterations (76.6%) — 8.8 it/s — elapsed 43m 37s — ETA 13m 18s
+PROGRESS Optimizing — 23,020/30,000 iterations (76.7%) — 8.8 it/s — elapsed 43m 42s — ETA 13m 15s
+PROGRESS Optimizing — 23,073/30,000 iterations (76.9%) — 8.8 it/s — elapsed 43m 47s — ETA 13m 09s
+PROGRESS Optimizing — 23,127/30,000 iterations (77.1%) — 8.8 it/s — elapsed 43m 52s — ETA 13m 02s
+PROGRESS Optimizing — 23,182/30,000 iterations (77.3%) — 8.8 it/s — elapsed 43m 57s — ETA 12m 56s
+PROGRESS Optimizing — 23,236/30,000 iterations (77.5%) — 8.8 it/s — elapsed 44m 02s — ETA 12m 49s
+PROGRESS Optimizing — 23,291/30,000 iterations (77.6%) — 8.8 it/s — elapsed 44m 07s — ETA 12m 42s
+PROGRESS Optimizing — 23,344/30,000 iterations (77.8%) — 8.8 it/s — elapsed 44m 12s — ETA 12m 36s
+PROGRESS Optimizing — 23,397/30,000 iterations (78.0%) — 8.8 it/s — elapsed 44m 17s — ETA 12m 30s
+PROGRESS Optimizing — 23,452/30,000 iterations (78.2%) — 8.8 it/s — elapsed 44m 22s — ETA 12m 23s
+PROGRESS Optimizing — 23,506/30,000 iterations (78.4%) — 8.8 it/s — elapsed 44m 27s — ETA 12m 17s
+PROGRESS Optimizing — 23,561/30,000 iterations (78.5%) — 8.8 it/s — elapsed 44m 32s — ETA 12m 10s
+PROGRESS Optimizing — 23,615/30,000 iterations (78.7%) — 8.8 it/s — elapsed 44m 37s — ETA 12m 04s
+PROGRESS Optimizing — 23,669/30,000 iterations (78.9%) — 8.8 it/s — elapsed 44m 42s — ETA 11m 57s
+PROGRESS Optimizing — 23,723/30,000 iterations (79.1%) — 8.8 it/s — elapsed 44m 47s — ETA 11m 51s
+PROGRESS Optimizing — 23,777/30,000 iterations (79.3%) — 8.8 it/s — elapsed 44m 52s — ETA 11m 45s
+PROGRESS Optimizing — 23,832/30,000 iterations (79.4%) — 8.8 it/s — elapsed 44m 57s — ETA 11m 38s
+PROGRESS Optimizing — 23,887/30,000 iterations (79.6%) — 8.8 it/s — elapsed 45m 03s — ETA 11m 32s
+PROGRESS Optimizing — 23,941/30,000 iterations (79.8%) — 8.8 it/s — elapsed 45m 08s — ETA 11m 25s
+PROGRESS Optimizing — 23,996/30,000 iterations (80.0%) — 8.8 it/s — elapsed 45m 13s — ETA 11m 19s
+PROGRESS Optimizing — 24,031/30,000 iterations (80.1%) — 8.8 it/s — elapsed 45m 18s — ETA 11m 15s
+PROGRESS Optimizing — 24,085/30,000 iterations (80.3%) — 8.8 it/s — elapsed 45m 23s — ETA 11m 09s
+PROGRESS Optimizing — 24,140/30,000 iterations (80.5%) — 8.8 it/s — elapsed 45m 28s — ETA 11m 02s
+PROGRESS Optimizing — 24,195/30,000 iterations (80.7%) — 8.9 it/s — elapsed 45m 33s — ETA 10m 56s
+PROGRESS Optimizing — 24,250/30,000 iterations (80.8%) — 8.9 it/s — elapsed 45m 38s — ETA 10m 49s
+PROGRESS Optimizing — 24,306/30,000 iterations (81.0%) — 8.9 it/s — elapsed 45m 43s — ETA 10m 43s
+PROGRESS Optimizing — 24,361/30,000 iterations (81.2%) — 8.9 it/s — elapsed 45m 48s — ETA 10m 36s
+PROGRESS Optimizing — 24,416/30,000 iterations (81.4%) — 8.9 it/s — elapsed 45m 53s — ETA 10m 30s
+PROGRESS Optimizing — 24,471/30,000 iterations (81.6%) — 8.9 it/s — elapsed 45m 58s — ETA 10m 23s
+PROGRESS Optimizing — 24,526/30,000 iterations (81.8%) — 8.9 it/s — elapsed 46m 03s — ETA 10m 17s
+PROGRESS Optimizing — 24,581/30,000 iterations (81.9%) — 8.9 it/s — elapsed 46m 08s — ETA 10m 10s
+PROGRESS Optimizing — 24,636/30,000 iterations (82.1%) — 8.9 it/s — elapsed 46m 13s — ETA 10m 04s
+PROGRESS Optimizing — 24,691/30,000 iterations (82.3%) — 8.9 it/s — elapsed 46m 18s — ETA 9m 57s
+PROGRESS Optimizing — 24,746/30,000 iterations (82.5%) — 8.9 it/s — elapsed 46m 23s — ETA 9m 51s
+PROGRESS Optimizing — 24,801/30,000 iterations (82.7%) — 8.9 it/s — elapsed 46m 28s — ETA 9m 44s
+PROGRESS Optimizing — 24,855/30,000 iterations (82.8%) — 8.9 it/s — elapsed 46m 33s — ETA 9m 38s
+PROGRESS Optimizing — 24,910/30,000 iterations (83.0%) — 8.9 it/s — elapsed 46m 38s — ETA 9m 32s
+PROGRESS Optimizing — 24,965/30,000 iterations (83.2%) — 8.9 it/s — elapsed 46m 43s — ETA 9m 25s
+PROGRESS Optimizing — 25,001/30,000 iterations (83.3%) — 8.9 it/s — elapsed 46m 49s — ETA 9m 22s
+PROGRESS Optimizing — 25,017/30,000 iterations (83.4%) — 8.8 it/s — elapsed 47m 19s — ETA 9m 26s
+PROGRESS Optimizing — 25,017/30,000 iterations (83.4%) — 8.7 it/s — elapsed 47m 49s — ETA 9m 32s
+PROGRESS Optimizing — 25,017/30,000 iterations (83.4%) — 8.6 it/s — elapsed 48m 19s — ETA 9m 38s
+PROGRESS Optimizing — 25,017/30,000 iterations (83.4%) — 8.5 it/s — elapsed 48m 49s — ETA 9m 43s
+PROGRESS Optimizing — 25,017/30,000 iterations (83.4%) — 8.5 it/s — elapsed 49m 19s — ETA 9m 49s
+PROGRESS Optimizing — 25,033/30,000 iterations (83.4%) — 8.4 it/s — elapsed 49m 24s — ETA 9m 48s
+PROGRESS Optimizing — 25,070/30,000 iterations (83.6%) — 8.4 it/s — elapsed 49m 30s — ETA 9m 44s
+PROGRESS Optimizing — 25,106/30,000 iterations (83.7%) — 8.4 it/s — elapsed 49m 35s — ETA 9m 40s
+PROGRESS Optimizing — 25,143/30,000 iterations (83.8%) — 8.4 it/s — elapsed 49m 40s — ETA 9m 36s
+PROGRESS Optimizing — 25,180/30,000 iterations (83.9%) — 8.4 it/s — elapsed 49m 45s — ETA 9m 31s
+PROGRESS Optimizing — 25,217/30,000 iterations (84.1%) — 8.4 it/s — elapsed 49m 50s — ETA 9m 27s
+PROGRESS Optimizing — 25,254/30,000 iterations (84.2%) — 8.4 it/s — elapsed 49m 55s — ETA 9m 23s
+PROGRESS Optimizing — 25,291/30,000 iterations (84.3%) — 8.4 it/s — elapsed 50m 00s — ETA 9m 19s
+PROGRESS Optimizing — 25,328/30,000 iterations (84.4%) — 8.4 it/s — elapsed 50m 05s — ETA 9m 14s
+PROGRESS Optimizing — 25,365/30,000 iterations (84.5%) — 8.4 it/s — elapsed 50m 10s — ETA 9m 10s
+PROGRESS Optimizing — 25,402/30,000 iterations (84.7%) — 8.4 it/s — elapsed 50m 15s — ETA 9m 06s
+PROGRESS Optimizing — 25,439/30,000 iterations (84.8%) — 8.4 it/s — elapsed 50m 20s — ETA 9m 02s
+PROGRESS Optimizing — 25,476/30,000 iterations (84.9%) — 8.4 it/s — elapsed 50m 25s — ETA 8m 57s
+PROGRESS Optimizing — 25,513/30,000 iterations (85.0%) — 8.4 it/s — elapsed 50m 31s — ETA 8m 53s
+PROGRESS Optimizing — 25,549/30,000 iterations (85.2%) — 8.4 it/s — elapsed 50m 36s — ETA 8m 49s
+PROGRESS Optimizing — 25,586/30,000 iterations (85.3%) — 8.4 it/s — elapsed 50m 41s — ETA 8m 45s
+PROGRESS Optimizing — 25,623/30,000 iterations (85.4%) — 8.4 it/s — elapsed 50m 46s — ETA 8m 40s
+PROGRESS Optimizing — 25,660/30,000 iterations (85.5%) — 8.4 it/s — elapsed 50m 51s — ETA 8m 36s
+PROGRESS Optimizing — 25,697/30,000 iterations (85.7%) — 8.4 it/s — elapsed 50m 56s — ETA 8m 32s
+PROGRESS Optimizing — 25,734/30,000 iterations (85.8%) — 8.4 it/s — elapsed 51m 01s — ETA 8m 27s
+PROGRESS Optimizing — 25,771/30,000 iterations (85.9%) — 8.4 it/s — elapsed 51m 06s — ETA 8m 23s
+PROGRESS Optimizing — 25,807/30,000 iterations (86.0%) — 8.4 it/s — elapsed 51m 11s — ETA 8m 19s
+PROGRESS Optimizing — 25,844/30,000 iterations (86.1%) — 8.4 it/s — elapsed 51m 16s — ETA 8m 15s
+PROGRESS Optimizing — 25,881/30,000 iterations (86.3%) — 8.4 it/s — elapsed 51m 21s — ETA 8m 10s
+PROGRESS Optimizing — 25,918/30,000 iterations (86.4%) — 8.4 it/s — elapsed 51m 26s — ETA 8m 06s
+PROGRESS Optimizing — 25,955/30,000 iterations (86.5%) — 8.4 it/s — elapsed 51m 32s — ETA 8m 02s
+PROGRESS Optimizing — 25,992/30,000 iterations (86.6%) — 8.4 it/s — elapsed 51m 37s — ETA 7m 58s
+PROGRESS Optimizing — 26,015/30,000 iterations (86.7%) — 8.4 it/s — elapsed 51m 42s — ETA 7m 55s
+PROGRESS Optimizing — 26,052/30,000 iterations (86.8%) — 8.4 it/s — elapsed 51m 47s — ETA 7m 51s
+PROGRESS Optimizing — 26,089/30,000 iterations (87.0%) — 8.4 it/s — elapsed 51m 52s — ETA 7m 47s
+PROGRESS Optimizing — 26,126/30,000 iterations (87.1%) — 8.4 it/s — elapsed 51m 57s — ETA 7m 42s
+PROGRESS Optimizing — 26,163/30,000 iterations (87.2%) — 8.4 it/s — elapsed 52m 02s — ETA 7m 38s
+PROGRESS Optimizing — 26,200/30,000 iterations (87.3%) — 8.4 it/s — elapsed 52m 07s — ETA 7m 34s
+PROGRESS Optimizing — 26,237/30,000 iterations (87.5%) — 8.4 it/s — elapsed 52m 12s — ETA 7m 29s
+PROGRESS Optimizing — 26,274/30,000 iterations (87.6%) — 8.4 it/s — elapsed 52m 17s — ETA 7m 25s
+PROGRESS Optimizing — 26,311/30,000 iterations (87.7%) — 8.4 it/s — elapsed 52m 23s — ETA 7m 21s
+PROGRESS Optimizing — 26,348/30,000 iterations (87.8%) — 8.4 it/s — elapsed 52m 28s — ETA 7m 16s
+PROGRESS Optimizing — 26,385/30,000 iterations (88.0%) — 8.4 it/s — elapsed 52m 33s — ETA 7m 12s
+PROGRESS Optimizing — 26,422/30,000 iterations (88.1%) — 8.4 it/s — elapsed 52m 38s — ETA 7m 08s
+PROGRESS Optimizing — 26,459/30,000 iterations (88.2%) — 8.4 it/s — elapsed 52m 43s — ETA 7m 03s
+PROGRESS Optimizing — 26,496/30,000 iterations (88.3%) — 8.4 it/s — elapsed 52m 48s — ETA 6m 59s
+PROGRESS Optimizing — 26,533/30,000 iterations (88.4%) — 8.4 it/s — elapsed 52m 53s — ETA 6m 55s
+PROGRESS Optimizing — 26,570/30,000 iterations (88.6%) — 8.4 it/s — elapsed 52m 58s — ETA 6m 50s
+PROGRESS Optimizing — 26,607/30,000 iterations (88.7%) — 8.4 it/s — elapsed 53m 03s — ETA 6m 46s
+PROGRESS Optimizing — 26,644/30,000 iterations (88.8%) — 8.4 it/s — elapsed 53m 08s — ETA 6m 42s
+PROGRESS Optimizing — 26,681/30,000 iterations (88.9%) — 8.4 it/s — elapsed 53m 14s — ETA 6m 37s
+PROGRESS Optimizing — 26,718/30,000 iterations (89.1%) — 8.4 it/s — elapsed 53m 19s — ETA 6m 33s
+PROGRESS Optimizing — 26,755/30,000 iterations (89.2%) — 8.4 it/s — elapsed 53m 24s — ETA 6m 29s
+PROGRESS Optimizing — 26,792/30,000 iterations (89.3%) — 8.3 it/s — elapsed 53m 29s — ETA 6m 24s
+PROGRESS Optimizing — 26,829/30,000 iterations (89.4%) — 8.3 it/s — elapsed 53m 34s — ETA 6m 20s
+PROGRESS Optimizing — 26,866/30,000 iterations (89.6%) — 8.3 it/s — elapsed 53m 39s — ETA 6m 16s
+PROGRESS Optimizing — 26,903/30,000 iterations (89.7%) — 8.3 it/s — elapsed 53m 44s — ETA 6m 11s
+PROGRESS Optimizing — 26,940/30,000 iterations (89.8%) — 8.3 it/s — elapsed 53m 49s — ETA 6m 07s
+PROGRESS Optimizing — 26,976/30,000 iterations (89.9%) — 8.3 it/s — elapsed 53m 54s — ETA 6m 03s
+PROGRESS Optimizing — 27,001/30,000 iterations (90.0%) — 8.3 it/s — elapsed 54m 00s — ETA 6m 00s
+PROGRESS Optimizing — 27,037/30,000 iterations (90.1%) — 8.3 it/s — elapsed 54m 05s — ETA 5m 56s
+PROGRESS Optimizing — 27,074/30,000 iterations (90.2%) — 8.3 it/s — elapsed 54m 10s — ETA 5m 51s
+PROGRESS Optimizing — 27,111/30,000 iterations (90.4%) — 8.3 it/s — elapsed 54m 15s — ETA 5m 47s
+PROGRESS Optimizing — 27,148/30,000 iterations (90.5%) — 8.3 it/s — elapsed 54m 20s — ETA 5m 42s
+PROGRESS Optimizing — 27,185/30,000 iterations (90.6%) — 8.3 it/s — elapsed 54m 25s — ETA 5m 38s
+PROGRESS Optimizing — 27,222/30,000 iterations (90.7%) — 8.3 it/s — elapsed 54m 30s — ETA 5m 34s
+PROGRESS Optimizing — 27,259/30,000 iterations (90.9%) — 8.3 it/s — elapsed 54m 35s — ETA 5m 29s
+PROGRESS Optimizing — 27,296/30,000 iterations (91.0%) — 8.3 it/s — elapsed 54m 40s — ETA 5m 25s
+PROGRESS Optimizing — 27,333/30,000 iterations (91.1%) — 8.3 it/s — elapsed 54m 45s — ETA 5m 21s
+PROGRESS Optimizing — 27,370/30,000 iterations (91.2%) — 8.3 it/s — elapsed 54m 51s — ETA 5m 16s
+PROGRESS Optimizing — 27,407/30,000 iterations (91.4%) — 8.3 it/s — elapsed 54m 56s — ETA 5m 12s
+PROGRESS Optimizing — 27,444/30,000 iterations (91.5%) — 8.3 it/s — elapsed 55m 01s — ETA 5m 07s
+PROGRESS Optimizing — 27,481/30,000 iterations (91.6%) — 8.3 it/s — elapsed 55m 06s — ETA 5m 03s
+PROGRESS Optimizing — 27,518/30,000 iterations (91.7%) — 8.3 it/s — elapsed 55m 11s — ETA 4m 59s
+PROGRESS Optimizing — 27,554/30,000 iterations (91.8%) — 8.3 it/s — elapsed 55m 16s — ETA 4m 54s
+PROGRESS Optimizing — 27,591/30,000 iterations (92.0%) — 8.3 it/s — elapsed 55m 21s — ETA 4m 50s
+PROGRESS Optimizing — 27,628/30,000 iterations (92.1%) — 8.3 it/s — elapsed 55m 26s — ETA 4m 46s
+PROGRESS Optimizing — 27,665/30,000 iterations (92.2%) — 8.3 it/s — elapsed 55m 31s — ETA 4m 41s
+PROGRESS Optimizing — 27,702/30,000 iterations (92.3%) — 8.3 it/s — elapsed 55m 36s — ETA 4m 37s
+PROGRESS Optimizing — 27,739/30,000 iterations (92.5%) — 8.3 it/s — elapsed 55m 41s — ETA 4m 32s
+PROGRESS Optimizing — 27,776/30,000 iterations (92.6%) — 8.3 it/s — elapsed 55m 46s — ETA 4m 28s
+PROGRESS Optimizing — 27,813/30,000 iterations (92.7%) — 8.3 it/s — elapsed 55m 52s — ETA 4m 24s
+PROGRESS Optimizing — 27,850/30,000 iterations (92.8%) — 8.3 it/s — elapsed 55m 57s — ETA 4m 19s
+PROGRESS Optimizing — 27,887/30,000 iterations (93.0%) — 8.3 it/s — elapsed 56m 02s — ETA 4m 15s
+PROGRESS Optimizing — 27,924/30,000 iterations (93.1%) — 8.3 it/s — elapsed 56m 07s — ETA 4m 10s
+PROGRESS Optimizing — 27,960/30,000 iterations (93.2%) — 8.3 it/s — elapsed 56m 12s — ETA 4m 06s
+PROGRESS Optimizing — 27,996/30,000 iterations (93.3%) — 8.3 it/s — elapsed 56m 17s — ETA 4m 02s
+PROGRESS Optimizing — 28,017/30,000 iterations (93.4%) — 8.3 it/s — elapsed 56m 22s — ETA 3m 59s
+PROGRESS Optimizing — 28,053/30,000 iterations (93.5%) — 8.3 it/s — elapsed 56m 27s — ETA 3m 55s
+PROGRESS Optimizing — 28,090/30,000 iterations (93.6%) — 8.3 it/s — elapsed 56m 32s — ETA 3m 51s
+PROGRESS Optimizing — 28,126/30,000 iterations (93.8%) — 8.3 it/s — elapsed 56m 37s — ETA 3m 46s
+PROGRESS Optimizing — 28,163/30,000 iterations (93.9%) — 8.3 it/s — elapsed 56m 42s — ETA 3m 42s
+PROGRESS Optimizing — 28,200/30,000 iterations (94.0%) — 8.3 it/s — elapsed 56m 47s — ETA 3m 37s
+PROGRESS Optimizing — 28,237/30,000 iterations (94.1%) — 8.3 it/s — elapsed 56m 52s — ETA 3m 33s
+PROGRESS Optimizing — 28,274/30,000 iterations (94.2%) — 8.3 it/s — elapsed 56m 58s — ETA 3m 29s
+PROGRESS Optimizing — 28,311/30,000 iterations (94.4%) — 8.3 it/s — elapsed 57m 03s — ETA 3m 24s
+PROGRESS Optimizing — 28,348/30,000 iterations (94.5%) — 8.3 it/s — elapsed 57m 08s — ETA 3m 20s
+PROGRESS Optimizing — 28,385/30,000 iterations (94.6%) — 8.3 it/s — elapsed 57m 13s — ETA 3m 15s
+PROGRESS Optimizing — 28,422/30,000 iterations (94.7%) — 8.3 it/s — elapsed 57m 18s — ETA 3m 11s
+PROGRESS Optimizing — 28,459/30,000 iterations (94.9%) — 8.3 it/s — elapsed 57m 23s — ETA 3m 06s
+PROGRESS Optimizing — 28,496/30,000 iterations (95.0%) — 8.3 it/s — elapsed 57m 28s — ETA 3m 02s
+PROGRESS Optimizing — 28,533/30,000 iterations (95.1%) — 8.3 it/s — elapsed 57m 33s — ETA 2m 58s
+PROGRESS Optimizing — 28,570/30,000 iterations (95.2%) — 8.3 it/s — elapsed 57m 38s — ETA 2m 53s
+PROGRESS Optimizing — 28,607/30,000 iterations (95.4%) — 8.3 it/s — elapsed 57m 43s — ETA 2m 49s
+PROGRESS Optimizing — 28,644/30,000 iterations (95.5%) — 8.3 it/s — elapsed 57m 48s — ETA 2m 44s
+PROGRESS Optimizing — 28,681/30,000 iterations (95.6%) — 8.3 it/s — elapsed 57m 54s — ETA 2m 40s
+PROGRESS Optimizing — 28,718/30,000 iterations (95.7%) — 8.3 it/s — elapsed 57m 59s — ETA 2m 35s
+PROGRESS Optimizing — 28,755/30,000 iterations (95.8%) — 8.3 it/s — elapsed 58m 04s — ETA 2m 31s
+PROGRESS Optimizing — 28,792/30,000 iterations (96.0%) — 8.3 it/s — elapsed 58m 09s — ETA 2m 26s
+PROGRESS Optimizing — 28,829/30,000 iterations (96.1%) — 8.3 it/s — elapsed 58m 14s — ETA 2m 22s
+PROGRESS Optimizing — 28,866/30,000 iterations (96.2%) — 8.2 it/s — elapsed 58m 19s — ETA 2m 17s
+PROGRESS Optimizing — 28,902/30,000 iterations (96.3%) — 8.2 it/s — elapsed 58m 24s — ETA 2m 13s
+PROGRESS Optimizing — 28,938/30,000 iterations (96.5%) — 8.2 it/s — elapsed 58m 29s — ETA 2m 09s
+PROGRESS Optimizing — 28,974/30,000 iterations (96.6%) — 8.2 it/s — elapsed 58m 34s — ETA 2m 04s
+PROGRESS Optimizing — 29,001/30,000 iterations (96.7%) — 8.2 it/s — elapsed 58m 40s — ETA 2m 01s
+PROGRESS Optimizing — 29,038/30,000 iterations (96.8%) — 8.2 it/s — elapsed 58m 45s — ETA 1m 57s
+PROGRESS Optimizing — 29,075/30,000 iterations (96.9%) — 8.2 it/s — elapsed 58m 50s — ETA 1m 52s
+PROGRESS Optimizing — 29,112/30,000 iterations (97.0%) — 8.2 it/s — elapsed 58m 55s — ETA 1m 48s
+PROGRESS Optimizing — 29,149/30,000 iterations (97.2%) — 8.2 it/s — elapsed 59m 01s — ETA 1m 43s
+PROGRESS Optimizing — 29,186/30,000 iterations (97.3%) — 8.2 it/s — elapsed 59m 06s — ETA 1m 39s
+PROGRESS Optimizing — 29,223/30,000 iterations (97.4%) — 8.2 it/s — elapsed 59m 11s — ETA 1m 34s
+PROGRESS Optimizing — 29,260/30,000 iterations (97.5%) — 8.2 it/s — elapsed 59m 16s — ETA 1m 30s
+PROGRESS Optimizing — 29,297/30,000 iterations (97.7%) — 8.2 it/s — elapsed 59m 21s — ETA 1m 25s
+PROGRESS Optimizing — 29,334/30,000 iterations (97.8%) — 8.2 it/s — elapsed 59m 26s — ETA 1m 21s
+PROGRESS Optimizing — 29,371/30,000 iterations (97.9%) — 8.2 it/s — elapsed 59m 31s — ETA 1m 16s
+PROGRESS Optimizing — 29,408/30,000 iterations (98.0%) — 8.2 it/s — elapsed 59m 36s — ETA 1m 12s
+PROGRESS Optimizing — 29,445/30,000 iterations (98.2%) — 8.2 it/s — elapsed 59m 41s — ETA 1m 08s
+PROGRESS Optimizing — 29,482/30,000 iterations (98.3%) — 8.2 it/s — elapsed 59m 46s — ETA 1m 03s
+PROGRESS Optimizing — 29,519/30,000 iterations (98.4%) — 8.2 it/s — elapsed 59m 51s — ETA 59s
+PROGRESS Optimizing — 29,555/30,000 iterations (98.5%) — 8.2 it/s — elapsed 59m 56s — ETA 54s
+PROGRESS Optimizing — 29,591/30,000 iterations (98.6%) — 8.2 it/s — elapsed 1h 00m — ETA 50s
+PROGRESS Optimizing — 29,627/30,000 iterations (98.8%) — 8.2 it/s — elapsed 1h 00m — ETA 45s
+PROGRESS Optimizing — 29,663/30,000 iterations (98.9%) — 8.2 it/s — elapsed 1h 00m — ETA 41s
+PROGRESS Optimizing — 29,700/30,000 iterations (99.0%) — 8.2 it/s — elapsed 1h 00m — ETA 37s
+PROGRESS Optimizing — 29,737/30,000 iterations (99.1%) — 8.2 it/s — elapsed 1h 00m — ETA 32s
+PROGRESS Optimizing — 29,773/30,000 iterations (99.2%) — 8.2 it/s — elapsed 1h 00m — ETA 28s
+PROGRESS Optimizing — 29,810/30,000 iterations (99.4%) — 8.2 it/s — elapsed 1h 00m — ETA 23s
+PROGRESS Optimizing — 29,845/30,000 iterations (99.5%) — 8.2 it/s — elapsed 1h 00m — ETA 19s
+PROGRESS Optimizing — 29,882/30,000 iterations (99.6%) — 8.2 it/s — elapsed 1h 00m — ETA 14s
+PROGRESS Optimizing — 29,919/30,000 iterations (99.7%) — 8.2 it/s — elapsed 1h 00m — ETA 10s
+PROGRESS Optimizing — 29,956/30,000 iterations (99.9%) — 8.2 it/s — elapsed 1h 00m — ETA 5s
+PROGRESS Optimizing — 29,993/30,000 iterations (100.0%) — 8.2 it/s — elapsed 1h 00m — ETA 1s
+PROGRESS Saving final checkpoint — checkpoint_fitted.ckpt — elapsed 0s
+PROGRESS Computing satisfaction metrics and outputs — elapsed 0s
+PROGRESS Evaluating verified patches — 0 patches — elapsed 0s
+PROGRESS Evaluating tracks — 741,046 tracks — elapsed 0s
+PROGRESS Evaluating tracks — 741,046 tracks — elapsed 30s
+PROGRESS Evaluating tracks — 741,046 tracks — elapsed 1m 00s
+PROGRESS Evaluating tracks — 741,046 tracks — elapsed 1m 30s
+PROGRESS Evaluating tracks — 741,046 tracks — elapsed 2m 00s
+PROGRESS Evaluating tracks — 741,046 tracks — elapsed 2m 30s
+PROGRESS Evaluating tracks — 741,046 tracks — elapsed 3m 00s
+PROGRESS Transforming final mesh — 0/39 chunks (0.0%) — elapsed 0s
+PROGRESS Writing final mesh windings — 0/260 windings (0.0%) — elapsed 0s
+PROGRESS Writing final mesh windings — 260/260 windings (100.0%) — elapsed 2s — ETA 0s
+no outer-shell losses; using configured shell_outer_winding_idx = 130 for the dense and regularisation losses
+removing tracks near patches
+kept 741046 / 741046 tracks (packed)
+track radius loss: 741046/741046 tracks survive exclusion (radius 16.0); 34978733 points retained
+track crossings: using TrackGraph cache for 741046 surviving tracks
+track crossings: used cached CSR for 741046 surviving tracks
+track crossing index: 492504/741046 tracks connected, 3011996 directed crossings, 43.0 MiB
+track length bins: short <= 32.0 (247171), medium <= 68.7 (246866), long (247009); effective weights [0.0, 0.15, 0.85]
+theta topology ready (0.0s, peak RSS 15.36 GiB)
+trainable parameters: 81,448,362 (325.8 MB) - gradient volume all-reduced every step in distributed mode
+WARNING: loss_weight_dense_spacing_density > 0 but dense_spacing_mode='grad_mag'; this component runs only as part of the 'phase' bundle and is INACTIVE.
+track point spacing: 4653630 cached points, observed 2.00-60.00 voxels (limits 20-60; 2358419 mandatory-anchor exceptions; native)
+step 0: loss = 4421.3, umbilicus = 3.0, sym_dirichlet = 4.1, dense_normals = 30.9, min_spacing = 0.0, track_radius = 4383.2, track_dt = 0.0
+step 200: loss = 1276.8, umbilicus = 0.1, sym_dirichlet = 8.1, dense_normals = 10.9, min_spacing = 0.0, track_radius = 1257.8, track_dt = 0.0
+step 400: loss = 585.1, umbilicus = 0.1, sym_dirichlet = 11.9, dense_normals = 7.2, min_spacing = 0.0, track_radius = 565.9, track_dt = 0.0
+step 600: loss = 437.4, umbilicus = 0.0, sym_dirichlet = 15.8, dense_normals = 6.0, min_spacing = 0.0, track_radius = 415.6, track_dt = 0.0
+step 800: loss = 361.0, umbilicus = 0.0, sym_dirichlet = 12.9, dense_normals = 6.0, min_spacing = 0.0, track_radius = 342.1, track_dt = 0.0
+step 1000: loss = 328.5, umbilicus = 0.0, sym_dirichlet = 18.8, dense_normals = 5.9, min_spacing = 0.0, track_radius = 303.8, track_dt = 0.0
+step 1200: loss = 310.3, umbilicus = 0.0, sym_dirichlet = 13.2, dense_normals = 6.0, min_spacing = 0.0, track_radius = 291.0, track_dt = 0.0
+step 1400: loss = 297.6, umbilicus = 0.0, sym_dirichlet = 17.9, dense_normals = 5.7, min_spacing = 0.0, track_radius = 274.0, track_dt = 0.0
+step 1600: loss = 273.1, umbilicus = 0.1, sym_dirichlet = 21.0, dense_normals = 5.6, min_spacing = 0.0, track_radius = 246.4, track_dt = 0.0
+step 1800: loss = 265.3, umbilicus = 0.0, sym_dirichlet = 17.2, dense_normals = 5.6, min_spacing = 0.0, track_radius = 242.5, track_dt = 0.0
+step 2000: loss = 252.7, umbilicus = 0.0, sym_dirichlet = 17.1, dense_normals = 5.6, min_spacing = 0.0, track_radius = 229.9, track_dt = 0.0
+step 2200: loss = 246.8, umbilicus = 0.0, sym_dirichlet = 16.5, dense_normals = 5.9, min_spacing = 0.0, track_radius = 224.3, track_dt = 0.0
+step 2400: loss = 239.7, umbilicus = 0.0, sym_dirichlet = 15.2, dense_normals = 5.2, min_spacing = 0.0, track_radius = 219.3, track_dt = 0.0
+step 2600: loss = 237.2, umbilicus = 0.1, sym_dirichlet = 15.3, dense_normals = 5.3, min_spacing = 0.0, track_radius = 216.6, track_dt = 0.0
+step 2800: loss = 232.3, umbilicus = 0.0, sym_dirichlet = 18.3, dense_normals = 5.6, min_spacing = 0.0, track_radius = 208.4, track_dt = 0.0
+step 3000: loss = 224.2, umbilicus = 0.0, sym_dirichlet = 15.4, dense_normals = 5.5, min_spacing = 0.0, track_radius = 203.3, track_dt = 0.0
+step 3200: loss = 225.1, umbilicus = 0.0, sym_dirichlet = 22.5, dense_normals = 5.7, min_spacing = 0.0, track_radius = 196.8, track_dt = 0.0
+step 3400: loss = 211.2, umbilicus = 0.0, sym_dirichlet = 15.7, dense_normals = 5.8, min_spacing = 0.0, track_radius = 189.6, track_dt = 0.0
+step 3600: loss = 214.8, umbilicus = 0.0, sym_dirichlet = 17.4, dense_normals = 5.4, min_spacing = 0.0, track_radius = 192.1, track_dt = 0.0
+step 3800: loss = 214.2, umbilicus = 0.0, sym_dirichlet = 22.5, dense_normals = 5.5, min_spacing = 0.0, track_radius = 186.1, track_dt = 0.0
+step 4000: loss = 205.3, umbilicus = 0.0, sym_dirichlet = 14.7, dense_normals = 5.4, min_spacing = 0.0, track_radius = 185.2, track_dt = 0.0
+step 4200: loss = 201.1, umbilicus = 0.0, sym_dirichlet = 15.1, dense_normals = 5.5, min_spacing = 0.0, track_radius = 180.5, track_dt = 0.0
+step 4400: loss = 205.0, umbilicus = 0.0, sym_dirichlet = 18.3, dense_normals = 5.6, min_spacing = 0.0, track_radius = 181.0, track_dt = 0.0
+step 4600: loss = 195.9, umbilicus = 0.0, sym_dirichlet = 17.5, dense_normals = 5.7, min_spacing = 0.0, track_radius = 172.7, track_dt = 0.0
+step 4800: loss = 194.2, umbilicus = 0.0, sym_dirichlet = 18.9, dense_normals = 5.5, min_spacing = 0.0, track_radius = 169.7, track_dt = 0.0
+step 5000: loss = 192.5, umbilicus = 0.0, sym_dirichlet = 19.8, dense_normals = 5.5, min_spacing = 0.0, track_radius = 167.2, track_dt = 0.0
+step 5200: loss = 185.9, umbilicus = 0.0, sym_dirichlet = 13.3, dense_normals = 5.6, min_spacing = 0.0, track_radius = 167.0, track_dt = 0.0
+step 5400: loss = 197.2, umbilicus = 0.0, sym_dirichlet = 23.0, dense_normals = 5.6, min_spacing = 0.0, track_radius = 168.6, track_dt = 0.0
+step 5600: loss = 186.7, umbilicus = 0.0, sym_dirichlet = 14.9, dense_normals = 5.3, min_spacing = 0.0, track_radius = 166.5, track_dt = 0.0
+step 5800: loss = 188.2, umbilicus = 0.0, sym_dirichlet = 20.3, dense_normals = 5.3, min_spacing = 0.0, track_radius = 162.6, track_dt = 0.0
+step 6000: loss = 182.7, umbilicus = 0.0, sym_dirichlet = 14.9, dense_normals = 5.4, min_spacing = 0.0, track_radius = 162.4, track_dt = 0.0
+step 6200: loss = 181.0, umbilicus = 0.0, sym_dirichlet = 16.9, dense_normals = 5.4, min_spacing = 0.0, track_radius = 158.6, track_dt = 0.0
+step 6400: loss = 180.9, umbilicus = 0.0, sym_dirichlet = 15.7, dense_normals = 5.6, min_spacing = 0.0, track_radius = 159.5, track_dt = 0.0
+step 6600: loss = 190.8, umbilicus = 0.0, sym_dirichlet = 23.4, dense_normals = 5.6, min_spacing = 0.0, track_radius = 161.9, track_dt = 0.0
+step 6800: loss = 185.7, umbilicus = 0.0, sym_dirichlet = 20.1, dense_normals = 5.7, min_spacing = 0.0, track_radius = 159.9, track_dt = 0.0
+step 7000: loss = 178.4, umbilicus = 0.0, sym_dirichlet = 16.6, dense_normals = 5.6, min_spacing = 0.0, track_radius = 156.3, track_dt = 0.0
+step 7200: loss = 175.4, umbilicus = 0.0, sym_dirichlet = 18.1, dense_normals = 5.5, min_spacing = 0.0, track_radius = 151.7, track_dt = 0.0
+step 7400: loss = 175.5, umbilicus = 0.0, sym_dirichlet = 15.8, dense_normals = 5.7, min_spacing = 0.0, track_radius = 154.0, track_dt = 0.0
+step 7600: loss = 169.7, umbilicus = 0.0, sym_dirichlet = 13.8, dense_normals = 5.3, min_spacing = 0.0, track_radius = 150.6, track_dt = 0.0
+step 7800: loss = 170.9, umbilicus = 0.0, sym_dirichlet = 18.1, dense_normals = 5.6, min_spacing = 0.0, track_radius = 147.2, track_dt = 0.0
+step 8000: loss = 172.4, umbilicus = 0.0, sym_dirichlet = 18.5, dense_normals = 5.3, min_spacing = 0.0, track_radius = 148.5, track_dt = 0.0
+step 8200: loss = 174.6, umbilicus = 0.0, sym_dirichlet = 18.4, dense_normals = 5.3, min_spacing = 0.0, track_radius = 150.8, track_dt = 0.0
+step 8400: loss = 166.1, umbilicus = 0.0, sym_dirichlet = 16.2, dense_normals = 5.7, min_spacing = 0.0, track_radius = 144.1, track_dt = 0.0
+step 8600: loss = 174.6, umbilicus = 0.0, sym_dirichlet = 23.0, dense_normals = 5.4, min_spacing = 0.0, track_radius = 146.1, track_dt = 0.0
+step 8800: loss = 173.9, umbilicus = 0.0, sym_dirichlet = 21.0, dense_normals = 5.5, min_spacing = 0.0, track_radius = 147.3, track_dt = 0.0
+step 9000: loss = 166.7, umbilicus = 0.0, sym_dirichlet = 15.0, dense_normals = 5.6, min_spacing = 0.0, track_radius = 146.0, track_dt = 0.0
+step 9200: loss = 165.8, umbilicus = 0.0, sym_dirichlet = 14.3, dense_normals = 5.6, min_spacing = 0.0, track_radius = 145.9, track_dt = 0.0
+step 9400: loss = 164.5, umbilicus = 0.0, sym_dirichlet = 16.7, dense_normals = 5.4, min_spacing = 0.0, track_radius = 142.4, track_dt = 0.0
+step 9600: loss = 162.6, umbilicus = 0.0, sym_dirichlet = 15.8, dense_normals = 5.4, min_spacing = 0.0, track_radius = 141.4, track_dt = 0.0
+step 9800: loss = 165.4, umbilicus = 0.0, sym_dirichlet = 19.5, dense_normals = 5.5, min_spacing = 0.0, track_radius = 140.4, track_dt = 0.0
+step 10000: loss = 161.8, umbilicus = 0.0, sym_dirichlet = 19.5, dense_normals = 5.5, min_spacing = 0.0, track_radius = 136.7, track_dt = 0.0
+step 10200: loss = 162.0, umbilicus = 0.0, sym_dirichlet = 18.4, dense_normals = 5.6, min_spacing = 0.0, track_radius = 138.0, track_dt = 0.0
+step 10400: loss = 158.9, umbilicus = 0.0, sym_dirichlet = 17.9, dense_normals = 5.6, min_spacing = 0.0, track_radius = 135.4, track_dt = 0.0
+step 10600: loss = 162.7, umbilicus = 0.0, sym_dirichlet = 20.7, dense_normals = 5.3, min_spacing = 0.0, track_radius = 136.7, track_dt = 0.0
+step 10800: loss = 152.7, umbilicus = 0.0, sym_dirichlet = 14.6, dense_normals = 5.5, min_spacing = 0.0, track_radius = 132.5, track_dt = 0.0
+step 11000: loss = 152.0, umbilicus = 0.0, sym_dirichlet = 16.6, dense_normals = 5.3, min_spacing = 0.0, track_radius = 130.1, track_dt = 0.0
+step 11200: loss = 149.3, umbilicus = 0.0, sym_dirichlet = 16.6, dense_normals = 5.4, min_spacing = 0.0, track_radius = 127.3, track_dt = 0.0
+step 11400: loss = 159.4, umbilicus = 0.0, sym_dirichlet = 20.8, dense_normals = 5.5, min_spacing = 0.0, track_radius = 133.0, track_dt = 0.0
+step 11600: loss = 154.7, umbilicus = 0.0, sym_dirichlet = 18.1, dense_normals = 5.7, min_spacing = 0.0, track_radius = 130.9, track_dt = 0.0
+step 11800: loss = 148.3, umbilicus = 0.0, sym_dirichlet = 14.6, dense_normals = 5.5, min_spacing = 0.0, track_radius = 128.2, track_dt = 0.0
+step 12000: loss = 152.1, umbilicus = 0.0, sym_dirichlet = 18.6, dense_normals = 5.4, min_spacing = 0.0, track_radius = 128.1, track_dt = 0.0
+step 12200: loss = 152.3, umbilicus = 0.0, sym_dirichlet = 16.5, dense_normals = 5.5, min_spacing = 0.0, track_radius = 130.3, track_dt = 0.0
+step 12400: loss = 152.1, umbilicus = 0.0, sym_dirichlet = 15.7, dense_normals = 5.4, min_spacing = 0.0, track_radius = 131.0, track_dt = 0.0
+step 12600: loss = 152.4, umbilicus = 0.0, sym_dirichlet = 18.0, dense_normals = 5.6, min_spacing = 0.0, track_radius = 128.7, track_dt = 0.0
+step 12800: loss = 150.1, umbilicus = 0.0, sym_dirichlet = 21.8, dense_normals = 5.4, min_spacing = 0.0, track_radius = 122.8, track_dt = 0.0
+step 13000: loss = 148.7, umbilicus = 0.0, sym_dirichlet = 17.9, dense_normals = 5.2, min_spacing = 0.0, track_radius = 125.5, track_dt = 0.0
+step 13200: loss = 155.8, umbilicus = 0.0, sym_dirichlet = 21.0, dense_normals = 5.4, min_spacing = 0.0, track_radius = 129.3, track_dt = 0.0
+step 13400: loss = 145.9, umbilicus = 0.0, sym_dirichlet = 16.0, dense_normals = 5.4, min_spacing = 0.0, track_radius = 124.5, track_dt = 0.0
+step 13600: loss = 151.7, umbilicus = 0.0, sym_dirichlet = 19.1, dense_normals = 5.3, min_spacing = 0.0, track_radius = 127.3, track_dt = 0.0
+step 13800: loss = 149.7, umbilicus = 0.0, sym_dirichlet = 15.6, dense_normals = 5.5, min_spacing = 0.0, track_radius = 128.6, track_dt = 0.0
+step 14000: loss = 146.2, umbilicus = 0.0, sym_dirichlet = 15.3, dense_normals = 5.4, min_spacing = 0.0, track_radius = 125.5, track_dt = 0.0
+step 14200: loss = 154.7, umbilicus = 0.0, sym_dirichlet = 19.8, dense_normals = 5.3, min_spacing = 0.0, track_radius = 129.6, track_dt = 0.0
+step 14400: loss = 149.8, umbilicus = 0.0, sym_dirichlet = 17.8, dense_normals = 5.1, min_spacing = 0.0, track_radius = 126.8, track_dt = 0.0
+step 14600: loss = 146.9, umbilicus = 0.0, sym_dirichlet = 19.4, dense_normals = 5.1, min_spacing = 0.0, track_radius = 122.4, track_dt = 0.0
+step 14800: loss = 146.1, umbilicus = 0.0, sym_dirichlet = 15.4, dense_normals = 5.4, min_spacing = 0.0, track_radius = 125.2, track_dt = 0.0
+step 15000: loss = 144.4, umbilicus = 0.0, sym_dirichlet = 19.2, dense_normals = 5.4, min_spacing = 0.0, track_radius = 119.8, track_dt = 0.0
+step 15200: loss = 150.7, umbilicus = 0.0, sym_dirichlet = 23.7, dense_normals = 5.3, min_spacing = 0.0, track_radius = 121.6, track_dt = 0.0
+step 15400: loss = 144.8, umbilicus = 0.0, sym_dirichlet = 20.0, dense_normals = 5.3, min_spacing = 0.0, track_radius = 119.4, track_dt = 0.0
+step 15600: loss = 142.9, umbilicus = 0.0, sym_dirichlet = 18.7, dense_normals = 5.5, min_spacing = 0.0, track_radius = 118.7, track_dt = 0.0
+step 15800: loss = 140.9, umbilicus = 0.0, sym_dirichlet = 18.2, dense_normals = 5.3, min_spacing = 0.0, track_radius = 117.4, track_dt = 0.0
+step 16000: loss = 144.1, umbilicus = 0.0, sym_dirichlet = 18.9, dense_normals = 5.5, min_spacing = 0.0, track_radius = 119.7, track_dt = 0.0
+step 16200: loss = 136.9, umbilicus = 0.0, sym_dirichlet = 17.8, dense_normals = 5.1, min_spacing = 0.0, track_radius = 114.0, track_dt = 0.0
+step 16400: loss = 148.2, umbilicus = 0.0, sym_dirichlet = 20.0, dense_normals = 5.2, min_spacing = 0.0, track_radius = 123.0, track_dt = 0.0
+step 16600: loss = 142.4, umbilicus = 0.0, sym_dirichlet = 19.6, dense_normals = 5.2, min_spacing = 0.0, track_radius = 117.6, track_dt = 0.0
+step 16800: loss = 142.1, umbilicus = 0.0, sym_dirichlet = 19.2, dense_normals = 5.3, min_spacing = 0.0, track_radius = 117.6, track_dt = 0.0
+step 17000: loss = 136.4, umbilicus = 0.0, sym_dirichlet = 16.4, dense_normals = 5.4, min_spacing = 0.0, track_radius = 114.5, track_dt = 0.0
+step 17200: loss = 139.2, umbilicus = 0.0, sym_dirichlet = 19.6, dense_normals = 5.2, min_spacing = 0.0, track_radius = 114.5, track_dt = 0.0
+step 17400: loss = 136.2, umbilicus = 0.0, sym_dirichlet = 17.7, dense_normals = 5.1, min_spacing = 0.0, track_radius = 113.3, track_dt = 0.0
+step 17600: loss = 145.3, umbilicus = 0.0, sym_dirichlet = 21.2, dense_normals = 5.2, min_spacing = 0.0, track_radius = 118.9, track_dt = 0.0
+step 17800: loss = 138.1, umbilicus = 0.0, sym_dirichlet = 19.9, dense_normals = 5.4, min_spacing = 0.0, track_radius = 112.8, track_dt = 0.0
+step 18000: loss = 149.5, umbilicus = 0.0, sym_dirichlet = 25.3, dense_normals = 5.4, min_spacing = 0.0, track_radius = 118.8, track_dt = 0.0
+step 18200: loss = 139.7, umbilicus = 0.0, sym_dirichlet = 20.1, dense_normals = 5.1, min_spacing = 0.0, track_radius = 114.5, track_dt = 0.0
+step 18400: loss = 135.0, umbilicus = 0.0, sym_dirichlet = 16.8, dense_normals = 5.1, min_spacing = 0.0, track_radius = 113.1, track_dt = 0.0
+step 18600: loss = 134.5, umbilicus = 0.0, sym_dirichlet = 15.1, dense_normals = 5.2, min_spacing = 0.0, track_radius = 114.2, track_dt = 0.0
+step 18800: loss = 131.4, umbilicus = 0.0, sym_dirichlet = 14.8, dense_normals = 5.2, min_spacing = 0.0, track_radius = 111.4, track_dt = 0.0
+step 19000: loss = 137.8, umbilicus = 0.0, sym_dirichlet = 18.1, dense_normals = 5.6, min_spacing = 0.0, track_radius = 114.1, track_dt = 0.0
+step 19200: loss = 131.9, umbilicus = 0.0, sym_dirichlet = 14.2, dense_normals = 5.4, min_spacing = 0.0, track_radius = 112.3, track_dt = 0.0
+step 19400: loss = 137.4, umbilicus = 0.0, sym_dirichlet = 19.4, dense_normals = 5.2, min_spacing = 0.0, track_radius = 112.9, track_dt = 0.0
+step 19600: loss = 132.1, umbilicus = 0.0, sym_dirichlet = 16.8, dense_normals = 5.3, min_spacing = 0.0, track_radius = 110.0, track_dt = 0.0
+step 19800: loss = 132.9, umbilicus = 0.0, sym_dirichlet = 14.5, dense_normals = 5.2, min_spacing = 0.0, track_radius = 113.2, track_dt = 0.0
+step 20000: loss = 136.0, umbilicus = 0.0, sym_dirichlet = 20.2, dense_normals = 5.2, min_spacing = 0.0, track_radius = 110.6, track_dt = 0.0
+step 20200: loss = 134.5, umbilicus = 0.0, sym_dirichlet = 20.9, dense_normals = 5.4, min_spacing = 0.0, track_radius = 108.2, track_dt = 0.0
+step 20400: loss = 130.0, umbilicus = 0.0, sym_dirichlet = 16.8, dense_normals = 5.4, min_spacing = 0.0, track_radius = 107.8, track_dt = 0.0
+step 20600: loss = 130.9, umbilicus = 0.0, sym_dirichlet = 17.8, dense_normals = 5.1, min_spacing = 0.0, track_radius = 108.0, track_dt = 0.0
+step 20800: loss = 135.0, umbilicus = 0.0, sym_dirichlet = 19.7, dense_normals = 5.1, min_spacing = 0.0, track_radius = 110.2, track_dt = 0.0
+step 21000: loss = 125.7, umbilicus = 0.0, sym_dirichlet = 19.3, dense_normals = 4.9, min_spacing = 0.0, track_radius = 101.4, track_dt = 0.0
+step 21200: loss = 138.3, umbilicus = 0.0, sym_dirichlet = 18.7, dense_normals = 5.1, min_spacing = 0.0, track_radius = 114.5, track_dt = 0.0
+step 21400: loss = 124.1, umbilicus = 0.0, sym_dirichlet = 14.6, dense_normals = 5.2, min_spacing = 0.0, track_radius = 104.3, track_dt = 0.0
+step 21600: loss = 133.0, umbilicus = 0.0, sym_dirichlet = 22.3, dense_normals = 5.2, min_spacing = 0.0, track_radius = 105.5, track_dt = 0.0
+step 21800: loss = 127.7, umbilicus = 0.0, sym_dirichlet = 17.8, dense_normals = 5.2, min_spacing = 0.0, track_radius = 104.6, track_dt = 0.0
+step 22000: loss = 127.5, umbilicus = 0.0, sym_dirichlet = 18.5, dense_normals = 5.2, min_spacing = 0.0, track_radius = 103.8, track_dt = 0.0
+step 22200: loss = 128.6, umbilicus = 0.0, sym_dirichlet = 18.0, dense_normals = 5.1, min_spacing = 0.0, track_radius = 105.5, track_dt = 0.0
+step 22400: loss = 132.6, umbilicus = 0.0, sym_dirichlet = 24.7, dense_normals = 5.2, min_spacing = 0.0, track_radius = 102.6, track_dt = 0.0
+step 22600: loss = 125.7, umbilicus = 0.0, sym_dirichlet = 16.0, dense_normals = 5.3, min_spacing = 0.0, track_radius = 104.4, track_dt = 0.0
+step 22800: loss = 121.5, umbilicus = 0.0, sym_dirichlet = 15.6, dense_normals = 5.3, min_spacing = 0.0, track_radius = 100.6, track_dt = 0.0
+step 23000: loss = 125.8, umbilicus = 0.0, sym_dirichlet = 18.8, dense_normals = 5.1, min_spacing = 0.0, track_radius = 101.9, track_dt = 0.0
+step 23200: loss = 131.8, umbilicus = 0.0, sym_dirichlet = 19.6, dense_normals = 5.3, min_spacing = 0.0, track_radius = 107.0, track_dt = 0.0
+step 23400: loss = 119.2, umbilicus = 0.0, sym_dirichlet = 16.2, dense_normals = 5.3, min_spacing = 0.0, track_radius = 97.7, track_dt = 0.0
+step 23600: loss = 131.7, umbilicus = 0.0, sym_dirichlet = 18.0, dense_normals = 5.1, min_spacing = 0.0, track_radius = 108.6, track_dt = 0.0
+step 23800: loss = 127.1, umbilicus = 0.0, sym_dirichlet = 17.9, dense_normals = 5.0, min_spacing = 0.0, track_radius = 104.2, track_dt = 0.0
+step 24000: loss = 123.9, umbilicus = 0.0, sym_dirichlet = 19.8, dense_normals = 5.1, min_spacing = 0.0, track_radius = 99.0, track_dt = 0.0
+step 24200: loss = 133.8, umbilicus = 0.0, sym_dirichlet = 17.3, dense_normals = 5.2, min_spacing = 0.0, track_radius = 111.3, track_dt = 0.0
+step 24400: loss = 129.2, umbilicus = 0.0, sym_dirichlet = 23.2, dense_normals = 5.1, min_spacing = 0.0, track_radius = 100.9, track_dt = 0.0
+step 24600: loss = 123.2, umbilicus = 0.0, sym_dirichlet = 20.5, dense_normals = 5.2, min_spacing = 0.0, track_radius = 97.4, track_dt = 0.0
+step 24800: loss = 128.9, umbilicus = 0.0, sym_dirichlet = 19.9, dense_normals = 5.3, min_spacing = 0.0, track_radius = 103.6, track_dt = 0.0
+step 25000: loss = 126.4, umbilicus = 0.0, sym_dirichlet = 14.8, dense_normals = 5.1, min_spacing = 0.0, track_radius = 106.6, track_dt = 0.0
+step 25200: loss = 242.1, umbilicus = 0.0, sym_dirichlet = 18.6, dense_normals = 5.0, min_spacing = 0.0, track_radius = 108.5, track_dt = 110.0
+step 25400: loss = 230.9, umbilicus = 0.0, sym_dirichlet = 17.5, dense_normals = 5.1, min_spacing = 0.0, track_radius = 102.7, track_dt = 105.6
+step 25600: loss = 230.4, umbilicus = 0.0, sym_dirichlet = 16.9, dense_normals = 5.3, min_spacing = 0.0, track_radius = 105.3, track_dt = 102.8
+step 25800: loss = 241.3, umbilicus = 0.0, sym_dirichlet = 23.4, dense_normals = 4.9, min_spacing = 0.0, track_radius = 113.4, track_dt = 99.5
+step 26000: loss = 229.4, umbilicus = 0.0, sym_dirichlet = 18.6, dense_normals = 5.0, min_spacing = 0.0, track_radius = 109.3, track_dt = 96.3
+step 26200: loss = 228.7, umbilicus = 0.0, sym_dirichlet = 21.8, dense_normals = 5.3, min_spacing = 0.0, track_radius = 105.8, track_dt = 95.7
+step 26400: loss = 225.4, umbilicus = 0.0, sym_dirichlet = 17.5, dense_normals = 5.1, min_spacing = 0.0, track_radius = 107.7, track_dt = 95.0
+step 26600: loss = 221.7, umbilicus = 0.0, sym_dirichlet = 14.3, dense_normals = 5.2, min_spacing = 0.0, track_radius = 107.4, track_dt = 94.8
+step 26800: loss = 215.0, umbilicus = 0.0, sym_dirichlet = 14.8, dense_normals = 5.4, min_spacing = 0.0, track_radius = 105.7, track_dt = 89.1
+step 27000: loss = 227.1, umbilicus = 0.0, sym_dirichlet = 21.4, dense_normals = 5.5, min_spacing = 0.0, track_radius = 107.2, track_dt = 92.9
+step 27200: loss = 221.8, umbilicus = 0.0, sym_dirichlet = 20.2, dense_normals = 5.4, min_spacing = 0.0, track_radius = 108.3, track_dt = 87.9
+step 27400: loss = 224.7, umbilicus = 0.0, sym_dirichlet = 20.1, dense_normals = 5.2, min_spacing = 0.0, track_radius = 109.8, track_dt = 89.6
+step 27600: loss = 221.5, umbilicus = 0.0, sym_dirichlet = 18.6, dense_normals = 5.2, min_spacing = 0.0, track_radius = 109.0, track_dt = 88.8
+step 27800: loss = 212.9, umbilicus = 0.0, sym_dirichlet = 15.1, dense_normals = 5.2, min_spacing = 0.0, track_radius = 103.9, track_dt = 88.6
+step 28000: loss = 219.4, umbilicus = 0.0, sym_dirichlet = 20.0, dense_normals = 5.1, min_spacing = 0.0, track_radius = 107.0, track_dt = 87.2
+step 28200: loss = 212.0, umbilicus = 0.0, sym_dirichlet = 17.0, dense_normals = 5.5, min_spacing = 0.0, track_radius = 102.7, track_dt = 86.8
+step 28400: loss = 220.1, umbilicus = 0.0, sym_dirichlet = 19.5, dense_normals = 5.2, min_spacing = 0.0, track_radius = 106.0, track_dt = 89.4
+step 28600: loss = 222.3, umbilicus = 0.0, sym_dirichlet = 22.0, dense_normals = 5.3, min_spacing = 0.0, track_radius = 107.2, track_dt = 87.8
+step 28800: loss = 216.4, umbilicus = 0.0, sym_dirichlet = 16.9, dense_normals = 5.0, min_spacing = 0.0, track_radius = 106.9, track_dt = 87.7
+step 29000: loss = 217.2, umbilicus = 0.0, sym_dirichlet = 22.1, dense_normals = 5.3, min_spacing = 0.0, track_radius = 106.1, track_dt = 83.7
+step 29200: loss = 209.4, umbilicus = 0.0, sym_dirichlet = 19.8, dense_normals = 5.2, min_spacing = 0.0, track_radius = 102.0, track_dt = 82.5
+step 29400: loss = 210.6, umbilicus = 0.0, sym_dirichlet = 18.8, dense_normals = 5.1, min_spacing = 0.0, track_radius = 102.4, track_dt = 84.4
+step 29600: loss = 210.2, umbilicus = 0.0, sym_dirichlet = 19.7, dense_normals = 5.0, min_spacing = 0.0, track_radius = 102.9, track_dt = 82.6
+step 29800: loss = 204.4, umbilicus = 0.0, sym_dirichlet = 15.5, dense_normals = 5.1, min_spacing = 0.0, track_radius = 100.6, track_dt = 83.2
+patch satisfaction: 0 patches, 0 quad centers, 0 forward + 0 inverse batches, 0.00s
+satisfied_patches = 0/0 (0.0%)
+satisfied_patches_area_weighted = 0.0/0.0 (0.0%)
+boundary_satisfied_patches = 0/0 (0.0%)
+satisfied_area = 0.0/0.0 (0.0%)
+satisfied_tracks = 131561/741046 (17.8%)
+satisfied_track_points = 18495941/34978733 (52.9%)
+save_mesh fitted: winding range [10, 130)
+splice rasterization: 0 eligible quads, 0 vertex batches, 0.00s
+
+$ find /data/out/ACW_z10000-11000_s30000 -maxdepth 3 | head -60
+/data/out/ACW_z10000-11000_s30000
+/data/out/ACW_z10000-11000_s30000/2026-09-17_PHerc0211_slice-10000-11000_0-patch
+/data/out/ACW_z10000-11000_s30000/2026-09-17_PHerc0211_slice-10000-11000_0-patch/checkpoint_fitted.ckpt
+/data/out/ACW_z10000-11000_s30000/2026-09-17_PHerc0211_slice-10000-11000_0-patch/meshes
+/data/out/ACW_z10000-11000_s30000/2026-09-17_PHerc0211_slice-10000-11000_0-patch/meshes/fitted
+/data/out/ACW_z10000-11000_s30000/2026-09-17_PHerc0211_slice-10000-11000_0-patch/non_liftable_patches.txt
+/data/out/ACW_z10000-11000_s30000/2026-09-17_PHerc0211_slice-10000-11000_0-patch/satisfaction_metrics_fitted.json
+/data/out/ACW_z10000-11000_s30000/2026-09-17_PHerc0211_slice-10000-11000_0-patch/satisfied_fitted.json
+/data/out/ACW_z10000-11000_s30000/fit.log
+/data/out/ACW_z10000-11000_s30000/overrides.json
+/data/out/ACW_z10000-11000_s30000/timing.json
+spiral_fit ACW_z10000-11000_s30000: exit 0, 64.9 min on A10
+Stopping app - local entrypoint completed.
+✓ App completed. View run at 
+https://modal.com/apps/bnleft/main/ap-wltKfl9pkWHylXsrOS7VoD
+exit=0

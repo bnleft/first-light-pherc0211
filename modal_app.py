@@ -580,6 +580,20 @@ arr = zarr.open_group(zarr.storage.FsspecStore(fs, path=VOLUME), mode="r")[LEVEL
 meshes = {name: load_meshes(path) for name, path in runs.items()}
 for name, ms in meshes.items():
     print(name, len(ms), "windings;", sum(len(m[1]) for m in ms), "valid vertices")
+# quantitative sense check: mean CT intensity under the fitted vertices (full window, level 1)
+for z in zs:
+    zi = round(z / SCALE)
+    full = np.asarray(arr[zi]).astype(np.float32)
+    for name, ms in meshes.items():
+        vals = []
+        for w, x, y, zz in ms:
+            sel = np.abs(zz - z) < tol
+            if sel.any():
+                xi = np.clip((x[sel]/SCALE).round().astype(int), 0, full.shape[1]-1); yi = np.clip((y[sel]/SCALE).round().astype(int), 0, full.shape[0]-1)
+                vals.append(full[yi, xi])
+        v = np.concatenate(vals) if vals else np.zeros(1)
+        bg = full[full > 0]
+        print(f"CTSCORE z={z} {name}: n={v.size} mean_ct={v.mean():.2f} median_ct={np.median(v):.1f} frac_bright(>{np.percentile(bg,75):.0f})={np.mean(v > np.percentile(bg,75)):.3f}  [scroll-voxel mean {bg.mean():.1f}]")
 for z in zs:
     zi = round(z / SCALE); ux, uy = umb(z); cx, cy = ux/SCALE, uy/SCALE
     y0, y1 = max(0, int(cy-crop)), min(arr.shape[1], int(cy+crop)); x0, x1 = max(0, int(cx-crop)), min(arr.shape[2], int(cx+crop))

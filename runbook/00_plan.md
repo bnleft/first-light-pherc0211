@@ -104,3 +104,15 @@ it is a villa defect a human hit on real data, a PR)
   Identical to within noise, as villa#1621 predicts (the metric is periodic in
   the winding). Decision therefore comes from overlaying the fitted sheets on
   the CT slice (`overlay_fits`), plus Bryant's read of the crops.
+
+## 2026-09-17 — 30,000-step CW/ACW fits (z 10000–11000)
+
+| sense | loss @20k | loss @25k | loss @29.8k (track_dt on) | satisfied tracks | satisfied points | wall (A10) |
+|---|---:|---:|---:|---:|---:|---:|
+| CW  | 136.1 | 137.1 | 212.1 | 131,918 (17.8%) | 52.9% | 61.0 min |
+| ACW | 136.0 | 126.4 | 204.4 | 131,561 (17.8%) | 52.9% | 64.9 min |
+
+Still tied. Note the 1,500-step runs took ~14 min because ~5 min of that is
+loading (crossings cache, packed track store, resident pools); the 30k runs
+amortise it. Winners' 30k on an A6000 took 30 min; A10 is ~2× slower here.
+Cost: ~$1.10/h × ~2.1 h ≈ $2.30 for both converged fits.
