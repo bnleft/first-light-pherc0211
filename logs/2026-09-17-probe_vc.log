@@ -1,10 +1,42 @@
 ✓ Initialized. View run at 
-https://modal.com/apps/bnleft/main/ap-NB6CwvZAIveFTaeZnx33nH
-Building image im-V189z8HXYWwNlTThiHpVgN
+https://modal.com/apps/bnleft/main/ap-WFfzUy3XBqkROQnYswgHkW
+Building image im-7cRnlXGURiuT7MvyKa4ZIE
 
 => Step 0: FROM base
 
-=> Step 1: RUN cd /opt/villa/volume-cartographer && cmake --preset ci-release-gcc && cmake --build --preset ci-release-gcc -j 16 && cmake --install build/ci-release-gcc --prefix /usr/local --component vc_runtime && rm -rf build && vc_render_tifxyz --help | grep -q flip-normals
+=> Step 1: RUN apt-get update -qq && DEBIAN_FRONTEND=noninteractive apt-get install -y -qq liblapacke-dev libopenblas-dev
+debconf: delaying package configuration, since apt-utils is not installed
+Selecting previously unselected package libtmglib3:amd64.
+(Reading database ... 
+[1A(Reading database ... 5%
+[1A(Reading database ... 10%
+[1A(Reading database ... 15%
+[1A(Reading database ... 20%
+[1A(Reading database ... 25%
+[1A(Reading database ... 30%
+[1A(Reading database ... 35%
+[1A(Reading database ... 40%(Reading database ... 45%
+[1A(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%
+[1A(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%
+[1A(Reading database ... 80562 files and directories currently installed.)
+Preparing to unpack .../libtmglib3_3.12.0-3build1.1_amd64.deb ...
+Unpacking libtmglib3:amd64 (3.12.0-3build1.1) ...
+Selecting previously unselected package liblapacke:amd64.
+Preparing to unpack .../liblapacke_3.12.0-3build1.1_amd64.deb ...
+Unpacking liblapacke:amd64 (3.12.0-3build1.1) ...
+Selecting previously unselected package libtmglib-dev:amd64.
+Preparing to unpack .../libtmglib-dev_3.12.0-3build1.1_amd64.deb ...
+Unpacking libtmglib-dev:amd64 (3.12.0-3build1.1) ...
+Selecting previously unselected package liblapacke-dev:amd64.
+Preparing to unpack .../liblapacke-dev_3.12.0-3build1.1_amd64.deb ...
+Unpacking liblapacke-dev:amd64 (3.12.0-3build1.1) ...
+Setting up libtmglib3:amd64 (3.12.0-3build1.1) ...
+Setting up liblapacke:amd64 (3.12.0-3build1.1) ...
+Setting up libtmglib-dev:amd64 (3.12.0-3build1.1) ...
+Setting up liblapacke-dev:amd64 (3.12.0-3build1.1) ...
+Processing triggers for libc-bin (2.39-0ubuntu8.7) ...
+
+=> Step 2: RUN cd /opt/villa/volume-cartographer && cmake --preset ci-release-gcc -DVC_BUILD_FLATBOI=OFF -DVC_BUILD_UI_TRACER=OFF && cmake --build --preset ci-release-gcc -j 16 && cmake --install build/ci-release-gcc --prefix /usr/local --component vc_runtime && rm -rf build && vc_render_tifxyz --help | grep -q flip-normals
 Preset CMake variables:
 
   CMAKE_BUILD_TYPE="Release"
@@ -77,3 +109,914 @@ Preset CMake variables:
 -- Found OpenMP_CXX: -fopenmp (found version "4.5") 
 -- Found OpenMP: TRUE (found version "4.5")  
 -- Creating target: igl::core (igl_core)
+-- Checking for module 'avahi-client'
+--   Found avahi-client, version 0.8
+-- Configuring done (7.5s)
+-- Generating done (0.8s)
+-- Build files have been written to: /opt/villa/volume-cartographer/build/ci-release-gcc
+[1/489] Creating directories for 'libbacktrace_build'
+[2/489] Automatic MOC and UIC for target c3d
+[3/489] Automatic MOC and UIC for target vc_delta3d
+[4/489] Automatic MOC and UIC for target vc_tifxyz_mmap_prepare
+[5/489] Building CXX object libs/c3d/CMakeFiles/c3d.dir/c3d_autogen/mocs_compilation.cpp.o
+[6/489] Building CXX object _deps/vc_delta3d-build/CMakeFiles/vc_delta3d.dir/vc_delta3d_autogen/mocs_compilation.cpp.o
+[7/489] Building CXX object apps/CMakeFiles/vc_tifxyz_mmap_prepare.dir/vc_tifxyz_mmap_prepare_autogen/mocs_compilation.cpp.o
+[8/489] Building CXX object utils/CMakeFiles/utils_c3d_codec.dir/src/c3d_codec.cpp.o
+[9/489] Building C object libs/c3d/CMakeFiles/c3d.dir/c3d.c.o
+[10/489] Building CXX object _deps/vc_delta3d-build/CMakeFiles/vc_delta3d.dir/src/codec.cpp.o
+[11/489] Linking CXX static library _deps/vc_delta3d-build/libvc_delta3d.a
+[12/489] Performing download step (git clone) for 'libbacktrace_build'
+Cloning into 'libbacktrace_build'...
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+[13/489] Performing disconnected update step for 'libbacktrace_build'
+[14/489] No patch_disconnected step for 'libbacktrace_build'
+[15/489] Building CXX object apps/CMakeFiles/vc_tifxyz_mmap_prepare.dir/src/vc_tifxyz_mmap_prepare.cpp.o
+[16/489] Building CXX object utils/CMakeFiles/utils.dir/src/aws_auth.cpp.o
+[17/489] Building CXX object utils/CMakeFiles/utils.dir/src/http_fetch.cpp.o
+[18/489] Linking CXX executable bin/vc_tifxyz_mmap_prepare
+[19/489] Building CXX object apps/CMakeFiles/vc_obj_uv_lift.dir/src/vc_obj_uv_lift.cpp.o
+[20/489] Building CXX object utils/CMakeFiles/utils.dir/src/zarr.cpp.o
+[21/489] Building CXX object utils/CMakeFiles/utils.dir/src/Json.cpp.o
+[22/489] Linking CXX shared library libs/c3d/libc3d.so
+[23/489] Linking CXX shared library utils/libutils_c3d_codec.so
+[24/489] Linking CXX executable bin/vc_obj_uv_lift
+[25/489] Linking CXX shared library utils/libutils.so
+[26/489] Building CXX object core/CMakeFiles/vc_common_pch.dir/cmake_pch.hxx.gch
+[27/489] Performing configure step for 'libbacktrace_build'
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... x86_64-pc-linux-gnu
+checking target system type... x86_64-pc-linux-gnu
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking whether gcc understands -c and -o together... yes
+checking how to run the C preprocessor... gcc -E
+checking for grep that handles long lines and -e... /usr/bin/grep
+checking for egrep... /usr/bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking minix/config.h usability... no
+checking minix/config.h presence... no
+checking for minix/config.h... no
+checking whether it is safe to define __EXTENSIONS__... yes
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /usr/bin/mkdir -p
+checking for gawk... no
+checking for mawk... mawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking whether to enable maintainer-specific portions of Makefiles... no
+checking for gcc... (cached) gcc
+checking whether we are using the GNU C compiler... (cached) yes
+checking whether gcc accepts -g... (cached) yes
+checking for gcc option to accept ISO C89... (cached) none needed
+checking whether gcc understands -c and -o together... (cached) yes
+checking for ranlib... ranlib
+checking for gawk... (cached) mawk
+checking for dwz... no
+checking how to print strings... printf
+checking for a sed that does not truncate output... /usr/bin/sed
+checking for fgrep... /usr/bin/grep -F
+checking for ld used by gcc... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+checking the name lister (/usr/bin/nm -B) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 4718592
+checking whether the shell understands some XSI constructs... yes
+checking whether the shell understands "+="... yes
+checking for /usr/bin/ld option to reload object files... -r
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for ar... ar
+checking for strip... strip
+checking for ranlib... (cached) ranlib
+checking command to parse /usr/bin/nm -B output from gcc object... ok
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if gcc supports -fno-rtti -fno-exceptions... no
+checking for gcc option to produce PIC... -fPIC -DPIC
+checking if gcc PIC flag -fPIC -DPIC works... yes
+checking if gcc static flag -static works... yes
+checking if gcc supports -c -o file.o... yes
+checking if gcc supports -c -o file.o... (cached) yes
+checking whether the gcc linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... no
+checking whether to build static libraries... yes
+checking for special C compiler options needed for large files... no
+checking for _FILE_OFFSET_BITS value needed for large files... no
+checking unwind.h usability... yes
+checking unwind.h presence... yes
+checking for unwind.h... yes
+checking for _Unwind_Backtrace... yes
+checking for -funwind-tables option... yes
+checking for -frandom-seed=string option... yes
+checking whether gcc supports -W... yes
+checking whether gcc supports -Wall... yes
+checking whether gcc supports -Wwrite-strings... yes
+checking whether gcc supports -Wstrict-prototypes... yes
+checking whether gcc supports -Wmissing-prototypes... yes
+checking whether gcc supports -Wold-style-definition... yes
+checking whether gcc supports -Wmissing-format-attribute... yes
+checking whether gcc supports -Wcast-qual... yes
+checking whether gcc supports -Wattributes... yes
+checking whether gcc supports -Wunknown-attributes... no
+checking whether gcc supports -Wpointer-arith... yes
+checking for _Unwind_GetIPInfo... yes
+checking __sync extensions... yes
+checking __atomic extensions... yes
+checking output filetype... elf64
+checking sys/mman.h usability... yes
+checking sys/mman.h presence... yes
+checking for sys/mman.h... yes
+checking for mmap... yes
+checking link.h usability... yes
+checking link.h presence... yes
+checking for link.h... yes
+checking sys/link.h usability... no
+checking sys/link.h presence... no
+checking for sys/link.h... no
+checking for dl_iterate_phdr... yes
+checking mach-o/dyld.h usability... no
+checking mach-o/dyld.h presence... no
+checking for mach-o/dyld.h... no
+checking sys/ldr.h usability... no
+checking sys/ldr.h presence... no
+checking for sys/ldr.h... no
+checking windows.h usability... no
+checking windows.h presence... no
+checking for windows.h... no
+checking for tlhelp32.h... no
+checking for fcntl... yes
+checking whether strnlen is declared... yes
+checking whether getpagesize is declared... yes
+checking for lstat... yes
+checking for readlink... yes
+checking for getexecname... no
+checking whether _pgmptr is declared... no
+checking for KERN_PROC... no
+checking for KERN_PROG_ARGS... no
+checking for clock_gettime... yes
+checking whether -pthread is supported... yes
+checking whether -gdwarf-5 is supported... yes
+checking for compress in -lz... yes
+checking whether --build-id is supported... yes
+checking whether --compress-debug-sections=zlib-gnu is supported... yes
+checking whether --compress-debug-sections=zlib-gabi is supported... yes
+checking for ZSTD_compress in -lzstd... yes
+checking whether --compress-debug-sections=zstd is supported... yes
+checking for objcopy... objcopy
+checking for readelf... readelf
+checking whether objcopy supports --strip-debug... yes
+checking whether objcopy supports debuglink... yes
+checking for dsymutil... no
+checking for nm... /usr/bin/nm -B
+checking for xz... xz
+checking for comm... comm
+checking for lzma_auto_decoder in -llzma... yes
+checking whether tests can run... yes
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating backtrace-supported.h
+config.status: creating install-debuginfo-for-buildid.sh
+config.status: creating config.h
+config.status: executing libtool commands
+config.status: executing default commands
+[28/489] Building CXX object core/CMakeFiles/vc_common_pch.dir/vc_common_pch.cpp.o
+[29/489] Linking CXX static library core/libvc_common_pch.a
+[30/489] Performing build step for 'libbacktrace_build'
+make  all-am
+make[1]: Entering directory '/opt/villa/volume-cartographer/build/ci-release-gcc/_deps/libbacktrace/src/libbacktrace_build-build'
+/bin/bash ./libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I/opt/villa/volume-cartographer/build/ci-release-gcc/_deps/libbacktrace/src/libbacktrace_build    -funwind-tables -frandom-seed=atomic.lo -W -Wall -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wmissing-format-attribute -Wcast-qual -Wno-attributes -Wpointer-arith  -g0 -c -o atomic.lo /opt/villa/volume-cartographer/build/ci-release-gcc/_deps/libbacktrace/src/libbacktrace_build/atomic.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I/opt/villa/volume-cartographer/build/ci-release-gcc/_deps/libbacktrace/src/libbacktrace_build -funwind-tables -frandom-seed=atomic.lo -W -Wall -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wmissing-format-attribute -Wcast-qual -Wno-attributes -Wpointer-arith -g0 -c /opt/villa/volume-cartographer/build/ci-release-gcc/_deps/libbacktrace/src/libbacktrace_build/atomic.c  -fPIC -DPIC -o atomic.o
+/bin/bash ./libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I/opt/villa/volume-cartographer/build/ci-release-gcc/_deps/libbacktrace/src/libbacktrace_build    -funwind-tables -frandom-seed=dwarf.lo -W -Wall -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wmissing-format-attribute -Wcast-qual -Wno-attributes -Wpointer-arith  -g0 -c -o dwarf.lo /opt/villa/volume-cartographer/build/ci-release-gcc/_deps/libbacktrace/src/libbacktrace_build/dwarf.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I/opt/villa/volume-cartographer/build/ci-release-gcc/_deps/libbacktrace/src/libbacktrace_build -funwind-tables -frandom-seed=dwarf.lo -W -Wall -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wmissing-format-attribute -Wcast-qual -Wno-attributes -Wpointer-arith -g0 -c /opt/villa/volume-cartographer/build/ci-release-gcc/_deps/libbacktrace/src/libbacktrace_build/dwarf.c  -fPIC -DPIC -o dwarf.o
+/bin/bash ./libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I/opt/villa/volume-cartographer/build/ci-release-gcc/_deps/libbacktrace/src/libbacktrace_build    -funwind-tables -frandom-seed=fileline.lo -W -Wall -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wmissing-format-attribute -Wcast-qual -Wno-attributes -Wpointer-arith  -g0 -c -o fileline.lo /opt/villa/volume-cartographer/build/ci-release-gcc/_deps/libbacktrace/src/libbacktrace_build/fileline.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I/opt/villa/volume-cartographer/build/ci-release-gcc/_deps/libbacktrace/src/libbacktrace_build -funwind-tables -frandom-seed=fileline.lo -W -Wall -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wmissing-format-attribute -Wcast-qual -Wno-attributes -Wpointer-arith -g0 -c /opt/villa/volume-cartographer/build/ci-release-gcc/_deps/libbacktrace/src/libbacktrace_build/fileline.c  -fPIC -DPIC -o fileline.o
+/bin/bash ./libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I/opt/villa/volume-cartographer/build/ci-release-gcc/_deps/libbacktrace/src/libbacktrace_build    -funwind-tables -frandom-seed=posix.lo -W -Wall -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wmissing-format-attribute -Wcast-qual -Wno-attributes -Wpointer-arith  -g0 -c -o posix.lo /opt/villa/volume-cartographer/build/ci-release-gcc/_deps/libbacktrace/src/libbacktrace_build/posix.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I/opt/villa/volume-cartographer/build/ci-release-gcc/_deps/libbacktrace/src/libbacktrace_build -funwind-tables -frandom-seed=posix.lo -W -Wall -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wmissing-format-attribute -Wcast-qual -Wno-attributes -Wpointer-arith -g0 -c /opt/villa/volume-cartographer/build/ci-release-gcc/_deps/libbacktrace/src/libbacktrace_build/posix.c  -fPIC -DPIC -o posix.o
+/bin/bash ./libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I/opt/villa/volume-cartographer/build/ci-release-gcc/_deps/libbacktrace/src/libbacktrace_build    -funwind-tables -frandom-seed=print.lo -W -Wall -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wmissing-format-attribute -Wcast-qual -Wno-attributes -Wpointer-arith  -g0 -c -o print.lo /opt/villa/volume-cartographer/build/ci-release-gcc/_deps/libbacktrace/src/libbacktrace_build/print.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I/opt/villa/volume-cartographer/build/ci-release-gcc/_deps/libbacktrace/src/libbacktrace_build -funwind-tables -frandom-seed=print.lo -W -Wall -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wmissing-format-attribute -Wcast-qual -Wno-attributes -Wpointer-arith -g0 -c /opt/villa/volume-cartographer/build/ci-release-gcc/_deps/libbacktrace/src/libbacktrace_build/print.c  -fPIC -DPIC -o print.o
+/bin/bash ./libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I/opt/villa/volume-cartographer/build/ci-release-gcc/_deps/libbacktrace/src/libbacktrace_build    -funwind-tables -frandom-seed=sort.lo -W -Wall -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wmissing-format-attribute -Wcast-qual -Wno-attributes -Wpointer-arith  -g0 -c -o sort.lo /opt/villa/volume-cartographer/build/ci-release-gcc/_deps/libbacktrace/src/libbacktrace_build/sort.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I/opt/villa/volume-cartographer/build/ci-release-gcc/_deps/libbacktrace/src/libbacktrace_build -funwind-tables -frandom-seed=sort.lo -W -Wall -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wmissing-format-attribute -Wcast-qual -Wno-attributes -Wpointer-arith -g0 -c /opt/villa/volume-cartographer/build/ci-release-gcc/_deps/libbacktrace/src/libbacktrace_build/sort.c  -fPIC -DPIC -o sort.o
+/bin/bash ./libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I/opt/villa/volume-cartographer/build/ci-release-gcc/_deps/libbacktrace/src/libbacktrace_build    -funwind-tables -frandom-seed=state.lo -W -Wall -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wmissing-format-attribute -Wcast-qual -Wno-attributes -Wpointer-arith  -g0 -c -o state.lo /opt/villa/volume-cartographer/build/ci-release-gcc/_deps/libbacktrace/src/libbacktrace_build/state.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I/opt/villa/volume-cartographer/build/ci-release-gcc/_deps/libbacktrace/src/libbacktrace_build -funwind-tables -frandom-seed=state.lo -W -Wall -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wmissing-format-attribute -Wcast-qual -Wno-attributes -Wpointer-arith -g0 -c /opt/villa/volume-cartographer/build/ci-release-gcc/_deps/libbacktrace/src/libbacktrace_build/state.c  -fPIC -DPIC -o state.o
+/bin/bash ./libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I/opt/villa/volume-cartographer/build/ci-release-gcc/_deps/libbacktrace/src/libbacktrace_build    -funwind-tables -frandom-seed=backtrace.lo -W -Wall -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wmissing-format-attribute -Wcast-qual -Wno-attributes -Wpointer-arith  -g0 -c -o backtrace.lo /opt/villa/volume-cartographer/build/ci-release-gcc/_deps/libbacktrace/src/libbacktrace_build/backtrace.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I/opt/villa/volume-cartographer/build/ci-release-gcc/_deps/libbacktrace/src/libbacktrace_build -funwind-tables -frandom-seed=backtrace.lo -W -Wall -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wmissing-format-attribute -Wcast-qual -Wno-attributes -Wpointer-arith -g0 -c /opt/villa/volume-cartographer/build/ci-release-gcc/_deps/libbacktrace/src/libbacktrace_build/backtrace.c  -fPIC -DPIC -o backtrace.o
+/bin/bash ./libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I/opt/villa/volume-cartographer/build/ci-release-gcc/_deps/libbacktrace/src/libbacktrace_build    -funwind-tables -frandom-seed=simple.lo -W -Wall -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wmissing-format-attribute -Wcast-qual -Wno-attributes -Wpointer-arith  -g0 -c -o simple.lo /opt/villa/volume-cartographer/build/ci-release-gcc/_deps/libbacktrace/src/libbacktrace_build/simple.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I/opt/villa/volume-cartographer/build/ci-release-gcc/_deps/libbacktrace/src/libbacktrace_build -funwind-tables -frandom-seed=simple.lo -W -Wall -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wmissing-format-attribute -Wcast-qual -Wno-attributes -Wpointer-arith -g0 -c /opt/villa/volume-cartographer/build/ci-release-gcc/_deps/libbacktrace/src/libbacktrace_build/simple.c  -fPIC -DPIC -o simple.o
+/bin/bash ./libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I/opt/villa/volume-cartographer/build/ci-release-gcc/_deps/libbacktrace/src/libbacktrace_build    -funwind-tables -frandom-seed=elf.lo -W -Wall -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wmissing-format-attribute -Wcast-qual -Wno-attributes -Wpointer-arith  -g0 -c -o elf.lo /opt/villa/volume-cartographer/build/ci-release-gcc/_deps/libbacktrace/src/libbacktrace_build/elf.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I/opt/villa/volume-cartographer/build/ci-release-gcc/_deps/libbacktrace/src/libbacktrace_build -funwind-tables -frandom-seed=elf.lo -W -Wall -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wmissing-format-attribute -Wcast-qual -Wno-attributes -Wpointer-arith -g0 -c /opt/villa/volume-cartographer/build/ci-release-gcc/_deps/libbacktrace/src/libbacktrace_build/elf.c  -fPIC -DPIC -o elf.o
+/bin/bash ./libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I/opt/villa/volume-cartographer/build/ci-release-gcc/_deps/libbacktrace/src/libbacktrace_build    -funwind-tables -frandom-seed=mmapio.lo -W -Wall -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wmissing-format-attribute -Wcast-qual -Wno-attributes -Wpointer-arith  -g0 -c -o mmapio.lo /opt/villa/volume-cartographer/build/ci-release-gcc/_deps/libbacktrace/src/libbacktrace_build/mmapio.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I/opt/villa/volume-cartographer/build/ci-release-gcc/_deps/libbacktrace/src/libbacktrace_build -funwind-tables -frandom-seed=mmapio.lo -W -Wall -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wmissing-format-attribute -Wcast-qual -Wno-attributes -Wpointer-arith -g0 -c /opt/villa/volume-cartographer/build/ci-release-gcc/_deps/libbacktrace/src/libbacktrace_build/mmapio.c  -fPIC -DPIC -o mmapio.o
+/bin/bash ./libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I/opt/villa/volume-cartographer/build/ci-release-gcc/_deps/libbacktrace/src/libbacktrace_build    -funwind-tables -frandom-seed=mmap.lo -W -Wall -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wmissing-format-attribute -Wcast-qual -Wno-attributes -Wpointer-arith  -g0 -c -o mmap.lo /opt/villa/volume-cartographer/build/ci-release-gcc/_deps/libbacktrace/src/libbacktrace_build/mmap.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I/opt/villa/volume-cartographer/build/ci-release-gcc/_deps/libbacktrace/src/libbacktrace_build -funwind-tables -frandom-seed=mmap.lo -W -Wall -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wmissing-format-attribute -Wcast-qual -Wno-attributes -Wpointer-arith -g0 -c /opt/villa/volume-cartographer/build/ci-release-gcc/_deps/libbacktrace/src/libbacktrace_build/mmap.c  -fPIC -DPIC -o mmap.o
+/bin/bash ./libtool  --tag=CC   --mode=link gcc -funwind-tables -frandom-seed=libbacktrace.la -W -Wall -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wmissing-format-attribute -Wcast-qual -Wno-attributes -Wpointer-arith  -g0   -o libbacktrace.la -rpath /opt/villa/volume-cartographer/build/ci-release-gcc/_deps/libbacktrace-install/lib atomic.lo dwarf.lo fileline.lo posix.lo print.lo sort.lo state.lo backtrace.lo simple.lo elf.lo mmapio.lo mmap.lo
+libtool: link: ar --plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so cru .libs/libbacktrace.a  atomic.o dwarf.o fileline.o posix.o print.o sort.o state.o backtrace.o simple.o elf.o mmapio.o mmap.o
+ar: `u' modifier ignored since `D' is the default (see `U')
+libtool: link: ranlib --plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so .libs/libbacktrace.a
+libtool: link: ( cd ".libs" && rm -f "libbacktrace.la" && ln -s "../libbacktrace.la" "libbacktrace.la" )
+make[1]: Leaving directory '/opt/villa/volume-cartographer/build/ci-release-gcc/_deps/libbacktrace/src/libbacktrace_build-build'
+[31/489] Automatic MOC and UIC for target vc_core
+[32/489] Performing install step for 'libbacktrace_build'
+make[1]: Entering directory '/opt/villa/volume-cartographer/build/ci-release-gcc/_deps/libbacktrace/src/libbacktrace_build-build'
+ /usr/bin/mkdir -p '/opt/villa/volume-cartographer/build/ci-release-gcc/_deps/libbacktrace-install/lib'
+ /bin/bash ./libtool   --mode=install /usr/bin/install -c   libbacktrace.la '/opt/villa/volume-cartographer/build/ci-release-gcc/_deps/libbacktrace-install/lib'
+libtool: install: /usr/bin/install -c .libs/libbacktrace.lai /opt/villa/volume-cartographer/build/ci-release-gcc/_deps/libbacktrace-install/lib/libbacktrace.la
+libtool: install: /usr/bin/install -c .libs/libbacktrace.a /opt/villa/volume-cartographer/build/ci-release-gcc/_deps/libbacktrace-install/lib/libbacktrace.a
+libtool: install: chmod 644 /opt/villa/volume-cartographer/build/ci-release-gcc/_deps/libbacktrace-install/lib/libbacktrace.a
+libtool: install: ranlib --plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so /opt/villa/volume-cartographer/build/ci-release-gcc/_deps/libbacktrace-install/lib/libbacktrace.a
+libtool: finish: PATH="/root/.local/bin:/usr/local/bin:/usr/bin:/bin:/sbin" ldconfig -n /opt/villa/volume-cartographer/build/ci-release-gcc/_deps/libbacktrace-install/lib
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /opt/villa/volume-cartographer/build/ci-release-gcc/_deps/libbacktrace-install/lib
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the `-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the `LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the `LD_RUN_PATH' environment variable
+     during linking
+   - use the `-Wl,-rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to `/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+ /usr/bin/mkdir -p '/opt/villa/volume-cartographer/build/ci-release-gcc/_deps/libbacktrace-install/include'
+ /usr/bin/install -c -m 644 /opt/villa/volume-cartographer/build/ci-release-gcc/_deps/libbacktrace/src/libbacktrace_build/backtrace.h backtrace-supported.h '/opt/villa/volume-cartographer/build/ci-release-gcc/_deps/libbacktrace-install/include'
+make[1]: Leaving directory '/opt/villa/volume-cartographer/build/ci-release-gcc/_deps/libbacktrace/src/libbacktrace_build-build'
+[33/489] Completed 'libbacktrace_build'
+[34/489] Building CXX object core/CMakeFiles/vc_core.dir/vc_core_autogen/mocs_compilation.cpp.o
+[35/489] Building CXX object core/CMakeFiles/vc_core.dir/src/UnixSocket.cpp.o
+[36/489] Building CXX object core/CMakeFiles/vc_core.dir/src/MemMap.cpp.o
+[37/489] Building CXX object core/CMakeFiles/vc_core.dir/src/VoxelSizeMetadata.cpp.o
+[38/489] Building CXX object core/CMakeFiles/vc_core.dir/src/CrashHandler.cpp.o
+/opt/villa/volume-cartographer/core/src/CrashHandler.cpp: In function 'void {anonymous}::crashHandler(int, siginfo_t*, void*)':
+/opt/villa/volume-cartographer/core/src/CrashHandler.cpp:867:16: warning: ignoring return value of 'ssize_t write(int, const void*, size_t)' declared with attribute 'warn_unused_result' [-Wunused-result]
+  867 |         ::write(OUT_FD, msg, sizeof(msg) - 1);
+      |         ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[39/489] Building CXX object core/CMakeFiles/vc_core.dir/src/VolpkgConvert.cpp.o
+[40/489] Building CXX object core/CMakeFiles/vc_core.dir/src/Segmentation.cpp.o
+[41/489] Building CXX object core/CMakeFiles/vc_core.dir/src/Logging.cpp.o
+[42/489] Building CXX object core/CMakeFiles/vc_core.dir/src/SparseChunkSpool.cpp.o
+[43/489] Building CXX object core/CMakeFiles/vc_core.dir/src/NormalGridVolume.cpp.o
+[44/489] Building CXX object core/CMakeFiles/vc_core.dir/src/normalgridtools.cpp.o
+[45/489] Building CXX object core/CMakeFiles/vc_core.dir/src/GridStore.cpp.o
+[46/489] Building CXX object core/CMakeFiles/vc_core.dir/src/Compositing.cpp.o
+[47/489] Building CXX object core/CMakeFiles/vc_core.dir/src/Surface.cpp.o
+[48/489] Building CXX object core/CMakeFiles/vc_core.dir/src/PlaneSurface.cpp.o
+[49/489] Building CXX object core/CMakeFiles/vc_core.dir/src/AffineTransform.cpp.o
+[50/489] Building CXX object core/CMakeFiles/vc_core.dir/src/Slicing.cpp.o
+[51/489] Building CXX object core/CMakeFiles/vc_core.dir/src/Tiff.cpp.o
+[52/489] Building CXX object core/CMakeFiles/vc_core.dir/src/LoadJson.cpp.o
+[53/489] Building CXX object core/CMakeFiles/vc_core.dir/src/Zarr.cpp.o
+[54/489] Building CXX object core/CMakeFiles/vc_core.dir/src/Render.cpp.o
+[55/489] Building CXX object core/CMakeFiles/vc_core.dir/src/RemoteUrl.cpp.o
+[56/489] Building CXX object core/CMakeFiles/vc_core.dir/src/RemoteCacheSettings.cpp.o
+[57/489] Building CXX object core/CMakeFiles/vc_core.dir/src/Volume.cpp.o
+[58/489] Building CXX object core/CMakeFiles/vc_core.dir/src/S3AuthFallback.cpp.o
+[59/489] Building CXX object core/CMakeFiles/vc_core.dir/src/HttpFetch.cpp.o
+[60/489] Building CXX object core/CMakeFiles/vc_core.dir/src/VcDataset.cpp.o
+[61/489] Building CXX object core/CMakeFiles/vc_core.dir/src/PostProcess.cpp.o
+[62/489] Building CXX object core/CMakeFiles/vc_core.dir/src/VolumePkg.cpp.o
+[63/489] Building CXX object core/CMakeFiles/vc_core.dir/src/QuadSurface.cpp.o
+[64/489] Building CXX object core/CMakeFiles/vc_core.dir/src/Geometry.cpp.o
+[65/489] Building CXX object core/CMakeFiles/vc_core.dir/src/Thinning.cpp.o
+[66/489] Building CXX object core/CMakeFiles/vc_core.dir/src/surface_metrics.cpp.o
+[67/489] Building CXX object core/CMakeFiles/vc_core.dir/src/Umbilicus.cpp.o
+[68/489] Building CXX object core/CMakeFiles/vc_core.dir/src/PointCollections.cpp.o
+[69/489] Building CXX object core/CMakeFiles/vc_core.dir/src/ScrollUmbilicus.cpp.o
+[70/489] Building CXX object core/CMakeFiles/vc_core.dir/src/render/DecodedChunkCacheBudget.cpp.o
+[71/489] Building CXX object core/CMakeFiles/vc_core.dir/src/RemoteFileCache.cpp.o
+[72/489] Building CXX object core/CMakeFiles/vc_core.dir/src/render/PostProcess.cpp.o
+[73/489] Building CXX object core/CMakeFiles/vc_core.dir/src/render/Colormaps.cpp.o
+[74/489] Building CXX object core/CMakeFiles/vc_core.dir/src/render/ChunkRequestScheduler.cpp.o
+[75/489] Building CXX object core/CMakeFiles/vc_core.dir/Version.cpp.o
+[76/489] Building CXX object core/CMakeFiles/vc_core.dir/src/render/ZarrDownloadBenchmark.cpp.o
+[77/489] Building CXX object core/CMakeFiles/vc_core.dir/src/PointIndex.cpp.o
+[78/489] Building CXX object core/CMakeFiles/vc_core.dir/__/apps/src/vc_merge_tifxyz_grid.cpp.o
+[79/489] Building CXX object core/CMakeFiles/vc_core.dir/src/render/PersistentZarrCacheBudget.cpp.o
+[80/489] Building CXX object core/CMakeFiles/vc_core.dir/src/render/SurfaceCache.cpp.o
+[81/489] Building CXX object core/CMakeFiles/vc_core.dir/src/render/ZarrChunkFetcher.cpp.o
+[82/489] Building CXX object core/CMakeFiles/vc_core.dir/src/render/ChunkedPlaneSampler.cpp.o
+[83/489] Building CXX object core/CMakeFiles/vc_core.dir/src/SurfacePatchIndex.cpp.o
+[84/489] Building CXX object core/CMakeFiles/vc_core.dir/src/render/ChunkCache.cpp.o
+[85/489] Linking CXX shared library core/libvc_core.so
+[86/489] Automatic MOC and UIC for target vc_tifxyz_inp_mask
+[87/489] Automatic MOC and UIC for target vc_seg_add_overlap
+[88/489] Automatic MOC and UIC for target vc_flattening
+[89/489] Automatic MOC and UIC for target vc_inpaint
+[90/489] Automatic MOC and UIC for target vc_objrefine
+[91/489] Automatic MOC and UIC for target vc_tifxyz2zarr_sparse
+[92/489] Automatic MOC and UIC for target vc_lasagna
+[93/489] Automatic MOC and UIC for target vc_render_video
+[94/489] Automatic MOC and UIC for target vc_add_ignore_label
+[95/489] Automatic MOC and UIC for target vc_tifxyz_trim
+[96/489] Automatic MOC and UIC for target vc_obj2tifxyz
+[97/489] Automatic MOC and UIC for target vc_obj2tifxyz_legacy
+[98/489] Automatic MOC and UIC for target vc_cut_windings
+[99/489] Automatic MOC and UIC for target vc_tifxyz_winding
+[100/489] Automatic MOC and UIC for target vc_tifxyz_selfcross
+[101/489] Automatic MOC and UIC for target vc_straighten
+[102/489] Building CXX object core/CMakeFiles/vc_flattening.dir/vc_flattening_autogen/mocs_compilation.cpp.o
+[103/489] Building CXX object core/CMakeFiles/vc_inpaint.dir/vc_inpaint_autogen/mocs_compilation.cpp.o
+[104/489] Building CXX object core/CMakeFiles/vc_lasagna.dir/vc_lasagna_autogen/mocs_compilation.cpp.o
+[105/489] Building CXX object apps/CMakeFiles/vc_tifxyz_inp_mask.dir/vc_tifxyz_inp_mask_autogen/mocs_compilation.cpp.o
+[106/489] Building CXX object core/CMakeFiles/vc_lasagna.dir/src/lasagna/EclMaxflow.cpp.o
+[107/489] Building CXX object apps/CMakeFiles/vc_tifxyz_inp_mask.dir/src/vc_tifxyz_inp_mask.cpp.o
+[108/489] Building CXX object core/CMakeFiles/vc_lasagna.dir/src/lasagna/EclMaxflowCut.cpp.o
+[109/489] Building CXX object core/CMakeFiles/vc_lasagna.dir/src/lasagna/LaplaceAmgx.cpp.o
+[110/489] Building CXX object core/CMakeFiles/vc_lasagna.dir/src/lasagna/LineViewBuilder.cpp.o
+[111/489] Building CXX object apps/CMakeFiles/vc_render_video.dir/vc_render_video_autogen/mocs_compilation.cpp.o
+[112/489] Building CXX object core/CMakeFiles/vc_lasagna.dir/src/lasagna/LineSpline.cpp.o
+[113/489] Linking CXX executable bin/vc_tifxyz_inp_mask
+[114/489] Building CXX object apps/CMakeFiles/vc_objrefine.dir/vc_objrefine_autogen/mocs_compilation.cpp.o
+[115/489] Building CXX object core/CMakeFiles/vc_lasagna.dir/src/lasagna/MaxflowGraph.cpp.o
+[116/489] Building CXX object apps/CMakeFiles/vc_seg_add_overlap.dir/vc_seg_add_overlap_autogen/mocs_compilation.cpp.o
+[117/489] Building CXX object core/CMakeFiles/vc_lasagna.dir/src/lasagna/LasagnaNormalSampler.cpp.o
+[118/489] Building CXX object core/CMakeFiles/vc_lasagna.dir/src/lasagna/LaplaceRank.cpp.o
+[119/489] Building CXX object core/CMakeFiles/vc_lasagna.dir/src/lasagna/ProjectVolumes.cpp.o
+[120/489] Building CXX object core/CMakeFiles/vc_inpaint.dir/src/InpaintSurface.cpp.o
+[121/489] Building CXX object apps/CMakeFiles/vc_render_video.dir/src/vc_render_video.cpp.o
+[122/489] Building CXX object apps/CMakeFiles/vc_tifxyz2zarr_sparse.dir/vc_tifxyz2zarr_sparse_autogen/mocs_compilation.cpp.o
+[123/489] Building CXX object core/CMakeFiles/vc_lasagna.dir/src/lasagna/Dataset.cpp.o
+[124/489] Building CXX object core/CMakeFiles/vc_lasagna.dir/src/lasagna/Manifest.cpp.o
+[125/489] Building CXX object apps/CMakeFiles/vc_objrefine.dir/src/ObjAlphaCompRefinement.cpp.o
+[126/489] Building CXX object apps/CMakeFiles/vc_add_ignore_label.dir/vc_add_ignore_label_autogen/mocs_compilation.cpp.o
+[127/489] Building CXX object apps/CMakeFiles/vc_obj2tifxyz.dir/vc_obj2tifxyz_autogen/mocs_compilation.cpp.o
+[128/489] Building CXX object core/CMakeFiles/vc_lasagna.dir/src/lasagna/ChannelSampler.cpp.o
+[129/489] Building CXX object apps/CMakeFiles/vc_obj2tifxyz_legacy.dir/vc_obj2tifxyz_legacy_autogen/mocs_compilation.cpp.o
+[130/489] Building CXX object apps/CMakeFiles/vc_tifxyz_trim.dir/vc_tifxyz_trim_autogen/mocs_compilation.cpp.o
+[131/489] Linking CXX executable bin/vc_render_video
+[132/489] Building CXX object apps/CMakeFiles/vc_obj2tifxyz.dir/src/vc_obj2tifxyz.cpp.o
+[133/489] Building CXX object apps/CMakeFiles/vc_obj2tifxyz_legacy.dir/src/vc_obj2tifxyz_legacy.cpp.o
+[134/489] Building CXX object apps/CMakeFiles/vc_seg_add_overlap.dir/src/vc_seg_add_overlap.cpp.o
+[135/489] Linking CXX shared library core/libvc_inpaint.so
+[136/489] Building CXX object apps/CMakeFiles/vc_straighten.dir/vc_straighten_autogen/mocs_compilation.cpp.o
+[137/489] Automatic MOC and UIC for target vc_tifxyz2obj
+[138/489] Building CXX object apps/CMakeFiles/vc_cut_windings.dir/vc_cut_windings_autogen/mocs_compilation.cpp.o
+[139/489] Building CXX object apps/CMakeFiles/vc_tifxyz_trim.dir/src/vc_tifxyz_trim.cpp.o
+[140/489] Linking CXX executable bin/vc_objrefine
+[141/489] Building CXX object apps/CMakeFiles/vc_tifxyz_winding.dir/vc_tifxyz_winding_autogen/mocs_compilation.cpp.o
+[142/489] Linking CXX executable bin/vc_obj2tifxyz_legacy
+[143/489] Building CXX object apps/CMakeFiles/vc_tifxyz2obj.dir/vc_tifxyz2obj_autogen/mocs_compilation.cpp.o
+[144/489] Automatic MOC and UIC for target vc_calc_surface_metrics
+[145/489] Automatic MOC and UIC for target vc_tifxyz_gengt
+[146/489] Building CXX object apps/CMakeFiles/vc_cut_windings.dir/src/vc_cut_windings.cpp.o
+[147/489] Linking CXX executable bin/vc_obj2tifxyz
+[148/489] Building CXX object apps/CMakeFiles/vc_tifxyz2zarr_sparse.dir/src/vc_tifxyz2zarr_sparse.cpp.o
+[149/489] Building CXX object apps/CMakeFiles/vc_tifxyz_selfcross.dir/vc_tifxyz_selfcross_autogen/mocs_compilation.cpp.o
+[150/489] Building CXX object apps/CMakeFiles/vc_tifxyz2obj.dir/src/vc_tifxyz2obj.cpp.o
+[151/489] Building CXX object apps/CMakeFiles/vc_tifxyz_winding.dir/src/vc_tifxyz_winding.cpp.o
+[152/489] Linking CXX executable bin/vc_tifxyz_trim
+[153/489] Automatic MOC and UIC for target vc_diffuse_winding
+[154/489] Generating __/core/include/vc/ui/moc_VCCollection.cpp
+[155/489] Building CXX object core/CMakeFiles/vc_lasagna.dir/src/lasagna/LineOptimizer.cpp.o
+[156/489] Building CXX object apps/CMakeFiles/vc_calc_surface_metrics.dir/vc_calc_surface_metrics_autogen/mocs_compilation.cpp.o
+[157/489] Building CXX object apps/CMakeFiles/vc_tifxyz_gengt.dir/vc_tifxyz_gengt_autogen/mocs_compilation.cpp.o
+[158/489] Linking CXX executable bin/vc_seg_add_overlap
+[159/489] Building CXX object apps/CMakeFiles/vc_straighten.dir/src/vc_straighten.cpp.o
+[160/489] Building CXX object apps/CMakeFiles/vc_diffuse_winding.dir/vc_diffuse_winding_autogen/mocs_compilation.cpp.o
+[161/489] Linking CXX executable bin/vc_tifxyz2obj
+[162/489] Building CXX object apps/CMakeFiles/vc_add_ignore_label.dir/src/vc_add_ignore_label.cpp.o
+[163/489] Building CXX object apps/CMakeFiles/vc_calc_surface_metrics.dir/src/vc_calc_surface_metrics.cpp.o
+[164/489] Building CXX object apps/CMakeFiles/vc_tifxyz_selfcross.dir/src/vc_tifxyz_selfcross.cpp.o
+[165/489] Linking CXX executable bin/vc_cut_windings
+[166/489] Building CXX object core/CMakeFiles/vc_flattening.dir/src/ABFFlattening.cpp.o
+[167/489] Building CXX object apps/CMakeFiles/vc_tifxyz_gengt.dir/src/vc_tifxyz_gengt.cpp.o
+[168/489] Linking CXX executable bin/vc_tifxyz_winding
+[169/489] Linking CXX executable bin/vc_tifxyz2zarr_sparse
+[170/489] Linking CXX executable bin/vc_straighten
+[171/489] Building CXX object apps/CMakeFiles/vc_diffuse_winding.dir/diffusion/continuous3d.cpp.o
+[172/489] Building CXX object apps/CMakeFiles/vc_diffuse_winding.dir/diffusion/continous.cpp.o
+[173/489] Building CXX object apps/CMakeFiles/vc_diffuse_winding.dir/diffusion/spiral_common.cpp.o
+[174/489] Building CXX object apps/CMakeFiles/vc_diffuse_winding.dir/diffusion/discrete.cpp.o
+[175/489] Automatic MOC and UIC for target vc_create_segment_mask
+[176/489] Automatic MOC and UIC for target vc_merge_tifxyz
+[177/489] Linking CXX executable bin/vc_calc_surface_metrics
+[178/489] Linking CXX executable bin/vc_tifxyz_gengt
+[179/489] Linking CXX executable bin/vc_tifxyz_selfcross
+[180/489] Automatic MOC and UIC for target vc_merge_patch
+[181/489] Building CXX object apps/CMakeFiles/vc_diffuse_winding.dir/__/core/src/VCCollection.cpp.o
+[182/489] Building CXX object apps/CMakeFiles/vc_create_segment_mask.dir/vc_create_segment_mask_autogen/mocs_compilation.cpp.o
+[183/489] Automatic MOC and UIC for target vc_visualize
+[184/489] Linking CXX shared library core/libvc_lasagna.so
+[185/489] Automatic MOC and UIC for target vc_atlas
+[186/489] Building CXX object apps/CMakeFiles/vc_merge_tifxyz.dir/vc_merge_tifxyz_autogen/mocs_compilation.cpp.o
+[187/489] Linking CXX shared library core/libvc_flattening.so
+[188/489] Building CXX object apps/CMakeFiles/vc_merge_patch.dir/vc_merge_patch_autogen/mocs_compilation.cpp.o
+[189/489] Building CXX object apps/CMakeFiles/vc_diffuse_winding.dir/__/core/include/vc/ui/moc_VCCollection.cpp.o
+[190/489] Building CXX object apps/CMakeFiles/vc_create_segment_mask.dir/src/vc_create_segment_mask.cpp.o
+[191/489] Automatic MOC and UIC for target vc_fiber_tracer
+[192/489] Automatic MOC and UIC for target vc_tracer
+[193/489] Building CXX object apps/CMakeFiles/vc_visualize.dir/vc_visualize_autogen/mocs_compilation.cpp.o
+[194/489] Building CXX object core/CMakeFiles/vc_atlas.dir/vc_atlas_autogen/mocs_compilation.cpp.o
+[195/489] Building CXX object apps/CMakeFiles/vc_diffuse_winding.dir/diffusion/spiral_ceres.cpp.o
+[196/489] Building CXX object core/CMakeFiles/vc_fiber_tracer.dir/vc_fiber_tracer_autogen/mocs_compilation.cpp.o
+[197/489] Building CXX object core/CMakeFiles/vc_tracer.dir/vc_tracer_autogen/mocs_compilation.cpp.o
+[198/489] Building CXX object apps/CMakeFiles/vc_diffuse_winding.dir/diffusion/spiral.cpp.o
+[199/489] Building CXX object core/CMakeFiles/vc_tracer.dir/src/NeuralTracerConnection.cpp.o
+[200/489] Building CXX object apps/CMakeFiles/vc_diffuse_winding.dir/diffusion/spiral2cont.cpp.o
+[201/489] Building CXX object apps/CMakeFiles/vc_diffuse_winding.dir/diffusion/spiral2.cpp.o
+[202/489] Building CXX object apps/CMakeFiles/vc_diffuse_winding.dir/diffusion/support.cpp.o
+[203/489] Building CXX object apps/CMakeFiles/vc_diffuse_winding.dir/diffusion/vc_diffuse_winding.cpp.o
+[204/489] Building CXX object core/CMakeFiles/vc_tracer.dir/src/growth_strategies/CandidateOrdering.cpp.o
+[205/489] Building CXX object core/CMakeFiles/vc_tracer.dir/src/growth_strategies/ComponentPruning.cpp.o
+[206/489] Building CXX object core/CMakeFiles/vc_tracer.dir/src/ChunkedTensor.cpp.o
+[207/489] Building CXX object core/CMakeFiles/vc_tracer.dir/src/SurfTrackerData.cpp.o
+[208/489] Automatic MOC and UIC for target vc_render_tifxyz
+[209/489] Automatic MOC and UIC for target vc_flatten
+[210/489] Automatic MOC and UIC for target vc_lasagna_line_probe
+[211/489] Building CXX object core/CMakeFiles/vc_tracer.dir/src/growth_strategies/GrowthConfig.cpp.o
+[212/489] Building CXX object core/CMakeFiles/vc_atlas.dir/src/AtlasConstraints.cpp.o
+[213/489] Linking CXX executable bin/vc_create_segment_mask
+[214/489] Building CXX object apps/CMakeFiles/vc_flatten.dir/vc_flatten_autogen/mocs_compilation.cpp.o
+[215/489] Building CXX object apps/CMakeFiles/vc_render_tifxyz.dir/vc_render_tifxyz_autogen/mocs_compilation.cpp.o
+[216/489] Automatic MOC and UIC for target vc_lasagna_maxflow_graph
+[217/489] Automatic MOC and UIC for target vc_volpkg_convert
+[218/489] Building CXX object apps/CMakeFiles/vc_lasagna_line_probe.dir/vc_lasagna_line_probe_autogen/mocs_compilation.cpp.o
+[219/489] Building CXX object core/CMakeFiles/vc_fiber_tracer.dir/src/fiber_tracer/FiberTrace.cpp.o
+[220/489] Building CXX object apps/CMakeFiles/vc_lasagna_maxflow_graph.dir/vc_lasagna_maxflow_graph_autogen/mocs_compilation.cpp.o
+[221/489] Building CXX object apps/CMakeFiles/vc_volpkg_convert.dir/vc_volpkg_convert_autogen/mocs_compilation.cpp.o
+[222/489] Automatic MOC and UIC for target vc_transform_geom
+[223/489] Building CXX object apps/CMakeFiles/vc_flatten.dir/src/vc_flatten.cpp.o
+[224/489] Building CXX object apps/CMakeFiles/vc_lasagna_maxflow_graph.dir/src/vc_lasagna_maxflow_graph.cpp.o
+[225/489] Building CXX object apps/CMakeFiles/vc_volpkg_convert.dir/src/vc_volpkg_convert.cpp.o
+[226/489] Building CXX object apps/CMakeFiles/vc_visualize.dir/src/vc_visualize.cpp.o
+[227/489] Building CXX object apps/CMakeFiles/vc_transform_geom.dir/vc_transform_geom_autogen/mocs_compilation.cpp.o
+[228/489] Building CXX object apps/CMakeFiles/vc_merge_patch.dir/src/vc_merge_patch.cpp.o
+[229/489] Building CXX object core/CMakeFiles/vc_atlas.dir/src/Atlas.cpp.o
+[230/489] Automatic MOC and UIC for target vc_gen_normalgrids
+[231/489] Linking CXX executable bin/vc_volpkg_convert
+[232/489] Building CXX object apps/CMakeFiles/vc_gen_normalgrids.dir/vc_gen_normalgrids_autogen/mocs_compilation.cpp.o
+[233/489] Building CXX object apps/CMakeFiles/vc_render_tifxyz.dir/src/vc_render_tifxyz.cpp.o
+[234/489] Linking CXX shared library core/libvc_fiber_tracer.so
+[235/489] Automatic MOC and UIC for target vc_fiber_trace_metric
+[236/489] Building CXX object apps/CMakeFiles/vc_add_ignore_label.dir/src/alpha_wrap.cpp.o
+[237/489] Linking CXX executable bin/vc_flatten
+[238/489] Building CXX object apps/CMakeFiles/vc_lasagna_line_probe.dir/src/vc_lasagna_line_probe.cpp.o
+[239/489] Building CXX object apps/CMakeFiles/vc_fiber_trace_metric.dir/vc_fiber_trace_metric_autogen/mocs_compilation.cpp.o
+[240/489] Automatic MOC and UIC for target vc_ngrids
+[241/489] Building CXX object core/CMakeFiles/vc_atlas.dir/src/FiberIntersections.cpp.o
+[242/489] Building CXX object apps/CMakeFiles/vc_merge_tifxyz.dir/src/vc_merge_tifxyz.cpp.o
+[243/489] Building CXX object apps/CMakeFiles/vc_transform_geom.dir/src/vc_transform_geom.cpp.o
+[244/489] Linking CXX executable bin/vc_lasagna_maxflow_graph
+[245/489] Linking CXX executable bin/vc_visualize
+[246/489] Automatic MOC and UIC for target vc_tifxyz2rgb
+[247/489] Linking CXX executable bin/vc_merge_patch
+[248/489] Building CXX object apps/CMakeFiles/vc_ngrids.dir/vc_ngrids_autogen/mocs_compilation.cpp.o
+[249/489] Building CXX object apps/CMakeFiles/vc_tifxyz2rgb.dir/vc_tifxyz2rgb_autogen/mocs_compilation.cpp.o
+[250/489] Automatic MOC and UIC for target vc_rgb2tifxyz
+[251/489] Automatic MOC and UIC for target vc_thinning
+[252/489] Building CXX object apps/CMakeFiles/vc_fiber_trace_metric.dir/src/vc_fiber_trace_metric.cpp.o
+[253/489] Building CXX object core/CMakeFiles/vc_tracer.dir/src/GrowSurface.cpp.o
+[254/489] Linking CXX executable bin/vc_render_tifxyz
+[255/489] Building CXX object core/CMakeFiles/vc_tracer.dir/src/GrowPatch.cpp.o
+[256/489] Linking CXX executable bin/vc_diffuse_winding
+[257/489] Building CXX object apps/CMakeFiles/vc_rgb2tifxyz.dir/vc_rgb2tifxyz_autogen/mocs_compilation.cpp.o
+[258/489] Automatic MOC and UIC for target vc_tifxyz
+[259/489] Automatic MOC and UIC for target vc_project_tifxyz
+[260/489] Linking CXX executable bin/vc_lasagna_line_probe
+[261/489] Building CXX object apps/CMakeFiles/vc_tifxyz2rgb.dir/src/vc_tifxyz2rgb.cpp.o
+[262/489] Building CXX object apps/CMakeFiles/vc_thinning.dir/vc_thinning_autogen/mocs_compilation.cpp.o
+[263/489] Building CXX object apps/CMakeFiles/vc_rgb2tifxyz.dir/src/vc_rgb2tifxyz.cpp.o
+[264/489] Linking CXX executable bin/vc_transform_geom
+[265/489] Automatic MOC and UIC for target vc_zarr_to_tiff
+[266/489] Building CXX object apps/CMakeFiles/vc_thinning.dir/src/vc_thinning.cpp.o
+[267/489] Building CXX object apps/CMakeFiles/vc_gen_normalgrids.dir/diffusion/support.cpp.o
+[268/489] Building CXX object apps/CMakeFiles/vc_tifxyz.dir/vc_tifxyz_autogen/mocs_compilation.cpp.o
+[269/489] Building CXX object apps/CMakeFiles/vc_gen_normalgrids.dir/src/vc_gen_normalgrids.cpp.o
+[270/489] Building CXX object apps/CMakeFiles/vc_project_tifxyz.dir/vc_project_tifxyz_autogen/mocs_compilation.cpp.o
+[271/489] Automatic MOC and UIC for target vc_zarr_recompress
+[272/489] Automatic MOC and UIC for target vc_zarr_download_bench
+[273/489] Linking CXX executable bin/vc_tifxyz2rgb
+[274/489] Linking CXX executable bin/vc_fiber_trace_metric
+[275/489] Building CXX object apps/CMakeFiles/vc_zarr_to_tiff.dir/vc_zarr_to_tiff_autogen/mocs_compilation.cpp.o
+[276/489] Linking CXX executable bin/vc_add_ignore_label
+[277/489] Linking CXX executable bin/vc_rgb2tifxyz
+[278/489] Linking CXX executable bin/vc_thinning
+[279/489] Building CXX object apps/CMakeFiles/vc_zarr_recompress.dir/vc_zarr_recompress_autogen/mocs_compilation.cpp.o
+[280/489] Linking CXX shared library core/libvc_atlas.so
+[281/489] Automatic MOC and UIC for target vc_atlas_constraints_export
+[282/489] Automatic MOC and UIC for target vc_atlas_inspect
+[283/489] Automatic MOC and UIC for target vc_atlas_pred_snap_rebuild
+[284/489] Building CXX object apps/CMakeFiles/vc_atlas_pred_snap_rebuild.dir/vc_atlas_pred_snap_rebuild_autogen/mocs_compilation.cpp.o
+[285/489] Building CXX object apps/CMakeFiles/vc_zarr_download_bench.dir/vc_zarr_download_bench_autogen/mocs_compilation.cpp.o
+[286/489] Linking CXX executable bin/vc_merge_tifxyz
+[287/489] Building CXX object apps/CMakeFiles/vc_atlas_constraints_export.dir/vc_atlas_constraints_export_autogen/mocs_compilation.cpp.o
+[288/489] Building CXX object apps/CMakeFiles/vc_atlas_inspect.dir/vc_atlas_inspect_autogen/mocs_compilation.cpp.o
+[289/489] Building CXX object apps/CMakeFiles/vc_tifxyz.dir/src/vc_tifxyz.cpp.o
+[290/489] Building CXX object apps/CMakeFiles/vc_zarr_to_tiff.dir/src/vc_zarr_to_tiff.cpp.o
+[291/489] Building CXX object apps/CMakeFiles/vc_project_tifxyz.dir/src/vc_project_tifxyz.cpp.o
+[292/489] Building CXX object apps/CMakeFiles/vc_atlas_constraints_export.dir/src/vc_atlas_constraints_export.cpp.o
+[293/489] Building CXX object apps/CMakeFiles/vc_atlas_pred_snap_rebuild.dir/VC3D/FiberSliceGeometry.cpp.o
+[294/489] Building CXX object apps/CMakeFiles/vc_zarr_recompress.dir/src/vc_zarr_recompress.cpp.o
+[295/489] Building CXX object apps/CMakeFiles/vc_zarr_download_bench.dir/src/vc_zarr_download_bench.cpp.o
+[296/489] Linking CXX executable bin/vc_atlas_constraints_export
+[297/489] Linking CXX executable bin/vc_gen_normalgrids
+[298/489] Building CXX object apps/CMakeFiles/vc_atlas_inspect.dir/src/vc_atlas_inspect.cpp.o
+[299/489] Linking CXX executable bin/vc_tifxyz
+[300/489] Building CXX object apps/CMakeFiles/vc_atlas_pred_snap_rebuild.dir/src/vc_atlas_pred_snap_rebuild.cpp.o
+[301/489] Linking CXX executable bin/vc_zarr_to_tiff
+[302/489] Linking CXX executable bin/vc_project_tifxyz
+[303/489] Building CXX object apps/CMakeFiles/vc_ngrids.dir/src/vc_ngrids.cpp.o
+[304/489] Linking CXX executable bin/vc_zarr_download_bench
+[305/489] Linking CXX shared library core/libvc_tracer.so
+[306/489] Automatic MOC and UIC for target vc_grow_seg_from_segments
+[307/489] Automatic MOC and UIC for target vc_grow_seg_from_seed
+[308/489] Building CXX object apps/CMakeFiles/vc_grow_seg_from_segments.dir/vc_grow_seg_from_segments_autogen/mocs_compilation.cpp.o
+[309/489] Building CXX object apps/CMakeFiles/vc_grow_seg_from_seed.dir/vc_grow_seg_from_seed_autogen/mocs_compilation.cpp.o
+[310/489] Linking CXX executable bin/vc_zarr_recompress
+[311/489] Linking CXX executable bin/vc_atlas_pred_snap_rebuild
+[312/489] Linking CXX executable bin/vc_atlas_inspect
+[313/489] Automatic MOC and UIC for target VC3D
+[314/489] Generating __/__/core/include/vc/ui/moc_VCCollection.cpp
+[315/489] Automatic RCC for resources.qrc
+[316/489] Linking CXX executable bin/vc_ngrids
+[317/489] Building CXX object apps/CMakeFiles/vc_grow_seg_from_seed.dir/src/vc_grow_seg_from_seed.cpp.o
+[318/489] Building CXX object apps/CMakeFiles/vc_grow_seg_from_segments.dir/src/vc_grow_seg_from_segments.cpp.o
+[319/489] Linking CXX executable bin/vc_grow_seg_from_seed
+[320/489] Linking CXX executable bin/vc_grow_seg_from_segments
+[321/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/cmake_pch.hxx.gch
+[322/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/Keybinds.cpp.o
+[323/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/__/__/core/src/VCCollection.cpp.o
+[324/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/FiberNameDisplay.cpp.o
+[325/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/LineAnnotationFiberSaveJob.cpp.o
+[326/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/StatusDockPanelHost.cpp.o
+[327/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/__/__/core/include/vc/ui/moc_VCCollection.cpp.o
+[328/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/RenderBenchRecorder.cpp.o
+[329/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/AxisAlignedSliceController.cpp.o
+[330/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/CState.cpp.o
+[331/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/FileWatcherService.cpp.o
+[332/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/CWindowContextMenu.cpp.o
+[333/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/FiberMapRuler.cpp.o
+[334/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/FiberSliceGeometry.cpp.o
+[335/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/VCAppMain.cpp.o
+[336/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/RenderBenchReplay.cpp.o
+[337/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/FiberWindingSolver.cpp.o
+[338/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/FiberMapWorkspace.cpp.o
+[339/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/FiberNetworkLayout.cpp.o
+[340/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/LineAnnotationGeneratedViews.cpp.o
+[341/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/OpenDataCatalogWindow.cpp.o
+[342/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/OpenDataSampleProject.cpp.o
+[343/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/OpenDataManifest.cpp.o
+[344/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/LineAnnotationFiberSegments.cpp.o
+[345/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/OpenDataSegmentCacheIO.cpp.o
+[346/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/OpenDataNormalGrids.cpp.o
+[347/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/OpenDataLasagna.cpp.o
+[348/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/OpenDataVolumePrefill.cpp.o
+[349/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/LineAnnotationDialog.cpp.o
+[350/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/AtlasControlPointsDock.cpp.o
+[351/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/volume_viewers/CVolumeViewerView.cpp.o
+[352/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/VolumeViewerCmaps.cpp.o
+[353/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/SurfaceAreaCalculator.cpp.o
+[354/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/SurfaceAffineTransformController.cpp.o
+[355/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/WindowRangeWidget.cpp.o
+[356/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/elements/CollapsibleSettingsGroup.cpp.o
+[357/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/elements/DropdownChecklistButton.cpp.o
+[358/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/OpenDataSegmentCache.cpp.o
+[359/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/VC3D_autogen/mocs_compilation.cpp.o
+[360/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/volume_viewers/annotation_tools/SameWrapAnnotationTool.cpp.o
+[361/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/WrapAnnotationWidget.cpp.o
+[362/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/elements/JsonProfileEditor.cpp.o
+[363/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/elements/LabeledControlRow.cpp.o
+[364/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/elements/VolumeSelector.cpp.o
+[365/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/elements/ViewerStatsBar.cpp.o
+[366/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/elements/RangeSlider.cpp.o
+[367/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/elements/SpiralConfigProfileEditor.cpp.o
+[368/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/elements/DownloadQueueDebugOverlay.cpp.o
+[369/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/SurfaceTreeWidget.cpp.o
+[370/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/elements/ViewerSplitGrid.cpp.o
+[371/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/elements/DownloadQueueStats.cpp.o
+[372/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/SeedingBatchTracker.cpp.o
+[373/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/SegmentationCommandHandler.cpp.o
+[374/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/SettingsDialog.cpp.o
+[375/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/segmentation/panels/SegmentationHeaderRow.cpp.o
+[376/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/segmentation/panels/SegmentationCorrectionsPanel.cpp.o
+[377/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/segmentation/panels/SegmentationEditingPanel.cpp.o
+[378/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/segmentation/SegmentationWidget.cpp.o
+[379/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/segmentation/panels/SegmentationGrowthPanel.cpp.o
+[380/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/segmentation/panels/SegmentationApprovalMaskPanel.cpp.o
+[381/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/segmentation/panels/SegmentationCustomParamsPanel.cpp.o
+[382/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/segmentation/panels/SegmentationManualAddPanel.cpp.o
+[383/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/segmentation/panels/SegmentationNeuralTracerPanel.cpp.o
+[384/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/segmentation/panels/SegmentationDirectionFieldPanel.cpp.o
+[385/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/segmentation/tools/ThinPlateSpline3d.cpp.o
+[386/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/segmentation/tools/SegmentationEditManager.cpp.o
+[387/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/SeedingWidget.cpp.o
+[388/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/segmentation/tools/ApprovalMaskBrushTool.cpp.o
+[389/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/segmentation/growth/SegmentationGrowth.cpp.o
+[390/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/segmentation/tools/ManualAddTool.cpp.o
+[391/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/segmentation/tools/SurfaceMaskBrushTool.cpp.o
+[392/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/segmentation/SegmentationModule_Falloff.cpp.o
+[393/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/segmentation/tools/SegmentationLineTool.cpp.o
+[394/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/segmentation/tools/SegmentationBrushTool.cpp.o
+[395/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/segmentation/SegmentationModule_Input.cpp.o
+[396/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/CWindow.cpp.o
+[397/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/segmentation/SegmentationModule_Session.cpp.o
+[398/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/segmentation/tools/SegmentationPushPullTool.cpp.o
+[399/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/overlays/BBoxOverlayController.cpp.o
+[400/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/overlays/PathsOverlayController.cpp.o
+[401/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/segmentation/growth/SegmentationGrower.cpp.o
+[402/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/overlays/RawPointsOverlayController.cpp.o
+[403/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/overlays/VectorOverlayController.cpp.o
+[404/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/overlays/PlaneSlicingOverlayController.cpp.o
+[405/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/overlays/PointsOverlayController.cpp.o
+[406/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/overlays/AtlasControlPointsOverlayController.cpp.o
+[407/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/overlays/SegmentationOverlayController.cpp.o
+[408/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/overlays/AtlasOverlayController.cpp.o
+[409/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/overlays/SurfaceRotationOverlayController.cpp.o
+[410/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/overlays/OverlayBatchItem.cpp.o
+[411/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/overlays/FiberSliceOverlayController.cpp.o
+[412/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/overlays/FiberOverlayController.cpp.o
+[413/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/overlays/SpiralOverlayController.cpp.o
+[414/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/overlays/InkDetectionOverlayController.cpp.o
+[415/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/overlays/VolumeOverlayController.cpp.o
+[416/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/NeuralTraceServiceManager.cpp.o
+[417/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/SpiralBrushCursorWidget.cpp.o
+[418/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/UnifiedBrowserDialog.cpp.o
+[419/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/overlays/ViewerOverlayControllerBase.cpp.o
+[420/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/LineAnnotationController.cpp.o
+[421/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/segmentation/growth/SegmentationCorrections.cpp.o
+[422/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/SpiralArtifactCache.cpp.o
+[423/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/SpiralPointChain.cpp.o
+[424/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/SpiralPointCollectionEdit.cpp.o
+[425/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/VolumeAttachmentController.cpp.o
+[426/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/LasagnaServiceManager.cpp.o
+[427/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/SurfacePanelController.cpp.o
+[428/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/SpiralSshTunnel.cpp.o
+[429/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/SpiralMinimap.cpp.o
+[430/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/LasagnaBatchWindow.cpp.o
+[431/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/SpiralBrushController.cpp.o
+[432/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/SpiralServiceManager.cpp.o
+[433/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/viewer_controls/ViewerControlsPanel.cpp.o
+[434/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/SpiralPanel.cpp.o
+[435/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/viewer_controls/panels/ViewerInkDetectionPanel.cpp.o
+[436/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/segmentation/SegmentationModule.cpp.o
+[437/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/viewer_controls/panels/ViewerCompositePanel.cpp.o
+[438/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/SpiralServiceManagerInputs.cpp.o
+[439/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/viewer_controls/panels/ViewerTransformsPanel.cpp.o
+[440/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/viewer_controls/panels/ViewerNavigationPanel.cpp.o
+[441/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/viewer_controls/panels/ViewerNormalVisualizationPanel.cpp.o
+[442/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/MenuActionController.cpp.o
+[443/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/SegmentRenderThread.cpp.o
+[444/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/viewer_controls/panels/ViewerViewExtrasPanel.cpp.o
+[445/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/elements/ProgressUtil.cpp.o
+[446/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/segmentation/panels/SegmentationLasagnaPanel.cpp.o
+[447/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/CommandLineToolRunner.cpp.o
+[448/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/ConsoleOutputWidget.cpp.o
+[449/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/elements/COutlinedTextItem.cpp.o
+[450/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/volume_viewers/CameraGizmoWidget.cpp.o
+[451/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/volume_viewers/VolumetricCompositor.cpp.o
+[452/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/FiberAnnotationController.cpp.o
+[453/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/ViewerManager.cpp.o
+[454/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/agent_bridge/AgentBridgeMethod.cpp.o
+[455/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/CPointCollectionWidget.cpp.o
+[456/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/CFiberWidget.cpp.o
+[457/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/agent_bridge/AgentBridgeMethods_atlas.cpp.o
+[458/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/ToolDialogs.cpp.o
+[459/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/agent_bridge/AgentBridgeMethods_editing.cpp.o
+[460/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/agent_bridge/AgentBridgeMethods_canvas.cpp.o
+[461/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/agent_bridge/AgentBridgeMethods_fiber.cpp.o
+[462/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/agent_bridge/AgentBridgeMethods_flatten.cpp.o
+[463/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/agent_bridge/AgentBridgeMethods_jobs.cpp.o
+[464/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/agent_bridge/AgentBridgeMethods_lasagna.cpp.o
+[465/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/SpiralWorkspace.cpp.o
+[466/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/agent_bridge/AgentBridgeMethods_surfaceops.cpp.o
+[467/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/agent_bridge/AgentBridgeMethods_points.cpp.o
+[468/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/agent_bridge/AgentBridgeMethods_seeding.cpp.o
+[469/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/agent_bridge/AgentBridgeMethods_session.cpp.o
+[470/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/agent_bridge/AgentBridgeMethods_wrap.cpp.o
+[471/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/agent_bridge/AgentBridgeMethods_viewer.cpp.o
+[472/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/agent_bridge/AgentBridgeServer.cpp.o
+[473/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/agent_bridge/AgentBridgeHandlers_catalog.cpp.o
+[474/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/volume_viewers/CChunkedVolumeViewer.cpp.o
+[475/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/agent_bridge/AgentBridgeHandlers_points.cpp.o
+[476/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/agent_bridge/AgentBridgeHandlers_review.cpp.o
+[477/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/agent_bridge/AgentBridgeHandlers_surfaceops.cpp.o
+[478/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/VC3D_autogen/EWIEGA46WW/qrc_resources.cpp.o
+[479/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/agent_bridge/AgentBridgeHandlers_session.cpp.o
+[480/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/agent_bridge/AgentBridgeJobs.cpp.o
+[481/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/agent_bridge/AgentBridgeHandlers_wrap.cpp.o
+[482/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/agent_bridge/AgentBridgeHandlers_viewer.cpp.o
+[483/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/agent_bridge/AgentBridgeHandlers_atlas.cpp.o
+[484/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/agent_bridge/AgentBridgeHandlers_editing.cpp.o
+[485/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/agent_bridge/AgentBridgeHandlers_fiber.cpp.o
+[486/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/agent_bridge/AgentBridgeHandlers_seeding.cpp.o
+[487/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/agent_bridge/AgentBridgeHandlers_flatten.cpp.o
+[488/489] Building CXX object apps/VC3D/CMakeFiles/VC3D.dir/agent_bridge/AgentBridgeHandlers_lasagna.cpp.o
+[489/489] Linking CXX executable bin/VC3D
+-- Install configuration: "Release"
+-- Installing: /usr/local/lib/libvc_core.so
+-- Set non-toolchain portion of runtime path of "/usr/local/lib/libvc_core.so" to "$ORIGIN/../lib"
+-- Installing: /usr/local/lib/libvc_flattening.so
+-- Set non-toolchain portion of runtime path of "/usr/local/lib/libvc_flattening.so" to "$ORIGIN/../lib"
+-- Installing: /usr/local/lib/libvc_inpaint.so
+-- Set non-toolchain portion of runtime path of "/usr/local/lib/libvc_inpaint.so" to "$ORIGIN/../lib"
+-- Installing: /usr/local/lib/libvc_lasagna.so
+-- Set non-toolchain portion of runtime path of "/usr/local/lib/libvc_lasagna.so" to "$ORIGIN/../lib"
+-- Installing: /usr/local/lib/libvc_atlas.so
+-- Set non-toolchain portion of runtime path of "/usr/local/lib/libvc_atlas.so" to "$ORIGIN/../lib"
+-- Installing: /usr/local/lib/libvc_fiber_tracer.so
+-- Set non-toolchain portion of runtime path of "/usr/local/lib/libvc_fiber_tracer.so" to "$ORIGIN/../lib"
+-- Installing: /usr/local/lib/libvc_tracer.so
+-- Set non-toolchain portion of runtime path of "/usr/local/lib/libvc_tracer.so" to "$ORIGIN/../lib"
+-- Installing: /usr/local/lib/libutils.so
+-- Set non-toolchain portion of runtime path of "/usr/local/lib/libutils.so" to "$ORIGIN/../lib"
+-- Installing: /usr/local/lib/libutils_c3d_codec.so
+-- Set non-toolchain portion of runtime path of "/usr/local/lib/libutils_c3d_codec.so" to "$ORIGIN/../lib"
+-- Installing: /usr/local/lib/libc3d.so
+-- Set non-toolchain portion of runtime path of "/usr/local/lib/libc3d.so" to "$ORIGIN/../lib"
+-- Installing: /usr/local/bin/vc_render_video
+-- Set non-toolchain portion of runtime path of "/usr/local/bin/vc_render_video" to "$ORIGIN/../lib"
+-- Installing: /usr/local/bin/vc_render_tifxyz
+-- Set non-toolchain portion of runtime path of "/usr/local/bin/vc_render_tifxyz" to "$ORIGIN/../lib"
+-- Installing: /usr/local/bin/vc_objrefine
+-- Set non-toolchain portion of runtime path of "/usr/local/bin/vc_objrefine" to "$ORIGIN/../lib"
+-- Installing: /usr/local/bin/vc_grow_seg_from_seed
+-- Set non-toolchain portion of runtime path of "/usr/local/bin/vc_grow_seg_from_seed" to "$ORIGIN/../lib"
+-- Installing: /usr/local/bin/vc_seg_add_overlap
+-- Set non-toolchain portion of runtime path of "/usr/local/bin/vc_seg_add_overlap" to "$ORIGIN/../lib"
+-- Installing: /usr/local/bin/vc_grow_seg_from_segments
+-- Set non-toolchain portion of runtime path of "/usr/local/bin/vc_grow_seg_from_segments" to "$ORIGIN/../lib"
+-- Installing: /usr/local/bin/vc_tifxyz2obj
+-- Set non-toolchain portion of runtime path of "/usr/local/bin/vc_tifxyz2obj" to "$ORIGIN/../lib"
+-- Installing: /usr/local/bin/vc_obj_uv_lift
+-- Set non-toolchain portion of runtime path of "/usr/local/bin/vc_obj_uv_lift" to "$ORIGIN/../lib"
+-- Installing: /usr/local/bin/vc_tifxyz2zarr_sparse
+-- Set non-toolchain portion of runtime path of "/usr/local/bin/vc_tifxyz2zarr_sparse" to "$ORIGIN/../lib"
+-- Installing: /usr/local/bin/vc_add_ignore_label
+-- Set non-toolchain portion of runtime path of "/usr/local/bin/vc_add_ignore_label" to "$ORIGIN/../lib"
+-- Installing: /usr/local/bin/vc_obj2tifxyz
+-- Set non-toolchain portion of runtime path of "/usr/local/bin/vc_obj2tifxyz" to "$ORIGIN/../lib"
+-- Installing: /usr/local/bin/vc_obj2tifxyz_legacy
+-- Set non-toolchain portion of runtime path of "/usr/local/bin/vc_obj2tifxyz_legacy" to "$ORIGIN/../lib"
+-- Installing: /usr/local/bin/vc_flatten
+-- Set non-toolchain portion of runtime path of "/usr/local/bin/vc_flatten" to "$ORIGIN/../lib"
+-- Installing: /usr/local/bin/vc_tifxyz_inp_mask
+-- Set non-toolchain portion of runtime path of "/usr/local/bin/vc_tifxyz_inp_mask" to "$ORIGIN/../lib"
+-- Installing: /usr/local/bin/vc_tifxyz_trim
+-- Set non-toolchain portion of runtime path of "/usr/local/bin/vc_tifxyz_trim" to "$ORIGIN/../lib"
+-- Installing: /usr/local/bin/vc_straighten
+-- Set non-toolchain portion of runtime path of "/usr/local/bin/vc_straighten" to "$ORIGIN/../lib"
+-- Installing: /usr/local/bin/vc_cut_windings
+-- Set non-toolchain portion of runtime path of "/usr/local/bin/vc_cut_windings" to "$ORIGIN/../lib"
+-- Installing: /usr/local/bin/vc_tifxyz_winding
+-- Set non-toolchain portion of runtime path of "/usr/local/bin/vc_tifxyz_winding" to "$ORIGIN/../lib"
+-- Installing: /usr/local/bin/vc_tifxyz_selfcross
+-- Set non-toolchain portion of runtime path of "/usr/local/bin/vc_tifxyz_selfcross" to "$ORIGIN/../lib"
+-- Installing: /usr/local/bin/vc_calc_surface_metrics
+-- Set non-toolchain portion of runtime path of "/usr/local/bin/vc_calc_surface_metrics" to "$ORIGIN/../lib"
+-- Installing: /usr/local/bin/vc_lasagna_line_probe
+-- Set non-toolchain portion of runtime path of "/usr/local/bin/vc_lasagna_line_probe" to "$ORIGIN/../lib"
+-- Installing: /usr/local/bin/vc_fiber_trace_metric
+-- Set non-toolchain portion of runtime path of "/usr/local/bin/vc_fiber_trace_metric" to "$ORIGIN/../lib"
+-- Installing: /usr/local/bin/vc_lasagna_maxflow_graph
+-- Set non-toolchain portion of runtime path of "/usr/local/bin/vc_lasagna_maxflow_graph" to "$ORIGIN/../lib"
+-- Installing: /usr/local/bin/vc_atlas_inspect
+-- Set non-toolchain portion of runtime path of "/usr/local/bin/vc_atlas_inspect" to "$ORIGIN/../lib"
+-- Installing: /usr/local/bin/vc_atlas_constraints_export
+-- Set non-toolchain portion of runtime path of "/usr/local/bin/vc_atlas_constraints_export" to "$ORIGIN/../lib"
+-- Installing: /usr/local/bin/vc_atlas_pred_snap_rebuild
+-- Set non-toolchain portion of runtime path of "/usr/local/bin/vc_atlas_pred_snap_rebuild" to "$ORIGIN/../lib"
+-- Installing: /usr/local/bin/vc_tifxyz_gengt
+-- Set non-toolchain portion of runtime path of "/usr/local/bin/vc_tifxyz_gengt" to "$ORIGIN/../lib"
+-- Installing: /usr/local/bin/vc_diffuse_winding
+-- Set non-toolchain portion of runtime path of "/usr/local/bin/vc_diffuse_winding" to "$ORIGIN/../lib"
+-- Installing: /usr/local/bin/vc_tifxyz_mmap_prepare
+-- Set non-toolchain portion of runtime path of "/usr/local/bin/vc_tifxyz_mmap_prepare" to "$ORIGIN/../lib"
+-- Installing: /usr/local/bin/vc_create_segment_mask
+-- Set non-toolchain portion of runtime path of "/usr/local/bin/vc_create_segment_mask" to "$ORIGIN/../lib"
+-- Installing: /usr/local/bin/vc_merge_tifxyz
+-- Set non-toolchain portion of runtime path of "/usr/local/bin/vc_merge_tifxyz" to "$ORIGIN/../lib"
+-- Installing: /usr/local/bin/vc_merge_patch
+-- Set non-toolchain portion of runtime path of "/usr/local/bin/vc_merge_patch" to "$ORIGIN/../lib"
+-- Installing: /usr/local/bin/vc_visualize
+-- Set non-toolchain portion of runtime path of "/usr/local/bin/vc_visualize" to "$ORIGIN/../lib"
+-- Installing: /usr/local/bin/vc_volpkg_convert
+-- Set non-toolchain portion of runtime path of "/usr/local/bin/vc_volpkg_convert" to "$ORIGIN/../lib"
+-- Installing: /usr/local/bin/vc_transform_geom
+-- Set non-toolchain portion of runtime path of "/usr/local/bin/vc_transform_geom" to "$ORIGIN/../lib"
+-- Installing: /usr/local/bin/vc_gen_normalgrids
+-- Set non-toolchain portion of runtime path of "/usr/local/bin/vc_gen_normalgrids" to "$ORIGIN/../lib"
+-- Installing: /usr/local/bin/vc_ngrids
+-- Set non-toolchain portion of runtime path of "/usr/local/bin/vc_ngrids" to "$ORIGIN/../lib"
+-- Installing: /usr/local/bin/vc_tifxyz2rgb
+-- Set non-toolchain portion of runtime path of "/usr/local/bin/vc_tifxyz2rgb" to "$ORIGIN/../lib"
+-- Installing: /usr/local/bin/vc_rgb2tifxyz
+-- Set non-toolchain portion of runtime path of "/usr/local/bin/vc_rgb2tifxyz" to "$ORIGIN/../lib"
+-- Installing: /usr/local/bin/vc_thinning
+-- Set non-toolchain portion of runtime path of "/usr/local/bin/vc_thinning" to "$ORIGIN/../lib"
+-- Installing: /usr/local/bin/vc_tifxyz
+-- Set non-toolchain portion of runtime path of "/usr/local/bin/vc_tifxyz" to "$ORIGIN/../lib"
+-- Installing: /usr/local/bin/vc_project_tifxyz
+-- Set non-toolchain portion of runtime path of "/usr/local/bin/vc_project_tifxyz" to "$ORIGIN/../lib"
+-- Installing: /usr/local/bin/vc_zarr_to_tiff
+-- Set non-toolchain portion of runtime path of "/usr/local/bin/vc_zarr_to_tiff" to "$ORIGIN/../lib"
+-- Installing: /usr/local/bin/vc_zarr_recompress
+-- Set non-toolchain portion of runtime path of "/usr/local/bin/vc_zarr_recompress" to "$ORIGIN/../lib"
+-- Installing: /usr/local/bin/vc_zarr_download_bench
+-- Set non-toolchain portion of runtime path of "/usr/local/bin/vc_zarr_download_bench" to "$ORIGIN/../lib"
+-- Installing: /usr/local/bin/VC3D
+-- Set non-toolchain portion of runtime path of "/usr/local/bin/VC3D" to "$ORIGIN/../lib"
+Saving image...
+Image saved, took 3.62s
+
+Built image im-7cRnlXGURiuT7MvyKa4ZIE in 268.88s
+
+
+✓ Created objects.
+├── 🔨 Created mount 
+│   /Users/bryantle/Documents/bnleft/first-light-pherc0211/modal_app.py
+├── 🔨 Created function render_slices.
+├── 🔨 Created function spiral_fit.
+├── 🔨 Created function probe.
+├── 🔨 Created function pack_pools.
+├── 🔨 Created function probe_ink.
+├── 🔨 Created function fetch_dataset.
+├── 🔨 Created function render_and_infer.
+├── 🔨 Created function control.
+└── 🔨 Created function probe_vc.
+
+$ vc_render_tifxyz --help | grep -n flip-normals
+44:  --flip-normals                      Negate surface normals (reverses slice 
+
+$ ls -la /usr/local/bin | grep -E 'vc_|flatboi'
+-rwxr-xr-x 1 root root    705056 May 13 18:30 flatboi
+-rwxr-xr-x 1 root root  65421240 Sep 17 18:49 vc_add_ignore_label
+-rwxr-xr-x 1 root root   7153056 Sep 17 18:49 vc_atlas_constraints_export
+-rwxr-xr-x 1 root root  11163304 Sep 17 18:49 vc_atlas_inspect
+-rwxr-xr-x 1 root root   8560192 Sep 17 18:49 vc_atlas_pred_snap_rebuild
+-rwxr-xr-x 1 root root   7991696 Sep 17 18:48 vc_calc_surface_metrics
+-rwxr-xr-x 1 root root   7349448 Sep 17 18:48 vc_create_segment_mask
+-rwxr-xr-x 1 root root   6661304 Sep 17 18:48 vc_cut_windings
+-rwxr-xr-x 1 root root  47342744 Sep 17 18:49 vc_diffuse_winding
+-rwxr-xr-x 1 root root   7089632 Sep 17 18:49 vc_fiber_trace_metric
+-rwxr-xr-x 1 root root   7773256 Sep 17 18:49 vc_flatten
+-rwxr-xr-x 1 root root  21834984 Sep 17 18:49 vc_gen_normalgrids
+-rwxr-xr-x 1 root root  11688440 Sep 17 18:49 vc_grow_seg_from_seed
+-rwxr-xr-x 1 root root  14012200 Sep 17 18:49 vc_grow_seg_from_segments
+-rwxr-xr-x 1 root root  15154112 Sep 17 18:49 vc_lasagna_line_probe
+-rwxr-xr-x 1 root root   6952408 Sep 17 18:49 vc_lasagna_maxflow_graph
+-rwxr-xr-x 1 root root  19761032 Sep 17 18:49 vc_merge_patch
+-rwxr-xr-x 1 root root  26183952 Sep 17 18:49 vc_merge_tifxyz
+-rwxr-xr-x 1 root root  22393928 Sep 17 18:49 vc_ngrids
+-rwxr-xr-x 1 root root   5842736 Sep 17 18:48 vc_obj2tifxyz
+-rwxr-xr-x 1 root root   5620632 Sep 17 18:48 vc_obj2tifxyz_legacy
+-rwxr-xr-x 1 root root   4044592 Sep 17 18:48 vc_obj_uv_lift
+-rwxr-xr-x 1 root root   7590392 Sep 17 18:48 vc_objrefine
+-rwxr-xr-x 1 root root   8797360 Sep 17 18:49 vc_project_tifxyz
+-rwxr-xr-x 1 root root  12022536 Sep 17 18:49 vc_render_tifxyz
+-rwxr-xr-x 1 root root   7412816 Sep 17 18:48 vc_render_video
+-rwxr-xr-x 1 root root   5676064 Sep 17 18:49 vc_rgb2tifxyz
+-rwxr-xr-x 1 root root   7738288 Sep 17 18:48 vc_seg_add_overlap
+-rwxr-xr-x 1 root root   8540744 Sep 17 18:48 vc_straighten
+-rwxr-xr-x 1 root root   5259400 Sep 17 18:49 vc_thinning
+-rwxr-xr-x 1 root root   9222480 Sep 17 18:49 vc_tifxyz
+-rwxr-xr-x 1 root root   5583528 Sep 17 18:48 vc_tifxyz2obj
+-rwxr-xr-x 1 root root   5444816 Sep 17 18:49 vc_tifxyz2rgb
+-rwxr-xr-x 1 root root  10014280 Sep 17 18:48 vc_tifxyz2zarr_sparse
+-rwxr-xr-x 1 root root   8167680 Sep 17 18:48 vc_tifxyz_gengt
+-rwxr-xr-x 1 root root   5427032 Sep 17 18:48 vc_tifxyz_inp_mask
+-rwxr-xr-x 1 root root   2015816 Sep 17 18:48 vc_tifxyz_mmap_prepare
+-rwxr-xr-x 1 root root   8705048 Sep 17 18:48 vc_tifxyz_selfcross
+-rwxr-xr-x 1 root root   5655080 Sep 17 18:48 vc_tifxyz_trim
+-rwxr-xr-x 1 root root   6161184 Sep 17 18:48 vc_tifxyz_winding
+-rwxr-xr-x 1 root root   7891296 Sep 17 18:49 vc_transform_geom
+-rwxr-xr-x 1 root root  10235096 Sep 17 18:49 vc_visualize
+-rwxr-xr-x 1 root root   5052144 Sep 17 18:48 vc_volpkg_convert
+-rwxr-xr-x 1 root root   9591680 Sep 17 18:49 vc_zarr_download_bench
+-rwxr-xr-x 1 root root   8834352 Sep 17 18:49 vc_zarr_recompress
+-rwxr-xr-x 1 root root   7619080 Sep 17 18:49 vc_zarr_to_tiff
+
+$ cat /src/.git/HEAD 2>/dev/null; git -C /src rev-parse HEAD 2>/dev/null || echo 'no /src git'; ls /src 2>/dev/null | head
+no /src git
+build
+Stopping app - local entrypoint completed.
+✓ App completed. View run at 
+https://modal.com/apps/bnleft/main/ap-WFfzUy3XBqkROQnYswgHkW
+exit=0

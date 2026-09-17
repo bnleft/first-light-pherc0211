@@ -101,7 +101,13 @@ ink_image = image.run_commands(
 # --flip-normals, which main's source has), so for the writeup's "pinned versions"
 # claim the binaries have to come from the same commit as the Python code.
 vc_image = ink_image.run_commands(
-    f"cd {VILLA}/volume-cartographer && cmake --preset ci-release-gcc "
+    # The May image is Ubuntu 24.04; main's install_build_deps.sh now targets 26.04
+    # (flang-21) and cannot run here. Install only what the apps build needs beyond
+    # what the image already has.
+    "apt-get update -qq && DEBIAN_FRONTEND=noninteractive apt-get install -y -qq liblapacke-dev libopenblas-dev",
+    # flatboi drags in PaStiX and is only used by render_ink --strips, which we do not use;
+    # the Qt tracer GUI is not needed headless either.
+    f"cd {VILLA}/volume-cartographer && cmake --preset ci-release-gcc -DVC_BUILD_FLATBOI=OFF -DVC_BUILD_UI_TRACER=OFF "
     f"&& cmake --build --preset ci-release-gcc -j 16 "
     f"&& cmake --install build/ci-release-gcc --prefix /usr/local --component vc_runtime "
     f"&& rm -rf build && vc_render_tifxyz --help | grep -q flip-normals",
