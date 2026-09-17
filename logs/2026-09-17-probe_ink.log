@@ -1,0 +1,152 @@
+✓ Initialized. View run at 
+https://modal.com/apps/bnleft/main/ap-T5a9gPaLIcNIVD9PuVi1h7
+Building image im-W75s2wh6tHh8XsinM2LsOA
+
+=> Step 0: FROM base
+
+=> Step 1: RUN cd /opt/villa/vesuvius && uv sync --frozen --extra models
+Using CPython 3.14.7
+Creating virtual environment at: .venv
+   Building nnunetv2 @ file:///opt/villa/segmentation/models/arch/nnunet
+   Building batchgeneratorsv2 @ file:///opt/villa/segmentation/models/batchgeneratorsv2
+   Building volume-cartographer @ file:///opt/villa/volume-cartographer
+   Building vesuvius @ file:///opt/villa/vesuvius
+Downloading scikit-image (13.1MiB)
+Downloading pillow (6.3MiB)
+Downloading nvidia-nccl-cu13 (196.4MiB)
+Downloading scipy (33.6MiB)
+Downloading cuda-bindings (6.2MiB)
+Downloading matplotlib (10.6MiB)
+Downloading cupy-cuda13x (65.3MiB)
+Downloading imageio-ffmpeg (28.1MiB)
+Downloading nvidia-cusolver (191.6MiB)
+Downloading simpleitk (50.3MiB)
+Downloading blosc2 (6.4MiB)
+Downloading sympy (6.0MiB)
+Downloading plotly (9.4MiB)
+Downloading fonttools (4.7MiB)
+Downloading torch (507.6MiB)
+Downloading diffusers (5.4MiB)
+Downloading wandb (25.5MiB)
+Downloading numcodecs (8.7MiB)
+Downloading numpy (15.9MiB)
+Downloading connected-components-3d (4.6MiB)
+Downloading imagecodecs (27.5MiB)
+Downloading torchvision (7.3MiB)
+Downloading pandas (10.4MiB)
+Downloading lxml (5.0MiB)
+Downloading triton (188.6MiB)
+Downloading scikit-learn (8.7MiB)
+Downloading botocore (14.3MiB)
+Downloading llvmlite (57.1MiB)
+Downloading ml-dtypes (4.8MiB)
+Downloading bokeh (6.1MiB)
+Downloading opencv-python-headless (58.4MiB)
+Downloading python-gdcm (12.7MiB)
+Downloading rdkit (35.5MiB)
+Downloading tensorstore (20.0MiB)
+Downloading nvidia-cudnn-cu13 (349.2MiB)
+Downloading nvidia-cuda-runtime (2.1MiB)
+Downloading nvidia-cuda-cupti (10.2MiB)
+Downloading nvidia-cusparse (139.2MiB)
+Downloading nvidia-curand (56.8MiB)
+Downloading nvidia-cusparselt-cu13 (162.3MiB)
+Downloading nvidia-nvshmem-cu13 (57.6MiB)
+Downloading nvidia-cuda-nvrtc (86.0MiB)
+Downloading nvidia-nvjitlink (38.8MiB)
+Downloading nvidia-cufft (204.2MiB)
+Downloading nvidia-cublas (403.5MiB)
+Downloading nvidia-cufile (1.2MiB)
+Downloading cucim-cu13 (14.6MiB)
+Downloading nvidia-nvimgcodec-cu13 (30.5MiB)
+Downloading numba (3.7MiB)
+ Downloaded nvidia-cufile
+Downloading hf-xet (4.3MiB)
+Downloading nibabel (3.1MiB)
+ Downloaded nvidia-cuda-runtime
+Downloading edt (2.8MiB)
+ Downloaded nibabel
+ Downloaded fonttools
+ Downloaded edt
+ Downloaded connected-components-3d
+ Downloaded numba
+Downloading timm (2.5MiB)
+Downloading pydantic-core (2.0MiB)
+Downloading pydicom (2.3MiB)
+ Downloaded ml-dtypes
+Downloading networkx (2.0MiB)
+ Downloaded lxml
+ Downloaded diffusers
+Downloading aiohttp (1.7MiB)
+ Downloaded cucim-cu13
+Downloading monai (1.5MiB)
+Downloading kiwisolver (1.4MiB)
+Downloading soundfile (1.3MiB)
+Downloading dask (1.4MiB)
+ Downloaded hf-xet
+Downloading pygments (1.2MiB)
+ Downloaded sympy
+Downloading setuptools (1.0MiB)
+ Downloaded bokeh
+ Downloaded pillow
+ Downloaded cuda-bindings
+ Downloaded monai
+ Downloaded pydantic-core
+ Downloaded aiohttp
+ Downloaded kiwisolver
+ Downloaded soundfile
+ Downloaded blosc2
+ Downloaded pydicom
+ Downloaded networkx
+ Downloaded pygments
+ Downloaded dask
+ Downloaded setuptools
+ Downloaded timm
+ Downloaded torchvision
+ Downloaded nvidia-cuda-cupti
+ Downloaded numcodecs
+ Downloaded scikit-learn
+ Downloaded plotly
+ Downloaded pandas
+ Downloaded matplotlib
+ Downloaded scikit-image
+ Downloaded python-gdcm
+ Downloaded botocore
+ Downloaded nvidia-nvimgcodec-cu13
+ Downloaded numpy
+   Building dynamic-network-architectures==0.3.1
+   Building iopath==0.1.10
+ Downloaded tensorstore
+   Building acvl-utils==0.2.6
+   Building fvcore==0.1.5.post20221221
+   Building pims==0.7
+ Downloaded imageio-ffmpeg
+ Downloaded imagecodecs
+ Downloaded wandb
+ Downloaded scipy
+ Downloaded rdkit
+ Downloaded simpleitk
+      Built iopath==0.1.10
+      Built dynamic-network-architectures==0.3.1
+ Downloaded llvmlite
+ Downloaded opencv-python-headless
+      Built fvcore==0.1.5.post20221221
+      Built acvl-utils==0.2.6
+ Downloaded cupy-cuda13x
+      Built pims==0.7
+      Built batchgeneratorsv2 @ file:///opt/villa/segmentation/models/batchgeneratorsv2
+ Downloaded nvidia-curand
+ Downloaded nvidia-nvjitlink
+      Built nnunetv2 @ file:///opt/villa/segmentation/models/arch/nnunet
+      Built vesuvius @ file:///opt/villa/vesuvius
+ Downloaded triton
+ Downloaded nvidia-nvshmem-cu13
+ Downloaded nvidia-cusolver
+ Downloaded nvidia-cuda-nvrtc
+ Downloaded nvidia-cufft
+ Downloaded nvidia-nccl-cu13
+ Downloaded torch
+ Downloaded nvidia-cusparselt-cu13
+ Downloaded nvidia-cusparse
+ Downloaded nvidia-cudnn-cu13
+ Downloaded nvidia-cublas

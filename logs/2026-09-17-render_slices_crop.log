@@ -1,25 +1,22 @@
 ✓ Initialized. View run at 
-https://modal.com/apps/bnleft/main/ap-ai7APNo1bVMz9oMF4McMNa
+https://modal.com/apps/bnleft/main/ap-umNc4wHiCSZagFbDSHNMcI
 ✓ Created objects.
 ├── 🔨 Created mount 
 │   /Users/bryantle/Documents/bnleft/first-light-pherc0211/modal_app.py
-├── 🔨 Created function render_slices.
 ├── 🔨 Created function fetch_dataset.
-├── 🔨 Created function pack_pools.
 ├── 🔨 Created function probe.
-└── 🔨 Created function spiral_fit.
+├── 🔨 Created function render_slices.
+├── 🔨 Created function spiral_fit.
+└── 🔨 Created function pack_pools.
 
-$ aws s3 cp --no-sign-request s3://vesuvius-challenge-open-data/PHerc0211/representations/umbilicus/20250821151803-umbilicus-20260808112626.json /data/spiral_datasets/PHerc0211/20250821151803/umbilicus.json
-Completed 6.3 KiB/6.3 KiB (18.0 KiB/s) with 1 file(s) remaining
-[1Adownload: s3://vesuvius-challenge-open-data/PHerc0211/representations/umbilicus/20250821151803-umbilicus-20260808112626.json to ../../data/spiral_datasets/PHerc0211/20250821151803/umbilicus.json
-
-$ cd /opt/villa/spiral-fitting && uv run python /opt/villa/spiral-fitting/_render_slices_pherc0211.py /data/spiral_datasets/PHerc0211/20250821151803/umbilicus.json /data/renders 5000,9000,13000
-level 2 (4854, 1987, 1987) uint8
-saved /data/renders/PHerc0211_z5000_level2.png
-saved /data/renders/PHerc0211_z9000_level2.png
-saved /data/renders/PHerc0211_z13000_level2.png
+$ cd /opt/villa/spiral-fitting && uv run python /opt/villa/spiral-fitting/_render_slices_pherc0211.py /data/spiral_datasets/PHerc0211/20250821151803/umbilicus.json /data/renders 9000,10000,10500,11000 1 350
+level 1 (9708, 3974, 3974) uint8
+saved /data/renders/PHerc0211_z9000_level1_crop350.png
+saved /data/renders/PHerc0211_z10000_level1_crop350.png
+saved /data/renders/PHerc0211_z10500_level1_crop350.png
+saved /data/renders/PHerc0211_z11000_level1_crop350.png
 Task was destroyed but it is pending!
-task: <Task pending name='Task-2346' coro=<_wait_for_close() running at /opt/villa/spiral-fitting/.venv/lib/python3.14/site-packages/aiohttp/connector.py:121>>
+task: <Task pending name='Task-620' coro=<_wait_for_close() running at /opt/villa/spiral-fitting/.venv/lib/python3.14/site-packages/aiohttp/connector.py:121>>
 Traceback (most recent call last):
   File "/root/.local/share/uv/python/cpython-3.14.7-linux-x86_64-gnu/lib/python3.14/weakref.py", line 566, in _exitfunc
     f()
@@ -63,5 +60,5 @@ Traceback (most recent call last):
 RuntimeError: loop <_UnixSelectorEventLoop running=True closed=False debug=False> is not the running loop
 Stopping app - local entrypoint completed.
 ✓ App completed. View run at 
-https://modal.com/apps/bnleft/main/ap-ai7APNo1bVMz9oMF4McMNa
+https://modal.com/apps/bnleft/main/ap-umNc4wHiCSZagFbDSHNMcI
 exit=0

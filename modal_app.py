@@ -89,7 +89,16 @@ image = (
     )
 )
 
+# Second layer: villa/vesuvius with the `models` extra, for ink_9um inference.
+# (cucim-cu13 has Linux-only wheels, which is fine here.) Kept separate so a
+# failure in this heavy install cannot block the spiral-fit steps.
+ink_image = image.run_commands(
+    f"cd {VILLA}/vesuvius && uv sync --frozen --extra models",
+)
+
 GPU = "A10"          # 24 GB, same class as the RTX 3090 the survey tool measured on
+CHECKPOINT_REPO = "scrollprize/ink_9um"
+CHECKPOINT_FILE = "hybrid_3d2d-seed42/step-075000.pth"
 HOURS = 3600
 
 
@@ -207,7 +216,7 @@ def write_scroll_spec(sense: str) -> Path:
 
 
 @app.function(image=image, volumes={str(DATA): vol}, timeout=HOURS, cpu=4, memory=16384)
-def render_slices(zs: str = "5000,9000,13000") -> list[str]:
+def render_slices(zs: str = "5000,9000,13000", level: int = 2, crop: int = 0) -> list[str]:
     """Axial slices at pyramid level 2 with the umbilicus marked, for the human
     CW/ACW read. Reads the CT volume straight from S3; nothing is downloaded."""
     script = VILLA / "spiral-fitting" / "_render_slices_pherc0211.py"
@@ -217,7 +226,7 @@ def render_slices(zs: str = "5000,9000,13000") -> list[str]:
     DS.mkdir(parents=True, exist_ok=True)
     if not (DS / "umbilicus.json").exists():
         sh(f"aws s3 cp --no-sign-request {UMBILICUS_S3} {DS}/umbilicus.json")
-    sh(f"cd {VILLA}/spiral-fitting && uv run python {script} {DS}/umbilicus.json {out} {zs}")
+    sh(f"cd {VILLA}/spiral-fitting && uv run python {script} {DS}/umbilicus.json {out} {zs} {level} {crop}")
     vol.commit()
     return sorted(str(p) for p in out.glob("*.png"))
 
@@ -230,7 +239,9 @@ import numpy as np, s3fs, zarr
 warnings.filterwarnings("ignore")
 VOLUME = "vesuvius-challenge-open-data/PHerc0211/volumes/20250821151803-9.362um-1.2m-113keV-masked.zarr"
 umb_path, out_dir, zs = sys.argv[1], sys.argv[2], [int(z) for z in sys.argv[3].split(",")]
-LEVEL, SCALE = "2", 4
+LEVEL = sys.argv[4] if len(sys.argv) > 4 else "2"
+CROP = int(sys.argv[5]) if len(sys.argv) > 5 else 0   # half-width in level pixels around the umbilicus; 0 = full slice
+SCALE = 2 ** int(LEVEL)
 pts = sorted(json.load(open(umb_path))["control_points"], key=lambda p: p["z"])
 def umb(z):
     if z <= pts[0]["z"]: return pts[0]["x"], pts[0]["y"]
@@ -244,18 +255,24 @@ arr = zarr.open_group(zarr.storage.FsspecStore(fs, path=VOLUME), mode="r")[LEVEL
 print("level", LEVEL, arr.shape, arr.dtype)
 for z in zs:
     zi = min(arr.shape[0]-1, round(z/SCALE))
-    slab = np.asarray(arr[zi]); ux, uy = umb(z)
+    ux, uy = umb(z); cx, cy = ux/SCALE, uy/SCALE
+    if CROP:
+        y0, y1 = max(0, int(cy-CROP)), min(arr.shape[1], int(cy+CROP))
+        x0, x1 = max(0, int(cx-CROP)), min(arr.shape[2], int(cx+CROP))
+        slab = np.asarray(arr[zi, y0:y1, x0:x1]); extent = (x0, x1, y1, y0)
+    else:
+        slab = np.asarray(arr[zi]); extent = None
     lo, hi = np.percentile(slab[slab > 0], [1, 99]) if (slab > 0).any() else (0, 1)
     disp = np.clip((slab.astype(np.float32)-lo)/max(hi-lo, 1), 0, 1)
     fig, ax = plt.subplots(figsize=(10, 10.5), dpi=150)
-    ax.imshow(disp, cmap="gray", origin="upper")
-    ax.plot(ux/SCALE, uy/SCALE, "r+", ms=24, mew=2.5)
-    ax.set_title(f"PHerc0211  z_full={z}  (level {LEVEL}, {SCALE}x down, z_idx={zi})  red + = published umbilicus")
+    ax.imshow(disp, cmap="gray", origin="upper", extent=extent)
+    ax.plot(cx, cy, "r+", ms=24, mew=2.5)
+    ax.set_title(f"PHerc0211  z_full={z}  (level {LEVEL}, {SCALE}x down, z_idx={zi}{', crop' if CROP else ''})  red + = published umbilicus")
     ax.set_xlabel("x  (array column, increases to the right)"); ax.set_ylabel("y  (array row, increases downward)")
     fig.text(0.02, 0.01, "Viewed looking along +z with +x right, +y down (native array orientation, no flips). "
              "Read the winding sense from the umbilicus outward.", fontsize=8)
     fig.tight_layout(rect=[0, 0.03, 1, 1])
-    p = f"{out_dir}/PHerc0211_z{z}_level{LEVEL}.png"; fig.savefig(p); plt.close(fig); print("saved", p)
+    p = f"{out_dir}/PHerc0211_z{z}_level{LEVEL}{'_crop'+str(CROP) if CROP else ''}.png"; fig.savefig(p); plt.close(fig); print("saved", p)
 '''
 
 
@@ -300,7 +317,7 @@ def spiral_fit(sense: str = "CW", steps: int = 1500, z_begin: int = 10000, z_end
     env = dict(os.environ,
                FIT_SPIRAL_CONFIG_OVERRIDES=json.dumps(overrides),
                FIT_SPIRAL_OUT_DIR=str(out_dir),
-               FIT_SPIRAL_CACHE_DIR=str(DATA / "cache"),
+               FIT_SPIRAL_CACHE_DIR=str(DATA / "cache" / tag),  # per-run: CW and ACW fits run concurrently
                WANDB_MODE="disabled")
     (out_dir / "overrides.json").write_text(json.dumps(overrides, indent=2))
     sh("nvidia-smi --query-gpu=name,memory.total --format=csv")
@@ -319,3 +336,74 @@ def spiral_fit(sense: str = "CW", steps: int = 1500, z_begin: int = 10000, z_end
     sh(f"find {out_dir} -maxdepth 3 | head -60")
     print(f"spiral_fit {tag}: exit {rc}, {mins:.1f} min on {GPU}")
     return tag
+
+
+# ---------------------------------------------------------------------------
+@app.function(image=ink_image, volumes={str(DATA): vol}, timeout=20 * 60)
+def probe_ink() -> None:
+    sh(f"cd {VILLA}/vesuvius && uv run --extra models python -c \"import torch, vesuvius.ink_detection.inference.infer as m; print('torch', torch.__version__, 'cuda build', torch.version.cuda); print('infer module', m.__file__)\"")
+    sh("vc_render_tifxyz --help 2>&1 | head -60 || true")
+    sh(f"cd {VILLA}/spiral-fitting && uv run python render_ink.py --help | head -40")
+
+
+@app.function(image=ink_image, gpu=GPU, volumes={str(DATA): vol}, timeout=8 * HOURS, cpu=16, memory=65536)
+def render_and_infer(run_tag: str, winding_min: int = -1, winding_max: int = -1,
+                     cache_gb: int = 16) -> str:
+    """Steps 4-6 of the Aug runbook in one GPU container:
+    render_ink.py (full-scroll concat + lasagna flatten, GPU) ->
+    vc_render_tifxyz (28-slice surface volume from S3, CPU) ->
+    vesuvius.ink_detection.inference.infer (ink_9um, GPU, both directions)."""
+    t0 = time.time()
+    fit_root = DATA / "out" / run_tag
+    runs = sorted(p for p in fit_root.iterdir() if p.is_dir() and (p / "meshes" / "fitted").is_dir())
+    assert runs, f"no fit run with meshes/fitted under {fit_root}"
+    run_dir = runs[-1]
+    meshes = run_dir / "meshes" / "fitted"
+    if winding_min >= 0:
+        scoped = run_dir / "meshes" / f"fitted_scoped_w{winding_min:03d}-{winding_max:03d}"
+        scoped.mkdir(exist_ok=True)
+        n = 0
+        for d in sorted(meshes.glob("w*_spliced")):
+            widx = int(d.name[1:].split("_")[0])
+            if winding_min <= widx <= winding_max:
+                link = scoped / d.name
+                if not link.exists():
+                    link.symlink_to(d)
+                n += 1
+        assert n, "no windings in range"
+        print(f"scoped {n} windings into {scoped}")
+        meshes = scoped
+    out = DATA / "ink" / run_tag / meshes.name
+    out.mkdir(parents=True, exist_ok=True)
+    cache = DATA / "volume-cache" / f"{SCROLL}.zarr"
+    cache.mkdir(parents=True, exist_ok=True)
+
+    # 4. concat + lasagna flatten (+ preview render) -- writes <meshes>/concat/*_flat
+    sh(f"cd {VILLA}/spiral-fitting && uv run python render_ink.py {meshes} "
+       f"--volume {cache} --remote-url {VOLUME_ZARR} --group-idx 1 --scale 0.25 --num-slices 5 "
+       f"--no-strips --full-scroll --lasagna-device cuda 2>&1 | tee {out}/render_ink.log")
+    flats = sorted((meshes / "concat").glob("*_flat"))
+    assert flats, "render_ink.py produced no *_flat tifxyz"
+    flat = flats[-1]
+    print("flattened tifxyz:", flat)
+
+    # 5. full-resolution 28-slice surface volume for the 9um ink model
+    seg_zarr = out / "segment.zarr"
+    sh(f"vc_render_tifxyz --volume {cache} --remote-url {VOLUME_ZARR} --group-idx 0 --scale 1 "
+       f"--segmentation {flat} --num-slices 28 --slice-step 1 --cache-gb {cache_gb} "
+       f"--zarr-output {seg_zarr} 2>&1 | tee {out}/vc_render_tifxyz.log")
+
+    # 6. ink inference, both directions
+    ckpt = DATA / "checkpoints" / "ink_9um" / CHECKPOINT_FILE
+    if not ckpt.exists():
+        sh(f"cd {VILLA}/vesuvius && uvx --from huggingface_hub hf download {CHECKPOINT_REPO} {CHECKPOINT_FILE} "
+           f"--local-dir {DATA}/checkpoints/ink_9um")
+    sh(f"cd {VILLA}/vesuvius && uv run --extra models python -m vesuvius.ink_detection.inference.infer "
+       f"{seg_zarr} {ckpt} {out}/segment.tif --overlap 0.5 --blend-mode hann --batch-size 4 --direction both "
+       f"2>&1 | tee {out}/infer.log")
+    vol.commit()
+    mins = (time.time() - t0) / 60
+    (out / "timing.json").write_text(json.dumps({"wall_minutes": mins, "gpu": GPU, "fit_run": str(run_dir)}, indent=2))
+    sh(f"ls -la {out}")
+    print(f"render_and_infer done in {mins:.1f} min")
+    return str(out)

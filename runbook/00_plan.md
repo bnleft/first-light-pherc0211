@@ -40,3 +40,22 @@ Spend cap agreed: $60.
 
 (filled in as they happen; each becomes a section in the writeup and, where
 it is a villa defect a human hit on real data, a PR)
+
+## 2026-09-17 — step 0–2 notes
+
+- Image built from `ghcr.io/scrollprize/villa/volume-cartographer:main` + Python 3.14 +
+  `uv sync --frozen` in `spiral-fitting`. Probe: torch 2.11.0+cu128, zarr 3.3.0,
+  all `vc_*` binaries present **except `vc_obj_uv_lift`** (only used by
+  `render_ink.py --strips`, which we do not use). Build ~1 min on Modal.
+- `s3fs`/`aiohttp` raise `RuntimeError: ... is not the running loop` at interpreter
+  exit on Python 3.14 after the renders are written. Harmless here; noted because it
+  makes a successful run end with a traceback.
+- Axial slices at level 2 (z 5000 / 9000 / 13000) and level-1 crops around the
+  published umbilicus (z 9000 / 10000 / 10500 / 11000): the umbilicus sits in a
+  clean, tightly wound core at z 9000–10500; at z 13000 the core is crushed and
+  the umbilicus is off the visible centre. Fit window chosen: **z 10000–11000**
+  (same width as the Aug run). Winding sense: to be read by Bryant from the crops
+  and cross-checked empirically with 1,500-step CW and ACW fits.
+- Current villa main only loads the lasagna normal stores through
+  `pack_resident_pools.py` sidecars (`lasagna_data.py`: "there is no other loading
+  path"). The 18 Aug workflow post and the Aug runbook predate this. Added as a step.
