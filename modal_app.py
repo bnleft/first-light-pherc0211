@@ -407,3 +407,56 @@ def render_and_infer(run_tag: str, winding_min: int = -1, winding_max: int = -1,
     sh(f"ls -la {out}")
     print(f"render_and_infer done in {mins:.1f} min")
     return str(out)
+
+
+# ---------------------------------------------------------------------------
+# Positive control: PHerc0139 w035, a segment in the ink_9um training set with
+# published labels. The Aug team learned the HF `ink/0139/w035_2026031718` mesh is
+# registered to a 2.4 um volume and renders all-zero against the 9.362 um volume;
+# the open-data bucket publishes per-volume registrations, so we take the
+# `-on-20250728140407-9.362um` mesh directly and also the team's own pre-rendered
+# 9.362 um surface volume (zero geometry code of ours) as a second control path.
+CONTROL_SEG_PREFIX = "s3://vesuvius-challenge-open-data/PHerc0139/segments/20260317000000-w035_2026031718"
+CONTROL_MESH_S3 = f"{CONTROL_SEG_PREFIX}/mesh/20260317000000-on-20250728140407-9.362um.tifxyz"
+CONTROL_SURFVOL_S3 = f"{CONTROL_SEG_PREFIX}/surface-volumes/9.362um-1.2m-113keV-volume-20250728140407.zarr"
+CONTROL_VOLUME_ZARR = "s3://vesuvius-challenge-open-data/PHerc0139/volumes/20250728140407-9.362um-1.2m-113keV-masked.zarr"
+CONTROL_LABELS_HF = "ink_9um/labels/native9-scrollprizeorg-21slices/w035"
+
+
+@app.function(image=ink_image, gpu=GPU, volumes={str(DATA): vol}, timeout=4 * HOURS, cpu=16, memory=65536)
+def control(flip_normals: bool = True, cache_gb: int = 16, use_published_render: bool = False) -> str:
+    """Run the identical inference on the control. Path A (default): our own
+    vc_render_tifxyz render of the published 9.362um-registered mesh. Path B
+    (--use-published-render): the team's pre-rendered surface volume."""
+    t0 = time.time()
+    root = DATA / "control"
+    out = root / ("out_published_render" if use_published_render else "out_own_render")
+    out.mkdir(parents=True, exist_ok=True)
+    ckpt = DATA / "checkpoints" / "ink_9um" / CHECKPOINT_FILE
+    if not ckpt.exists():
+        sh(f"cd {VILLA}/vesuvius && uvx --from huggingface_hub hf download {CHECKPOINT_REPO} {CHECKPOINT_FILE} "
+           f"--local-dir {DATA}/checkpoints/ink_9um")
+    if use_published_render:
+        seg_zarr = root / "published_surface_volume.zarr"
+        if not (seg_zarr / ".zgroup").exists() and not (seg_zarr / ".zarray").exists():
+            sh(f"aws s3 cp --no-sign-request --only-show-errors --recursive {CONTROL_SURFVOL_S3} {seg_zarr}")
+    else:
+        mesh = root / "mesh_on_9362um.tifxyz"
+        if not (mesh / "x.tif").exists():
+            sh(f"aws s3 cp --no-sign-request --only-show-errors --recursive {CONTROL_MESH_S3} {mesh}")
+        sh(f"ls -la {mesh}; cat {mesh}/meta.json")
+        cache = DATA / "volume-cache" / "control-PHerc0139-9362.zarr"
+        cache.mkdir(parents=True, exist_ok=True)
+        seg_zarr = out / "control.zarr"
+        flip = "--flip-normals" if flip_normals else ""
+        sh(f"vc_render_tifxyz --volume {cache} --remote-url {CONTROL_VOLUME_ZARR} --group-idx 0 --scale 1 "
+           f"--segmentation {mesh} --num-slices 28 --slice-step 1 --cache-gb {cache_gb} {flip} "
+           f"--zarr-output {seg_zarr} 2>&1 | tee {out}/vc_render_tifxyz.log")
+    sh(f"cd {VILLA}/vesuvius && uv run --extra models python -m vesuvius.ink_detection.inference.infer "
+       f"{seg_zarr} {ckpt} {out}/control_prediction.tif --overlap 0.5 --blend-mode hann --batch-size 4 --direction both "
+       f"2>&1 | tee {out}/infer.log")
+    vol.commit()
+    (out / "timing.json").write_text(json.dumps({"wall_minutes": (time.time()-t0)/60, "gpu": GPU,
+                                                 "flip_normals": flip_normals, "published_render": use_published_render}, indent=2))
+    sh(f"ls -la {out}")
+    return str(out)
