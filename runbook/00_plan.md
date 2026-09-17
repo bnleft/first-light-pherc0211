@@ -116,3 +116,14 @@ Still tied. Note the 1,500-step runs took ~14 min because ~5 min of that is
 loading (crossings cache, packed track store, resident pools); the 30k runs
 amortise it. Winners' 30k on an A6000 took 30 min; A10 is ~2× slower here.
 Cost: ~$1.10/h × ~2.1 h ≈ $2.30 for both converged fits.
+
+### Sense selection (recorded before any target inference)
+
+Every automated signal is tied: loss, satisfaction, and mean CT intensity under
+the fitted vertices (CW 67–72, ACW 68–71 across three slices; scroll-voxel mean
+~108). ACW had the lower loss at every checkpoint from 15k steps on
+(144 vs 150, 136 vs 136, 126 vs 137, 204 vs 212), which is weak evidence. We
+proceed with **ACW** for the first flatten + render + inference, windings
+w010–w065 (the same inner-half scope as the Aug run), and will run CW too if
+Bryant's read of the crops disagrees or if the flattened ACW render shows
+sheet-switch seams. Both fitted meshes are kept.
