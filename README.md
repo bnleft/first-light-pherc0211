@@ -21,14 +21,16 @@ we committed to count as ink; we wrote the rules before we looked.
    `ghcr.io/scrollprize/villa/volume-cartographer:main` is built from
    `1e3f4c02` (2026-05-13). Its `vc_render_tifxyz` has no `--flip-normals`,
    which the control recipe needs. Villa #1588 already reports the staleness;
-   we add the revision label and the missing flag as concrete evidence. Fix on
+   we added the revision label and the missing flag as concrete evidence
+   ([comment](https://github.com/ScrollPrize/villa/issues/1588#issuecomment-5807394810)). Fix on
    our side: rebuild the `vc_runtime` component from the pinned commit inside
    the image (`modal_app.py`, `vc_image`).
 2. **Current `main` will not load the lasagna normal maps without a packing
    step the workflow post never mentions.** `lasagna_data.py` reads normals
    only through `pack_resident_pools.py` sidecars ("there is no other loading
    path"). The 18 Aug post and the Aug runbook predate this. Documented in
-   `runbook/00_plan.md`; README addition proposed upstream (see `contrib/README.md`).
+   `runbook/00_plan.md`; README addition proposed upstream as
+   [villa #1880](https://github.com/ScrollPrize/villa/pull/1880).
 3. **Mirroring the zarr normal stores into a network volume is hours-slow.**
    ~100k chunk files per store. Because the fitter only needs the sidecars,
    `pack_pools_fast` pulls the fit window's chunk rows to local disk, packs
