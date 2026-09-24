@@ -1,4 +1,9 @@
-# Proposed villa contributions (drafts — nothing posted yet)
+# Villa contributions (posted 2026-09-24 under bnleft)
+
+- #1588 comment: https://github.com/ScrollPrize/villa/issues/1588#issuecomment-5807394810
+- #1716 comment: https://github.com/ScrollPrize/villa/issues/1716#issuecomment-5807394976
+- Docs PR: see `git log` / PR link appended below once known.
+
 
 Villa's CONTRIBUTING requires a human to have hit the problem on real data and
 to write the commentary. Bryant decides what to post and edits the text.

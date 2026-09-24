@@ -28,7 +28,7 @@ we committed to count as ink; we wrote the rules before we looked.
    step the workflow post never mentions.** `lasagna_data.py` reads normals
    only through `pack_resident_pools.py` sidecars ("there is no other loading
    path"). The 18 Aug post and the Aug runbook predate this. Documented in
-   `runbook/00_plan.md`; proposed doc change in `contrib/`.
+   `runbook/00_plan.md`; README addition proposed upstream (see `contrib/README.md`).
 3. **Mirroring the zarr normal stores into a network volume is hours-slow.**
    ~100k chunk files per store. Because the fitter only needs the sidecars,
    `pack_pools_fast` pulls the fit window's chunk rows to local disk, packs
