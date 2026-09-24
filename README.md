@@ -72,6 +72,31 @@ flipping the sense should, its forward/reverse numbers mirror ACW's):
 | excluded (boundary/band/coverage) | 0/0/0 | 0/0/0 | 1/2/0 | 1/1/1 |
 
 
+### Is the negative result real?
+
+We checked the four ways it could be an artifact. Scale: the flattened mesh's
+grid spacing is 19.7–20.4 voxels against the declared 20, so nothing is
+stretched. Readout code: on the control it finds 61 letter-sized candidates
+(2.5–3.7 mm) where the letters are. Model: a second published checkpoint
+(seed43) agrees. Surface placement — the one that mattered: the spiral-fit
+surface is on papyrus (fibre texture is visible) but, unlike the curated control
+segment, its brightness peak wanders through the 28-layer slab along the strip.
+So we rendered 64 layers, re-centred every 256 px tile on its own intensity
+peak, and ran the identical inference on a slab that is now centred in 100 % of
+blocks. It finds less, not more:
+
+| slab | centring: blocks peaking mid-third | fwd: px ≥ T / candidates | rev: px ≥ T / candidates |
+|---|---:|---:|---:|
+| control, curated w035 mesh (letters present) | 77 % | 1.257 % / **61** | 0.141 % / 9 |
+| target ACW, as rendered, seed42 | 46 % | 0.019 % / **23** | 0.027 % / **38** |
+| target ACW, as rendered, seed43 | 46 % | 0.015 % / **14** | 0.018 % / **27** |
+| target ACW, re-centred per tile, seed42 | 100 % | 0.009 % / **10** | 0.014 % / **20** |
+| target CW, as rendered, seed42 | 54 % | 0.032 % / **42** | 0.019 % / **22** |
+
+The centring diagnostic (`slab_profiles`) and the re-centring step
+(`recenter_and_infer`) are in `modal_app.py`; neither is in the published
+workflow, and the first one is cheap enough to run on every render.
+
 Disclosure: the checkpoint's inference patch is 128 × 128 px = 1.198 mm, larger
 than the 0.5 × 0.5 mm the prize page recommends for ML-generated images. We
 claim no letters from these outputs.
@@ -96,6 +121,7 @@ claim no letters from these outputs.
 | Control: render + inference | A10 | 4.75 min | |
 | Target ACW: flatten + render + inference (w010–w065) | A10 | 36.1 min | |
 | Target CW: same (warm volume cache) | A10 | 18.9 min | |
+| Verification: seed43, slab profiles, 64-layer re-centre + inference | A10 / CPU | ~55 + 5 + 109 min | |
 | **Total** | | | **<!-- TODO from Modal dashboard -->** (cap: $60) |
 
 Modal bills per second with no idle-pod cost; the Aug team's $56 was ~90 % idle

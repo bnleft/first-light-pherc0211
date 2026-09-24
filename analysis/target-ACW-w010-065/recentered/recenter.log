@@ -1,0 +1,5 @@
+source (64, 2360, 256640) -> out layers 28 tile 256
+row 0/10 centre layers: median 32
+row 4/10 centre layers: median 30
+row 8/10 centre layers: median 32
+centre layer over tiles: median 32, p10 14, p90 45, frac at clamp edges 0.17

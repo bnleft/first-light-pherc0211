@@ -157,3 +157,10 @@ sheet-switch seams. Both fitted meshes are kept.
 forward (0.015 %), 14 candidates ≥ 0.5 mm; reverse 110,872 px (0.018 %), 27
 candidates. No boundary/band/coverage exclusions fired. Same verdict as seed42
 (23 / 38). `analysis/target-ACW-w010-065/ckpt_seed43/readout.json`.
+
+## 2026-09-24 — re-centred slab result
+
+Per-tile re-centring on the 64-layer render: centring 46 % → 100 % mid-third
+(control 77 %). Candidates fell: 23 → 10 forward, 38 → 20 reverse.
+The negative result is not a centring artifact. 108.9 min A10 (GPU contention;
+inference took ~25 min/direction instead of 7).

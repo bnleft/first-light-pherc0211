@@ -64,3 +64,22 @@ labels `ink_9um/labels/native9-scrollprizeorg-21slices/w035`, any-depth max,
 one on the control; the reverse is treated as a second, weaker channel. The
 ACW target inference was already running when this was computed, but no target
 output had been read; this note is committed before any target output is opened.
+
+## Deviation note 2 — verification steps added after target inference (2026-09-23/24)
+
+Added after the first target readout, as checks on whether the negative result
+is an artifact. Criteria above are unchanged; these steps re-apply them.
+
+1. **Sheet-centring diagnostic.** Per 1024-px column block, the mean non-zero
+   intensity per layer of the rendered slab; a sheet-centred render peaks in the
+   middle. Control: 77 % of blocks peak in the middle third. Original target
+   render (ACW): 46 %. So the first readout ran on a surface that is on papyrus
+   but not consistently centred on it.
+2. **Local re-centring.** Rendered a 64-layer slab from the same flattened mesh,
+   re-centred each 256 × 256 tile on its smoothed intensity peak, cut a 28-layer
+   stack (median centre layer 32 of 64; p10 14, p90 45; 17 % of tiles at a
+   clamp edge). Result: 100 % of blocks peak in the middle third. Inference and
+   the readout were re-run on this stack with the same T.
+3. **Second checkpoint.** `hybrid_3d2d-seed43` on the original slab.
+
+Neither changes what counts as ink; both are reported alongside the original.
