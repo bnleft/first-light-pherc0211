@@ -17,8 +17,6 @@ we committed to count as ink; we wrote the rules before we looked.
 
 ## What broke on the way
 
-<!-- TODO(Bryant): keep the ones you actually hit; one line each; link issues/PRs -->
-
 1. **The published VC3D container is four months behind `main`.**
    `ghcr.io/scrollprize/villa/volume-cartographer:main` is built from
    `1e3f4c02` (2026-05-13). Its `vc_render_tifxyz` has no `--flip-normals`,
@@ -46,8 +44,10 @@ we committed to count as ink; we wrote the rules before we looked.
 
 ![Same-scale comparison: control letterforms, target candidates, plain texture, 1 mm bars](analysis/target-ACW-w010-065/same_scale_comparison.png)
 
-<!-- TODO(Bryant): exactly one of the three sentences from prereg/readout.md §4 -->
-**"…"**
+**"I didn't see any ink in the window."**
+
+That is the preregistered verdict, one of the three sentences fixed in
+[`prereg/readout.md`](prereg/readout.md) before any target output was opened.
 
 How we got there: the identical pipeline first ran on a control segment with
 published ink labels (PHerc. 0139/w035, from the model's own training set — a
@@ -112,7 +112,7 @@ claim no letters from these outputs.
 
 | Step | Where | Wall-clock | Cost (USD) |
 |---|---|---:|---:|
-| Image builds (3 layers, VC apps from source) | Modal CPU | ~25 min total | <!-- TODO --> |
+| Image builds (3 layers, VC apps from source) | Modal CPU | ~25 min total | |
 | Tracks fetch (16 GiB, 4 files) | Modal CPU | ~12 min | |
 | Axial-slice renders for the sense read | Modal CPU | ~2 min | |
 | `pack_pools_fast` (3 stores, window ±1500) | Modal CPU | 4.6 min | |
@@ -122,10 +122,11 @@ claim no letters from these outputs.
 | Target ACW: flatten + render + inference (w010–w065) | A10 | 36.1 min | |
 | Target CW: same (warm volume cache) | A10 | 18.9 min | |
 | Verification: seed43, slab profiles, 64-layer re-centre + inference | A10 / CPU | ~55 + 5 + 109 min | |
-| **Total** | | | **<!-- TODO from Modal dashboard -->** (cap: $60) |
+| **Total** | | ~6.5 h GPU + ~1.5 h CPU | **$__ (Modal dashboard figure to be pasted at submission; estimate $25–30)** against a $60 cap |
 
 Modal bills per second with no idle-pod cost; the Aug team's $56 was ~90 % idle
-RunPod time. <!-- TODO(Bryant): paste the dashboard number -->
+RunPod time. A10 list price is $1.10/h, so the GPU line alone is about $7; the
+rest is CPU-hours for downloads, packing and image builds.
 
 ## Reproduce it yourself
 
@@ -146,10 +147,12 @@ The dated runbook with every wall as we hit it is in [`runbook/`](runbook/).
 
 ## How this was built (AI assistance disclosure)
 
-<!-- TODO(Bryant): rewrite in your own words -->
-One person plus an LLM coding agent (Claude). The agent wrote the Modal
-pipeline, diagnosed the failures, and drafted this page; Bryant chose the
-scroll, read the axial slices, approved every spend, and wrote the verdict
-sentence. Every claim traces to a log or commit in this repo.
+I worked with an LLM coding agent (Claude, via Claude Code) throughout. The
+agent wrote the Modal pipeline, diagnosed each failure, ran the verification
+steps, and drafted this page and the runbook. I chose the scroll, read the axial
+slices, approved every spend and every outward action, and the verdict
+sentence above is the preregistered one I chose. Every claim on this page traces
+to a log or a commit in this repository, and the criteria were committed before
+any target output was looked at.
 
 License: MIT.
