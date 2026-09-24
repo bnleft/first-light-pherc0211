@@ -883,14 +883,15 @@ import json, sys, numpy as np, zarr, numcodecs
 src_path, dst_path, out_layers, tile = sys.argv[1], sys.argv[2], int(sys.argv[3]), int(sys.argv[4])
 g = zarr.open_group(src_path, mode="r"); a = g["0"]; Z, H, W = a.shape; half = out_layers // 2
 print("source", a.shape, "-> out layers", out_layers, "tile", tile)
-dst = zarr.open_group(dst_path, mode="w")
+# write zarr v2 explicitly: the source is v2, and zarr-python 3 defaults to v3 whose
+# codec API rejects numcodecs.Blosc (cf. villa#1360 for the same trap in vesuvius.predict)
+dst = zarr.open_group(dst_path, mode="w", zarr_format=2)
 try:
     dst.attrs.update(dict(g.attrs)); dst.attrs["recentered_from"] = src_path; dst.attrs["chunk_size"] = [out_layers, 128, 128]
 except Exception as e: print("attrs copy:", e)
 comp = numcodecs.Blosc(cname="lz4", clevel=3, shuffle=1)
-o = dst.create_array("0", shape=(out_layers, H, W), chunks=(out_layers, 128, 128), dtype="u1", fill_value=0,
-                     compressors=[comp] if hasattr(dst, "create_array") else None, dimension_names=None) if hasattr(dst, "create_array") else \
-    dst.create_dataset("0", shape=(out_layers, H, W), chunks=(out_layers, 128, 128), dtype="u1", fill_value=0, compressor=comp)
+o = dst.create_array("0", shape=(out_layers, H, W), chunks=(out_layers, 128, 128), dtype="uint8", fill_value=0,
+                     compressors=comp, chunk_key_encoding={"name": "v2", "separator": "/"})
 offsets = np.full((-(-H // tile), -(-W // tile)), -1, dtype=np.int32)
 k = np.array([1, 2, 3, 2, 1], float); k /= k.sum()
 for ty in range(offsets.shape[0]):

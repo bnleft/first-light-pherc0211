@@ -1,24 +1,25 @@
 ✓ Initialized. View run at 
-https://modal.com/apps/bnleft/main/ap-PL91jGOKfZSt66CEKhiLIT
+https://modal.com/apps/bnleft/main/ap-cDBaXtAtLIhEaOyVztfAWN
 ✓ Created objects.
 ├── 🔨 Created mount 
 │   /Users/bryantle/Documents/bnleft/first-light-pherc0211/modal_app.py
+├── 🔨 Created function pack_pools.
+├── 🔨 Created function fetch_dataset.
 ├── 🔨 Created function render_slices.
 ├── 🔨 Created function probe.
-├── 🔨 Created function control.
-├── 🔨 Created function pack_pools.
-├── 🔨 Created function probe_vc.
-├── 🔨 Created function fetch_dataset.
 ├── 🔨 Created function render_and_infer.
 ├── 🔨 Created function probe_ink.
+├── 🔨 Created function control.
+├── 🔨 Created function probe_vc.
 ├── 🔨 Created function spiral_fit.
 ├── 🔨 Created function overlay_fits.
 ├── 🔨 Created function calibrate_control.
 ├── 🔨 Created function readout.
-├── 🔨 Created function slab_profiles.
-├── 🔨 Created function recenter_and_infer.
+├── 🔨 Created function verify.
 ├── 🔨 Created function readout_control.
 ├── 🔨 Created function pack_pools_fast.
-└── 🔨 Created function verify.
+├── 🔨 Created function slab_profiles.
+├── 🔨 Created function recenter_and_infer.
+└── 🔨 Created function infer_ckpt.
 
-$ vc_render_tifxyz --volume /data/volume-cache/PHerc0211.zarr --remote-url s3://vesuvius-challenge-open-data/PHerc0211/volumes/20250821151803-9.362um-1.2m-113keV-masked.zarr --group-idx 0 --scale 1 --segmentation /data/out/ACW_z10000-11000_s30000/2026-09-17_PHerc0211_slice-10000-11000_0-patch/meshes/fitted_scoped_w010-065/concat/w010-065_flat --num-slices 64 --slice-step 1 --cache-gb 16 --zarr-output /data/ink/ACW_z10000-11000_s30000/fitted_scoped_w010-065_recentered/segment64.zarr 2>&1 | tee /data/ink/ACW_z10000-11000_s30000/fitted_scoped_w010-065_recentered/vc_render_tifxyz.log
+$ cd /opt/villa/spiral-fitting && uv run python /opt/villa/spiral-fitting/_recenter.py /data/ink/ACW_z10000-11000_s30000/fitted_scoped_w010-065_recentered/segment64.zarr /data/ink/ACW_z10000-11000_s30000/fitted_scoped_w010-065_recentered/segment.zarr 28 256 2>&1 | tee /data/ink/ACW_z10000-11000_s30000/fitted_scoped_w010-065_recentered/recenter.log

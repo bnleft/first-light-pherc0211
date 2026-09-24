@@ -150,3 +150,10 @@ sheet-switch seams. Both fitted meshes are kept.
 - Half the slab is zero because the flattened concat is only 49.5 % valid cells
   (the unflattened concat is 74.8 %): the lasagna flatten's output margin, trimmed
   by bbox only.
+
+## 2026-09-23/24 — model-dependence check
+
+`hybrid_3d2d-seed43/step-075000.pth` on the identical ACW slab: 89,584 px ≥ T
+forward (0.015 %), 14 candidates ≥ 0.5 mm; reverse 110,872 px (0.018 %), 27
+candidates. No boundary/band/coverage exclusions fired. Same verdict as seed42
+(23 / 38). `analysis/target-ACW-w010-065/ckpt_seed43/readout.json`.
