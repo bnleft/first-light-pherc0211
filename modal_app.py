@@ -761,3 +761,111 @@ def readout(run_tag: str, scope: str = "fitted_scoped_w010-065", thresh: float =
     sh(f"cd {VILLA}/spiral-fitting && uv run python {script} {out}/segment.tif {out}/segment_reverse.tif {seg} {out} {thresh}")
     vol.commit()
     return json.loads((out / "readout.json").read_text())
+
+
+# ---------------------------------------------------------------------------
+VERIFY_SCRIPT = r'''
+"""Is the negative result real? (1) mesh grid spacing vs meta.json scale (render
+stretch), (2) CT brightness profile through the rendered slab (is the mesh on
+papyrus?), (3) full-res texture crops for eyeballing, target vs control."""
+import json, sys, numpy as np, zarr
+from PIL import Image
+Image.MAX_IMAGE_PIXELS = None
+flat_dir, concat_dir, target_zarr, control_zarr, out_dir = sys.argv[1:6]
+def grid_spacing(d):
+    m = json.load(open(f"{d}/meta.json"))
+    x = np.array(Image.open(f"{d}/x.tif")); y = np.array(Image.open(f"{d}/y.tif")); z = np.array(Image.open(f"{d}/z.tif"))
+    ok = (x != -1) & (y != -1) & (z != -1)
+    def step(axis):
+        a = np.stack([x, y, z], -1).astype(np.float64)
+        d1 = np.linalg.norm(np.diff(a, axis=axis), axis=-1)
+        okk = ok[1:, :] & ok[:-1, :] if axis == 0 else ok[:, 1:] & ok[:, :-1]
+        v = d1[okk]; return float(np.median(v)), float(np.percentile(v, 10)), float(np.percentile(v, 90))
+    rows, cols = step(0), step(1)
+    return {"grid_shape": list(x.shape), "valid_frac": float(ok.mean()), "meta_scale": m.get("scale"),
+            "expected_step_vx": [1 / s for s in m["scale"]] if m.get("scale") else None,
+            "median_step_vx_along_rows(y-dir)": rows, "median_step_vx_along_cols(x-dir)": cols,
+            "z_range_vx": [float(z[ok].min()), float(z[ok].max())], "meta_keys": sorted(m.keys())}
+res = {"flat": grid_spacing(flat_dir), "concat_unflattened": grid_spacing(concat_dir)}
+for k, v in res.items(): print(k, json.dumps(v))
+def profile(path, tag, crop_xy):
+    g = zarr.open_group(path, mode="r"); a = g["0"] if "0" in g else g[list(g.array_keys())[0]]
+    prof = []
+    # sample 64 evenly spaced 512-wide column blocks to keep it cheap
+    W = a.shape[2]; xs = np.linspace(0, W - 512, 64).astype(int)
+    for zi in range(a.shape[0]):
+        vals = np.concatenate([np.asarray(a[zi, :, x0:x0 + 512]).ravel() for x0 in xs])
+        prof.append({"layer": zi, "mean": float(vals.mean()), "frac_zero": float((vals == 0).mean()), "p50": float(np.median(vals))})
+    mid = a.shape[0] // 2
+    y0, x0 = crop_xy
+    crop = np.asarray(a[mid, y0:y0 + 1500, x0:x0 + 1500])
+    Image.fromarray(crop).save(f"{out_dir}/{tag}_layer{mid}_crop1500.png")
+    print(tag, "shape", a.shape, "layer means:", [round(p["mean"], 1) for p in prof])
+    print(tag, "frac_zero per layer:", [round(p["frac_zero"], 3) for p in prof])
+    return prof
+res["target_profile"] = profile(target_zarr, "target", (400, 120000))
+res["control_profile"] = profile(control_zarr, "control", (2000, 2000))
+json.dump(res, open(f"{out_dir}/verify.json", "w"), indent=2)
+'''
+
+
+@app.function(image=image, volumes={str(DATA): vol}, timeout=HOURS, cpu=8, memory=32768)
+def verify(run_tag: str = "ACW_z10000-11000_s30000", scope: str = "fitted_scoped_w010-065") -> dict:
+    fit_root = DATA / "out" / run_tag
+    run_dir = sorted(p for p in fit_root.iterdir() if (p / "meshes" / "fitted").is_dir())[-1]
+    concat = run_dir / "meshes" / scope / "concat"
+    flat = sorted(concat.glob("*_flat"))[-1]
+    unflat = flat.with_name(flat.name.replace("_flat", ""))
+    out = DATA / "ink" / run_tag / scope
+    script = VILLA / "spiral-fitting" / "_verify.py"
+    script.write_text(VERIFY_SCRIPT)
+    sh(f"cat {flat}/meta.json; echo; cat {unflat}/meta.json")
+    sh(f"cd {VILLA}/spiral-fitting && uv run python {script} {flat} {unflat} {out}/segment.zarr {DATA}/control/out_own_render/control.zarr {out}")
+    vol.commit()
+    return json.loads((out / "verify.json").read_text())
+
+
+@app.function(image=image, volumes={str(DATA): vol}, timeout=HOURS, cpu=8, memory=49152)
+def readout_control(thresh: float = 199.0) -> dict:
+    """Positive test of the readout code: on the control it must report letter-sized candidates."""
+    out = DATA / "control" / "out_own_render"
+    script = VILLA / "spiral-fitting" / "_readout.py"
+    script.write_text(READOUT_SCRIPT)
+    sh(f"cd {VILLA}/spiral-fitting && uv run python {script} {out}/control_prediction.tif {out}/control_prediction_reverse.tif {out}/control.zarr {out} {thresh}")
+    vol.commit()
+    return json.loads((out / "readout.json").read_text())
+
+
+# ---------------------------------------------------------------------------
+PROFILE_SCRIPT = r'''
+"""Per-region layer profile of a rendered slab: for 48 column blocks across the
+strip, the mean intensity of non-zero pixels per layer, the argmax layer, and
+the peak-to-trough amplitude. A sheet-centred render peaks in the middle."""
+import json, sys, numpy as np, zarr
+path, out_json, nblocks = sys.argv[1], sys.argv[2], int(sys.argv[3])
+g = zarr.open_group(path, mode="r"); a = g["0"] if "0" in g else g[list(g.array_keys())[0]]
+Z, H, W = a.shape; xs = np.linspace(0, W - 1024, nblocks).astype(int)
+rows = []
+for x0 in xs:
+    blk = np.asarray(a[:, :, x0:x0 + 1024]).astype(np.float32)          # (Z, H, 1024)
+    nz = blk > 0
+    prof = np.array([blk[z][nz[z]].mean() if nz[z].any() else 0 for z in range(Z)])
+    rows.append({"x0": int(x0), "frac_nonzero": float(nz[Z//2].mean()), "argmax_layer": int(prof.argmax()),
+                 "amp": float(prof.max() - prof.min()), "mid_minus_edge": float(prof[Z//2] - (prof[0] + prof[-1]) / 2), "profile": [round(float(v), 1) for v in prof]})
+    print(f"x0={x0:7d} nonzero={rows[-1]['frac_nonzero']:.2f} argmax={rows[-1]['argmax_layer']:2d} amp={rows[-1]['amp']:5.1f} mid-edge={rows[-1]['mid_minus_edge']:+5.1f}")
+amps = np.array([r["amp"] for r in rows]); me = np.array([r["mid_minus_edge"] for r in rows])
+print(f"SUMMARY blocks={len(rows)} median_amp={np.median(amps):.1f} frac_mid_peaked(mid-edge>5)={np.mean(me > 5):.2f} frac_argmax_in_middle_third={np.mean([Z/3 <= r['argmax_layer'] <= 2*Z/3 for r in rows]):.2f}")
+json.dump(rows, open(out_json, "w"))
+'''
+
+
+@app.function(image=image, volumes={str(DATA): vol}, timeout=HOURS, cpu=8, memory=32768)
+def slab_profiles() -> None:
+    script = VILLA / "spiral-fitting" / "_profile.py"
+    script.write_text(PROFILE_SCRIPT)
+    for tag, path in [("control", DATA / "control/out_own_render/control.zarr"),
+                      ("target_ACW", DATA / "ink/ACW_z10000-11000_s30000/fitted_scoped_w010-065/segment.zarr"),
+                      ("target_CW", DATA / "ink/CW_z10000-11000_s30000/fitted_scoped_w010-065/segment.zarr")]:
+        print(f"===== {tag}")
+        sh(f"cd {VILLA}/spiral-fitting && uv run python {script} {path} {path.parent}/slab_profile_{tag}.json 48")
+    vol.commit()

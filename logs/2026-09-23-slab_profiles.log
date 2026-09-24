@@ -1,0 +1,180 @@
+✓ Initialized. View run at 
+https://modal.com/apps/bnleft/main/ap-dIojjxVCEZy5NxZXwCF3Cf
+✓ Created objects.
+├── 🔨 Created mount 
+│   /Users/bryantle/Documents/bnleft/first-light-pherc0211/modal_app.py
+├── 🔨 Created function render_slices.
+├── 🔨 Created function probe_ink.
+├── 🔨 Created function spiral_fit.
+├── 🔨 Created function render_and_infer.
+├── 🔨 Created function probe.
+├── 🔨 Created function pack_pools.
+├── 🔨 Created function fetch_dataset.
+├── 🔨 Created function control.
+├── 🔨 Created function readout_control.
+├── 🔨 Created function readout.
+├── 🔨 Created function slab_profiles.
+├── 🔨 Created function calibrate_control.
+├── 🔨 Created function pack_pools_fast.
+├── 🔨 Created function overlay_fits.
+├── 🔨 Created function probe_vc.
+└── 🔨 Created function verify.
+===== control
+
+$ cd /opt/villa/spiral-fitting && uv run python /opt/villa/spiral-fitting/_profile.py /data/control/out_own_render/control.zarr /data/control/out_own_render/slab_profile_control.json 48
+x0=      0 nonzero=0.81 argmax=12 amp= 18.6 mid-edge= +3.2
+x0=     89 nonzero=0.89 argmax=12 amp= 18.0 mid-edge= +2.5
+x0=    179 nonzero=0.94 argmax=12 amp= 17.5 mid-edge= +2.4
+x0=    269 nonzero=0.96 argmax=12 amp= 16.7 mid-edge= +2.2
+x0=    358 nonzero=0.96 argmax=12 amp= 16.3 mid-edge= +1.5
+x0=    448 nonzero=0.96 argmax=12 amp= 15.8 mid-edge= +1.0
+x0=    538 nonzero=0.95 argmax=12 amp= 15.5 mid-edge= +0.5
+x0=    627 nonzero=0.95 argmax=12 amp= 15.0 mid-edge= +0.1
+x0=    717 nonzero=0.94 argmax=12 amp= 14.4 mid-edge= -0.3
+x0=    807 nonzero=0.93 argmax=12 amp= 14.3 mid-edge= -0.3
+x0=    897 nonzero=0.92 argmax=12 amp= 14.5 mid-edge= +0.1
+x0=    986 nonzero=0.91 argmax=12 amp= 14.4 mid-edge= +0.2
+x0=   1076 nonzero=0.90 argmax=12 amp= 15.0 mid-edge= +1.5
+x0=   1166 nonzero=0.89 argmax=12 amp= 16.3 mid-edge= +2.8
+x0=   1255 nonzero=0.89 argmax=12 amp= 17.3 mid-edge= +4.1
+x0=   1345 nonzero=0.88 argmax=12 amp= 18.3 mid-edge= +5.5
+x0=   1435 nonzero=0.87 argmax=12 amp= 19.4 mid-edge= +6.9
+x0=   1524 nonzero=0.87 argmax=12 amp= 20.0 mid-edge= +8.1
+x0=   1614 nonzero=0.86 argmax=12 amp= 21.0 mid-edge= +9.2
+x0=   1704 nonzero=0.86 argmax=12 amp= 22.1 mid-edge=+10.6
+x0=   1794 nonzero=0.86 argmax=12 amp= 22.5 mid-edge=+11.5
+x0=   1883 nonzero=0.86 argmax=12 amp= 22.2 mid-edge=+11.6
+x0=   1973 nonzero=0.86 argmax=12 amp= 21.9 mid-edge=+11.8
+x0=   2063 nonzero=0.86 argmax=12 amp= 20.5 mid-edge=+10.9
+x0=   2152 nonzero=0.86 argmax=12 amp= 18.4 mid-edge= +9.7
+x0=   2242 nonzero=0.86 argmax=12 amp= 16.5 mid-edge= +8.2
+x0=   2332 nonzero=0.86 argmax=12 amp= 14.7 mid-edge= +6.5
+x0=   2421 nonzero=0.86 argmax=12 amp= 13.8 mid-edge= +4.9
+x0=   2511 nonzero=0.86 argmax=12 amp= 12.8 mid-edge= +3.9
+x0=   2601 nonzero=0.86 argmax= 0 amp= 13.0 mid-edge= +2.7
+x0=   2691 nonzero=0.86 argmax= 0 amp= 14.1 mid-edge= +1.2
+x0=   2780 nonzero=0.86 argmax= 0 amp= 15.1 mid-edge= +0.9
+x0=   2870 nonzero=0.86 argmax= 0 amp= 15.5 mid-edge= +0.0
+x0=   2960 nonzero=0.86 argmax= 0 amp= 16.6 mid-edge= -0.9
+x0=   3049 nonzero=0.86 argmax= 0 amp= 17.1 mid-edge= -0.9
+x0=   3139 nonzero=0.86 argmax= 0 amp= 16.7 mid-edge= -0.6
+x0=   3229 nonzero=0.86 argmax= 0 amp= 15.8 mid-edge= -0.2
+x0=   3318 nonzero=0.86 argmax= 0 amp= 14.3 mid-edge= +0.5
+x0=   3408 nonzero=0.86 argmax= 0 amp= 12.7 mid-edge= +1.3
+x0=   3498 nonzero=0.86 argmax= 0 amp= 11.1 mid-edge= +2.1
+x0=   3588 nonzero=0.85 argmax=12 amp= 11.9 mid-edge= +3.4
+x0=   3677 nonzero=0.85 argmax=12 amp= 12.6 mid-edge= +4.7
+x0=   3767 nonzero=0.85 argmax=12 amp= 13.0 mid-edge= +5.5
+x0=   3857 nonzero=0.85 argmax=12 amp= 13.5 mid-edge= +6.6
+x0=   3946 nonzero=0.83 argmax=12 amp= 14.2 mid-edge= +7.6
+x0=   4036 nonzero=0.79 argmax=12 amp= 15.1 mid-edge= +8.9
+x0=   4126 nonzero=0.74 argmax=12 amp= 16.4 mid-edge= +9.7
+x0=   4216 nonzero=0.66 argmax=12 amp= 17.5 mid-edge=+10.5
+SUMMARY blocks=48 median_amp=15.8 frac_mid_peaked(mid-edge>5)=0.38 frac_argmax_in_middle_third=0.77
+===== target_ACW
+
+$ cd /opt/villa/spiral-fitting && uv run python /opt/villa/spiral-fitting/_profile.py /data/ink/ACW_z10000-11000_s30000/fitted_scoped_w010-065/segment.zarr /data/ink/ACW_z10000-11000_s30000/fitted_scoped_w010-065/slab_profile_target_ACW.json 48
+x0=      0 nonzero=0.46 argmax= 0 amp= 11.2 mid-edge= +0.4
+x0=   5438 nonzero=0.46 argmax=11 amp= 17.2 mid-edge= +1.8
+x0=  10877 nonzero=0.46 argmax= 9 amp= 11.4 mid-edge= +5.1
+x0=  16315 nonzero=0.47 argmax=13 amp= 17.5 mid-edge= +6.1
+x0=  21754 nonzero=0.48 argmax= 7 amp= 17.7 mid-edge= -4.4
+x0=  27193 nonzero=0.47 argmax=13 amp= 21.6 mid-edge= +7.9
+x0=  32631 nonzero=0.45 argmax=17 amp= 19.7 mid-edge= -0.7
+x0=  38070 nonzero=0.45 argmax=22 amp=  7.4 mid-edge= -3.1
+x0=  43509 nonzero=0.49 argmax= 4 amp= 14.3 mid-edge= -4.4
+x0=  48947 nonzero=0.45 argmax=23 amp= 23.6 mid-edge= +1.2
+x0=  54386 nonzero=0.50 argmax= 5 amp=  7.1 mid-edge= +3.1
+x0=  59825 nonzero=0.48 argmax=11 amp= 11.9 mid-edge= +3.9
+x0=  65263 nonzero=0.47 argmax= 6 amp= 10.1 mid-edge= -1.1
+x0=  70702 nonzero=0.48 argmax=20 amp=  6.1 mid-edge= +3.7
+x0=  76140 nonzero=0.50 argmax=14 amp=  4.8 mid-edge= +2.3
+x0=  81579 nonzero=0.49 argmax=10 amp=  3.7 mid-edge= +1.6
+x0=  87018 nonzero=0.45 argmax=18 amp= 13.0 mid-edge= +1.4
+x0=  92456 nonzero=0.45 argmax=12 amp= 14.6 mid-edge= +3.3
+x0=  97895 nonzero=0.47 argmax=18 amp= 11.1 mid-edge= -0.8
+x0= 103334 nonzero=0.47 argmax=11 amp=  9.5 mid-edge= -2.9
+x0= 108772 nonzero=0.47 argmax=13 amp=  9.0 mid-edge= +3.6
+x0= 114211 nonzero=0.46 argmax=17 amp= 12.3 mid-edge= +3.0
+x0= 119650 nonzero=0.46 argmax= 5 amp= 10.8 mid-edge= -6.2
+x0= 125088 nonzero=0.47 argmax=17 amp= 12.6 mid-edge= +9.0
+x0= 130527 nonzero=0.48 argmax=13 amp= 14.0 mid-edge= +2.0
+x0= 135965 nonzero=0.47 argmax=13 amp= 11.8 mid-edge= +3.8
+x0= 141404 nonzero=0.44 argmax=24 amp= 14.5 mid-edge= -9.2
+x0= 146843 nonzero=0.45 argmax=14 amp= 15.0 mid-edge= +6.6
+x0= 152281 nonzero=0.49 argmax=11 amp=  2.7 mid-edge= +1.4
+x0= 157720 nonzero=0.50 argmax=14 amp=  3.7 mid-edge= +2.3
+x0= 163159 nonzero=0.51 argmax=11 amp=  9.8 mid-edge= -0.4
+x0= 168597 nonzero=0.49 argmax= 3 amp= 11.3 mid-edge= -4.1
+x0= 174036 nonzero=0.47 argmax=17 amp= 14.0 mid-edge= +3.8
+x0= 179475 nonzero=0.45 argmax=21 amp= 14.0 mid-edge= +3.8
+x0= 184913 nonzero=0.49 argmax= 4 amp= 12.7 mid-edge= -8.4
+x0= 190352 nonzero=0.50 argmax= 0 amp=  3.3 mid-edge= -1.0
+x0= 195790 nonzero=0.44 argmax=24 amp= 10.2 mid-edge= +4.1
+x0= 201229 nonzero=0.49 argmax=27 amp= 10.1 mid-edge= +1.4
+x0= 206668 nonzero=0.45 argmax=21 amp=  8.4 mid-edge= +4.3
+x0= 212106 nonzero=0.50 argmax= 1 amp=  3.3 mid-edge= +0.6
+x0= 217545 nonzero=0.45 argmax=26 amp=  5.4 mid-edge= -1.2
+x0= 222984 nonzero=0.50 argmax= 5 amp=  3.7 mid-edge= +0.5
+x0= 228422 nonzero=0.50 argmax= 8 amp=  3.3 mid-edge= +0.1
+x0= 233861 nonzero=0.50 argmax=11 amp=  2.5 mid-edge= +0.7
+x0= 239300 nonzero=0.50 argmax= 0 amp=  3.9 mid-edge= -1.0
+x0= 244738 nonzero=0.46 argmax=25 amp=  6.9 mid-edge= -1.7
+x0= 250177 nonzero=0.49 argmax=26 amp=  3.3 mid-edge= -1.3
+x0= 255616 nonzero=0.29 argmax=19 amp= 10.4 mid-edge= +9.2
+SUMMARY blocks=48 median_amp=10.6 frac_mid_peaked(mid-edge>5)=0.12 frac_argmax_in_middle_third=0.46
+===== target_CW
+
+$ cd /opt/villa/spiral-fitting && uv run python /opt/villa/spiral-fitting/_profile.py /data/ink/CW_z10000-11000_s30000/fitted_scoped_w010-065/segment.zarr /data/ink/CW_z10000-11000_s30000/fitted_scoped_w010-065/slab_profile_target_CW.json 48
+x0=      0 nonzero=0.47 argmax=26 amp=  9.6 mid-edge= +0.3
+x0=   5433 nonzero=0.49 argmax=13 amp=  8.9 mid-edge= +5.6
+x0=  10867 nonzero=0.49 argmax=14 amp=  8.5 mid-edge= +3.6
+x0=  16300 nonzero=0.47 argmax=15 amp= 22.9 mid-edge=+11.4
+x0=  21734 nonzero=0.48 argmax= 6 amp= 15.3 mid-edge= -3.5
+x0=  27167 nonzero=0.47 argmax=15 amp= 22.6 mid-edge=+12.0
+x0=  32601 nonzero=0.47 argmax=10 amp= 18.5 mid-edge= -2.5
+x0=  38034 nonzero=0.49 argmax=20 amp= 13.1 mid-edge= -2.0
+x0=  43468 nonzero=0.50 argmax=20 amp= 10.6 mid-edge= -6.7
+x0=  48901 nonzero=0.48 argmax= 4 amp= 18.0 mid-edge= +4.8
+x0=  54335 nonzero=0.50 argmax= 3 amp=  6.7 mid-edge= -0.2
+x0=  59768 nonzero=0.50 argmax=19 amp= 13.0 mid-edge= +1.9
+x0=  65202 nonzero=0.47 argmax=22 amp=  9.3 mid-edge= -1.2
+x0=  70635 nonzero=0.50 argmax=16 amp= 11.2 mid-edge= +5.4
+x0=  76069 nonzero=0.52 argmax=16 amp= 11.2 mid-edge= +3.0
+x0=  81502 nonzero=0.50 argmax= 4 amp= 11.4 mid-edge= +3.4
+x0=  86936 nonzero=0.48 argmax=16 amp= 12.8 mid-edge= +2.1
+x0=  92370 nonzero=0.49 argmax= 8 amp=  6.9 mid-edge= -0.4
+x0=  97803 nonzero=0.47 argmax=14 amp= 13.9 mid-edge= +5.1
+x0= 103237 nonzero=0.46 argmax=22 amp= 17.9 mid-edge= -9.0
+x0= 108670 nonzero=0.46 argmax=15 amp= 23.2 mid-edge=+12.2
+x0= 114104 nonzero=0.46 argmax= 9 amp= 16.4 mid-edge= +2.9
+x0= 119537 nonzero=0.45 argmax=23 amp= 16.3 mid-edge=-10.5
+x0= 124971 nonzero=0.45 argmax=14 amp= 22.3 mid-edge=+12.1
+x0= 130404 nonzero=0.45 argmax= 5 amp=  9.7 mid-edge= -3.6
+x0= 135838 nonzero=0.47 argmax=18 amp= 13.3 mid-edge= +1.8
+x0= 141271 nonzero=0.50 argmax=21 amp= 10.5 mid-edge= -1.1
+x0= 146705 nonzero=0.46 argmax=13 amp= 13.2 mid-edge= +9.3
+x0= 152138 nonzero=0.47 argmax=26 amp=  6.5 mid-edge= -4.1
+x0= 157572 nonzero=0.52 argmax=18 amp=  5.4 mid-edge= -0.3
+x0= 163005 nonzero=0.52 argmax=27 amp=  4.6 mid-edge= +0.6
+x0= 168439 nonzero=0.50 argmax= 0 amp= 12.7 mid-edge= +4.9
+x0= 173873 nonzero=0.47 argmax=13 amp= 19.9 mid-edge=+13.5
+x0= 179306 nonzero=0.49 argmax=25 amp= 11.8 mid-edge= +5.0
+x0= 184740 nonzero=0.47 argmax=13 amp= 19.6 mid-edge= +9.6
+x0= 190173 nonzero=0.52 argmax=26 amp=  4.5 mid-edge= +1.0
+x0= 195607 nonzero=0.52 argmax=15 amp= 13.9 mid-edge= +2.0
+x0= 201040 nonzero=0.47 argmax=11 amp= 13.5 mid-edge= +4.5
+x0= 206474 nonzero=0.46 argmax=13 amp=  3.2 mid-edge= +0.9
+x0= 211907 nonzero=0.50 argmax=15 amp=  3.0 mid-edge= +2.3
+x0= 217341 nonzero=0.55 argmax=14 amp=  2.3 mid-edge= +1.5
+x0= 222774 nonzero=0.49 argmax=15 amp=  5.3 mid-edge= +3.1
+x0= 228208 nonzero=0.48 argmax=17 amp=  2.0 mid-edge= -0.1
+x0= 233641 nonzero=0.52 argmax=13 amp=  1.8 mid-edge= +1.2
+x0= 239075 nonzero=0.53 argmax=15 amp=  4.5 mid-edge= +3.2
+x0= 244508 nonzero=0.49 argmax=19 amp=  9.4 mid-edge= +6.2
+x0= 249942 nonzero=0.53 argmax=27 amp=  4.1 mid-edge= +0.4
+x0= 255376 nonzero=0.44 argmax=17 amp=  3.3 mid-edge= +1.2
+SUMMARY blocks=48 median_amp=11.2 frac_mid_peaked(mid-edge>5)=0.25 frac_argmax_in_middle_third=0.54
+Stopping app - local entrypoint completed.
+✓ App completed. View run at 
+https://modal.com/apps/bnleft/main/ap-dIojjxVCEZy5NxZXwCF3Cf

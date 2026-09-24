@@ -1,0 +1,223 @@
+✓ Initialized. View run at 
+https://modal.com/apps/bnleft/main/ap-QXjPy6gzRdttcYlTS915Pq
+✓ Created objects.
+├── 🔨 Created mount 
+│   /Users/bryantle/Documents/bnleft/first-light-pherc0211/modal_app.py
+├── 🔨 Created function probe.
+├── 🔨 Created function render_slices.
+├── 🔨 Created function pack_pools.
+├── 🔨 Created function fetch_dataset.
+├── 🔨 Created function probe_ink.
+├── 🔨 Created function probe_vc.
+├── 🔨 Created function spiral_fit.
+├── 🔨 Created function readout.
+├── 🔨 Created function control.
+├── 🔨 Created function calibrate_control.
+├── 🔨 Created function pack_pools_fast.
+├── 🔨 Created function readout_control.
+├── 🔨 Created function overlay_fits.
+├── 🔨 Created function verify.
+└── 🔨 Created function render_and_infer.
+
+$ cat /data/out/ACW_z10000-11000_s30000/2026-09-17_PHerc0211_slice-10000-11000_0-patch/meshes/fitted_scoped_w010-065/concat/w010-065_flat/meta.json; echo; cat /data/out/ACW_z10000-11000_s30000/2026-09-17_PHerc0211_slice-10000-11000_0-patch/meshes/fitted_scoped_w010-065/concat/w010-065/meta.json
+{
+    "area_vx2": 293413600.0,
+    "bbox": [
+        [
+            1537.2620849609375,
+            2182.4853515625,
+            10000.71484375
+        ],
+        [
+            5410.35009765625,
+            4284.59912109375,
+            10999.6806640625
+        ]
+    ],
+    "fit_config": {
+        "args": {
+            "approval-inpaint": false,
+            "approval-inpaint-corr-spacing": null,
+            "approval-inpaint-output-mask": false,
+            "approval-inpaint-output-mask-dilate": 3,
+            "approval-inpaint-padding-frac": 0.25,
+            "approval-inpaint-tifxyz": null,
+            "corr-point-roi": false,
+            "corr-point-roi-init-margin": 80,
+            "corr-point-roi-output-radius": 20,
+            "crop": null,
+            "cuda-gridsample": 1,
+            "depth": 3,
+            "device": "cuda",
+            "downscale": 4.0,
+            "erode-valid-mask": 0,
+            "flatten-solver": "forward",
+            "flatten_edge_step_global_scale": 100.0,
+            "flatten_initial_inversion": false,
+            "flatten_output_margin": 0.0,
+            "flatten_output_step": 20.0,
+            "flatten_solver": "forward",
+            "init-mode": "cylinder_seed",
+            "init-shell-dir": null,
+            "input": null,
+            "mesh-h": 32,
+            "mesh-step": 100,
+            "mesh-w": 32,
+            "model-h": null,
+            "model-init": "flatten",
+            "model-input": null,
+            "model-output": null,
+            "model-w": null,
+            "model-w-unit": "voxels",
+            "normal-mask-zero": 0,
+            "out-dir": "/data/out/ACW_z10000-11000_s30000/2026-09-17_PHerc0211_slice-10000-11000_0-patch/meshes/fitted_scoped_w010-065/concat/w010-065_lasagna",
+            "progress": false,
+            "pyramid-d": true,
+            "seed": null,
+            "self-map-init": "off",
+            "snapshot-interval": 1000,
+            "sparse-prefetch-backend": "tensorstore",
+            "subsample-mesh": 4,
+            "subsample-winding": 4,
+            "tifxyz-flow-gate-channels": false,
+            "tifxyz-init": null,
+            "winding-step": 25,
+            "winding-volume": null,
+            "z-center": 0.0
+        },
+        "base": {
+            "flatten_avg_offset": 1.0,
+            "flatten_edge_step": 1.0,
+            "flatten_orient": 2.0,
+            "flatten_sdir": 1.0
+        },
+        "external_surfaces": [
+            {
+                "path": "/data/out/ACW_z10000-11000_s30000/2026-09-17_PHerc0211_slice-10000-11000_0-patch/meshes/fitted_scoped_w010-065/concat/w010-065"
+            }
+        ],
+        "stages": [
+            {
+                "args": {
+                    "auto_steps_max": 100000,
+                    "auto_steps_rel_threshold": 1e-05,
+                    "auto_steps_window": 2000,
+                    "compile_flatten": true,
+                    "compile_flatten_combined": true,
+                    "flatten_diagnostics": false,
+                    "flatten_filter_source_angles": false,
+                    "flatten_max_update": 0.1,
+                    "flatten_orient_min_det": 0.01,
+                    "flatten_renorm_interval": 500,
+                    "flatten_sdir_eps": 1e-08,
+                    "flatten_support": true,
+                    "flatten_support_radius": 1,
+                    "fused_flatten_adam_clamp": true,
+                    "status_interval": 100
+                },
+                "lr": 0.01,
+                "min_scaledown": 0,
+                "name": "flatten",
+                "params": [
+                    "map_flatten_ms"
+                ],
+                "steps": 4500
+            },
+            {
+                "args": {
+                    "auto_steps_max": 100000,
+                    "auto_steps_rel_threshold": 1e-05,
+                    "auto_steps_window": 2000,
+                    "compile_flatten": true,
+                    "compile_flatten_combined": true,
+                    "flatten_diagnostics": false,
+                    "flatten_filter_source_angles": false,
+                    "flatten_max_update": 0.1,
+                    "flatten_orient_min_det": 0.01,
+                    "flatten_sdir_eps": 1e-08,
+                    "flatten_support": true,
+                    "flatten_support_radius": 1,
+                    "fused_flatten_adam_clamp": true,
+                    "status_interval": 100
+                },
+                "lr": 0.001,
+                "min_scaledown": 0,
+                "name": "flatten",
+                "params": [
+                    "map_flatten_ms"
+                ],
+                "steps": 1000
+            },
+            {
+                "args": {
+                    "auto_steps_max": 100000,
+                    "auto_steps_rel_threshold": 1e-05,
+                    "auto_steps_window": 2000,
+                    "compile_flatten": true,
+                    "compile_flatten_combined": true,
+                    "flatten_diagnostics": false,
+                    "flatten_filter_source_angles": false,
+                    "flatten_max_update": 0.1,
+                    "flatten_orient_min_det": 0.01,
+                    "flatten_sdir_eps": 1e-08,
+                    "flatten_support": true,
+                    "flatten_support_radius": 1,
+                    "fused_flatten_adam_clamp": true,
+                    "status_interval": 100
+                },
+                "lr": 0.0001,
+                "min_scaledown": 0,
+                "name": "flatten",
+                "params": [
+                    "map_flatten_ms"
+                ],
+                "steps": 1000
+            }
+        ]
+    },
+    "format": "tifxyz",
+    "model_source": "/data/out/ACW_z10000-11000_s30000/2026-09-17_PHerc0211_slice-10000-11000_0-patch/meshes/fitted_scoped_w010-065/concat/w010-065_lasagna/model_final.pt",
+    "name": "w010-065_flat",
+    "scale": [
+        0.05,
+        0.05
+    ],
+    "type": "seg",
+    "uuid": "w010-065_flat"
+}
+
+{
+    "scale": [
+        0.05,
+        0.05
+    ],
+    "bbox": [
+        [
+            1523.895751953125,
+            2175.74462890625,
+            10000.0
+        ],
+        [
+            5419.712890625,
+            4286.05126953125,
+            10999.9990234375
+        ]
+    ],
+    "area_vx2": 186437600.0,
+    "area_cm2": 163.407045304544,
+    "format": "tifxyz",
+    "type": "seg",
+    "uuid": "w010-065",
+    "source": "render_ink full-scroll concat fitted_scoped_w010-065"
+}
+$ cd /opt/villa/spiral-fitting && uv run python /opt/villa/spiral-fitting/_verify.py /data/out/ACW_z10000-11000_s30000/2026-09-17_PHerc0211_slice-10000-11000_0-patch/meshes/fitted_scoped_w010-065/concat/w010-065_flat /data/out/ACW_z10000-11000_s30000/2026-09-17_PHerc0211_slice-10000-11000_0-patch/meshes/fitted_scoped_w010-065/concat/w010-065 /data/ink/ACW_z10000-11000_s30000/fitted_scoped_w010-065/segment.zarr /data/control/out_own_render/control.zarr /data/ink/ACW_z10000-11000_s30000/fitted_scoped_w010-065
+flat {"grid_shape": [118, 12832], "valid_frac": 0.4950890781520774, "meta_scale": [0.05, 0.05], "expected_step_vx": [20.0, 20.0], "median_step_vx_along_rows(y-dir)": [19.741111295808565, 19.063020241938826, 20.236777312195564], "median_step_vx_along_cols(x-dir)": [20.383833228360263, 17.955833705148116, 21.658080386690294], "z_range_vx": [10000.71484375, 10999.6806640625], "meta_keys": ["area_vx2", "bbox", "fit_config", "format", "model_source", "name", "scale", "type", "uuid"]}
+concat_unflattened {"grid_shape": [66, 9656], "valid_frac": 0.7481374431975095, "meta_scale": [0.05, 0.05], "expected_step_vx": [20.0, 20.0], "median_step_vx_along_rows(y-dir)": [24.044295761958704, 20.348140250161066, 30.899988652971015], "median_step_vx_along_cols(x-dir)": [22.45343671062676, 14.71145021710539, 47.632115078093804], "z_range_vx": [10000.0, 10999.9990234375], "meta_keys": ["area_cm2", "area_vx2", "bbox", "format", "scale", "source", "type", "uuid"]}
+target shape (28, 2360, 256640) layer means: [53.7, 53.6, 53.5, 53.5, 53.5, 53.5, 53.7, 53.8, 54.0, 54.1, 54.2, 54.3, 54.2, 54.1, 53.9, 53.7, 53.4, 53.3, 53.2, 53.2, 53.2, 53.3, 53.4, 53.5, 53.6, 53.5, 53.4, 53.3]
+target frac_zero per layer: [0.529, 0.529, 0.529, 0.529, 0.529, 0.529, 0.529, 0.529, 0.529, 0.529, 0.529, 0.529, 0.529, 0.529, 0.529, 0.529, 0.529, 0.529, 0.529, 0.529, 0.529, 0.529, 0.529, 0.529, 0.529, 0.529, 0.529, 0.529]
+control shape (28, 5820, 5240) layer means: [70.5, 69.9, 68.8, 67.5, 66.3, 65.3, 64.8, 65.2, 66.9, 69.8, 73.1, 75.7, 76.5, 75.4, 73.0, 70.4, 68.2, 66.8, 66.2, 66.2, 66.6, 67.2, 67.8, 68.1, 68.3, 68.2, 68.1, 67.9]
+control frac_zero per layer: [0.137, 0.137, 0.137, 0.137, 0.137, 0.137, 0.137, 0.137, 0.137, 0.137, 0.137, 0.137, 0.137, 0.137, 0.137, 0.137, 0.137, 0.137, 0.137, 0.137, 0.137, 0.137, 0.137, 0.137, 0.137, 0.137, 0.137, 0.137]
+Stopping app - local entrypoint completed.
+✓ App completed. View run at 
+https://modal.com/apps/bnleft/main/ap-QXjPy6gzRdttcYlTS915Pq
+exit=0

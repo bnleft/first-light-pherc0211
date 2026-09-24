@@ -1,0 +1,42 @@
+✓ Initialized. View run at 
+https://modal.com/apps/bnleft/main/ap-4NjehWp0pnVrrbcXiht5jH
+✓ Created objects.
+├── 🔨 Created mount 
+│   /Users/bryantle/Documents/bnleft/first-light-pherc0211/modal_app.py
+├── 🔨 Created function fetch_dataset.
+├── 🔨 Created function pack_pools.
+├── 🔨 Created function probe.
+├── 🔨 Created function spiral_fit.
+├── 🔨 Created function render_slices.
+├── 🔨 Created function readout.
+├── 🔨 Created function pack_pools_fast.
+├── 🔨 Created function calibrate_control.
+├── 🔨 Created function probe_ink.
+├── 🔨 Created function readout_control.
+├── 🔨 Created function overlay_fits.
+├── 🔨 Created function verify.
+├── 🔨 Created function render_and_infer.
+├── 🔨 Created function control.
+└── 🔨 Created function probe_vc.
+
+$ cd /opt/villa/spiral-fitting && uv run python /opt/villa/spiral-fitting/_readout.py /data/control/out_own_render/control_prediction.tif /data/control/out_own_render/control_prediction_reverse.tif /data/control/out_own_render/control.zarr /data/control/out_own_render 199.0
+prediction (5820, 5240) = [54.5, 49.1] mm
+surface volume (28, 5820, 5240)
+forward {"mean": 72.88392470685449, "p99": 200.0, "frac_ge_T": 0.012571712441961124, "pixels_ge_T": 383397, "components": 4463, "excluded": {"boundary": 3, "band": 8, "low_coverage": 0, "small": 4391}, "candidates": 61}
+   {'id': 225, 'bbox_yx': [783, 1148, 1046, 1457], 'h_px': 263, 'w_px': 309, 'long_mm': 2.89, 'area_px': 22455, 'mean_val': 202.9508795368515}
+   {'id': 272, 'bbox_yx': [860, 601, 1260, 822], 'h_px': 400, 'w_px': 221, 'long_mm': 3.74, 'area_px': 22351, 'mean_val': 202.40758802738134}
+   {'id': 2411, 'bbox_yx': [2368, 616, 2587, 899], 'h_px': 219, 'w_px': 283, 'long_mm': 2.65, 'area_px': 21177, 'mean_val': 202.04094064315058}
+   {'id': 1025, 'bbox_yx': [1331, 1752, 1587, 2046], 'h_px': 256, 'w_px': 294, 'long_mm': 2.75, 'area_px': 21067, 'mean_val': 202.63222100916124}
+   {'id': 2431, 'bbox_yx': [2379, 2236, 2750, 2468], 'h_px': 371, 'w_px': 232, 'long_mm': 3.47, 'area_px': 19542, 'mean_val': 202.3676696346331}
+   {'id': 1053, 'bbox_yx': [1395, 2024, 1632, 2292], 'h_px': 237, 'w_px': 268, 'long_mm': 2.51, 'area_px': 19202, 'mean_val': 202.7361212373711}
+reverse {"mean": 70.55034583956349, "p99": 175.0, "frac_ge_T": 0.0014065082238136461, "pixels_ge_T": 42894, "components": 735, "excluded": {"boundary": 6, "band": 5, "low_coverage": 0, "small": 715}, "candidates": 9}
+   {'id': 336, 'bbox_yx': [3625, 1403, 3676, 1477], 'h_px': 51, 'w_px': 74, 'long_mm': 0.69, 'area_px': 2592, 'mean_val': 203.31442901234567}
+   {'id': 548, 'bbox_yx': [4537, 2754, 4603, 2819], 'h_px': 66, 'w_px': 65, 'long_mm': 0.62, 'area_px': 2516, 'mean_val': 201.72535771065182}
+   {'id': 571, 'bbox_yx': [4560, 3038, 4613, 3099], 'h_px': 53, 'w_px': 61, 'long_mm': 0.57, 'area_px': 1993, 'mean_val': 203.6156547917712}
+   {'id': 268, 'bbox_yx': [3048, 2420, 3087, 2493], 'h_px': 39, 'w_px': 73, 'long_mm': 0.68, 'area_px': 1400, 'mean_val': 201.28642857142856}
+   {'id': 624, 'bbox_yx': [4821, 1931, 4874, 1974], 'h_px': 53, 'w_px': 43, 'long_mm': 0.5, 'area_px': 1202, 'mean_val': 201.7737104825291}
+   {'id': 255, 'bbox_yx': [2620, 4298, 2664, 4353], 'h_px': 44, 'w_px': 55, 'long_mm': 0.51, 'area_px': 1183, 'mean_val': 202.2967032967033}
+Stopping app - local entrypoint completed.
+✓ App completed. View run at 
+https://modal.com/apps/bnleft/main/ap-4NjehWp0pnVrrbcXiht5jH
+exit=0

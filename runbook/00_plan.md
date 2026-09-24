@@ -127,3 +127,26 @@ proceed with **ACW** for the first flatten + render + inference, windings
 w010–w065 (the same inner-half scope as the Aug run), and will run CW too if
 Bryant's read of the crops disagrees or if the flattened ACW render shows
 sheet-switch seams. Both fitted meshes are kept.
+
+## 2026-09-23 — verification pass ("is the negative result real?")
+
+| check | control (curated w035) | target ACW | target CW |
+|---|---:|---:|---:|
+| mesh grid step vs 1/scale | n/a | 19.7–20.4 vx vs 20 ✓ | same recipe |
+| readout finds letters when present | 61 candidates, 2.5–3.7 mm ✓ | — | — |
+| slab layer profile, median amplitude | 15.8 | 10.6 | 11.2 |
+| blocks with peak layer in middle third | 77 % | 46 % | 54 % |
+| blocks clearly mid-peaked (mid − edge > 5) | 38 % | 12 % | 25 % |
+| non-zero fraction of slab | 86 % | 47 % | ~47 % |
+
+- Scale is right; the 22 mm strip height is genuine arc length (sheets steeply inclined).
+- The readout code is positively validated on the control.
+- **Sheet centring is the weak link.** The spiral fit puts the surface on papyrus
+  (fibre texture visible in `target_layer14_crop1500.png`) but the brightness peak
+  wanders through the 28-layer slab across the strip, unlike the curated control
+  segment. `ink_9um` was trained on centred slabs, so detection sensitivity on the
+  target is lower than the control implies. The verdict must be worded as "no ink
+  detected under this surface", and the writeup should carry this table.
+- Half the slab is zero because the flattened concat is only 49.5 % valid cells
+  (the unflattened concat is 74.8 %): the lasagna flatten's output margin, trimmed
+  by bbox only.
