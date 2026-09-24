@@ -869,3 +869,97 @@ def slab_profiles() -> None:
         print(f"===== {tag}")
         sh(f"cd {VILLA}/spiral-fitting && uv run python {script} {path} {path.parent}/slab_profile_{tag}.json 48")
     vol.commit()
+
+
+# ---------------------------------------------------------------------------
+RECENTER_SCRIPT = r'''
+"""Re-centre a thick rendered slab on the local papyrus intensity peak.
+For each (tile_y, tile_x) tile, take the mean non-zero intensity per layer,
+smooth it, pick the peak layer, and cut a 28-layer window centred there
+(clamped). Writes a zarr with the same layout as vc_render_tifxyz's level 0,
+plus offsets.json. The point: ink_9um was trained on sheet-centred slabs; a
+global spiral fit is on papyrus but drifts through the sheet thickness."""
+import json, sys, numpy as np, zarr, numcodecs
+src_path, dst_path, out_layers, tile = sys.argv[1], sys.argv[2], int(sys.argv[3]), int(sys.argv[4])
+g = zarr.open_group(src_path, mode="r"); a = g["0"]; Z, H, W = a.shape; half = out_layers // 2
+print("source", a.shape, "-> out layers", out_layers, "tile", tile)
+dst = zarr.open_group(dst_path, mode="w")
+try:
+    dst.attrs.update(dict(g.attrs)); dst.attrs["recentered_from"] = src_path; dst.attrs["chunk_size"] = [out_layers, 128, 128]
+except Exception as e: print("attrs copy:", e)
+comp = numcodecs.Blosc(cname="lz4", clevel=3, shuffle=1)
+o = dst.create_array("0", shape=(out_layers, H, W), chunks=(out_layers, 128, 128), dtype="u1", fill_value=0,
+                     compressors=[comp] if hasattr(dst, "create_array") else None, dimension_names=None) if hasattr(dst, "create_array") else \
+    dst.create_dataset("0", shape=(out_layers, H, W), chunks=(out_layers, 128, 128), dtype="u1", fill_value=0, compressor=comp)
+offsets = np.full((-(-H // tile), -(-W // tile)), -1, dtype=np.int32)
+k = np.array([1, 2, 3, 2, 1], float); k /= k.sum()
+for ty in range(offsets.shape[0]):
+    for tx in range(offsets.shape[1]):
+        y0, x0 = ty * tile, tx * tile; y1, x1 = min(H, y0 + tile), min(W, x0 + tile)
+        blk = np.asarray(a[:, y0:y1, x0:x1])
+        nz = blk > 0
+        if nz[Z // 2].mean() < 0.05:
+            c = Z // 2
+        else:
+            prof = np.array([blk[z][nz[z]].mean() if nz[z].any() else 0.0 for z in range(Z)])
+            prof = np.convolve(prof, k, mode="same")
+            c = int(np.clip(prof.argmax(), half, Z - (out_layers - half)))
+        offsets[ty, tx] = c
+        o[:, y0:y1, x0:x1] = blk[c - half:c - half + out_layers]
+    if ty % 4 == 0: print(f"row {ty}/{offsets.shape[0]} centre layers: median {np.median(offsets[ty][offsets[ty]>=0]):.0f}")
+json.dump({"tile": tile, "out_layers": out_layers, "source_layers": Z, "centre_layer": offsets.tolist()}, open(f"{dst_path}/../offsets.json", "w"))
+vals = offsets[offsets >= 0]
+print(f"centre layer over tiles: median {np.median(vals):.0f}, p10 {np.percentile(vals,10):.0f}, p90 {np.percentile(vals,90):.0f}, frac at clamp edges {np.mean((vals==half)|(vals==Z-(out_layers-half))):.2f}")
+'''
+
+
+@app.function(image=vc_image, gpu=GPU, volumes={str(DATA): vol}, timeout=6 * HOURS, cpu=16, memory=65536)
+def recenter_and_infer(run_tag: str = "ACW_z10000-11000_s30000", scope: str = "fitted_scoped_w010-065",
+                       thick: int = 64, tile: int = 256, cache_gb: int = 16) -> str:
+    t0 = time.time()
+    fit_root = DATA / "out" / run_tag
+    run_dir = sorted(p for p in fit_root.iterdir() if (p / "meshes" / "fitted").is_dir())[-1]
+    flat = sorted((run_dir / "meshes" / scope / "concat").glob("*_flat"))[-1]
+    out = DATA / "ink" / run_tag / f"{scope}_recentered"
+    out.mkdir(parents=True, exist_ok=True)
+    cache = DATA / "volume-cache" / f"{SCROLL}.zarr"
+    thick_zarr = out / f"segment{thick}.zarr"
+    if not (thick_zarr / "0" / ".zarray").exists():
+        sh(f"vc_render_tifxyz --volume {cache} --remote-url {VOLUME_ZARR} --group-idx 0 --scale 1 "
+           f"--segmentation {flat} --num-slices {thick} --slice-step 1 --cache-gb {cache_gb} "
+           f"--zarr-output {thick_zarr} 2>&1 | tee {out}/vc_render_tifxyz.log")
+    script = VILLA / "spiral-fitting" / "_recenter.py"
+    script.write_text(RECENTER_SCRIPT)
+    seg = out / "segment.zarr"
+    sh(f"cd {VILLA}/spiral-fitting && uv run python {script} {thick_zarr} {seg} 28 {tile} 2>&1 | tee {out}/recenter.log")
+    ckpt = DATA / "checkpoints" / "ink_9um" / CHECKPOINT_FILE
+    sh(f"cd {VILLA}/vesuvius && uv run --extra models python -m vesuvius.ink_detection.inference.infer "
+       f"{seg} {ckpt} {out}/segment.tif --overlap 0.5 --blend-mode hann --batch-size 4 --direction both 2>&1 | tee {out}/infer.log")
+    # profile + readout on the re-centred slab
+    prof = VILLA / "spiral-fitting" / "_profile.py"; prof.write_text(PROFILE_SCRIPT)
+    sh(f"cd {VILLA}/spiral-fitting && uv run python {prof} {seg} {out}/slab_profile.json 48 | tail -1")
+    rd = VILLA / "spiral-fitting" / "_readout.py"; rd.write_text(READOUT_SCRIPT)
+    sh(f"cd {VILLA}/spiral-fitting && uv run python {rd} {out}/segment.tif {out}/segment_reverse.tif {seg} {out} 199.0")
+    vol.commit()
+    (out / "timing.json").write_text(json.dumps({"wall_minutes": (time.time() - t0) / 60, "gpu": GPU, "thick": thick, "tile": tile}, indent=2))
+    print(f"recenter_and_infer done in {(time.time()-t0)/60:.1f} min")
+    return str(out)
+
+
+@app.function(image=ink_image, gpu=GPU, volumes={str(DATA): vol}, timeout=3 * HOURS, cpu=8, memory=32768)
+def infer_ckpt(run_tag: str = "ACW_z10000-11000_s30000", scope: str = "fitted_scoped_w010-065",
+               ckpt_file: str = "hybrid_3d2d-seed43/step-075000.pth", thresh: float = 199.0) -> dict:
+    """Model-dependence check: the second published seed on the same slab."""
+    src = DATA / "ink" / run_tag / scope
+    tag = ckpt_file.split("/")[0]
+    out = src / f"ckpt_{tag}"
+    out.mkdir(parents=True, exist_ok=True)
+    ckpt = DATA / "checkpoints" / "ink_9um" / ckpt_file
+    if not ckpt.exists():
+        sh(f"cd {VILLA}/vesuvius && uvx --from huggingface_hub hf download {CHECKPOINT_REPO} {ckpt_file} --local-dir {DATA}/checkpoints/ink_9um")
+    sh(f"cd {VILLA}/vesuvius && uv run --extra models python -m vesuvius.ink_detection.inference.infer "
+       f"{src}/segment.zarr {ckpt} {out}/segment.tif --overlap 0.5 --blend-mode hann --batch-size 4 --direction both 2>&1 | tee {out}/infer.log")
+    rd = VILLA / "spiral-fitting" / "_readout.py"; rd.write_text(READOUT_SCRIPT)
+    sh(f"cd {VILLA}/spiral-fitting && uv run python {rd} {out}/segment.tif {out}/segment_reverse.tif {src}/segment.zarr {out} {thresh}")
+    vol.commit()
+    return json.loads((out / "readout.json").read_text())
