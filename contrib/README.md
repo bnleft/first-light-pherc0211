@@ -2,7 +2,7 @@
 
 - #1588 comment: https://github.com/ScrollPrize/villa/issues/1588#issuecomment-5807394810
 - #1716 comment: https://github.com/ScrollPrize/villa/issues/1716#issuecomment-5807394976
-- Docs PR: https://github.com/ScrollPrize/villa/pull/1880
+- Docs PR: https://github.com/ScrollPrize/villa/pull/1880 (merged 2026-09-25 by pmh47)
 
 
 Villa's CONTRIBUTING requires a human to have hit the problem on real data and
