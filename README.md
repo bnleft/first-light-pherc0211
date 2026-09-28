@@ -124,7 +124,7 @@ claim no letters from these outputs.
 | Target ACW: flatten + render + inference (w010–w065) | A10 | 36.1 min | |
 | Target CW: same (warm volume cache) | A10 | 18.9 min | |
 | Verification: seed43, slab profiles, 64-layer re-centre + inference | A10 / CPU | ~55 + 5 + 109 min | |
-| **Total** | | ~6.5 h GPU + ~1.5 h CPU | **$__ (Modal dashboard figure to be pasted at submission; estimate $25–30)** against a $60 cap |
+| **Total** | | ~6.5 h GPU + ~1.5 h CPU | **$13.53** (Modal workspace billing report for app `first-light-pherc0211`, 2026-09-17 to 09-28; all steps incl. verification) against a $60 cap |
 
 Modal bills per second with no idle-pod cost; the Aug team's $56 was ~90 % idle
 RunPod time. A10 list price is $1.10/h, so the GPU line alone is about $7; the
