@@ -1,0 +1,47 @@
+{
+  "schema": "render_preflight_historical_motivation_v1",
+  "source_report_sha256": "6e9d4fad19b24847f89b6a04074bd45a9f789984f7668fcd3a4f031500d4a618",
+  "source_report_bytes": 6721231,
+  "source_report_date": "2026-10-12",
+  "source_report_path": "analysis/outer-w066-129/per_ray_depth_transfer_2026-10-12/per_ray_depth_profile.json",
+  "shape_zyx": [
+    28,
+    3720,
+    8192
+  ],
+  "spatial_tiles": 1920,
+  "source_CT_metadata_sha256": "f477832091320414ca2ee8c33e351e4a3a27efb9b17395b658604cb057fab08d",
+  "groups": {
+    "all_pixels": {
+      "ray_count": 30474240,
+      "stored_ray_count": 8699904,
+      "missing_fill_ray_count": 21774336,
+      "stored_allzero_profile_ray_count": 2184788,
+      "positive_profile_ray_count": 6515116,
+      "missing_fill_CT_sample_count": 609681408,
+      "stored_semantic_zero_CT_sample_count": 91419924,
+      "positive_CT_sample_count": 152177388
+    },
+    "geometry_excluded": {
+      "ray_count": 22241996,
+      "stored_ray_count": 1256880,
+      "missing_fill_ray_count": 20985116,
+      "stored_allzero_profile_ray_count": 980945,
+      "positive_profile_ray_count": 275935,
+      "missing_fill_CT_sample_count": 587583248,
+      "stored_semantic_zero_CT_sample_count": 28478690,
+      "positive_CT_sample_count": 6713950
+    },
+    "geometry_included": {
+      "ray_count": 8232244,
+      "stored_ray_count": 7443024,
+      "missing_fill_ray_count": 789220,
+      "stored_allzero_profile_ray_count": 1203843,
+      "positive_profile_ray_count": 6239181,
+      "missing_fill_CT_sample_count": 22098160,
+      "stored_semantic_zero_CT_sample_count": 62941234,
+      "positive_CT_sample_count": 145463438
+    }
+  },
+  "scope": "Selected scalar fields from saved October 12 QA. Not a rerun of Render preflight and not part of the new public-source benchmark. The historical geometry mask is not an input to the new CLI."
+}

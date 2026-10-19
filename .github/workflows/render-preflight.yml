@@ -1,0 +1,44 @@
+name: Render preflight
+
+on:
+  pull_request:
+    paths:
+      - "tools/render-preflight/**"
+      - ".github/workflows/render-preflight.yml"
+  push:
+    paths:
+      - "tools/render-preflight/**"
+      - ".github/workflows/render-preflight.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: ubuntu-latest
+            python: "3.11"
+          - os: ubuntu-latest
+            python: "3.12"
+          - os: windows-latest
+            python: "3.12"
+          - os: macos-latest
+            python: "3.12"
+    runs-on: ${{ matrix.os }}
+    defaults:
+      run:
+        working-directory: tools/render-preflight
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: astral-sh/setup-uv@1c37ad07a6a961277cf70c0d37d6f313000f5884 # v10.3.0
+        with:
+          version: "0.5.8"
+      - run: uv sync --locked --extra test --python ${{ matrix.python }}
+      - run: uv run --locked --extra test pytest -q
+      - run: uv run --locked --extra test ruff check src tests examples
+      - run: uv run --locked render-preflight --help
+      - run: uv build
