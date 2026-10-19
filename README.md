@@ -157,4 +157,15 @@ sentence above is the preregistered one I chose. Every claim on this page traces
 to a log or a commit in this repository, and the criteria were committed before
 any target output was looked at.
 
+## October follow-up: reusable render diagnostics
+
+[Render preflight](tools/render-preflight/README.md) turns the October storage
+and depth-profile investigations into a standalone CPU tool for local rendered
+Zarr slabs. It separates absent chunk fill from stored zeros, preserves profile
+denominators and tied maxima, and can check an input before another inference.
+Validation covers nine windows from three public scroll renders and six lossless
+layout conversions. This is a diagnostic contribution, with no new letter or
+surface-accuracy claim. The [October contribution note](contrib/OCTOBER.md)
+links the evidence and release/submission draft.
+
 License: MIT.

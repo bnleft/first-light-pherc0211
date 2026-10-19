@@ -1,0 +1,30 @@
+{
+  "schema": "render_preflight_cross_scroll_plan_v1",
+  "selection": "Fixed convenience windows selected from public metadata and prior study coordinates before pixel fetch. No population-wide or anatomical accuracy claim. Retain every planned window, including empty or absent keys.",
+  "datasets": [
+    {
+      "id": "pherc0139_w035",
+      "base_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/PHerc0139/segments/20260317000000-w035_2026031718/surface-volumes/9.362um-1.2m-113keV-volume-20250728140407.zarr",
+      "shape": [28, 5820, 5240],
+      "chunks": [28, 128, 128],
+      "windows_yx": [[2048, 2304, 2048, 2304], [2560, 2816, 2560, 2816], [3072, 3328, 3072, 3328]],
+      "prior_exposure": "These windows formed the initial local prototype validation; no holdout claim."
+    },
+    {
+      "id": "paris4_w046_052",
+      "base_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/PHercParis4/segments/20260701183127-w046-052/surface-volumes/2.4um-0.22m-78keV-volume-20260411134726.zarr",
+      "shape": [109, 74960, 194800],
+      "chunks": [109, 128, 128],
+      "windows_yx": [[9216, 9344, 12032, 12160], [37376, 37504, 97280, 97408], [56192, 56320, 146048, 146176]],
+      "prior_exposure": "First location is near the prior geometry study cell; the other two are metadata-derived center/three-quarter locations. Storage HEAD checks only; no pixels from this render fetched for this plan."
+    },
+    {
+      "id": "pherc1667_w013",
+      "base_url": "https://vesuvius-challenge-open-data.s3.us-east-1.amazonaws.com/PHerc1667/segments/20240304141531-w013_20240304141531_flatboi/surface-volumes/2.399um-0.22m-78keV-volume-20251217075048.zarr",
+      "shape": [109, 41600, 79600],
+      "chunks": [109, 128, 128],
+      "windows_yx": [[10368, 10496, 19840, 19968], [20736, 20864, 39680, 39808], [31104, 31232, 59648, 59776]],
+      "prior_exposure": "Metadata-derived quarter/half/three-quarter positions; no pixel inspection for this plan."
+    }
+  ]
+}
