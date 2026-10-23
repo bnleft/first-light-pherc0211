@@ -1,0 +1,1 @@
+{"external_ip_blocked": 1, "file_write_outside_scratch_blocked": 1, "loopback_ip_blocked": 1, "task_unix_ipc_blocked": 1, "unix_socket_outside_ipc_blocked": 1}

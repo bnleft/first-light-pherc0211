@@ -1,0 +1,214 @@
+OMP: Warning #179: Function Can't set size of /tmp file failed:
+...................FFFFFFF.                                              [100%]
+=================================== FAILURES ===================================
+__________ test_raw_empty_tile_releases_chunk_in_either_order[False] ___________
+
+skip_first = False
+
+    @pytest.mark.parametrize("skip_first", [False, True])
+    def test_raw_empty_tile_releases_chunk_in_either_order(skip_first):
+        accumulator, probability, weight, _ = _accumulator((2, 3), (2, 3))
+    
+        def add():
+            accumulator.add_tile(
+                y0=0, x0=0,
+                tile=np.full((2, 2), 0.25, dtype=np.float32),
+                tile_weights=np.ones((2, 2), dtype=np.float32),
+            )
+    
+        def skip():
+            accumulator.skip_tile(y0=0, x0=1, valid_h=2, valid_w=2)
+    
+        if skip_first:
+            skip()
+            add()
+        else:
+            add()
+>           skip()
+
+/private/tmp/vesuvius-render-preflight-20261018/flat-inference-memory/vesuvius/tests/ink_detection/test_flat_inference_empty_chunks.py:52: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def skip():
+>       accumulator.skip_tile(y0=0, x0=1, valid_h=2, valid_w=2)
+        ^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'ChunkAccumulator' object has no attribute 'skip_tile'
+
+/private/tmp/vesuvius-render-preflight-20261018/flat-inference-memory/vesuvius/tests/ink_detection/test_flat_inference_empty_chunks.py:45: AttributeError
+___________ test_raw_empty_tile_releases_chunk_in_either_order[True] ___________
+
+skip_first = True
+
+    @pytest.mark.parametrize("skip_first", [False, True])
+    def test_raw_empty_tile_releases_chunk_in_either_order(skip_first):
+        accumulator, probability, weight, _ = _accumulator((2, 3), (2, 3))
+    
+        def add():
+            accumulator.add_tile(
+                y0=0, x0=0,
+                tile=np.full((2, 2), 0.25, dtype=np.float32),
+                tile_weights=np.ones((2, 2), dtype=np.float32),
+            )
+    
+        def skip():
+            accumulator.skip_tile(y0=0, x0=1, valid_h=2, valid_w=2)
+    
+        if skip_first:
+>           skip()
+
+/private/tmp/vesuvius-render-preflight-20261018/flat-inference-memory/vesuvius/tests/ink_detection/test_flat_inference_empty_chunks.py:48: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def skip():
+>       accumulator.skip_tile(y0=0, x0=1, valid_h=2, valid_w=2)
+        ^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'ChunkAccumulator' object has no attribute 'skip_tile'
+
+/private/tmp/vesuvius-render-preflight-20261018/flat-inference-memory/vesuvius/tests/ink_detection/test_flat_inference_empty_chunks.py:45: AttributeError
+__________ test_only_raw_empty_tiles_do_not_allocate_or_write_chunks ___________
+
+    def test_only_raw_empty_tiles_do_not_allocate_or_write_chunks():
+        accumulator, probability, weight, blocks = _accumulator((3, 5), (2, 2))
+    
+        class RejectWrites:
+            def __setitem__(self, key, values):
+                raise AssertionError("raw-empty chunks should keep implicit fill")
+    
+        accumulator.prob_sum_store = RejectWrites()
+        accumulator.weight_sum_store = RejectWrites()
+        for block in blocks:
+>           accumulator.skip_tile(
+            ^^^^^^^^^^^^^^^^^^^^^
+                y0=block.y0, x0=block.x0,
+                valid_h=block.valid_h, valid_w=block.valid_w,
+            )
+E           AttributeError: 'ChunkAccumulator' object has no attribute 'skip_tile'
+
+/private/tmp/vesuvius-render-preflight-20261018/flat-inference-memory/vesuvius/tests/ink_detection/test_flat_inference_empty_chunks.py:70: AttributeError
+______ test_inference_completes_skipped_tiles_without_adding_weights[0-1] ______
+
+batch_size = 1, nonempty_index = 0
+
+    @pytest.mark.parametrize("batch_size", [1, 2])
+    @pytest.mark.parametrize("nonempty_index", [0, 1])
+    def test_inference_completes_skipped_tiles_without_adding_weights(
+        batch_size, nonempty_index
+    ):
+        accumulator, probability, weight, _ = _accumulator((2, 3), (2, 3))
+        # A raw-nonempty robust-normalized patch can itself be all zero.
+        images = torch.zeros((2, 1, 1, 2, 2))
+        metadata = torch.tensor([[0, 0, 2, 2, 0], [0, 1, 2, 2, 0]])
+        metadata[nonempty_index, 4] = 1
+        model = _ZeroLogits()
+        run_block_inference(
+            loader=DataLoader(TensorDataset(images, metadata), batch_size=batch_size),
+            model=model, accumulator=accumulator,
+            weight_map=np.ones((2, 2), dtype=np.float32), mask=None,
+            device=torch.device("cpu"), amp_dtype=None, tta_axes=(),
+            tta_batch_size=None,
+        )
+        assert model.images_seen == 1
+>       assert not accumulator.buffers
+E       assert not {ChunkKey(row=0, col=0): (array([[0.5, 0.5, 0. ],\n       [0.5, 0.5, 0. ]], dtype=float32), array([[1., 1., 0.],\n       [1., 1., 0.]], dtype=float32))}
+E        +  where {ChunkKey(row=0, col=0): (array([[0.5, 0.5, 0. ],\n       [0.5, 0.5, 0. ]], dtype=float32), array([[1., 1., 0.],\n       [1., 1., 0.]], dtype=float32))} = <vesuvius.ink_detection.inference.infer.ChunkAccumulator object at 0x116f029c0>.buffers
+
+/private/tmp/vesuvius-render-preflight-20261018/flat-inference-memory/vesuvius/tests/ink_detection/test_flat_inference_empty_chunks.py:112: AssertionError
+______ test_inference_completes_skipped_tiles_without_adding_weights[0-2] ______
+
+batch_size = 2, nonempty_index = 0
+
+    @pytest.mark.parametrize("batch_size", [1, 2])
+    @pytest.mark.parametrize("nonempty_index", [0, 1])
+    def test_inference_completes_skipped_tiles_without_adding_weights(
+        batch_size, nonempty_index
+    ):
+        accumulator, probability, weight, _ = _accumulator((2, 3), (2, 3))
+        # A raw-nonempty robust-normalized patch can itself be all zero.
+        images = torch.zeros((2, 1, 1, 2, 2))
+        metadata = torch.tensor([[0, 0, 2, 2, 0], [0, 1, 2, 2, 0]])
+        metadata[nonempty_index, 4] = 1
+        model = _ZeroLogits()
+        run_block_inference(
+            loader=DataLoader(TensorDataset(images, metadata), batch_size=batch_size),
+            model=model, accumulator=accumulator,
+            weight_map=np.ones((2, 2), dtype=np.float32), mask=None,
+            device=torch.device("cpu"), amp_dtype=None, tta_axes=(),
+            tta_batch_size=None,
+        )
+        assert model.images_seen == 1
+>       assert not accumulator.buffers
+E       assert not {ChunkKey(row=0, col=0): (array([[0.5, 0.5, 0. ],\n       [0.5, 0.5, 0. ]], dtype=float32), array([[1., 1., 0.],\n       [1., 1., 0.]], dtype=float32))}
+E        +  where {ChunkKey(row=0, col=0): (array([[0.5, 0.5, 0. ],\n       [0.5, 0.5, 0. ]], dtype=float32), array([[1., 1., 0.],\n       [1., 1., 0.]], dtype=float32))} = <vesuvius.ink_detection.inference.infer.ChunkAccumulator object at 0x116edbdf0>.buffers
+
+/private/tmp/vesuvius-render-preflight-20261018/flat-inference-memory/vesuvius/tests/ink_detection/test_flat_inference_empty_chunks.py:112: AssertionError
+______ test_inference_completes_skipped_tiles_without_adding_weights[1-1] ______
+
+batch_size = 1, nonempty_index = 1
+
+    @pytest.mark.parametrize("batch_size", [1, 2])
+    @pytest.mark.parametrize("nonempty_index", [0, 1])
+    def test_inference_completes_skipped_tiles_without_adding_weights(
+        batch_size, nonempty_index
+    ):
+        accumulator, probability, weight, _ = _accumulator((2, 3), (2, 3))
+        # A raw-nonempty robust-normalized patch can itself be all zero.
+        images = torch.zeros((2, 1, 1, 2, 2))
+        metadata = torch.tensor([[0, 0, 2, 2, 0], [0, 1, 2, 2, 0]])
+        metadata[nonempty_index, 4] = 1
+        model = _ZeroLogits()
+        run_block_inference(
+            loader=DataLoader(TensorDataset(images, metadata), batch_size=batch_size),
+            model=model, accumulator=accumulator,
+            weight_map=np.ones((2, 2), dtype=np.float32), mask=None,
+            device=torch.device("cpu"), amp_dtype=None, tta_axes=(),
+            tta_batch_size=None,
+        )
+        assert model.images_seen == 1
+>       assert not accumulator.buffers
+E       assert not {ChunkKey(row=0, col=0): (array([[0. , 0.5, 0.5],\n       [0. , 0.5, 0.5]], dtype=float32), array([[0., 1., 1.],\n       [0., 1., 1.]], dtype=float32))}
+E        +  where {ChunkKey(row=0, col=0): (array([[0. , 0.5, 0.5],\n       [0. , 0.5, 0.5]], dtype=float32), array([[0., 1., 1.],\n       [0., 1., 1.]], dtype=float32))} = <vesuvius.ink_detection.inference.infer.ChunkAccumulator object at 0x116f01f20>.buffers
+
+/private/tmp/vesuvius-render-preflight-20261018/flat-inference-memory/vesuvius/tests/ink_detection/test_flat_inference_empty_chunks.py:112: AssertionError
+______ test_inference_completes_skipped_tiles_without_adding_weights[1-2] ______
+
+batch_size = 2, nonempty_index = 1
+
+    @pytest.mark.parametrize("batch_size", [1, 2])
+    @pytest.mark.parametrize("nonempty_index", [0, 1])
+    def test_inference_completes_skipped_tiles_without_adding_weights(
+        batch_size, nonempty_index
+    ):
+        accumulator, probability, weight, _ = _accumulator((2, 3), (2, 3))
+        # A raw-nonempty robust-normalized patch can itself be all zero.
+        images = torch.zeros((2, 1, 1, 2, 2))
+        metadata = torch.tensor([[0, 0, 2, 2, 0], [0, 1, 2, 2, 0]])
+        metadata[nonempty_index, 4] = 1
+        model = _ZeroLogits()
+        run_block_inference(
+            loader=DataLoader(TensorDataset(images, metadata), batch_size=batch_size),
+            model=model, accumulator=accumulator,
+            weight_map=np.ones((2, 2), dtype=np.float32), mask=None,
+            device=torch.device("cpu"), amp_dtype=None, tta_axes=(),
+            tta_batch_size=None,
+        )
+        assert model.images_seen == 1
+>       assert not accumulator.buffers
+E       assert not {ChunkKey(row=0, col=0): (array([[0. , 0.5, 0.5],\n       [0. , 0.5, 0.5]], dtype=float32), array([[0., 1., 1.],\n       [0., 1., 1.]], dtype=float32))}
+E        +  where {ChunkKey(row=0, col=0): (array([[0. , 0.5, 0.5],\n       [0. , 0.5, 0.5]], dtype=float32), array([[0., 1., 1.],\n       [0., 1., 1.]], dtype=float32))} = <vesuvius.ink_detection.inference.infer.ChunkAccumulator object at 0x116f019d0>.buffers
+
+/private/tmp/vesuvius-render-preflight-20261018/flat-inference-memory/vesuvius/tests/ink_detection/test_flat_inference_empty_chunks.py:112: AssertionError
+=============================== warnings summary ===============================
+../../../../private/tmp/vesuvius-render-preflight-20261018/flat-supported-py314/lib/python3.14/site-packages/_pytest/config/__init__.py:1345
+  /private/tmp/vesuvius-render-preflight-20261018/flat-supported-py314/lib/python3.14/site-packages/_pytest/config/__init__.py:1345: PytestAssertRewriteWarning: Module already imported so cannot be rewritten; zarr
+    self._mark_plugins_for_rewrite(hook, disable_autoload)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED ../../../../dev::test_raw_empty_tile_releases_chunk_in_either_order[False]
+FAILED ../../../../dev::test_raw_empty_tile_releases_chunk_in_either_order[True]
+FAILED ../../../../dev::test_only_raw_empty_tiles_do_not_allocate_or_write_chunks
+FAILED ../../../../dev::test_inference_completes_skipped_tiles_without_adding_weights[0-1]
+FAILED ../../../../dev::test_inference_completes_skipped_tiles_without_adding_weights[0-2]
+FAILED ../../../../dev::test_inference_completes_skipped_tiles_without_adding_weights[1-1]
+FAILED ../../../../dev::test_inference_completes_skipped_tiles_without_adding_weights[1-2]
+7 failed, 20 passed, 1 warning in 10.95s

@@ -1,0 +1,156 @@
+{
+  "python": "3.14.6",
+  "torch": "2.12.1",
+  "device": "cpu",
+  "threads": 1,
+  "checkpoint_repository": "scrollprize/ink_9um",
+  "checkpoint_file": "hybrid_3d2d-seed42/step-075000.pth",
+  "checkpoint_revision": "7109667e2607db1b90c37c8b09cb876ea7fe7bb1",
+  "checkpoint_sha256": "e635558ae6a1a807a7e5ec1e83adfd45bc3c0ac53883ea43f1d4e085d62a9cab",
+  "validation_runner_sha256": "a63beac3f2b440c0dded8cef7efa3fb38fc1404f1e686a05990cbe62f4c48690",
+  "before": {
+    "source_sha256": "3e1f942f513426cfbee451c27aeb84d1d231ec71b02e1d58946b58d8551ea38f",
+    "cli_exit_status": 0,
+    "contract": {
+      "loaded_state_tensors": 508,
+      "patch_size": 128,
+      "input_depth": 17,
+      "preprocessing": "tifxyz_robust",
+      "amp_dtype": "torch.float16",
+      "model_parameter_dtypes": [
+        "torch.float32"
+      ]
+    },
+    "directions": {
+      "forward": {
+        "accumulator_buffer_bytes_peak": 524288,
+        "scheduled": 17,
+        "images_seen": 14,
+        "model_calls": 4,
+        "model_input_dtype": "torch.float32",
+        "model_input_stream_sha256": "05b902e23492ff4903a7f94ff5a5982d00676ecf186851dc0639baa5dec79b23",
+        "raw_empty_skipped": 3,
+        "before_final_flush": {
+          "chunks": 2,
+          "array_bytes": 262144
+        },
+        "probability_sum_sha256": "8f2bede74007ed980e5ec86f24561f0d48c8905d21efdf2fa5474674eff7be01",
+        "weight_sum_sha256": "b3e1ff663ab185da3eef581656a3d4d4fb870ac32fa821e07f8cd9211278d5d8",
+        "output_name": "prediction.tif",
+        "output_shape": [
+          384,
+          384
+        ],
+        "output_dtype": "uint8",
+        "decoded_pixels_sha256": "eb40b09e46e0760d59e15c88c4105107e64ee77da5220601ff2fc48bc76778c7",
+        "tiff_file_sha256": "b0abcea1617f01a904ad4d731b1a4ac6f1b9317c3cff66962d671f27d8bcbe7c",
+        "pixel_min": 0,
+        "pixel_max": 166,
+        "distinct_uint8_values": 113
+      },
+      "reverse": {
+        "accumulator_buffer_bytes_peak": 524288,
+        "scheduled": 17,
+        "images_seen": 14,
+        "model_calls": 4,
+        "model_input_dtype": "torch.float32",
+        "model_input_stream_sha256": "07a4fd61875a45ffb454e683dc2844419926ed69e5ffde8c6b9222dec683fe74",
+        "raw_empty_skipped": 3,
+        "before_final_flush": {
+          "chunks": 2,
+          "array_bytes": 262144
+        },
+        "probability_sum_sha256": "66fe2a39f35cc9c93d33e02c72608287e5b4d0b19d1cabe92ff2d44028e61869",
+        "weight_sum_sha256": "b3e1ff663ab185da3eef581656a3d4d4fb870ac32fa821e07f8cd9211278d5d8",
+        "output_name": "prediction_reverse.tif",
+        "output_shape": [
+          384,
+          384
+        ],
+        "output_dtype": "uint8",
+        "decoded_pixels_sha256": "f94f4a57c3617fb841633a4f30eefe2ad12a2011e3185b9df42a9d07688d7e8a",
+        "tiff_file_sha256": "4f7f9b64b1bfac8862c73ffb18e8e89ed4339b2ca5d528b5d163d154717ab76f",
+        "pixel_min": 0,
+        "pixel_max": 202,
+        "distinct_uint8_values": 150
+      }
+    },
+    "instrumented_wall_seconds": 7.54574595799204
+  },
+  "after": {
+    "source_sha256": "9091cd283a70f4cb67e7cf5c7736fcebd4dbc3b2706625d5532138c0d3cd298e",
+    "cli_exit_status": 0,
+    "contract": {
+      "loaded_state_tensors": 508,
+      "patch_size": 128,
+      "input_depth": 17,
+      "preprocessing": "tifxyz_robust",
+      "amp_dtype": "torch.float16",
+      "model_parameter_dtypes": [
+        "torch.float32"
+      ]
+    },
+    "directions": {
+      "forward": {
+        "accumulator_buffer_bytes_peak": 524288,
+        "scheduled": 17,
+        "images_seen": 14,
+        "model_calls": 4,
+        "model_input_dtype": "torch.float32",
+        "model_input_stream_sha256": "05b902e23492ff4903a7f94ff5a5982d00676ecf186851dc0639baa5dec79b23",
+        "raw_empty_skipped": 3,
+        "before_final_flush": {
+          "chunks": 0,
+          "array_bytes": 0
+        },
+        "probability_sum_sha256": "8f2bede74007ed980e5ec86f24561f0d48c8905d21efdf2fa5474674eff7be01",
+        "weight_sum_sha256": "b3e1ff663ab185da3eef581656a3d4d4fb870ac32fa821e07f8cd9211278d5d8",
+        "output_name": "prediction.tif",
+        "output_shape": [
+          384,
+          384
+        ],
+        "output_dtype": "uint8",
+        "decoded_pixels_sha256": "eb40b09e46e0760d59e15c88c4105107e64ee77da5220601ff2fc48bc76778c7",
+        "tiff_file_sha256": "b0abcea1617f01a904ad4d731b1a4ac6f1b9317c3cff66962d671f27d8bcbe7c",
+        "pixel_min": 0,
+        "pixel_max": 166,
+        "distinct_uint8_values": 113
+      },
+      "reverse": {
+        "accumulator_buffer_bytes_peak": 524288,
+        "scheduled": 17,
+        "images_seen": 14,
+        "model_calls": 4,
+        "model_input_dtype": "torch.float32",
+        "model_input_stream_sha256": "07a4fd61875a45ffb454e683dc2844419926ed69e5ffde8c6b9222dec683fe74",
+        "raw_empty_skipped": 3,
+        "before_final_flush": {
+          "chunks": 0,
+          "array_bytes": 0
+        },
+        "probability_sum_sha256": "66fe2a39f35cc9c93d33e02c72608287e5b4d0b19d1cabe92ff2d44028e61869",
+        "weight_sum_sha256": "b3e1ff663ab185da3eef581656a3d4d4fb870ac32fa821e07f8cd9211278d5d8",
+        "output_name": "prediction_reverse.tif",
+        "output_shape": [
+          384,
+          384
+        ],
+        "output_dtype": "uint8",
+        "decoded_pixels_sha256": "f94f4a57c3617fb841633a4f30eefe2ad12a2011e3185b9df42a9d07688d7e8a",
+        "tiff_file_sha256": "4f7f9b64b1bfac8862c73ffb18e8e89ed4339b2ca5d528b5d163d154717ab76f",
+        "pixel_min": 0,
+        "pixel_max": 202,
+        "distinct_uint8_values": 150
+      }
+    },
+    "instrumented_wall_seconds": 5.729561416999786
+  },
+  "all_pair_comparisons_passed": true,
+  "limitations": [
+    "Bounded failure-focused real crop; not a full-render trained-model run.",
+    "No ink-quality, legibility, or throughput improvement is established.",
+    "Parent-package initializers bypassed; device selection fixed to CPU.",
+    "Only macOS arm64 CPU checked; no hosted CI or GPU claim."
+  ]
+}

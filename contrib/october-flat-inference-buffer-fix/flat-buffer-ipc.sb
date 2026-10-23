@@ -1,0 +1,10 @@
+(version 1)
+(allow default)
+(deny network*)
+(allow network-bind network-inbound network-outbound
+  (subpath "/private/tmp/vesuvius-render-preflight-20261018/flat-worker-ipc"))
+(deny file-write*)
+(allow file-write*
+  (literal "/dev/null")
+  (subpath "/private/tmp/vesuvius-render-preflight-20261018")
+  (subpath "/Users/bryantle/Documents/bnleft/first-light-pherc0211/contrib/october-flat-inference-buffer-fix"))

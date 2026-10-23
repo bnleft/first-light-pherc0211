@@ -1,0 +1,29 @@
+{
+  "repository": "scrollprize/ink_9um",
+  "file": "hybrid_3d2d-seed42/step-075000.pth",
+  "revision": "7109667e2607db1b90c37c8b09cb876ea7fe7bb1",
+  "bytes": 138360039,
+  "sha256": "e635558ae6a1a807a7e5ec1e83adfd45bc3c0ac53883ea43f1d4e085d62a9cab",
+  "publisher_metadata": {
+    "type": "file",
+    "oid": "b72eef60ec13456b345ef3cac2a6e74ab965ab55",
+    "size": 138360039,
+    "lfs": {
+      "oid": "e635558ae6a1a807a7e5ec1e83adfd45bc3c0ac53883ea43f1d4e085d62a9cab",
+      "size": 138360039,
+      "pointerSize": 134
+    },
+    "xetHash": "9faa5e1d7c2902747cca4d6d94099e7fd71071b2707d762858dd7d0072d5345c",
+    "path": "hybrid_3d2d-seed42/step-075000.pth",
+    "lastCommit": {
+      "id": "7109667e2607db1b90c37c8b09cb876ea7fe7bb1",
+      "title": "9 \u00b5m ink detection: hybrid_3d2d seed42/seed43 checkpoints + model card",
+      "date": "2026-08-14T01:02:42.000Z"
+    }
+  },
+  "publisher_api_url": "https://huggingface.co/api/models/scrollprize/ink_9um/tree/main/hybrid_3d2d-seed42?expand=true",
+  "download_url": "https://huggingface.co/scrollprize/ink_9um/resolve/7109667e2607db1b90c37c8b09cb876ea7fe7bb1/hybrid_3d2d-seed42/step-075000.pth",
+  "workflow_reference": "modal_app.py CHECKPOINT_REPO, CHECKPOINT_FILE, and _infer_slab",
+  "historical_october11_remote_checkpoint_bytes_rehashed": false,
+  "weights_bundled": false
+}

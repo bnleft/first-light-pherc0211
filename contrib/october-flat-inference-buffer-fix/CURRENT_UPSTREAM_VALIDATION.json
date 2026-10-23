@@ -1,0 +1,41 @@
+{
+  "validated_date": "2026-10-22",
+  "base_commit": "e2254ebe0168a232e5ba7b94997c749b4e6a4544",
+  "candidate_commit": "72845f6e18abdf345fc80f5722253c1ca25d7339",
+  "candidate_branch": "fix/flat-inference-skipped-chunks-oct22",
+  "python": "3.14.6",
+  "torch": "2.12.1",
+  "platform": "macOS arm64 CPU",
+  "baseline_tests": {
+    "passed": 26,
+    "failed": 7,
+    "exit_status": 1,
+    "log": "current-tests-before.txt"
+  },
+  "candidate_tests": {
+    "passed": 33,
+    "failed": 0,
+    "exit_status": 0,
+    "log": "current-tests-after.txt"
+  },
+  "existing_upstream_test_cases_passing_both_variants": 25,
+  "test_files": [
+    "test_flat_inference.py",
+    "test_flat_inference_ensemble.py",
+    "test_flat_inference_empty_chunks.py"
+  ],
+  "test_assertions_rewritten": false,
+  "parent_initializers_bypassed": true,
+  "runtime_device_selection_hook_fixed_to_cpu": true,
+  "trained_checkpoint_report": "TRAINED_CHECKPOINT_CURRENT.json",
+  "before_retained_array_bytes_per_direction": 262144,
+  "after_retained_array_bytes_per_direction": 0,
+  "paired_model_inputs_blend_sums_pixels_and_tiff_files_byte_identical": true,
+  "crop_peak_array_bytes_unchanged": 524288,
+  "source_before_sha256": "3e1f942f513426cfbee451c27aeb84d1d231ec71b02e1d58946b58d8551ea38f",
+  "source_after_sha256": "9091cd283a70f4cb67e7cf5c7736fcebd4dbc3b2706625d5532138c0d3cd298e",
+  "patch_applies_and_matches_candidate": true,
+  "full_project_ci_or_gpu_execution_verified": false,
+  "trained_checkpoint_full_render_run": false,
+  "personal_human_review_attested": false
+}

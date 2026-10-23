@@ -1,0 +1,109 @@
+{
+  "base_commit": "23876bef6a10c928abf167e963f9755534cec2dd",
+  "candidate_commit": "237201a4163680884d72488df1fd7509c0287ef0",
+  "latest_upstream_main_checked": "672339382d4dc71576cacb452bd94bb3dc79fa8d",
+  "latest_upstream_target_paths_unchanged_from_tested_base": true,
+  "candidate_branch": "fix/flat-inference-skipped-chunks",
+  "supported_runtime_focused_tests": {
+    "before_failed": 7,
+    "before_passed": 1,
+    "after_passed": 8,
+    "python": "3.14.6",
+    "torch": "2.12.1",
+    "numpy": "2.4.6",
+    "method": "Complete inference module imported without AST extraction; unrelated parent package initializers bypassed."
+  },
+  "existing_flat_inference_test_suite": {
+    "source": "vesuvius/tests/ink_detection/test_flat_inference.py",
+    "source_sha256": "58ec06cc4278bca8efb133f8c4895427676ec40dbb8f99a90d57ccb3ceb8d945",
+    "status": "19_passed_on_both_versions",
+    "tests_executed": 19,
+    "passed": 19,
+    "failed": 0,
+    "additional_install_approved_and_executed": true
+  },
+  "combined_existing_and_new_tests": {
+    "runner_sha256": "b2b431cf4e8ea2960fa7e59c8296b43286dab7fa2e7893cb70cdf2a227fe5d78",
+    "before": {
+      "passed": 20,
+      "failed": 7,
+      "pytest_exit_status": 1,
+      "log": "all-flat-tests-before-cpu.txt"
+    },
+    "after": {
+      "passed": 27,
+      "failed": 0,
+      "pytest_exit_status": 0,
+      "log": "all-flat-tests-after-cpu.txt"
+    },
+    "new_regressions": {
+      "before_failed": 7,
+      "before_passed": 1,
+      "after_passed": 8
+    },
+    "test_assertions_rewritten": false,
+    "runtime_device_selection_hook_fixed_to_cpu": true,
+    "parent_initializers_bypassed_in_main_and_spawned_process": true,
+    "ip_networking_and_write_restrictions_preserved": true,
+    "task_directory_unix_ipc_enabled": true,
+    "sandbox_profile_sha256": "0bd9c59b4101ce5b1a61857ad3524726ed75fb325e0a8082e62d0bd4e6937ea6",
+    "sandbox_probe_sha256": "30fc763318c57e57d69e2378f49560c449eb3afdfbd3d1d0f689878e564901f6",
+    "sandbox_probe_result": "sandbox-probe-local-ipc.json",
+    "core_32_installed_package_versions_preserved": true,
+    "extended_installed_package_count": 46
+  },
+  "real_data_accumulator_replays": {
+    "sources": 1,
+    "bounded_derived_crops": 1,
+    "repetitions_per_variant": 3,
+    "numpy": "2.4.6",
+    "zarr": "3.1.6",
+    "python": "3.12.8",
+    "schedule_and_output_chunk_bytes_identical": true
+  },
+  "real_data_torch_loop": {
+    "mode": "module",
+    "cases": 3,
+    "python": "3.14.6",
+    "torch": "2.12.1",
+    "model": "Deterministic depth-sensitive CPU test network; no trained ink checkpoint.",
+    "reader_normalization_DataLoader_inference_loop_blending_and_uint8_conversion": "executed",
+    "model_input_bytes_and_final_pixel_bytes_identical_all_cases": true,
+    "float32_probability_and_weight_sum_bytes_identical_all_cases": true,
+    "LZW_TIFF_files_byte_identical_and_decoded_pixels_verified_all_cases": true,
+    "full_input_pixels_per_direction": 30474240,
+    "whole_module_import_and_TIFF_writer_exercised": true
+  },
+  "downloaded_files_rehashed_after_benchmarks": 774,
+  "changed_files_ruff_E4_E7_E9_F": "pass",
+  "changed_files_python314_ast_parse": "pass",
+  "supported_python314_torch212_runtime_verified": true,
+  "setup_approved_and_executed": true,
+  "platform": "macOS arm64 CPU",
+  "full_project_or_hosted_CI_verified": false,
+  "real_ink_checkpoint_forward_run": true,
+  "trained_checkpoint_crop_run": {
+    "actual_infer_main_called": true,
+    "report": "TRAINED_CHECKPOINT_CPU.json",
+    "checkpoint_sha256": "e635558ae6a1a807a7e5ec1e83adfd45bc3c0ac53883ea43f1d4e085d62a9cab",
+    "directions": [
+      "forward",
+      "reverse"
+    ],
+    "shape_yx": [
+      384,
+      384
+    ],
+    "preprocessing": "tifxyz_robust",
+    "device": "cpu",
+    "model_and_input_dtype": "torch.float32",
+    "model_inputs_float32_sums_decoded_pixels_and_TIFF_files_identical": true,
+    "before_retained_array_bytes_per_direction": 262144,
+    "after_retained_array_bytes_per_direction": 0
+  },
+  "trained_checkpoint_full_render_forward_run": false,
+  "human_review_or_human_written_upstream_commentary_verified": false,
+  "upstream_required_actual_terminal_screenshots_prepared": false,
+  "published": false,
+  "upstream_contact_sent": false
+}

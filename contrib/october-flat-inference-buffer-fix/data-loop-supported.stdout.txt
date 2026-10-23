@@ -1,0 +1,4 @@
+OMP: Warning #179: Function Can't set size of /tmp file failed:
+{"case": "full_forward_batch4", "mode": "module", "inputs_blend_sums_and_pixels_identical": true, "before_final_flush": {"chunks": 44, "array_bytes": 5767168}, "after_final_flush": {"chunks": 0, "array_bytes": 0}}
+{"case": "full_reverse_batch4", "mode": "module", "inputs_blend_sums_and_pixels_identical": true, "before_final_flush": {"chunks": 44, "array_bytes": 5767168}, "after_final_flush": {"chunks": 0, "array_bytes": 0}}
+{"case": "crop_forward_batch1", "mode": "module", "inputs_blend_sums_and_pixels_identical": true, "before_final_flush": {"chunks": 2, "array_bytes": 262144}, "after_final_flush": {"chunks": 0, "array_bytes": 0}}

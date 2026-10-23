@@ -1,0 +1,9 @@
+OMP: Warning #179: Function Can't set size of /tmp file failed:
+...........................                                              [100%]
+=============================== warnings summary ===============================
+../../../../private/tmp/vesuvius-render-preflight-20261018/flat-supported-py314/lib/python3.14/site-packages/_pytest/config/__init__.py:1345
+  /private/tmp/vesuvius-render-preflight-20261018/flat-supported-py314/lib/python3.14/site-packages/_pytest/config/__init__.py:1345: PytestAssertRewriteWarning: Module already imported so cannot be rewritten; zarr
+    self._mark_plugins_for_rewrite(hook, disable_autoload)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+27 passed, 1 warning in 10.94s
