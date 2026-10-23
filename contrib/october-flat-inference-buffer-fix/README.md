@@ -119,15 +119,16 @@ probes verify that IP connections, sockets elsewhere, and writes outside approve
 remain blocked. [SETUP.md](SETUP.md#additional-existing-suite-check) records the
 commands and harness configuration; both raw logs and the sandbox probe are included.
 
-No branch has been published and no upstream message or PR has been sent.
+The current fix branch is published in `bnleft/villa` as
+`fix/flat-inference-skipped-chunks-oct22`. The reproduction files are published
+on `bnleft/first-light-pherc0211`'s `docs/flat-inference-buffer-evidence` branch.
 The contributor requested an AI-assisted motivation comment, now prepared in
 [MOTIVATION_COMMENT.md](MOTIVATION_COMMENT.md) and incorporated into the
 [PR draft](UPSTREAM_PR_DRAFT.md). This records the documented workflow and does
-not attest to personal human review. Actual
-terminal/tool screenshots required by upstream have not been prepared: the
-computer-use tool rejected Terminal access with "Computer Use is not allowed
-to use the app 'com.apple.Terminal' for safety reasons." The actual test logs
-and reproduction commands are included. The candidate is technically validated
+not attest to personal human review. The actual test logs and reproduction
+commands are included. Browser captures of the saved GitHub test logs are now
+included as [before](pytest-before-github.jpg) and [after](pytest-after-github.jpg).
+The candidate is technically validated
 for the tested path; community adoption and
 October prize eligibility have not been established. The
 [code review and upstream overlap check](REVIEW.md) and

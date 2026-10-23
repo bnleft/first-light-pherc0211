@@ -20,6 +20,10 @@ cases pass on both versions. Only seven expected new regressions fail on the
 baseline. See the raw [baseline](current-tests-before.txt) and
 [candidate](current-tests-after.txt) output.
 
+The [before](pytest-before-github.jpg) and [after](pytest-after-github.jpg)
+screenshots capture those actual saved logs displayed on GitHub at evidence
+commit `8db1d73fd6657397f0763248c2bbf366c1944697`.
+
 The new branch applies the original patch to current main without altering its
 source or regression logic. It preserves upstream's ensemble checkpoint support
 and blocking host-to-MPS copy fix. The earlier October 20 evidence files remain

@@ -72,10 +72,10 @@ bytes have not been rehashed; repository/file identity matches `modal_app.py`.
 
 [Villa's contribution rules](https://github.com/ScrollPrize/villa/blob/23876bef6a10c928abf167e963f9755534cec2dd/CONTRIBUTING.md)
 require actual human use, a motivation, human-written commentary, personal code
-review, and genuine before/after terminal/tool screenshots. The screenshots
-cannot currently be captured by the computer-use tool: Terminal access was
-explicitly denied for safety reasons. Do not substitute a generated image of a
-terminal or claim that a screenshot or human review exists.
+review, and genuine before/after terminal/tool screenshots. October 22 browser
+captures of the actual saved GitHub test logs are included as
+[before](pytest-before-github.jpg) and [after](pytest-after-github.jpg).
+Personal human code review remains unattested.
 
 The contributor subsequently authorized drafting the motivation on their behalf.
 [MOTIVATION_COMMENT.md](MOTIVATION_COMMENT.md) states the verified workflow and
