@@ -11,6 +11,11 @@ trained-checkpoint comparison on the real crop. The evidence below records the
 original October 20 candidate; current source snapshots, logs, and patch use
 `current` in their filenames.
 
+**Upstream PR:** [ScrollPrize/villa#2254](https://github.com/ScrollPrize/villa/pull/2254).
+The two-file fix is open for upstream review. [PUBLICATION.json](PUBLICATION.json)
+records the published head and evidence pin; GitHub is authoritative for live
+check and review status.
+
 The inference scheduler counts every scheduled patch when deciding when an
 output chunk can be flushed. The inference loop skips raw-empty patches without
 completing their contributions. A chunk overlapping both empty and nonempty

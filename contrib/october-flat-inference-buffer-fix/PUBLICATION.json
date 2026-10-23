@@ -1,0 +1,19 @@
+{
+  "upstream_pr": "https://github.com/ScrollPrize/villa/pull/2254",
+  "state_at_publication": "open",
+  "is_draft": false,
+  "base_commit_tested": "e2254ebe0168a232e5ba7b94997c749b4e6a4544",
+  "head_commit_tested_and_published": "72845f6e18abdf345fc80f5722253c1ca25d7339",
+  "head_branch": "bnleft:fix/flat-inference-skipped-chunks-oct22",
+  "pinned_evidence_commit_in_pr": "ab91ab3b76c62c9012722a77b4982417ff2bffa3",
+  "pinned_evidence_repository": "bnleft/first-light-pherc0211",
+  "t3_thread_link_registered": true,
+  "ai_assistance_disclosed": true,
+  "personal_verification_checkbox_checked": false,
+  "local_cpu_test_cases_passed": 33,
+  "paired_trained_checkpoint_comparisons_passed": true,
+  "github_python_matrix_state_at_initial_verification": "in_progress",
+  "vercel_status_at_initial_verification": "failure",
+  "merged": false,
+  "prize_submission_sent": false
+}
